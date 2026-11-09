@@ -7,7 +7,8 @@
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "check": "next typegen && tsc --noEmit"
+    "check": "next typegen && tsc --noEmit",
+    "test": "node --test tests/publication-status.test.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.8.0",

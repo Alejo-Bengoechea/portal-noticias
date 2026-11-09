@@ -113,17 +113,21 @@ export async function changePublicationStatus(_: string, form: FormData): Promis
   const id = field(form, 'id');
   const intent = field(form, 'intent');
   if (!client || !uuid.test(id) || !['publish', 'unpublish'].includes(intent)) return 'No se pudo autorizar el cambio.';
+  const { data, error: readError } = await client.from('articles').select('published_at,ever_published,category_id').eq('id', id).single();
+  if (readError || !data) return 'No se encontró la noticia.';
   if (intent === 'publish') {
-    const { data, error } = await client.from('articles').select('published_at,ever_published,category_id').eq('id', id).single();
-    if (error || !data) return 'No se encontró la noticia.';
     if (data.published_at) return 'La noticia ya está publicada.';
     if (!data.ever_published) return 'Los borradores deben editarse antes de publicarlos.';
     if (!data.category_id) return 'Selecciona una categoría antes de publicar la noticia.';
-  }
+  } else if (!data.published_at) return 'La noticia no está publicada.';
   const row = intent === 'publish'
     ? { published_at: new Date().toISOString(), ever_published: true }
     : { published_at: null };
-  const { error } = await client.from('articles').update(row).eq('id', id).select('id').single();
+  const request = client.from('articles').update(row).eq('id', id);
+  const { error } = intent === 'publish'
+    ? await request.is('published_at', null).eq('ever_published', true).not('category_id', 'is', null).select('id').single()
+    : await request.not('published_at', 'is', null).select('id').single();
+  if (error?.code === 'PGRST116') return 'La noticia cambió durante la operación. Actualiza la tabla y comprueba su estado.';
   if (error) return 'No se pudo cambiar el estado de la noticia.';
   revalidatePath('/', 'layout');
   return 'Estado actualizado.';

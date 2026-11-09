@@ -6,7 +6,7 @@ Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un h
 
 - Carpeta local del usuario: `C:\Users\alejo\Desktop\periodismo-alejodice` (Windows). Repositorio Git con remoto **público** en GitHub: `Alejo-Bengoechea/portal-noticias`, rama principal `main`.
 - **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue. Hoy los avances se publican en Sites mediante Codex; el dominio propio y su proveedor están sin decidir (ver §6).
-- `sites-release/` es una copia histórica de publicación, no la fuente activa; en el repositorio está vacía. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual.
+- `sites-release/` es una copia histórica de publicación, no la fuente activa; Git la registra como una referencia gitlink histórica, no como el código fuente activo de Next.js; localmente conserva archivos y dependencias propios. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual. Los archivos `*.tar.gz` dejan de versionarse y se conservan localmente, ignorados por Git; las copias antiguas siguen en el historial.
 - **Nunca guardar contraseñas, claves ni notas con credenciales en archivos del proyecto**: el repositorio es público y el historial de Git las conserva aunque se borren. No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
 - No desactivar autenticación, RLS ni comprobaciones del administrador para probar. No crear/publicar/eliminar noticias reales como parte de una prueba visual.
 - El usuario tiene poca experiencia en código: implementar lo pedido y explicar en español sencillo. Resolver decisiones rutinarias sin pedir confirmaciones innecesarias.
@@ -17,16 +17,16 @@ Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un h
 
 ### 1.1 Protocolo común Codex + Claude Code
 
-Ambos agentes tienen la misma relevancia y siguen este documento. Ninguno reescribe el trabajo del otro sin petición.
+El usuario determina los roles. En la colaboración actual, Codex coordina la integración y Claude Code contribuye con cambios revisables. Ambos siguen este protocolo y preservan el trabajo ajeno.
 
-1. **Al empezar:** `git status` y `git log --oneline -10`. Si se trabaja en local y hay cambios nuevos en GitHub, traerlos antes de editar (`git pull`).
-2. **Cambios ajenos sin commit:** no tocarlos, revertirlos ni incluirlos en el propio commit. Preguntar al usuario.
-3. **Un agente a la vez** sobre la misma carpeta. Para trabajar en paralelo, cada uno en su rama.
-4. **Cambios mínimos y localizados:** no reformatear, renombrar, reordenar imports ni "limpiar" código fuera de la tarea. Seguir el estilo del archivo que se edita (componentes compactos, comillas simples, textos de interfaz en español). Sin dependencias, rutas ni capas nuevas sin petición.
-5. **Al terminar:** un commit por tarea con mensaje en español que diga qué cambió y por qué. El historial de Git es el traspaso entre agentes; no crear diarios ni documentos paralelos.
-6. **Si cambia el comportamiento real**, actualizar este documento en el mismo commit, reemplazando lo obsoleto.
-7. **Sesiones de Claude Code en la nube** trabajan sobre un clon de GitHub en ramas `claude/...`. Su trabajo llega a la carpeta local solo cuando el usuario lo fusiona en `main` y hace `git pull`. Codex debe hacer commit y push de su trabajo para que Claude lo vea.
-8. **Antes de declarar terminado:** cumplir §12 e informar al usuario de qué se comprobó y qué no.
+1. **Al empezar:** revisar `git status`, `git log --oneline -10` y las secciones pertinentes de este documento. Consultar GitHub con `git fetch origin` cuando sea necesario; actualizar con `git pull --ff-only` solo con el árbol limpio y tras revisar los cambios.
+2. **Cambios ajenos sin commit:** no revertirlos, reformatearlos ni incluirlos en el propio commit. Continuar con archivos independientes; aislar o pedir aclaración solo si existe un conflicto que no puede resolverse de forma segura. Proteger el trabajo antes de integrar ramas.
+3. **Un agente a la vez sobre la misma carpeta.** Para trabajo simultáneo hacen falta worktrees o clones separados, además de ramas separadas. Una rama por sí sola no aísla los archivos.
+4. **Cambios localizados:** evitar limpiezas fuera de alcance y dependencias redundantes. Las rutas, dependencias y capas necesarias para la tarea están autorizadas por su alcance; no requieren otra confirmación rutinaria. Seguir el estilo del archivo y leer la guía local de Next.js antes de modificar código.
+5. **Al terminar:** commits con alcance claro y mensaje en español; excluir cambios ajenos y credenciales. Hacer push cuando esté autorizado por el usuario en la tarea. Un push de Git no autoriza publicar Sites.
+6. **Si cambia el comportamiento real**, actualizar este documento en el mismo commit, reemplazando lo obsoleto. Corregir contradicciones relacionadas con la tarea; explicar las discrepancias relevantes que queden pendientes.
+7. **Claude Code en la nube** trabaja en un clon de GitHub, normalmente en ramas `claude/...`. Sus cambios llegan al proyecto local tras fetch, revisión y fusión autorizada; los cambios locales solo serán visibles en la nube después del push correspondiente.
+8. **Antes de declarar terminado:** cumplir §12 e informar de qué se comprobó y qué no. No aplicar migraciones ni mutar datos reales como prueba sin autorización específica.
 
 ## 2. Tecnología y ejecución
 
@@ -35,6 +35,7 @@ Next.js 16.x App Router, React 19, TypeScript, Tailwind CSS 4, Supabase PostgreS
 ```powershell
 npm.cmd ci             # Solo si faltan dependencias
 npm.cmd run dev        # http://localhost:3000; comprobar antes si ya está activo
+npm.cmd test           # Regresión de acciones de publicación con Supabase simulado
 npm.cmd run check      # next typegen + tsc --noEmit
 npm.cmd run build      # next build --webpack
 npm.cmd start          # Servir una compilación existente
@@ -42,7 +43,7 @@ npm.cmd start          # Servir una compilación existente
 
 `npm.cmd` evita restricciones de `npm.ps1` en PowerShell. En Linux/macOS o en sesiones en la nube se usan los mismos scripts con `npm` (`npm ci`, `npm run check`, `npm run build`). Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones.
 
-**No hay tests automáticos, linter ni CI.** La red de seguridad actual es `check` (tipos) + `build` + prueba manual del flujo. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
+**Hay tests de regresión de publicación** en `tests/publication-status.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
 
 ## 3. Estado real de persistencia: leer antes de prometer funciones
 
@@ -213,7 +214,7 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 
 ## 12. Verificación y pendientes
 
-- Ejecutar `npm.cmd run check` y `npm.cmd run build` para cambios de código relevantes. Ajustes solo Markdown: revisar enlaces/rutas y coherencia, sin recompilar la aplicación por rutina.
+- Ejecutar `npm.cmd test`, `npm.cmd run check` y `npm.cmd run build` para cambios de código relevantes. Ajustes solo Markdown: revisar enlaces/rutas y coherencia, sin recompilar la aplicación por rutina.
 - Probar el flujo tocado en escritorio y móvil, con barra lateral abierta/cerrada. En pruebas aisladas no desactivar auth: montar los componentes con acciones/consultas simuladas fuera de las rutas reales.
 - Editor: JSON válido/inválido, rechazo sin pérdida, formato inline, mover/quitar, entradilla normalizada, categorías, etiquetas, fuentes recién añadidas en edición, vídeo, zoom de lectura y recuperación de copias incompletas.
 - Gestores: separación noticias/borradores, 15 filas + carga, filtros/orden, selección y operaciones masivas autorizadas. Categorías: confirmar/cancelar nombre y bloquear eliminación asociada.
@@ -226,10 +227,16 @@ Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 
 - **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
-- Sin tests automáticos: candidatos prioritarios `lib/news-import.ts`, `validateWorkspaceValues` y las acciones masivas.
+- Ampliar la cobertura de tests a `lib/news-import.ts` y `validateWorkspaceValues`. Las acciones de publicación individuales y masivas ya tienen pruebas con Supabase simulado, incluidas modificaciones concurrentes; falta comprobarlas contra una base aislada con RLS real.
 - Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
 - Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
 - `/api/traffic` y el RPC `record_editorial_view` permiten inflar contadores (impacto bajo mientras el panel de audiencia sea simulado).
 - Subida de imágenes duplicada en `article-form.tsx` y `lib/media-upload.ts`. `publicaciones/page.tsx` consulta categorías sin usar el resultado.
 - La biblioteca multimedia recorre todo Storage y todas las noticias en cada carga y cada borrado; revisar si crece mucho el archivo.
-- Los `alejo-sites-*.tar.gz` (~9,5 MB) siguen versionados; retirarlos del repositorio solo con permiso del usuario.
+- Los archivos históricos de Sites se retiraron del índice de Git conservando las copias locales. El historial público anterior no se ha reescrito.
+
+### Integración revisada con Claude Code — 9 de noviembre de 2026
+
+ las operaciones individuales y masivas solo actualizan noticias que cambian de estado; publicar conserva las fechas de las ya publicadas. Los filtros de escritura vuelven a exigir estado despublicado, histórico de publicación y categoría para impedir sobrescrituras concurrentes. No se han probado ni modificado noticias reales de Supabase en esta integración.
+
+Validación local de esta integración: 17 tests de acciones con Supabase simulado, comprobación de tipos y compilación de producción correctos. La compilación necesita permiso de escritura sobre la salida `.next` en Windows; no resolver EPERM eliminando carpetas por rutina.

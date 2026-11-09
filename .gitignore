@@ -5,3 +5,5 @@ node_modules/
 *.tsbuildinfo
 next-env.d.ts
 .claude/settings.local.json
+*.tar.gz
+Nuevo Documento de texto.txt

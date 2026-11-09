@@ -1,6 +1,6 @@
 # Alejo Bengoechea · Periodismo y análisis
 
-El proyecto se desarrolla con dos asistentes de código, Codex y Claude Code, con la misma relevancia. [CONTEXTO_IA.md](CONTEXTO_IA.md) es la referencia común e incluye el protocolo para trabajar juntos (§1.1). Codex entra por [AGENTS.md](AGENTS.md) y Claude Code por [CLAUDE.md](CLAUDE.md). Contexto consolidado al 9 de noviembre de 2026.
+El proyecto se desarrolla con dos asistentes de código, Codex y Claude Code, con Codex como coordinador de integración y Claude Code como colaborador, según lo indicado por el usuario. [CONTEXTO_IA.md](CONTEXTO_IA.md) es la referencia común e incluye el protocolo para trabajar juntos (§1.1). Codex entra por [AGENTS.md](AGENTS.md) y Claude Code por [CLAUDE.md](CLAUDE.md). Contexto consolidado al 9 de noviembre de 2026.
 
 El creador nuevo por JSON/componentes es una previsualización editable: sus botones generales Crear y Guardar borrador siguen deshabilitados y no guardan en Supabase. El aviso al sustituir un trabajo permite guardar una copia local recuperable; no hay autoguardado general. El editor de noticias ya guardadas sí tiene persistencia. Las 30 noticias del gestor de muestra son ficticias y no son filas de Supabase.
 
