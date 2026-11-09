@@ -3,6 +3,19 @@ export type NewsBlock = Record<string, unknown>;
 export type ImageResource = { tipo: string; url: string; alt: string; credito: string };
 export type NewsResources = Record<string, ImageResource>;
 
+export function newsTextLimit(path: string[], news: NewsDocument) {
+  const key = path.at(-1);
+  if (path[0] === 'titular') return 60;
+  if (path[0] === 'subtitulo') return 240;
+  if (path[0] === 'entradilla') return 600;
+  if (path.includes('etiquetas')) return 40;
+  if (path[0] === 'autores' || key === 'atribucion' || key === 'credito') return 100;
+  if (key === 'pie') return 300;
+  if (key === 'titulo' || key === 'tituloAviso') return 120;
+  if (path[0] === 'cuerpo' && (news.cuerpo as NewsDocument[])?.[Number(path[1])]?.tipo === 'encabezado') return 120;
+  return 3000;
+}
+
 export const componentTypes = [
   { type: 'encabezado', name: 'Subtítulo', symbol: 'H', group: 'Texto' },
   { type: 'parrafo', name: 'Texto', symbol: '¶', group: 'Texto' },
@@ -26,8 +39,8 @@ export const emptyImage = (): ImageResource => ({ tipo: 'imagen', url: '', alt: 
 export function createNewsDocument(): NewsDocument {
   return {
     versionEsquema: '1.0.0',
-    metadatos: { slug: '', estado: 'borrador', seccion: 'España', etiquetas: [] },
-    titular: 'Nueva noticia', subtitulo: '', entradilla: '',
+    metadatos: { slug: '', estado: 'borrador', seccion: '', etiquetas: [] },
+    titular: '', subtitulo: '', entradilla: '',
     autores: [{ nombre: 'Alejo Bengoechea' }],
     fechas: { publicacion: null, actualizacion: new Date().toISOString() },
     portada: null, recursos: {}, cuerpo: [],
@@ -38,14 +51,14 @@ export function createNewsDocument(): NewsDocument {
 export function createNewsBlock(type: ComponentType): { block: NewsBlock; resources: NewsResources } {
   const id = crypto.randomUUID();
   const imageId = `imagen-${id}`;
-  const span = { texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', marcas: [] as string[], enlace: { href: '' } };
+  const span = { texto: '', marcas: [] as string[], enlace: { href: '' } };
   const defaults: Record<ComponentType, NewsBlock> = {
-    encabezado: { nivel: 2, texto: 'Lorem ipsum dolor sit amet' },
+    encabezado: { nivel: 2, texto: '' },
     parrafo: { spans: [span] },
     lista: { ordenada: false, elementos: [{ spans: [span] }] },
     lista_numerada: { ordenada: true, elementos: [{ spans: [span] }] },
-    cita: { texto: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', atribucion: 'Nombre de la fuente', retratoUrl: '' },
-    pullquote: { texto: 'Lorem ipsum dolor sit amet.' },
+    cita: { texto: '', atribucion: '', retratoUrl: '' },
+    pullquote: { texto: '' },
     imagen: { recursoId: imageId, pie: '' },
     texto_imagen: { recursoId: imageId, pie: '', ladoTexto: 'izquierda', spans: [span] },
     galeria: { titulo: 'Galería', elementos: [{ recursoId: imageId, pie: '' }] },
@@ -59,7 +72,7 @@ export function createNewsBlock(type: ComponentType): { block: NewsBlock; resour
     cronologia: { eventos: [{ fecha: new Date().toISOString().slice(0, 10), titulo: 'Acontecimiento', texto: '' }] },
     encuesta: { pregunta: '¿Qué quieres preguntar?', modo: 'demostracion', activa: false, opciones: [{ id: crypto.randomUUID(), texto: 'Opción 1' }, { id: crypto.randomUUID(), texto: 'Opción 2' }] },
     nota_editorial: { titulo: 'Nota de la edición', texto: 'Escribe la nota.', icono: 'info', color: 'rojo' },
-    fuentes: { elementos: [{ id: crypto.randomUUID(), titulo: 'Nombre de la fuente', url: '' }] },
+    fuentes: { elementos: [{ id: crypto.randomUUID(), titulo: '', url: '' }] },
     correccion: { titulo: 'Corrección', fecha: new Date().toISOString().slice(0, 10), texto: '' },
   };
   return {

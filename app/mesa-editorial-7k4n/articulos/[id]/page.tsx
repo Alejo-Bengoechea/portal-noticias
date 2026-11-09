@@ -6,13 +6,13 @@ import { ArticleForm } from '@/components/article-form';
 import { DeleteForm, TermForm } from '@/components/admin-forms';
 import { JsonDropzone } from '@/components/json-dropzone';
 
-export default async function EditArticle({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ borradorLocal?: string; borradoresLocales?: string }> }) {
+export default async function EditArticle({ params }: { params: Promise<{ id: string }> }) {
   const client = await adminClient();
   if (!client) redirect('/mesa-editorial-7k4n/login');
   const { id } = await params;
   if (id === 'nuevo') {
-    const [categories, query] = await Promise.all([getTerms('categories'), searchParams]);
-    return <JsonDropzone categories={categories} initialDraftId={typeof query.borradorLocal === 'string' ? query.borradorLocal : undefined} showDraftsInitially={query.borradoresLocales === '1'} />;
+    const categories = await getTerms('categories');
+    return <JsonDropzone categories={categories} />;
   }
   if (!/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(id)) notFound();
   const { data, error } = await client.from('articles').select('*').eq('id', id).maybeSingle();

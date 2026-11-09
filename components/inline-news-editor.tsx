@@ -1,20 +1,22 @@
 'use client';
 
 import { createContext, useContext, useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import type { NewsDocument } from '@/lib/news-components';
+import { newsTextLimit, type NewsDocument } from '@/lib/news-components';
+export { newsTextLimit };
 import { dateLabel } from '@/lib/format';
 import { inlineSpansFromDOM } from '@/lib/inline-format';
 
 type Path = string[];
-type Editing = { news: NewsDocument; categories: { id: string; name: string }[]; change: (path: Path, value: unknown) => void };
+type Editing = { news: NewsDocument; categories: { id: string; name: string }[]; invalid: Set<string>; change: (path: Path, value: unknown) => void };
 const InlineEditing = createContext<Editing | null>(null);
 export const useInlineNewsEditing = () => useContext(InlineEditing);
 const tagKey = (value: unknown) => String(value ?? '').trim().normalize('NFKC').toLocaleLowerCase('es');
+const emptyInvalid = new Set<string>();
 
-export function InlineNewsEditor({ news, onChange, children, categories = [] }: {
-  news: NewsDocument; onChange: (news: NewsDocument) => void; children: ReactNode; categories?: { id: string; name: string }[];
+export function InlineNewsEditor({ news, onChange, children, categories = [], invalid = emptyInvalid }: {
+  news: NewsDocument; onChange: (news: NewsDocument) => void; children: ReactNode; categories?: { id: string; name: string }[]; invalid?: Set<string>;
 }) {
-  return <InlineEditing.Provider value={{ news, categories, change: (path, value) => {
+  return <InlineEditing.Provider value={{ news, categories, invalid, change: (path, value) => {
     if (path[0] === 'metadatos' && path[1] === 'etiquetas') {
       if (Array.isArray(value) && value.length > 3) return;
       if (!Array.isArray(value)) {
@@ -35,19 +37,6 @@ export function InlineNewsEditor({ news, onChange, children, categories = [] }: 
   } }}>{children}</InlineEditing.Provider>;
 }
 
-export function newsTextLimit(path: Path, news: NewsDocument) {
-  const key = path.at(-1);
-  if (path[0] === 'titular') return 60;
-  if (path[0] === 'subtitulo') return 240;
-  if (path[0] === 'entradilla') return 600;
-  if (path.includes('etiquetas')) return 40;
-  if (path[0] === 'autores' || key === 'atribucion' || key === 'credito') return 100;
-  if (key === 'pie') return 300;
-  if (key === 'titulo' || key === 'tituloAviso') return 120;
-  if (path[0] === 'cuerpo' && (news.cuerpo as NewsDocument[])?.[Number(path[1])]?.tipo === 'encabezado') return 120;
-  return 3000;
-}
-
 export function InlineNewsCategory({ value }: { value: unknown }) {
   const editing = useInlineNewsEditing();
   const [open, setOpen] = useState(false);
@@ -62,6 +51,7 @@ export function InlineNewsCategory({ value }: { value: unknown }) {
   }, [open]);
   if (!editing) return <>{String(value ?? '')}</>;
   const current = String(value ?? '').toLocaleUpperCase('es');
+  const invalid = editing.invalid.has('metadatos.seccion');
   return <span ref={root} className="news-category-picker" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false); }}
     onKeyDown={event => {
       if (event.key === 'Escape') { setOpen(false); trigger.current?.focus(); }
@@ -74,7 +64,7 @@ export function InlineNewsCategory({ value }: { value: unknown }) {
         options[next]?.focus();
       }
     }}>
-    <button ref={trigger} type="button" className="inline-news-category" aria-label="Categoría de la noticia" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={() => setOpen(value => !value)}>
+    <button ref={trigger} id="news-field-metadatos-seccion" type="button" className="inline-news-category" aria-label="Categoría de la noticia" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} aria-invalid={invalid || undefined} onClick={() => setOpen(value => !value)}>
       <span>{editing.categories.some(category => category.name.toLocaleUpperCase('es') === current) ? current : 'Selecciona una categoría'}</span><span aria-hidden="true">⌄</span>
     </button>
     {open && <span id={id} className="news-category-options" role="listbox" aria-label="Categorías disponibles">
@@ -151,9 +141,10 @@ export function InlineNewsText({ path, value, label, placeholder, multiline = fa
   }, [text]);
   if (!editing) return <>{text}</>;
   const limit = newsTextLimit(path, editing.news);
-  return <span ref={element} className="inline-news-text" contentEditable="plaintext-only" suppressContentEditableWarning
+  const invalid = editing.invalid.has(path.join('.'));
+  return <span ref={element} id={`news-field-${path.join('-')}`} className="inline-news-text" contentEditable="plaintext-only" suppressContentEditableWarning
     role="textbox" aria-label={label} aria-multiline={multiline} tabIndex={0}
-    aria-invalid={duplicate || undefined}
+    aria-invalid={duplicate || invalid || undefined}
     title={`${label}: máximo ${limit} caracteres${limited ? ' · Límite alcanzado' : ''}`}
     onInput={event => {
       const node = event.currentTarget;

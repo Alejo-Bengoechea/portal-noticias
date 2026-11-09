@@ -68,9 +68,11 @@ function PreviewImage({ resources, item, path, cover, onImageChange }: { resourc
   const alt = text(resource.alt);
   const focal = fields(item.puntoFocal);
   const inline = useInlineNewsEditing();
+  const altInvalid = inline?.invalid.has([...path, 'alt'].join('.'));
+  const imageInvalid = inline?.invalid.has(path.join('.'));
   const objectPosition = typeof focal.x === 'number' && typeof focal.y === 'number'
     ? `${Math.max(0, Math.min(1, focal.x)) * 100}% ${Math.max(0, Math.min(1, focal.y)) * 100}%` : undefined;
-  return <figure className="preview-figure">
+  return <figure className="preview-figure" data-invalid={imageInvalid || undefined}>
     {onImageChange && id && <div className="preview-image-controls">
       <button type="button" className="preview-image-edit" disabled={uploading} onClick={() => fileInput.current?.click()}>{uploading ? 'Subiendo…' : 'Subir foto'}</button>
       <button type="button" className="preview-image-edit" disabled={uploading} aria-expanded={editing} onClick={() => { setEditing(value => !value); setError(''); }}>Cambiar URL</button>
@@ -102,6 +104,8 @@ function PreviewImage({ resources, item, path, cover, onImageChange }: { resourc
     </form>}
     {error && <small className="preview-upload-error" role="alert">{error}</small>}
     {uploading && <span className="preview-upload-status" role="status">Guardando la imagen en Supabase Storage…</span>}
+    {inline && id && <p className="preview-image-alt">Texto alternativo <InlineNewsText path={['recursos', id, 'alt']} value={resource.alt} label="Texto alternativo de la imagen" placeholder="Describe la imagen para accesibilidad" /></p>}
+    {altInvalid && <small className="preview-upload-error" role="alert">Añade un texto alternativo a la imagen, para accesibilidad.</small>}
     {(item.pie || resource.credito || inline) ? <figcaption>
       <span><InlineNewsText path={[...path, 'pie']} value={item.pie} label="Pie de imagen" /></span>
       {(inline || item.pie && resource.credito) ? ' · ' : null}
@@ -207,8 +211,8 @@ function renderBlock(block: Fields, index: number, resources: Fields, embeds: bo
   }
 }
 
-export function NewsPreview({ news, onImageChange, blockControls, addComponent }: {
-  news: Fields; onImageChange?: ChangeImage; blockControls?: (block: Fields, index: number) => ReactNode; addComponent?: ReactNode;
+export function NewsPreview({ news, onImageChange, blockControls, blockInvalid, addComponent }: {
+  news: Fields; onImageChange?: ChangeImage; blockControls?: (block: Fields, index: number) => ReactNode; blockInvalid?: (index: number) => boolean; addComponent?: ReactNode;
 }) {
   const inline = useInlineNewsEditing();
   const metadata = fields(news.metadatos);
@@ -240,7 +244,7 @@ export function NewsPreview({ news, onImageChange, blockControls, addComponent }
     </div>
     {presentation.mostrarAvisoFiccion !== false && text(metadata.avisoVisible) && <EditorialNote note={{ titulo: metadata.tituloAviso, texto: metadata.avisoVisible }} path={['metadatos']} titleKey="tituloAviso" textKey="avisoVisible" />}
     </section>
-    {(inline || text(cover.recursoId)) && <section className={inline ? 'composer-news-section' : undefined} aria-label="Portada">
+    {(inline || text(cover.recursoId)) && <section id="news-field-portada" className={inline ? 'composer-news-section' : undefined} aria-label="Portada">
       {inline && <p className="composer-section-label">02 · Portada</p>}
       <PreviewImage resources={resources} item={cover} path={['portada']} cover onImageChange={onImageChange} />
     </section>}
@@ -249,7 +253,7 @@ export function NewsPreview({ news, onImageChange, blockControls, addComponent }
     <div className="rich">
       {text(news.entradilla) && <p className="preview-lede"><InlineNewsText path={['entradilla']} value={news.entradilla} label="Entradilla" multiline /></p>}
       {body.map((block, i) => block.tipo === 'fuentes' || block.tipo === 'relacionados' ? null :
-        <div key={text(block.id) || i} className={blockControls ? 'composer-preview-block' : undefined} data-news-block={text(block.id) || String(i)} data-preview-block={i} id={text(block.id) || undefined}>
+        <div key={text(block.id) || i} className={blockControls ? 'composer-preview-block' : undefined} data-news-block={text(block.id) || String(i)} data-preview-block={i} data-invalid={blockInvalid?.(i) || undefined} id={text(block.id) || undefined}>
           {blockControls?.(block, i)}
           {renderBlock(block, i, resources, fields(presentation.embeds).habilitados !== false, onImageChange)}
         </div>)}

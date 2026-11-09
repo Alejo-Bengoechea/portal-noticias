@@ -1,6 +1,6 @@
 # Contexto del proyecto para asistentes de código
 
-Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un historial de propuestas. Es la fuente de verdad común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
+Actualizado: **9 de noviembre de 2026** (creador: validación completa, sin borradores locales). Estado consolidado del código, no un historial de propuestas. Es la fuente de verdad común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
 
 ## 1. Reglas de trabajo
 
@@ -50,12 +50,11 @@ npm.cmd start          # Servir una compilación existente
 
 | Área | Qué se guarda realmente |
 | --- | --- |
-| Creador nuevo por JSON/componentes | Previsualización editable. Los botones generales **Crear / Guardar borrador siguen deshabilitados**. No crea filas de noticias en Supabase. |
-| Borradores locales del creador | Se guardan desde el aviso al sustituir un trabajo por otro JSON. Persisten solo en ese navegador y se pueden recuperar desde el desplegable y el inicio. No hay autoguardado general. |
+| Creador nuevo por JSON/componentes | Previsualización editable, con validación completa de todos los campos (ver §8.1). Los botones **Crear / Guardar borrador validan y marcan los campos con error**, pero todavía no escriben en Supabase: con todo válido muestran un aviso de que el guardado se conecta en otra tarea. No crea filas de noticias en Supabase. |
 | Editor de una noticia ya guardada | `ArticleForm` y `actions.ts` guardan cambios en Supabase. La acción `saveArticle` admite inserción, pero la ruta Nueva noticia muestra el creador nuevo; no existe actualmente un flujo UI completo de alta persistente desde ese creador. |
 | Imágenes subidas | Se guardan inmediatamente en Storage, aunque la noticia siga siendo una preview sin guardar. |
 | Gestores de noticias/borradores | Por defecto muestran 30 muestras; `datos=reales` consulta Supabase. Las acciones sobre muestras se simulan en memoria. |
-| Inicio / Mesa de trabajo | Consultas reales de noticias, combinadas con borradores locales identificados. No cuenta las muestras. |
+| Inicio / Mesa de trabajo | Consultas reales de noticias guardadas en Supabase. No cuenta las muestras. No hay borradores locales: el creador ya no guarda nada en el navegador. |
 | Audiencia y tráfico | Cuatro paneles con **datos ficticios explícitos**. La vista no consulta el RPC de tráfico real. En la base remota no existe la tabla de tráfico (migración 3), así que hoy tampoco se registran visitas: `/api/traffic` responde 503 y el portal lo ignora. |
 | Organización, ideas y directorio de fuentes | Hoy **modo local** (solo en el navegador): las tablas de la migración 7 no existen en la base remota. Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
 | Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. Sin la migración 6 (no aplicada en remoto) el inventario puede aparecer vacío y el borrado falla. La subida sí funciona (migración 1). |
@@ -71,8 +70,6 @@ Todas las rutas siguientes del panel llevan el prefijo `/mesa-editorial-7k4n`.
 | `/` (del panel) | Mesa de trabajo: resumen, borradores recientes, portada y Nueva noticia |
 | `/login` | Login privado rediseñado, sin línea horizontal superior |
 | `/articulos/nuevo` | Creador por JSON/componentes |
-| `/articulos/nuevo?borradorLocal=ID` | Recuperar una copia local concreta |
-| `/articulos/nuevo?borradoresLocales=1` | Abrir el desplegable de copias locales |
 | `/articulos/[id]` | Editor persistente de una noticia existente |
 | `/categorias/nueva` | Crear, renombrar y gestionar categorías |
 | `/publicaciones` | Gestor de noticias publicadas/despublicadas |
@@ -151,7 +148,7 @@ Crear, renombrar y eliminar categorías; asociarlas a una noticia desde el edito
 - Categorías siempre en mayúsculas. Editar sobre su nombre; Guardar aparece tras un cambio, a la derecha de Eliminar. Cancelar la confirmación restaura el nombre y oculta Guardar. Renombrar conserva slug. Eliminar bloqueado si hay noticias asociadas, incluidas muestras.
 - Eliminar una noticia no elimina sus imágenes de Storage.
 
-## 8. Creador por JSON/componentes y borradores locales
+## 8. Creador por JSON/componentes
 
 Ambos modos usan `NewsComposer`, `NewsPreview` y `InlineNewsEditor`. Editar directamente en el contenido; no volver a montar el editor flotante amarillo ni formularios iniciales externos. Separación visual: datos, portada, cuerpo. Los controles de bloque permiten insertar/ordenar/quitar y deshacer la retirada; movimiento con animación. Inserción arriba/abajo salvo último bloque, que solo la ofrece arriba. No recuperar rótulos de tipo ni divisores de puntos. Ya no se muestra el mensaje para añadir el primer componente.
 
@@ -162,12 +159,21 @@ Ambos modos usan `NewsComposer`, `NewsPreview` y `InlineNewsEditor`. Editar dire
 - Vídeo: YouTube validado, `youtube-nocookie.com`; input se oculta tras insertar y Actualizar vídeo aparece sobre el reproductor.
 - Fuentes de una noticia al final. Añadir fuente abre de inmediato su formulario y enfoca el nombre; las importadas quedan en lectura hasta Editar. Son distintas del directorio privado `/fuentes`.
 - El área grande de JSON se contrae al entrar en modo componentes, pero queda Cargar un JSON en pequeño. Input fuera del bloque oculto/inert.
-- Validar un archivo completo antes de cambiar el documento. Si falla, popup breve con ruta/campo y causa, sin perder el trabajo actual. Si es válido y hay cambios, ofrecer Cancelar / Reemplazar / Guardar borrador local y abrir otro JSON.
-- Guardado local de noticias: `editorial.local-news-drafts.v1`, vía `lib/local-news-drafts.ts`. Documentos completos con ID/nombre/fecha; conservar copias anteriores. Error de cuota/datos corruptos impide reemplazar el trabajo.
-- Desplegable flotante de borradores a la derecha de la barra superior. Restauración solo normaliza: no aplicar validación estricta a un borrador incompleto, que debe poder abrirse para corregirlo. No borrar estas copias al publicar, cambiar de modo o importar por iniciativa propia.
-- Fuera de esos guardados locales explícitos, no hay persistencia de la preview al recargar. Los botones generales Crear/Guardar borrador siguen deshabilitados.
+- Validar un archivo completo antes de cambiar el documento. Si falla, popup breve con ruta/campo y causa, sin perder el trabajo actual. Si es válido y hay cambios, ofrecer Cancelar / Reemplazar sin guardar (no se guardan borradores en el navegador: avisa antes de perder el trabajo).
+- **No hay borradores locales.** Se retiró `lib/local-news-drafts.ts` y el guardado en `localStorage` a propósito (9 de noviembre de 2026): nada de la noticia persiste en el navegador fuera de la sesión de edición en memoria. Recargar la página pierde el trabajo no guardado en Supabase.
 
-### Formato y validación
+### 8.1 Validación del creador
+
+`lib/news-validation.ts` (`validateNewsDocument`) revisa el documento completo del creador —no el JSON importado, que usa el validador más estricto `parseNewsImport`— y devuelve **todos** los problemas encontrados a la vez, cada uno con la ruta exacta del campo, en vez de detenerse en el primero.
+
+- Los botones **Crear** y **Guardar borrador** (en `JsonDropzone`) ejecutan esta validación al pulsarlos. `Crear` exige categoría y portada; `Guardar borrador` no (coherente con que solo un borrador puede quedar sin categoría, §7.2).
+- Si hay errores: aparece un resumen con todos los mensajes arriba del creador (con enlaces que llevan al campo), el campo o bloque afectado se marca en rojo (`aria-invalid`/`data-invalid`) y se hace scroll automático al primero.
+- Si no hay errores: aviso de que la validación es correcta pero el guardado real en Supabase todavía no está conectado (pendiente, ver el final de este documento). No se crea ninguna fila ni se escribe nada.
+- Los bloques nuevos del creador ya no llevan texto de relleno (antes "Lorem ipsum", "Nombre de la fuente", etc.): nacen vacíos y la validación exige completarlos. El gráfico de barras es la excepción: conserva datos de ejemplo marcados con `muestra: true`, y la validación rechaza crear/guardar mientras ese marcador siga activo (se quita solo al aplicar datos reales desde su propio formulario).
+- La imagen de portada y las imágenes del cuerpo exigen URL y texto alternativo (accesibilidad); el campo de texto alternativo ahora es editable directamente bajo cada imagen en el creador.
+- Cubierto por `tests/news-validation.test.cjs`.
+
+### Formato y validación de JSON
 
 `lib/news-import.ts` es la referencia: `parseNewsImport` se reexporta como `parseNewsPreview`; `normalizeNewsDocument` convierte una entradilla antigua en párrafo movible/eliminable y completa la fecha de actualización. Conserva una actualización válida, o usa publicación válida/instante de importación; la fecha se muestra salvo opción explícita false.
 
@@ -183,7 +189,7 @@ No truncar datos al importar: rechazar con explicación. Un renderizador histór
 
 ## 9. Mesa de trabajo, estadísticas y multimedia
 
-**Inicio:** `editorial-home.ts` consulta recuentos reales, últimos seis borradores y portada publicada (destacada o última). `EditorialHome` combina borradores Supabase/locales, separados por etiquetas y conteo, con enlaces funcionales para retomar. Errores se muestran como no disponibles, no como ceros. Las muestras del gestor quedan excluidas.
+**Inicio:** `editorial-home.ts` consulta recuentos reales, últimos seis borradores (solo Supabase; ya no hay borradores locales) y portada publicada (destacada o última). `EditorialHome` muestra esos borradores con enlaces funcionales para retomarlos. Errores se muestran como no disponibles, no como ceros. Las muestras del gestor quedan excluidas.
 
 **Audiencia:** `AnalyticsDashboard` y `analytics-demo.ts`: noticia seleccionable, categoría, portal y canales de adquisición. Datos ficticios deterministas explícitos; series coherentes, SVG, barras CSS, donut y tablas accesibles. No afirmar que el dashboard es analítica real ni eliminar la recogida real existente por esta razón.
 
@@ -211,7 +217,7 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 | Acciones de noticias/categorías | `app/mesa-editorial-7k4n/actions.ts`, `bulk-news-actions.ts`, `news-actions.ts` |
 | Inicio | `lib/editorial-home.ts`, `components/editorial-home.tsx` |
 | Menú y login | `components/editorial-sidebar.tsx`, `editorial-login.tsx`, `admin-forms.tsx`, layout del panel |
-| Importación y copias locales | `lib/news-import.ts`, `local-news-drafts.ts`, `components/json-dropzone.tsx` |
+| Importación y validación | `lib/news-import.ts`, `lib/news-validation.ts`, `components/json-dropzone.tsx` |
 | Composición y render editorial | `components/news-composer.tsx`, `news-preview.tsx`, `lib/news-components.ts` |
 | Edición inline | `components/inline-news-editor.tsx`, `inline-rich-text.tsx`, `imported-rich-block.tsx`, `lib/inline-format.ts` |
 | Bloques | `news-text-image.tsx`, `news-table.tsx`, `news-bar-chart.tsx`, `news-video.tsx`, `news-sources.tsx`, `zoomable-image.tsx` |
@@ -229,13 +235,13 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 
 - Ejecutar `npm.cmd test`, `npm.cmd run check` y `npm.cmd run build` para cambios de código relevantes. Ajustes solo Markdown: revisar enlaces/rutas y coherencia, sin recompilar la aplicación por rutina.
 - Probar el flujo tocado en escritorio y móvil, con barra lateral abierta/cerrada. En pruebas aisladas no desactivar auth: montar los componentes con acciones/consultas simuladas fuera de las rutas reales.
-- Editor: JSON válido/inválido, rechazo sin pérdida, formato inline, mover/quitar, entradilla normalizada, categorías, etiquetas, fuentes recién añadidas en edición, vídeo, zoom de lectura y recuperación de copias incompletas.
+- Editor: JSON válido/inválido, rechazo sin pérdida, formato inline, mover/quitar, entradilla normalizada, categorías, etiquetas, fuentes recién añadidas en edición, vídeo, zoom de lectura. Validación: Crear/Guardar borrador con campos vacíos o inválidos marcan los campos/bloques correctos y no limpian el resto; con todo válido, el aviso de guardado pendiente aparece y desaparecen las marcas de error.
 - Gestores: separación noticias/borradores, 15 filas + carga, filtros/orden, selección y operaciones masivas autorizadas. Categorías: confirmar/cancelar nombre y bloquear eliminación asociada.
 - Organización/fuentes: persistencia local al reabrir, cambios de estado, idea→plan sin borrado, filtros/favoritas, fechas bisiestas/cambio de año y errores de almacenamiento. Probar cloud con mocks si no está habilitada la migración; no afirmar que se escribió en Supabase real.
 - QA previo incluyó TypeScript/build, pruebas de validación/autorización y navegador con fixtures aisladas. Las capturas de demostración contienen ejemplos, no prueban el estado real de la base remota.
 - Eliminar entornos temporales de prueba tras detenerlos y verificar su ruta. Dependencias históricas de Vite en `sites-release/node_modules` han servido para QA local; no son parte del despliegue Next ni permiso para publicar Sites.
 
-Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y formato del portal; verificar/aplicar migraciones en Supabase según su estado real; conectar estadísticas a datos reales solo cuando se pida. No anunciar estos puntos como terminados por haber creado UI, acciones o un SQL.
+Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y formato del portal (la validación completa de §8.1 ya está lista como base para esto: falta la acción de servidor que guarde `Crear`/`Guardar borrador` en Supabase y la conversión del documento editorial al formato Tiptap de `articles.body`); verificar/aplicar migraciones en Supabase según su estado real; conectar estadísticas a datos reales solo cuando se pida. No anunciar estos puntos como terminados por haber creado UI, acciones o un SQL.
 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 
