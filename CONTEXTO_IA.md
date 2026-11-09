@@ -43,7 +43,7 @@ npm.cmd start          # Servir una compilación existente
 
 `npm.cmd` evita restricciones de `npm.ps1` en PowerShell. En Linux/macOS o en sesiones en la nube se usan los mismos scripts con `npm` (`npm ci`, `npm run check`, `npm run build`). Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones.
 
-**Hay tests de regresión de publicación** en `tests/publication-status.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
+**Hay tests automáticos** en `tests/*.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas: `publication-status` (acciones de publicación con Supabase simulado, incluidas modificaciones concurrentes) y `validation` (importador JSON `lib/news-import.ts`, `validateWorkspaceValues` y cálculos de calendario). Cargan el TypeScript real con `typescript.transpileModule`; un import nuevo en esos módulos puede requerir ajustar el cargador o los mocks del test. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
 
 ## 3. Estado real de persistencia: leer antes de prometer funciones
 
@@ -55,9 +55,9 @@ npm.cmd start          # Servir una compilación existente
 | Imágenes subidas | Se guardan inmediatamente en Storage, aunque la noticia siga siendo una preview sin guardar. |
 | Gestores de noticias/borradores | Por defecto muestran 30 muestras; `datos=reales` consulta Supabase. Las acciones sobre muestras se simulan en memoria. |
 | Inicio / Mesa de trabajo | Consultas reales de noticias, combinadas con borradores locales identificados. No cuenta las muestras. |
-| Audiencia y tráfico | Cuatro paneles con **datos ficticios explícitos**. La vista no consulta el RPC de tráfico real. |
-| Organización, ideas y directorio de fuentes | Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
-| Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. |
+| Audiencia y tráfico | Cuatro paneles con **datos ficticios explícitos**. La vista no consulta el RPC de tráfico real. En la base remota no existe la tabla de tráfico (migración 3), así que hoy tampoco se registran visitas: `/api/traffic` responde 503 y el portal lo ignora. |
+| Organización, ideas y directorio de fuentes | Hoy **modo local** (solo en el navegador): las tablas de la migración 7 no existen en la base remota. Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
+| Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. Sin la migración 6 (no aplicada en remoto) el inventario puede aparecer vacío y el borrado falla. La subida sí funciona (migración 1). |
 
 Los formatos JSON editorial del creador y Tiptap de `articles.body` **no son intercambiables**. Conectar el nuevo creador a persistencia/publicación requiere una decisión de conversión/renderizado y validación de servidor; no basta con habilitar sus botones. El portal actual renderiza el cuerpo persistido con `RichText`.
 
@@ -113,17 +113,17 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 
 ### Migraciones, en orden
 
-| Archivo en `supabase/migrations/` | Propósito |
-| --- | --- |
-| `202611070001_editorial.sql` | Tablas iniciales, administrador, RLS, bucket editorial |
-| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA |
-| `202611070003_traffic.sql` | Recogida/resumen de tráfico real |
-| `202611070004_news_management.sql` | Fechas, histórico de publicación y trigger |
-| `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico |
-| `202611090001_media_library.sql` | SELECT/DELETE del inventario Storage, exclusivos del administrador |
-| `202611090002_editorial_workspace.sql` | Agenda, ideas, fuentes, timestamps y RLS privada |
+| Archivo en `supabase/migrations/` | Propósito | Remoto (comprobado 9 nov 2026) |
+| --- | --- | --- |
+| `202611070001_editorial.sql` | Tablas iniciales, administrador, RLS, bucket editorial | Aplicada |
+| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA | **No** (faltan una o más de las tres categorías) |
+| `202611070003_traffic.sql` | Recogida/resumen de tráfico real | **No** |
+| `202611070004_news_management.sql` | Fechas, histórico de publicación y trigger | Aplicada |
+| `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico | Aplicada |
+| `202611090001_media_library.sql` | SELECT/DELETE del inventario Storage, exclusivos del administrador | **No** |
+| `202611090002_editorial_workspace.sql` | Agenda, ideas, fuentes, timestamps y RLS privada | **No** |
 
-**Que un archivo exista no demuestra que se haya aplicado.** El agente preparó las migraciones recientes; no verificó ni aplicó su estado en la base remota. Comprobar en Supabase antes de asumirlas ejecutadas. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
+**Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado). Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
 
 ## 7. Noticias, categorías y operaciones de tabla
 
@@ -227,16 +227,11 @@ Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 
 - **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
-- Ampliar la cobertura de tests a `lib/news-import.ts` y `validateWorkspaceValues`. Las acciones de publicación individuales y masivas ya tienen pruebas con Supabase simulado, incluidas modificaciones concurrentes; falta comprobarlas contra una base aislada con RLS real.
+- **Usuario:** aplicar las migraciones pendientes (2, 3, 6 y 7) tras revisar el estado de las categorías.
+- Los tests usan Supabase simulado; falta comprobar las acciones contra una base aislada con RLS real. Sin cobertura todavía: componentes de interfaz y rutas.
 - Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
 - Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
 - `/api/traffic` y el RPC `record_editorial_view` permiten inflar contadores (impacto bajo mientras el panel de audiencia sea simulado).
 - Subida de imágenes duplicada en `article-form.tsx` y `lib/media-upload.ts`. `publicaciones/page.tsx` consulta categorías sin usar el resultado.
 - La biblioteca multimedia recorre todo Storage y todas las noticias en cada carga y cada borrado; revisar si crece mucho el archivo.
 - Los archivos históricos de Sites se retiraron del índice de Git conservando las copias locales. El historial público anterior no se ha reescrito.
-
-### Integración revisada con Claude Code — 9 de noviembre de 2026
-
- las operaciones individuales y masivas solo actualizan noticias que cambian de estado; publicar conserva las fechas de las ya publicadas. Los filtros de escritura vuelven a exigir estado despublicado, histórico de publicación y categoría para impedir sobrescrituras concurrentes. No se han probado ni modificado noticias reales de Supabase en esta integración.
-
-Validación local de esta integración: 17 tests de acciones con Supabase simulado, comprobación de tipos y compilación de producción correctos. La compilación necesita permiso de escritura sobre la salida `.next` en Windows; no resolver EPERM eliminando carpetas por rutina.
