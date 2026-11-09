@@ -44,7 +44,7 @@ npm.cmd start          # Servir una compilación existente
 
 `npm.cmd` evita restricciones de `npm.ps1` en PowerShell. En Linux/macOS o en sesiones en la nube se usan los mismos scripts con `npm` (`npm ci`, `npm run check`, `npm run build`). Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones.
 
-**Hay tests automáticos** en `tests/*.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas: `publication-status` (acciones de publicación con Supabase simulado, incluidas modificaciones concurrentes) y `validation` (importador JSON `lib/news-import.ts`, `validateWorkspaceValues` y cálculos de calendario). Cargan el TypeScript real con `typescript.transpileModule`; un import nuevo en esos módulos puede requerir ajustar el cargador o los mocks del test. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
+**Hay tests automáticos** en `tests/*.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas: `publication-status` (acciones de publicación con Supabase simulado, incluidas modificaciones concurrentes), `validation` (importador JSON `lib/news-import.ts`, `validateWorkspaceValues` y cálculos de calendario) y `public-nav` (el menú del portal frente a Supabase simulado, incluido el fallo degradado). Cargan el TypeScript real con `typescript.transpileModule` (los componentes, con el runtime JSX clásico, para inspeccionar el árbol de elementos sin `ReactDOM`); un import nuevo en esos módulos puede requerir ajustar el cargador o los mocks del test. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
 
 ## 3. Estado real de persistencia: leer antes de prometer funciones
 
@@ -127,6 +127,18 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 **Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado). Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
 
 ## 7. Noticias, categorías y operaciones de tabla
+
+### 7.1 Flujo de categorías (auditado el 9 de noviembre de 2026)
+
+Crear, renombrar y eliminar categorías; asociarlas a una noticia desde el editor persistente o desde el menú de fila del gestor; mostrarlas en el portal público, filtrar por ellas y listarlas en el sitemap: **todo funciona de verdad contra Supabase**, no es simulado (salvo la superposición de las 30 muestras, ver abajo).
+
+- Panel: `app/mesa-editorial-7k4n/categorias/nueva/page.tsx` + `CategoryManager`/`CategoryCard` listan y editan; `manageTerm` en `actions.ts` crea/renombra/elimina con bloqueo si hay noticias asociadas (reales o de muestra).
+- Asociar a una noticia: el `<select>` de `ArticleForm` (editor completo) y el diálogo "Cambiar categoría" de `NewsRowActions` (menú de fila del gestor, vía `changeNewsCategory`). Ambos exigen categoría salvo en borradores.
+- Portal público: `categoria/[slug]/page.tsx` ya resolvía por slug de forma dinámica. El menú de `app/(public)/layout.tsx` tenía fijos Internacional/España/Economía: se cambió a leer `getTerms('categories')`, igual que el resto del portal. Si esa consulta falla, el menú se degrada a solo "Inicio" (con `.catch(() => [])`) en vez de romper también `/derechos` y `/privacidad`, que no dependían de Supabase. Cubierto por `tests/public-nav.test.cjs`.
+- Las 30 muestras del gestor siguen asociadas a los slugs ficticios `espana`/`internacional`/`economia` (`lib/news-manager-demo.ts`). Si una categoría real comparte ese slug, la muestra se asocia a ella (cuenta en `CategoryCard` y bloquea su borrado); si no (como `nacional` o `tecnologia` hoy), esa muestra queda sin categoría en el gestor. Es el comportamiento documentado de la superposición de datos, no un error.
+- Pendiente, no implementado: el recuadro de portada sin imagen (`cover-art`, en `cards.tsx`) solo tiene variantes de color para los IDs de muestra `1`/`2`/`3`; con categorías reales (UUID) todas usan el color por defecto. Es solo estético.
+
+### 7.2 Noticias y operaciones de tabla
 
 `articles`: UUID, slug, título/subtítulo/firma, cuerpo Tiptap, `category_id`, `tag_ids`, portada, destacada y fechas. Estado: `published_at` no nulo → publicado; nulo con `ever_published` → despublicado; nulo sin histórico → borrador. Solo un borrador puede estar sin categoría.
 
@@ -229,7 +241,6 @@ Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin impl
 
 - **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
 - **Usuario, al pasar a funcionalidad real:** aplicar las migraciones 3, 6 y 7 (seguras con el estado actual) y decidir las categorías definitivas antes de la 2.
-- El menú del portal (`app/(public)/layout.tsx`) tiene fijas Internacional, España y Economía. Las categorías creadas desde el panel no aparecen en él, y con las categorías remotas actuales Internacional y Economía dan 404. Las 30 muestras del gestor también usan esos tres slugs. Decidir si el menú debe leer las categorías de Supabase.
 - Los tests usan Supabase simulado; falta comprobar las acciones contra una base aislada con RLS real. Sin cobertura todavía: componentes de interfaz y rutas.
 - Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
 - Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
