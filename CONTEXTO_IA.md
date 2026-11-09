@@ -8,6 +8,7 @@ Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un h
 - **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue. Hoy los avances se publican en Sites mediante Codex; el dominio propio y su proveedor están sin decidir (ver §6).
 - `sites-release/` es una copia histórica de publicación, no la fuente activa; Git la registra como una referencia gitlink histórica, no como el código fuente activo de Next.js; localmente conserva archivos y dependencias propios. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual. Los archivos `*.tar.gz` dejan de versionarse y se conservan localmente, ignorados por Git; las copias antiguas siguen en el historial.
 - **Nunca guardar contraseñas, claves ni notas con credenciales en archivos del proyecto**: el repositorio es público y el historial de Git las conserva aunque se borren. No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
+- **Fase actual (noviembre de 2026): validar diseño y flujos.** Todo el contenido, en el portal y en Supabase, es ficticio. La funcionalidad real y la persistencia completa se abordarán después, cuando el usuario lo indique. Priorizar diseño, navegación y flujos; no tratar las migraciones pendientes ni la pérdida de datos de prueba como urgencias.
 - No desactivar autenticación, RLS ni comprobaciones del administrador para probar. No crear/publicar/eliminar noticias reales como parte de una prueba visual.
 - El usuario tiene poca experiencia en código: implementar lo pedido y explicar en español sencillo. Resolver decisiones rutinarias sin pedir confirmaciones innecesarias.
 - Mantener accesibilidad, móvil y diseño existente. Evitar dependencias redundantes. No cambiar funciones de negocio durante una tarea de documentación o diseño.
@@ -43,7 +44,7 @@ npm.cmd start          # Servir una compilación existente
 
 `npm.cmd` evita restricciones de `npm.ps1` en PowerShell. En Linux/macOS o en sesiones en la nube se usan los mismos scripts con `npm` (`npm ci`, `npm run check`, `npm run build`). Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones.
 
-**Hay tests de regresión de publicación** en `tests/publication-status.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
+**Hay tests automáticos** en `tests/*.test.cjs`, ejecutables con `npm.cmd test`, sin credenciales ni escrituras remotas: `publication-status` (acciones de publicación con Supabase simulado, incluidas modificaciones concurrentes), `validation` (importador JSON `lib/news-import.ts`, `validateWorkspaceValues` y cálculos de calendario) y `public-nav` (el menú del portal frente a Supabase simulado, incluido el fallo degradado). Cargan el TypeScript real con `typescript.transpileModule` (los componentes, con el runtime JSX clásico, para inspeccionar el árbol de elementos sin `ReactDOM`); un import nuevo en esos módulos puede requerir ajustar el cargador o los mocks del test. No hay linter ni CI. La validación combina estos tests, `check` (tipos), `build` y pruebas manuales del flujo cuando corresponda. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
 
 ## 3. Estado real de persistencia: leer antes de prometer funciones
 
@@ -55,9 +56,9 @@ npm.cmd start          # Servir una compilación existente
 | Imágenes subidas | Se guardan inmediatamente en Storage, aunque la noticia siga siendo una preview sin guardar. |
 | Gestores de noticias/borradores | Por defecto muestran 30 muestras; `datos=reales` consulta Supabase. Las acciones sobre muestras se simulan en memoria. |
 | Inicio / Mesa de trabajo | Consultas reales de noticias, combinadas con borradores locales identificados. No cuenta las muestras. |
-| Audiencia y tráfico | Cuatro paneles con **datos ficticios explícitos**. La vista no consulta el RPC de tráfico real. |
-| Organización, ideas y directorio de fuentes | Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
-| Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. |
+| Audiencia y tráfico | Cuatro paneles con **datos ficticios explícitos**. La vista no consulta el RPC de tráfico real. En la base remota no existe la tabla de tráfico (migración 3), así que hoy tampoco se registran visitas: `/api/traffic` responde 503 y el portal lo ignora. |
+| Organización, ideas y directorio de fuentes | Hoy **modo local** (solo en el navegador): las tablas de la migración 7 no existen en la base remota. Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
+| Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. Sin la migración 6 (no aplicada en remoto) el inventario puede aparecer vacío y el borrado falla. La subida sí funciona (migración 1). |
 
 Los formatos JSON editorial del creador y Tiptap de `articles.body` **no son intercambiables**. Conectar el nuevo creador a persistencia/publicación requiere una decisión de conversión/renderizado y validación de servidor; no basta con habilitar sus botones. El portal actual renderiza el cuerpo persistido con `RichText`.
 
@@ -113,19 +114,31 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 
 ### Migraciones, en orden
 
-| Archivo en `supabase/migrations/` | Propósito |
-| --- | --- |
-| `202611070001_editorial.sql` | Tablas iniciales, administrador, RLS, bucket editorial |
-| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA |
-| `202611070003_traffic.sql` | Recogida/resumen de tráfico real |
-| `202611070004_news_management.sql` | Fechas, histórico de publicación y trigger |
-| `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico |
-| `202611090001_media_library.sql` | SELECT/DELETE del inventario Storage, exclusivos del administrador |
-| `202611090002_editorial_workspace.sql` | Agenda, ideas, fuentes, timestamps y RLS privada |
+| Archivo en `supabase/migrations/` | Propósito | Remoto (comprobado 9 nov 2026) |
+| --- | --- | --- |
+| `202611070001_editorial.sql` | Tablas iniciales, administrador, RLS, bucket editorial | Aplicada |
+| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA | **No.** La base tiene ESPAÑA (`espana`), NACIONAL (`nacional`) y TECNOLOGÍA (`tecnologia`), todas de prueba. No aplicar sin decidir antes las categorías definitivas |
+| `202611070003_traffic.sql` | Recogida/resumen de tráfico real | **No** |
+| `202611070004_news_management.sql` | Fechas, histórico de publicación y trigger | Aplicada |
+| `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico | Aplicada |
+| `202611090001_media_library.sql` | SELECT/DELETE del inventario Storage, exclusivos del administrador | **No** |
+| `202611090002_editorial_workspace.sql` | Agenda, ideas, fuentes, timestamps y RLS privada | **No** |
 
-**Que un archivo exista no demuestra que se haya aplicado.** El agente preparó las migraciones recientes; no verificó ni aplicó su estado en la base remota. Comprobar en Supabase antes de asumirlas ejecutadas. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
+**Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado). Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
 
 ## 7. Noticias, categorías y operaciones de tabla
+
+### 7.1 Flujo de categorías (auditado el 9 de noviembre de 2026)
+
+Crear, renombrar y eliminar categorías; asociarlas a una noticia desde el editor persistente o desde el menú de fila del gestor; mostrarlas en el portal público, filtrar por ellas y listarlas en el sitemap: **todo funciona de verdad contra Supabase**, no es simulado (salvo la superposición de las 30 muestras, ver abajo).
+
+- Panel: `app/mesa-editorial-7k4n/categorias/nueva/page.tsx` + `CategoryManager`/`CategoryCard` listan y editan; `manageTerm` en `actions.ts` crea/renombra/elimina con bloqueo si hay noticias asociadas (reales o de muestra).
+- Asociar a una noticia: el `<select>` de `ArticleForm` (editor completo) y el diálogo "Cambiar categoría" de `NewsRowActions` (menú de fila del gestor, vía `changeNewsCategory`). Ambos exigen categoría salvo en borradores.
+- Portal público: `categoria/[slug]/page.tsx` ya resolvía por slug de forma dinámica. El menú de `app/(public)/layout.tsx` tenía fijos Internacional/España/Economía: se cambió a leer `getTerms('categories')`, igual que el resto del portal. Si esa consulta falla, el menú se degrada a solo "Inicio" (con `.catch(() => [])`) en vez de romper también `/derechos` y `/privacidad`, que no dependían de Supabase. Cubierto por `tests/public-nav.test.cjs`.
+- Las 30 muestras del gestor siguen asociadas a los slugs ficticios `espana`/`internacional`/`economia` (`lib/news-manager-demo.ts`). Si una categoría real comparte ese slug, la muestra se asocia a ella (cuenta en `CategoryCard` y bloquea su borrado); si no (como `nacional` o `tecnologia` hoy), esa muestra queda sin categoría en el gestor. Es el comportamiento documentado de la superposición de datos, no un error.
+- Pendiente, no implementado: el recuadro de portada sin imagen (`cover-art`, en `cards.tsx`) solo tiene variantes de color para los IDs de muestra `1`/`2`/`3`; con categorías reales (UUID) todas usan el color por defecto. Es solo estético.
+
+### 7.2 Noticias y operaciones de tabla
 
 `articles`: UUID, slug, título/subtítulo/firma, cuerpo Tiptap, `category_id`, `tag_ids`, portada, destacada y fechas. Estado: `published_at` no nulo → publicado; nulo con `ever_published` → despublicado; nulo sin histórico → borrador. Solo un borrador puede estar sin categoría.
 
@@ -227,16 +240,11 @@ Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 
 - **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
-- Ampliar la cobertura de tests a `lib/news-import.ts` y `validateWorkspaceValues`. Las acciones de publicación individuales y masivas ya tienen pruebas con Supabase simulado, incluidas modificaciones concurrentes; falta comprobarlas contra una base aislada con RLS real.
+- **Usuario, al pasar a funcionalidad real:** aplicar las migraciones 3, 6 y 7 (seguras con el estado actual) y decidir las categorías definitivas antes de la 2.
+- Los tests usan Supabase simulado; falta comprobar las acciones contra una base aislada con RLS real. Sin cobertura todavía: componentes de interfaz y rutas.
 - Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
 - Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
 - `/api/traffic` y el RPC `record_editorial_view` permiten inflar contadores (impacto bajo mientras el panel de audiencia sea simulado).
 - Subida de imágenes duplicada en `article-form.tsx` y `lib/media-upload.ts`. `publicaciones/page.tsx` consulta categorías sin usar el resultado.
 - La biblioteca multimedia recorre todo Storage y todas las noticias en cada carga y cada borrado; revisar si crece mucho el archivo.
 - Los archivos históricos de Sites se retiraron del índice de Git conservando las copias locales. El historial público anterior no se ha reescrito.
-
-### Integración revisada con Claude Code — 9 de noviembre de 2026
-
- las operaciones individuales y masivas solo actualizan noticias que cambian de estado; publicar conserva las fechas de las ya publicadas. Los filtros de escritura vuelven a exigir estado despublicado, histórico de publicación y categoría para impedir sobrescrituras concurrentes. No se han probado ni modificado noticias reales de Supabase en esta integración.
-
-Validación local de esta integración: 17 tests de acciones con Supabase simulado, comprobación de tipos y compilación de producción correctos. La compilación necesita permiso de escritura sobre la salida `.next` en Windows; no resolver EPERM eliminando carpetas por rutina.

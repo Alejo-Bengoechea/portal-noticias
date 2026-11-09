@@ -2,10 +2,14 @@ import Link from 'next/link';
 import { EditionDate } from '@/components/edition-date';
 import { PageView } from '@/components/page-view';
 import { configured } from '@/lib/supabase';
+import { getTerms } from '@/lib/articles';
 
 export const metadata = configured ? {} : { robots: { index: false, follow: false } };
 
-export default function PublicLayout({ children }: { children: React.ReactNode }) {
+export default async function PublicLayout({ children }: { children: React.ReactNode }) {
+  // Una categoría la resuelve cada página con su propio getTerms(); si falla aquí, el menú
+  // se queda solo con Inicio en vez de tumbar también las páginas legales estáticas.
+  const categories = await getTerms('categories').catch(() => []);
   return <div className="public-portal">
     {configured && <PageView />}
     <div className="edition-status">
@@ -27,9 +31,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
         </form>
         <div className="section-links">
           <Link href="/">Inicio</Link>
-          <Link href="/categoria/internacional">Internacional</Link>
-          <Link href="/categoria/espana">España</Link>
-          <Link href="/categoria/economia">Economía</Link>
+          {categories.map(category => <Link key={category.id} href={`/categoria/${category.slug}`}>{category.name}</Link>)}
         </div>
       </nav>
     </header>
