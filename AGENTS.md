@@ -15,3 +15,7 @@ Work on this project locally. Publish or update its Sites deployment only when t
 ## Project context
 
 Read `CONTEXTO_IA.md` for the current architecture, editor behavior, demo/real data distinction, security rules, and validation workflow before modifying this project.
+
+## Collaboration
+
+Codex and Claude Code both work on this project with equal relevance. Both follow the shared protocol in `CONTEXTO_IA.md` §1.1 (check `git status` first, never revert or reformat the other agent's work, one commit per task with a Spanish message, update `CONTEXTO_IA.md` when behavior changes). `CLAUDE.md` is Claude Code's entry point and adds no project rules of its own. Never store passwords or credential notes in project files: the GitHub repository is public.

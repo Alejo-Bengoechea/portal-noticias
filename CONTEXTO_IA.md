@@ -1,18 +1,32 @@
 # Contexto del proyecto para asistentes de código
 
-Actualizado: **9 de noviembre de 2026**. Estado consolidado del código local, no un historial de propuestas. Leer también [AGENTS.md](AGENTS.md). Claude Code entra por [CLAUDE.md](CLAUDE.md).
+Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un historial de propuestas. Es la fuente de verdad común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
 
 ## 1. Reglas de trabajo
 
-- Trabajar en `C:\Users\alejo\Desktop\periodismo-alejodice`, en local. **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue.
-- `sites-release/` es una copia histórica de publicación, no la fuente activa. No sincronizarla ni modificarla por iniciativa propia. Sus dependencias se han usado en pruebas aisladas locales, sin publicar.
-- No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
+- Carpeta local del usuario: `C:\Users\alejo\Desktop\periodismo-alejodice` (Windows). Repositorio Git con remoto **público** en GitHub: `Alejo-Bengoechea/portal-noticias`, rama principal `main`.
+- **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue. Hoy los avances se publican en Sites mediante Codex; el dominio propio y su proveedor están sin decidir (ver §6).
+- `sites-release/` es una copia histórica de publicación, no la fuente activa; en el repositorio está vacía. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual.
+- **Nunca guardar contraseñas, claves ni notas con credenciales en archivos del proyecto**: el repositorio es público y el historial de Git las conserva aunque se borren. No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
 - No desactivar autenticación, RLS ni comprobaciones del administrador para probar. No crear/publicar/eliminar noticias reales como parte de una prueba visual.
 - El usuario tiene poca experiencia en código: implementar lo pedido y explicar en español sencillo. Resolver decisiones rutinarias sin pedir confirmaciones innecesarias.
 - Mantener accesibilidad, móvil y diseño existente. Evitar dependencias redundantes. No cambiar funciones de negocio durante una tarea de documentación o diseño.
 - Antes de escribir código de Next.js, leer la guía pertinente de **`node_modules/next/dist/docs/`**, como exige el bloque de `AGENTS.md`. No sustituirla por convenciones recordadas de otras versiones.
-- No borrar `.next` ni otras carpetas por rutina. Comprobar rutas absolutas antes de una eliminación recursiva. No asumir que hay repositorio Git.
+- No borrar `.next` ni otras carpetas por rutina. Comprobar rutas absolutas antes de una eliminación recursiva.
 - Mantener este documento consolidado: reemplazar notas obsoletas, no añadir versiones contradictorias al final.
+
+### 1.1 Protocolo común Codex + Claude Code
+
+Ambos agentes tienen la misma relevancia y siguen este documento. Ninguno reescribe el trabajo del otro sin petición.
+
+1. **Al empezar:** `git status` y `git log --oneline -10`. Si se trabaja en local y hay cambios nuevos en GitHub, traerlos antes de editar (`git pull`).
+2. **Cambios ajenos sin commit:** no tocarlos, revertirlos ni incluirlos en el propio commit. Preguntar al usuario.
+3. **Un agente a la vez** sobre la misma carpeta. Para trabajar en paralelo, cada uno en su rama.
+4. **Cambios mínimos y localizados:** no reformatear, renombrar, reordenar imports ni "limpiar" código fuera de la tarea. Seguir el estilo del archivo que se edita (componentes compactos, comillas simples, textos de interfaz en español). Sin dependencias, rutas ni capas nuevas sin petición.
+5. **Al terminar:** un commit por tarea con mensaje en español que diga qué cambió y por qué. El historial de Git es el traspaso entre agentes; no crear diarios ni documentos paralelos.
+6. **Si cambia el comportamiento real**, actualizar este documento en el mismo commit, reemplazando lo obsoleto.
+7. **Sesiones de Claude Code en la nube** trabajan sobre un clon de GitHub en ramas `claude/...`. Su trabajo llega a la carpeta local solo cuando el usuario lo fusiona en `main` y hace `git pull`. Codex debe hacer commit y push de su trabajo para que Claude lo vea.
+8. **Antes de declarar terminado:** cumplir §12 e informar al usuario de qué se comprobó y qué no.
 
 ## 2. Tecnología y ejecución
 
@@ -26,7 +40,9 @@ npm.cmd run build      # next build --webpack
 npm.cmd start          # Servir una compilación existente
 ```
 
-`npm.cmd` evita restricciones de `npm.ps1` en PowerShell. Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones. Las comprobaciones de código más recientes pasaron; esta actualización de contexto modifica solo Markdown.
+`npm.cmd` evita restricciones de `npm.ps1` en PowerShell. En Linux/macOS o en sesiones en la nube se usan los mismos scripts con `npm` (`npm ci`, `npm run check`, `npm run build`). Windows ha bloqueado algunas escrituras de compilación en `.next` con EPERM; resolver el permiso concreto, sin borrar carpetas ni desactivar protecciones.
+
+**No hay tests automáticos, linter ni CI.** La red de seguridad actual es `check` (tipos) + `build` + prueba manual del flujo. Al 9 de noviembre de 2026, `check` y `build` pasan en un clon limpio con `npm ci` (sin variables de Supabase).
 
 ## 3. Estado real de persistencia: leer antes de prometer funciones
 
@@ -74,7 +90,7 @@ Portal público: `/`, `/noticia/[slug]`, `/categoria/[slug]`, `/buscar`, `/derec
 
 - Portal, preview y panel usan grises oscuros, texto claro y acento rojo; estética editorial confidencial, minimalista, inspirada en Codex. No recuperar el antiguo fondo azul.
 - Texto normal de noticias en **Inter Light 300**, negritas 700; títulos/subtítulos mantienen serif. Texto administrativo en Inter, con estilos heredados puntuales en la barra.
-- Marca Alejo Bengoechea en texto; Alejo muy fino. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
+- Marca **Alejo Bengoechea** en texto; Alejo muy fino. Lema: "Periodismo y análisis". "Alejo Dice" es una denominación antigua errónea: no usarla en código, metadatos ni textos. Metadatos, firma por defecto del editor, ejemplos y portada sin imagen (`AB.`) ya usan la marca correcta. Las filas ya guardadas en Supabase pueden conservar la firma antigua; no se han modificado datos remotos. El nombre interno del paquete npm (`periodismo-alejodice`) coincide con la carpeta y no es visible. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
 - Identificación discreta `Mesa editorial / ÁREA EDITORIAL · PRIVADO` dentro del menú. No restaurar el rótulo flotante ni `admin-head` con línea superior.
 - Pie del menú: **Ir al portal** amarillo, después **Cerrar sesión** rojo y el nombre centrado abajo, sin enlace. Ambos controles comparten `console-footer-action`: misma tipografía, tamaño, iconos, alineación y padding.
 - Inicio: resumen arriba, borradores en columna amplia y portada al lado. No restaurar INICIO/BIENVENIDO con tres cuadrados.
@@ -85,6 +101,10 @@ Portal público: `/`, `/noticia/[slug]`, `/categoria/[slug]`, `/buscar`, `/derec
 ## 6. Seguridad y configuración externa
 
 Variables: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `ADMIN_USER_ID`, `NEXT_PUBLIC_SITE_URL`. No documentar valores reales.
+
+Publicación: hoy en Sites (vía Codex). El dominio propio y su proveedor no están decididos; la sección Vercel del README es una opción, no una decisión. Al elegirlo: configurar `NEXT_PUBLIC_SITE_URL` y la Site URL de Supabase Auth con ese dominio, y valorar cabeceras de seguridad (ver §12).
+
+El 9 de noviembre de 2026 se retiró de la raíz una nota de texto que parecía contener la contraseña de Supabase y que estuvo publicada en el repositorio público. **Esa contraseña debe considerarse comprometida**; cambiarla en el panel de Supabase es una acción del usuario y no consta como hecha. El valor sigue en el historial de Git; no buscarlo ni citarlo.
 
 `lib/supabase.ts`: `adminClient()` comprueba Supabase Auth, coincidencia con `ADMIN_USER_ID` y RPC `is_editorial_admin`. React `cache` solo deduplica comprobaciones dentro de una petición/render; no cachear sesiones globalmente. Cada acción/endpoint de escritura vuelve a autorizar y validar entradas. `proxy.ts` refresca la sesión. Una URL difícil de adivinar no sustituye permisos.
 
@@ -111,6 +131,7 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 - 15 filas iniciales y otras 15 al llegar al final, mediante IntersectionObserver y acción autenticada.
 - Búsqueda por título/ID; orden por categoría, creación y modificación desde cabeceras. Borradores omite Estado/Creación y ordena por modificación por defecto.
 - Checkbox de cabecera selecciona filas cargadas. Barra de selección: Eliminar con confirmación en ambos gestores, Publicar/Despublicar solo en noticias. Validación de servidor, máximo 500 IDs únicos. No permitir publicación rápida de borradores ni noticias sin categoría.
+- Publicar (en lote o por fila) solo cambia noticias despublicadas; las ya publicadas conservan su `published_at` original y se ignoran en el lote. Despublicar solo cambia las publicadas. No reintroducir actualizaciones que reescriban la fecha de publicación de noticias ya publicadas.
 - Menú por fila: publicar o despublicar según estado, editar, cambiar categoría y descargar JSON. Las muestras no son editables como noticias reales.
 - Las 30 muestras se reparten diez por cada slug base (`espana`, `internacional`, `economia`). `lib/news-management.ts` resuelve esos slugs contra categorías reales. Las tarjetas de categorías separan conteos reales y de muestra.
 - Categorías siempre en mayúsculas. Editar sobre su nombre; Guardar aparece tras un cambio, a la derecha de Eliminar. Cancelar la confirmación restaura el nombre y oculta Guardar. Renombrar conserva slug. Eliminar bloqueado si hay noticias asociadas, incluidas muestras.
@@ -188,7 +209,7 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 | Audiencia simulada | `components/analytics-dashboard.tsx`, `lib/analytics-demo.ts` |
 | Diseño global | `app/globals.css` y fuentes locales de `public/fonts/` |
 
-`components/preview-text-editor.tsx` y otros formularios antiguos pueden permanecer en disco sin usarse en el flujo actual. Buscar sus imports antes de reutilizarlos; no reactivar el editor flotante ni una paleta retirada por encontrar un archivo existente.
+`components/preview-text-editor.tsx` y `components/news-component-fields.tsx` no se importan desde ningún sitio; otros formularios antiguos pueden permanecer en disco sin usarse en el flujo actual. Buscar sus imports antes de reutilizarlos; no reactivar el editor flotante ni una paleta retirada por encontrar un archivo existente.
 
 ## 12. Verificación y pendientes
 
@@ -201,3 +222,14 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 - Eliminar entornos temporales de prueba tras detenerlos y verificar su ruta. Dependencias históricas de Vite en `sites-release/node_modules` han servido para QA local; no son parte del despliegue Next ni permiso para publicar Sites.
 
 Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y formato del portal; verificar/aplicar migraciones en Supabase según su estado real; conectar estadísticas a datos reales solo cuando se pida. No anunciar estos puntos como terminados por haber creado UI, acciones o un SQL.
+
+Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
+
+- **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
+- Sin tests automáticos: candidatos prioritarios `lib/news-import.ts`, `validateWorkspaceValues` y las acciones masivas.
+- Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
+- Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
+- `/api/traffic` y el RPC `record_editorial_view` permiten inflar contadores (impacto bajo mientras el panel de audiencia sea simulado).
+- Subida de imágenes duplicada en `article-form.tsx` y `lib/media-upload.ts`. `publicaciones/page.tsx` consulta categorías sin usar el resultado.
+- La biblioteca multimedia recorre todo Storage y todas las noticias en cada carga y cada borrado; revisar si crece mucho el archivo.
+- Los `alejo-sites-*.tar.gz` (~9,5 MB) siguen versionados; retirarlos del repositorio solo con permiso del usuario.

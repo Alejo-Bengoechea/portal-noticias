@@ -1,6 +1,6 @@
 # Alejo Bengoechea · Periodismo y análisis
 
-Para continuar el desarrollo con una IA, leer [AGENTS.md](AGENTS.md) y [CONTEXTO_IA.md](CONTEXTO_IA.md). Claude Code dispone de una entrada en [CLAUDE.md](CLAUDE.md). Contexto consolidado al 9 de noviembre de 2026.
+El proyecto se desarrolla con dos asistentes de código, Codex y Claude Code, con la misma relevancia. [CONTEXTO_IA.md](CONTEXTO_IA.md) es la referencia común e incluye el protocolo para trabajar juntos (§1.1). Codex entra por [AGENTS.md](AGENTS.md) y Claude Code por [CLAUDE.md](CLAUDE.md). Contexto consolidado al 9 de noviembre de 2026.
 
 El creador nuevo por JSON/componentes es una previsualización editable: sus botones generales Crear y Guardar borrador siguen deshabilitados y no guardan en Supabase. El aviso al sustituir un trabajo permite guardar una copia local recuperable; no hay autoguardado general. El editor de noticias ya guardadas sí tiene persistencia. Las 30 noticias del gestor de muestra son ficticias y no son filas de Supabase.
 
@@ -49,7 +49,9 @@ Los estados de la agenda organizan la producción; marcar una noticia como prepa
 
 La biblioteca Multimedia necesita también las políticas preparadas en [202611090001_media_library.sql](supabase/migrations/202611090001_media_library.sql). Consulta el contexto para los límites, permisos y migraciones restantes.
 
-## Vercel
+## Publicación
+
+Hoy los avances se publican en Sites, solo cuando el usuario lo pide. El dominio propio y su proveedor están pendientes de decidir. Vercel es una opción posible:
 
 Importa el proyecto como Next.js y añade las mismas variables de entorno. Configura `NEXT_PUBLIC_SITE_URL` con el dominio HTTPS final para los enlaces canónicos y el sitemap. Configura también ese dominio como Site URL en Supabase Auth. Aplica la migración y habilita la cuenta antes de publicar la versión definitiva.
 
