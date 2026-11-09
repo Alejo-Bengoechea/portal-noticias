@@ -19,10 +19,10 @@ const examples: Article[] = [
   ['bibliotecas-de-barrio', 'La segunda vida de las bibliotecas de barrio', 'Qué ocurre cuando una biblioteca se convierte en un lugar de encuentro.'],
   ['leer-la-inflacion', 'Cómo leer el dato de inflación', 'Por qué un promedio de precios puede contar una historia distinta a la de tu cesta de la compra.'],
 ].map(([slug, title, subtitle], index) => ({
-  id: String(index + 1), slug, title, subtitle, author: 'Alejo Dice',
+  id: String(index + 1), slug, title, subtitle, author: 'Alejo Bengoechea',
   category_id: ['1', '2', '1', '3'][index], tag_ids: [], cover_url: null, cover_alt: '',
   featured: index === 0, published_at: '2026-11-06T12:00:00Z',
-  body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Esta pieza de demostración muestra cómo se verá una noticia publicada en Alejo Dice.' }] }, { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'El contexto' }] }, { type: 'paragraph', content: [{ type: 'text', text: subtitle }] }] },
+  body: { type: 'doc', content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Esta pieza de demostración muestra cómo se verá una noticia publicada en el portal de Alejo Bengoechea.' }] }, { type: 'heading', attrs: { level: 2 }, content: [{ type: 'text', text: 'El contexto' }] }, { type: 'paragraph', content: [{ type: 'text', text: subtitle }] }] },
 }));
 
 export const getTerms = cache(async (table: 'categories' | 'tags'): Promise<Term[]> => {

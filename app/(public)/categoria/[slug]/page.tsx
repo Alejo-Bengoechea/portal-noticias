@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const category = (await getTerms('categories')).find(c => c.slug === slug);
   if (!category) notFound();
-  return { title: category.name, description: `Noticias de ${category.name} en Alejo Dice.`, alternates: { canonical: `/categoria/${slug}` } };
+  return { title: category.name, description: `Noticias de ${category.name} · Alejo Bengoechea, periodismo y análisis.`, alternates: { canonical: `/categoria/${slug}` } };
 }
 export default async function Category({ params, searchParams }: Props) {
   const { slug } = await params;

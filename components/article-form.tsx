@@ -96,7 +96,7 @@ export function ArticleForm({ article, categories, tags }: { article: Article | 
     <label>Titular<input autoComplete="off" name="title" defaultValue={article?.title} maxLength={160} required /></label>
     <label>Subtítulo<textarea autoComplete="off" name="subtitle" defaultValue={article?.subtitle} maxLength={300} rows={2} /></label>
     <div className="admin-columns">
-      <label>Firma<input autoComplete="off" name="author" defaultValue={article?.author ?? 'Alejo Dice'} maxLength={100} required /></label>
+      <label>Firma<input autoComplete="off" name="author" defaultValue={article?.author ?? 'Alejo Bengoechea'} maxLength={100} required /></label>
       <label>Identificador en la URL<input autoComplete="off" name="slug" defaultValue={article?.slug} placeholder="Se genera a partir del titular" maxLength={180} /></label>
     </div>
     <label>Categoría<select name="category" required={Boolean(article?.published_at || article?.ever_published)} defaultValue={article?.category_id ?? ''}><option value="" disabled={Boolean(article?.published_at || article?.ever_published)}>Sin categoría (solo borrador)</option>

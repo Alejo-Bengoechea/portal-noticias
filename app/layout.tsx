@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: { default: 'Alejo Dice | Noticias con contexto', template: '%s | Alejo Dice' },
+  title: { default: 'Alejo Bengoechea | Periodismo y análisis', template: '%s | Alejo Bengoechea' },
   description: 'Actualidad, mundo y cultura. Un medio independiente para entender qué pasó y por qué importa.',
 };
 

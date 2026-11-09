@@ -5,7 +5,7 @@ import { dateLabel, webUrl } from '@/lib/format';
 export function Cover({ article, priority = false }: { article: Article; priority?: boolean }) {
   const src = webUrl(article.cover_url);
   if (src) return <img className="cover" src={src} alt={article.cover_alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} />;
-  return <div className={`cover cover-art art-${article.category_id ?? '1'}`} aria-hidden="true"><span>AD<span>.</span></span></div>;
+  return <div className={`cover cover-art art-${article.category_id ?? '1'}`} aria-hidden="true"><span>AB<span>.</span></span></div>;
 }
 
 export function Card({ article, category }: { article: Article; category?: Term }) {
