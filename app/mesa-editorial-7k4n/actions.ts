@@ -5,6 +5,8 @@ import { revalidatePath } from 'next/cache';
 import { adminClient, sessionClient } from '@/lib/supabase';
 import { slugify, webUrl } from '@/lib/format';
 import { demoCategoryCount } from '@/lib/news-manager-demo';
+import { getTerms } from '@/lib/articles';
+import { validateNewsDocument } from '@/lib/news-validation';
 
 const field = (form: FormData, key: string) => String(form.get(key) ?? '').trim();
 const uuid = /^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i;
@@ -70,6 +72,74 @@ export async function saveArticle(_: string, form: FormData): Promise<string> {
   if (error) return 'No se pudo guardar la publicación.';
   revalidatePath('/', 'layout');
   redirect('/mesa-editorial-7k4n/publicaciones');
+}
+
+/**
+ * Guarda una noticia del creador por componentes (documento editorial completo, sin
+ * convertir a Tiptap: ver CONTEXTO_IA.md §8.1). Revalida en servidor con el mismo
+ * validateNewsDocument que marca los campos en pantalla, por si llega una petición sin
+ * pasar por esa comprobación en el cliente.
+ */
+export async function saveNewsDocument(_: string, form: FormData): Promise<string> {
+  const client = await adminClient();
+  if (!client) return 'Tu sesión no permite guardar publicaciones.';
+  const id = field(form, 'id');
+  const intent = field(form, 'intent');
+  if (id && !uuid.test(id)) return 'No se pudo autorizar el guardado.';
+  if (intent !== 'crear' && intent !== 'borrador') return 'No se pudo autorizar el guardado.';
+  const raw = String(form.get('document') ?? '');
+  if (raw.length > 1_500_000) return 'El contenido supera el tamaño permitido.';
+  let news: Record<string, unknown>;
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) throw new Error();
+    news = parsed as Record<string, unknown>;
+  } catch {
+    return 'El documento de la noticia no es válido.';
+  }
+  const categories = await getTerms('categories');
+  const issues = validateNewsDocument(news, categories, { requireCategory: intent === 'crear', requireCover: intent === 'crear' });
+  if (issues.length) return `Revisa ${issues.length === 1 ? 'este campo' : 'estos campos'} antes de guardar: ${issues[0].message}`;
+
+  const metadata = news.metadatos && typeof news.metadatos === 'object' && !Array.isArray(news.metadatos) ? news.metadatos as Record<string, unknown> : {};
+  const seccion = String(metadata.seccion ?? '').trim();
+  let categoryId: string | null = null;
+  if (seccion) {
+    const match = categories.find(category => category.name.toLocaleUpperCase('es') === seccion.toLocaleUpperCase('es'));
+    if (!match) return 'La categoría seleccionada ya no existe. Elige otra.';
+    categoryId = match.id;
+  }
+  const authors = Array.isArray(news.autores) ? news.autores as unknown[] : [];
+  const author = authors.map(value => value && typeof value === 'object' ? String((value as Record<string, unknown>).nombre ?? '').trim() : '')
+    .filter(Boolean).join(', ').slice(0, 100);
+  const title = String(news.titular ?? '').trim();
+  if (!author || !title) return 'Revisa el titular y la firma.';
+  const subtitle = String(news.subtitulo ?? '').trim();
+  const resources = news.recursos && typeof news.recursos === 'object' && !Array.isArray(news.recursos) ? news.recursos as Record<string, Record<string, unknown>> : {};
+  const portada = news.portada && typeof news.portada === 'object' && !Array.isArray(news.portada) ? news.portada as Record<string, unknown> : null;
+  const coverResource = portada && typeof portada.recursoId === 'string' ? resources[portada.recursoId] : undefined;
+  const coverUrl = coverResource && typeof coverResource.url === 'string' && webUrl(coverResource.url) ? coverResource.url : null;
+  const coverAlt = coverResource && typeof coverResource.alt === 'string' ? coverResource.alt : '';
+
+  const base = {
+    title, subtitle, author, body: news, body_format: 'editorial' as const,
+    category_id: categoryId, tag_ids: [] as string[], cover_url: coverUrl, cover_alt: coverAlt, featured: false,
+  };
+  if (id) {
+    const { data: existing, error: readError } = await client.from('articles').select('body_format,published_at,ever_published').eq('id', id).single();
+    if (readError || !existing) return 'No se encontró la publicación.';
+    if (existing.body_format !== 'editorial') return 'Esta noticia no se puede editar desde el creador nuevo.';
+    if (!categoryId && (existing.published_at || existing.ever_published)) return 'Selecciona una categoría. Solo los borradores pueden quedar sin categoría.';
+    const { error } = await client.from('articles').update(base).eq('id', id).select('id').single();
+    if (error) return 'No se pudo guardar la noticia.';
+    revalidatePath('/', 'layout');
+    redirect(`/mesa-editorial-7k4n/articulos/${id}`);
+  }
+  const { data, error } = await client.from('articles').insert({ ...base, slug: slugify(title), published_at: null }).select('id').single();
+  if (error?.code === '23505') return 'Ya existe una publicación con un identificador de URL muy parecido. Cambia el titular.';
+  if (error) return 'No se pudo guardar la noticia.';
+  revalidatePath('/', 'layout');
+  redirect(`/mesa-editorial-7k4n/articulos/${data.id}`);
 }
 
 export async function deleteArticle(_: string, form: FormData): Promise<string> {

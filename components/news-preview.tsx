@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { dateLabel, webUrl } from '@/lib/format';
 import { ImportedRichBlock } from './imported-rich-block';
@@ -263,6 +265,26 @@ export function NewsPreview({ news, onImageChange, blockControls, blockInvalid, 
     <InlineNewsTags tags={list(metadata.etiquetas)} />
     <NewsSources body={body} />
     </article>
+  </div>;
+}
+
+/**
+ * Cuerpo de una noticia en formato editorial (creador por componentes), para el portal
+ * público. Reutiliza `renderBlock` tal cual: misma fidelidad que la vista previa del
+ * creador (tablas, gráficos, notas editoriales, texto+imagen…), en modo solo lectura
+ * porque no hay `InlineNewsEditor` alrededor. El resto de la página (titular, portada,
+ * firma) lo sigue construyendo `app/(public)/noticia/[slug]/page.tsx` con sus propios datos.
+ */
+export function EditorialArticleBody({ news }: { news: Fields }) {
+  const resources = fields(news.recursos);
+  const presentation = fields(news.presentacion);
+  const body = list(news.cuerpo).map(fields);
+  return <div className="rich">
+    {body.map((block, i) => block.tipo === 'fuentes' || block.tipo === 'relacionados' ? null :
+      <div key={text(block.id) || i} id={text(block.id) || undefined}>
+        {renderBlock(block, i, resources, fields(presentation.embeds).habilitados !== false)}
+      </div>)}
+    <NewsSources body={body} />
   </div>;
 }
 

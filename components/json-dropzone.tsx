@@ -1,15 +1,17 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { startTransition, useActionState, useEffect, useRef, useState } from 'react';
 import { parseNewsPreview } from './news-preview';
 import { NewsComposer } from './news-composer';
-import { createNewsDocument } from '@/lib/news-components';
+import { createNewsDocument, type NewsDocument } from '@/lib/news-components';
 import { validateNewsDocument, type NewsValidationIssue } from '@/lib/news-validation';
+import { saveNewsDocument } from '@/app/mesa-editorial-7k4n/actions';
 
 type IncomingNews = { name: string; news: ReturnType<typeof parseNewsPreview> };
 type Preview = IncomingNews & { revision: number };
+type EditingArticle = { id: string; name: string; news: NewsDocument };
 
-export function JsonDropzone({ categories = [] }: { categories?: { id: string; name: string }[] }) {
+export function JsonDropzone({ categories = [], article }: { categories?: { id: string; name: string }[]; article?: EditingArticle }) {
   const input = useRef<HTMLInputElement>(null);
   const errorDialog = useRef<HTMLDialogElement>(null);
   const [jsonError, setJsonError] = useState('');
@@ -18,17 +20,17 @@ export function JsonDropzone({ categories = [] }: { categories?: { id: string; n
     if (!jsonError && errorDialog.current?.open) errorDialog.current.close();
   }, [jsonError]);
   const confirmation = useRef<HTMLDialogElement>(null);
-  const [preview, setPreview] = useState<Preview | null>(null);
-  const latest = useRef<Preview | null>(null);
-  const baseline = useRef('');
+  const [preview, setPreview] = useState<Preview | null>(() => article ? { name: article.name, news: article.news, revision: 1 } : null);
+  const latest = useRef<Preview | null>(preview);
+  const baseline = useRef(article ? JSON.stringify(article.news) : '');
   const [pending, setPending] = useState<IncomingNews | null>(null);
   const [dragging, setDragging] = useState(false);
   const [error, setError] = useState('');
-  const [componentsMode, setComponentsMode] = useState(false);
+  const [componentsMode, setComponentsMode] = useState(Boolean(article));
   const selectionVersion = useRef(0);
   const [loading, setLoading] = useState(false);
   const [issues, setIssues] = useState<NewsValidationIssue[]>([]);
-  const [notice, setNotice] = useState('');
+  const [saveMessage, dispatchSave, saving] = useActionState(saveNewsDocument, '');
 
   useEffect(() => {
     if (pending && !confirmation.current?.open) confirmation.current?.showModal();
@@ -44,7 +46,6 @@ export function JsonDropzone({ categories = [] }: { categories?: { id: string; n
     setPending(null);
     setError('');
     setIssues([]);
-    setNotice('');
   }
   function requestOpen(next: IncomingNews) {
     if (latest.current && JSON.stringify(latest.current.news) !== baseline.current) setPending(next);
@@ -79,15 +80,18 @@ export function JsonDropzone({ categories = [] }: { categories?: { id: string; n
   }
 
   function attempt(action: 'crear' | 'borrador') {
-    if (!preview) return;
-    setNotice('');
+    if (!preview || saving) return;
     const found = validateNewsDocument(preview.news, categories, { requireCategory: action === 'crear', requireCover: action === 'crear' });
     setIssues(found);
     if (found.length) { jumpTo(found[0].path); return; }
-    setNotice(action === 'crear'
-      ? 'Todos los campos son válidos. El guardado en Supabase todavía no está conectado: se habilitará en la siguiente tarea.'
-      : 'Todos los campos son válidos. El guardado de borradores todavía no está conectado: se habilitará en la siguiente tarea.');
+    const data = new FormData();
+    data.set('id', article?.id ?? '');
+    data.set('intent', action);
+    data.set('document', JSON.stringify(preview.news));
+    startTransition(() => dispatchSave(data));
   }
+
+  const strictLabel = article ? 'Guardar cambios' : 'Crear';
 
   return <div className="news-import">
     <input autoComplete="off" ref={input} hidden type="file" accept=".json,application/json" onChange={event => { select(event.currentTarget.files); event.currentTarget.value = ''; }} />
@@ -120,12 +124,12 @@ export function JsonDropzone({ categories = [] }: { categories?: { id: string; n
       <strong>Revisa estos {issues.length === 1 ? 'campo' : 'campos'} antes de continuar</strong>
       <ul>{issues.map((issue, i) => <li key={i}><button type="button" onClick={() => jumpTo(issue.path)}>{issue.message}</button></li>)}</ul>
     </div>}
-    {preview && notice && <p className="news-validation-notice" role="status">{notice}</p>}
+    {preview && saveMessage && <div className="news-validation-summary" role="alert" aria-live="assertive"><strong>No se pudo guardar</strong><p>{saveMessage}</p></div>}
     {preview && <NewsComposer key={preview.revision} showToolbar={componentsMode} categories={categories} news={preview.news} issues={issues}
       onChange={news => { const value = { ...preview, news }; latest.current = value; setPreview(value); }} />}
     {preview && <div className="news-import-actions news-preview-actions" aria-label="Acciones de la noticia">
-      <button type="button" onClick={() => attempt('crear')}>Crear</button>
-      <button type="button" onClick={() => attempt('borrador')}>Guardar borrador</button>
+      <button type="button" disabled={saving} onClick={() => attempt('crear')}>{saving ? 'Guardando…' : strictLabel}</button>
+      <button type="button" disabled={saving} onClick={() => attempt('borrador')}>{saving ? 'Guardando…' : 'Guardar borrador'}</button>
     </div>}
     {componentsMode && <p className="json-upload-status" role="status">{error || (loading ? 'Preparando JSON…' : '')}</p>}
     <dialog ref={errorDialog} className="category-confirm-dialog json-error-dialog" aria-labelledby="json-error-title" onCancel={() => setJsonError('')} onClose={() => setJsonError('')}>

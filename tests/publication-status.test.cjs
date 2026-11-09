@@ -38,6 +38,7 @@ function setup(rows, { authorized = true, onRead } = {}) {
     'next/cache': { revalidatePath() {} },
     'next/navigation': { redirect() { throw new Error('Unexpected redirect'); } },
     '@/lib/format': {}, '@/lib/news-manager-demo': {},
+    '@/lib/articles': { getTerms: async () => [] }, '@/lib/news-validation': { validateNewsDocument: () => [] },
   };
   const load = path => {
     const source = readFileSync(`${__dirname}/../app/mesa-editorial-7k4n/${path}`, 'utf8');

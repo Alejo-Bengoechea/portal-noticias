@@ -1,6 +1,6 @@
 # Contexto del proyecto para asistentes de código
 
-Actualizado: **9 de noviembre de 2026** (creador: validación completa, sin borradores locales). Estado consolidado del código, no un historial de propuestas. Es la fuente de verdad común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
+Actualizado: **9 de noviembre de 2026** (el creador por componentes ya guarda de verdad en Supabase, formato editorial sin convertir a Tiptap). Estado consolidado del código, no un historial de propuestas. Es la fuente de verdad común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
 
 ## 1. Reglas de trabajo
 
@@ -50,8 +50,8 @@ npm.cmd start          # Servir una compilación existente
 
 | Área | Qué se guarda realmente |
 | --- | --- |
-| Creador nuevo por JSON/componentes | Previsualización editable, con validación completa de todos los campos (ver §8.1). Los botones **Crear / Guardar borrador validan y marcan los campos con error**, pero todavía no escriben en Supabase: con todo válido muestran un aviso de que el guardado se conecta en otra tarea. No crea filas de noticias en Supabase. |
-| Editor de una noticia ya guardada | `ArticleForm` y `actions.ts` guardan cambios en Supabase. La acción `saveArticle` admite inserción, pero la ruta Nueva noticia muestra el creador nuevo; no existe actualmente un flujo UI completo de alta persistente desde ese creador. |
+| Creador nuevo por JSON/componentes | **Guarda de verdad en Supabase** (9 de noviembre de 2026, ver §8.1-§8.2). Los botones Crear y Guardar borrador validan en cliente y de nuevo en servidor, marcan los campos con error y, si todo es válido, insertan o actualizan una fila real en `articles` con `body_format='editorial'` (el documento completo del creador, sin convertir a Tiptap) y redirigen a la edición de esa fila. Nunca publican directamente: la fila queda como borrador (`published_at` nulo) hasta que se publique desde el gestor. |
+| Editor de una noticia ya guardada | `app/mesa-editorial-7k4n/articulos/[id]/page.tsx` bifurca por `body_format`: `'tiptap'` (noticias antiguas) abre `ArticleForm`/`saveArticle` como siempre; `'editorial'` (creadas con el creador nuevo) reabre `JsonDropzone` con el documento cargado, y `saveNewsDocument` actualiza esa misma fila en vez de crear una nueva. |
 | Imágenes subidas | Se guardan inmediatamente en Storage, aunque la noticia siga siendo una preview sin guardar. |
 | Gestores de noticias/borradores | Por defecto muestran 30 muestras; `datos=reales` consulta Supabase. Las acciones sobre muestras se simulan en memoria. |
 | Inicio / Mesa de trabajo | Consultas reales de noticias guardadas en Supabase. No cuenta las muestras. No hay borradores locales: el creador ya no guarda nada en el navegador. |
@@ -59,7 +59,7 @@ npm.cmd start          # Servir una compilación existente
 | Organización, ideas y directorio de fuentes | Hoy **modo local** (solo en el navegador): las tablas de la migración 7 no existen en la base remota. Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
 | Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. Sin la migración 6 (no aplicada en remoto) el inventario puede aparecer vacío y el borrado falla. La subida sí funciona (migración 1). |
 
-Los formatos JSON editorial del creador y Tiptap de `articles.body` **no son intercambiables**. Conectar el nuevo creador a persistencia/publicación requiere una decisión de conversión/renderizado y validación de servidor; no basta con habilitar sus botones. El portal actual renderiza el cuerpo persistido con `RichText`.
+Los formatos JSON editorial del creador y Tiptap de `articles.body` **no son intercambiables**. Se conviven sin convertir uno a otro: la columna `body_format` (migración 202611090003) distingue qué forma tiene `articles.body` fila por fila. El portal renderiza `RichText` para `'tiptap'` y `EditorialArticleBody` (en `news-preview.tsx`, el mismo renderizador del creador en modo solo lectura) para `'editorial'`, así que tablas, gráficos, notas editoriales y texto+imagen se ven igual en el portal que en la vista previa del creador, sin perder nada.
 
 ## 4. Rutas y navegación
 
@@ -120,8 +120,9 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 | `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico | Aplicada |
 | `202611090001_media_library.sql` | SELECT/DELETE del inventario Storage, exclusivos del administrador | **No** |
 | `202611090002_editorial_workspace.sql` | Agenda, ideas, fuentes, timestamps y RLS privada | **No** |
+| `202611090003_article_body_format.sql` | Columna `body_format` (`'tiptap'`/`'editorial'`) en `articles`, por defecto `'tiptap'` | Aplicada |
 
-**Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado). Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
+**Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado), más la aplicación confirmada por el usuario de `202611090003` el mismo día tras probar el guardado real del creador. Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
 
 ## 7. Noticias, categorías y operaciones de tabla
 
@@ -168,10 +169,27 @@ Ambos modos usan `NewsComposer`, `NewsPreview` y `InlineNewsEditor`. Editar dire
 
 - Los botones **Crear** y **Guardar borrador** (en `JsonDropzone`) ejecutan esta validación al pulsarlos. `Crear` exige categoría y portada; `Guardar borrador` no (coherente con que solo un borrador puede quedar sin categoría, §7.2).
 - Si hay errores: aparece un resumen con todos los mensajes arriba del creador (con enlaces que llevan al campo), el campo o bloque afectado se marca en rojo (`aria-invalid`/`data-invalid`) y se hace scroll automático al primero.
-- Si no hay errores: aviso de que la validación es correcta pero el guardado real en Supabase todavía no está conectado (pendiente, ver el final de este documento). No se crea ninguna fila ni se escribe nada.
+- Si no hay errores, se envía a `saveNewsDocument` (ver §8.2), que vuelve a validar en servidor antes de escribir.
 - Los bloques nuevos del creador ya no llevan texto de relleno (antes "Lorem ipsum", "Nombre de la fuente", etc.): nacen vacíos y la validación exige completarlos. El gráfico de barras es la excepción: conserva datos de ejemplo marcados con `muestra: true`, y la validación rechaza crear/guardar mientras ese marcador siga activo (se quita solo al aplicar datos reales desde su propio formulario).
 - La imagen de portada y las imágenes del cuerpo exigen URL y texto alternativo (accesibilidad); el campo de texto alternativo ahora es editable directamente bajo cada imagen en el creador.
 - Cubierto por `tests/news-validation.test.cjs`.
+
+### 8.2 Guardado real: Crear y Guardar borrador (9 de noviembre de 2026)
+
+`saveNewsDocument` en `app/mesa-editorial-7k4n/actions.ts` recibe el documento completo (`JSON.stringify` del estado del creador), vuelve a ejecutar `validateNewsDocument` en servidor (nunca confía solo en la validación de cliente) y, si pasa, escribe en `articles`:
+
+- `body`: el documento editorial completo, sin convertir; `body_format: 'editorial'`.
+- `category_id`: se resuelve buscando el nombre de `metadatos.seccion` contra las categorías reales (`getTerms('categories')`); si no hay coincidencia, falla con un mensaje claro en vez de guardar una categoría inventada.
+- `author`: se arma uniendo los nombres de `autores` con «, »; no hay más de un campo de firma en la tabla `articles`, así que varias firmas se muestran igual en el gestor pero se conservan completas dentro de `body.autores` para el portal.
+- `tag_ids`: queda **vacío a propósito**. Las etiquetas del creador (`metadatos.etiquetas`) son texto libre, no términos de la tabla `tags`; no se crean términos automáticamente al guardar. Siguen visibles en el documento y en el portal (ver abajo), pero no participan del filtro relacional de etiquetas del gestor. Pendiente de decisión si se quiere unificarlas.
+- `cover_url`/`cover_alt`: se resuelven desde `portada.recursoId` contra `recursos`.
+- `published_at`: siempre `null` al crear. El creador **nunca publica directamente**; la fila queda como borrador hasta que se publique desde `/publicaciones` o `/borradores`, igual que el resto del flujo (§7.2).
+- Con `id` (edición de una fila existente): actualiza esa fila en vez de insertar, exige que su `body_format` sea `'editorial'` (si no, el guardado se rechaza: esa fila se edita con el editor clásico) y aplica la misma regla de categoría obligatoria si la noticia ya se publicó alguna vez.
+- Al terminar, `revalidatePath('/', 'layout')` y redirección a `/mesa-editorial-7k4n/articulos/{id}` (edición de la fila recién creada o actualizada), donde `JsonDropzone` se reabre con el documento cargado desde Supabase.
+
+El portal público (`app/(public)/noticia/[slug]/page.tsx`) distingue `body_format` para renderizar y para las etiquetas mostradas: con `'editorial'` usa `EditorialArticleBody` y lista `body.metadatos.etiquetas` como texto (no las etiquetas relacionales, que quedan vacías para estas filas).
+
+Probado de extremo a extremo el 9 de noviembre de 2026: crear con el creador, verificar la fila en Supabase, reabrir para editar (recupera todo correctamente) y comprobar que aparece en `/borradores`. **No probado todavía:** publicar una noticia `'editorial'` desde el gestor y verla en el portal público ya en producción (el renderizador está implementado y compila, pero falta esa prueba visual en vivo).
 
 ### Formato y validación de JSON
 
@@ -214,14 +232,14 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 | Responsabilidad | Archivos principales |
 | --- | --- |
 | Datos/autorización | `lib/supabase.ts`, `proxy.ts`, `lib/articles.ts` |
-| Acciones de noticias/categorías | `app/mesa-editorial-7k4n/actions.ts`, `bulk-news-actions.ts`, `news-actions.ts` |
+| Acciones de noticias/categorías | `app/mesa-editorial-7k4n/actions.ts` (incluye `saveArticle` para Tiptap y `saveNewsDocument` para el creador editorial), `bulk-news-actions.ts`, `news-actions.ts` |
 | Inicio | `lib/editorial-home.ts`, `components/editorial-home.tsx` |
 | Menú y login | `components/editorial-sidebar.tsx`, `editorial-login.tsx`, `admin-forms.tsx`, layout del panel |
-| Importación y validación | `lib/news-import.ts`, `lib/news-validation.ts`, `components/json-dropzone.tsx` |
-| Composición y render editorial | `components/news-composer.tsx`, `news-preview.tsx`, `lib/news-components.ts` |
+| Importación y validación | `lib/news-import.ts`, `lib/news-validation.ts` (también usado en servidor por `saveNewsDocument`), `components/json-dropzone.tsx` |
+| Composición y render editorial | `components/news-composer.tsx`, `news-preview.tsx` (incluye `EditorialArticleBody`, para el portal público), `lib/news-components.ts` |
 | Edición inline | `components/inline-news-editor.tsx`, `inline-rich-text.tsx`, `imported-rich-block.tsx`, `lib/inline-format.ts` |
 | Bloques | `news-text-image.tsx`, `news-table.tsx`, `news-bar-chart.tsx`, `news-video.tsx`, `news-sources.tsx`, `zoomable-image.tsx` |
-| Noticias persistidas | `components/article-form.tsx`, `rich-text.tsx`, ruta `articulos/[id]` |
+| Noticias persistidas (Tiptap) | `components/article-form.tsx`, `rich-text.tsx`, ruta `articulos/[id]` (bifurca por `body_format`, ver §3 y §8.2) |
 | Gestores | `news-manager-table.tsx`, `news-row-actions.tsx`, `infinite-news-manager.tsx`, `lib/news-management.ts`, `news-manager-demo.ts` |
 | Categorías | `category-manager.tsx`, `category-card.tsx`, `admin-forms.tsx` |
 | Multimedia | `lib/media-upload.ts`, `image-signature.ts`, `media-library.ts`, `components/media-library.tsx`, rutas media/multimedia |
@@ -241,7 +259,7 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 - QA previo incluyó TypeScript/build, pruebas de validación/autorización y navegador con fixtures aisladas. Las capturas de demostración contienen ejemplos, no prueban el estado real de la base remota.
 - Eliminar entornos temporales de prueba tras detenerlos y verificar su ruta. Dependencias históricas de Vite en `sites-release/node_modules` han servido para QA local; no son parte del despliegue Next ni permiso para publicar Sites.
 
-Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y formato del portal (la validación completa de §8.1 ya está lista como base para esto: falta la acción de servidor que guarde `Crear`/`Guardar borrador` en Supabase y la conversión del documento editorial al formato Tiptap de `articles.body`); verificar/aplicar migraciones en Supabase según su estado real; conectar estadísticas a datos reales solo cuando se pida. No anunciar estos puntos como terminados por haber creado UI, acciones o un SQL.
+Pendientes conocidos: probar en vivo la publicación de una noticia `body_format='editorial'` desde el gestor y su renderizado en el portal público (implementado, ver §8.2, pero no verificado visualmente todavía); decidir si las etiquetas del creador deben unificarse con la tabla relacional `tags` (hoy quedan solo dentro del documento y en el portal, `tag_ids` vacío para estas filas, ver §8.2); verificar/aplicar migraciones restantes en Supabase según su estado real; conectar estadísticas a datos reales solo cuando se pida. No anunciar estos puntos como terminados por haber creado UI, acciones o un SQL.
 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 

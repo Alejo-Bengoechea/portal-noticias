@@ -5,6 +5,8 @@ import { getTerms, type Article } from '@/lib/articles';
 import { ArticleForm } from '@/components/article-form';
 import { DeleteForm, TermForm } from '@/components/admin-forms';
 import { JsonDropzone } from '@/components/json-dropzone';
+import { normalizeNewsDocument } from '@/lib/news-import';
+import type { NewsDocument } from '@/lib/news-components';
 
 export default async function EditArticle({ params }: { params: Promise<{ id: string }> }) {
   const client = await adminClient();
@@ -19,7 +21,16 @@ export default async function EditArticle({ params }: { params: Promise<{ id: st
   if (error) throw error;
   if (!data) notFound();
   const article: Article = data;
-  const [categories, tags] = await Promise.all([getTerms('categories'), getTerms('tags')]);
+  const categories = await getTerms('categories');
+  if (article.body_format === 'editorial') {
+    const news = normalizeNewsDocument(structuredClone(article.body) as NewsDocument);
+    return <><Link className="back" href="/mesa-editorial-7k4n/publicaciones">← Publicaciones</Link>
+      <h1 className="page-title">Editar noticia</h1>
+      <JsonDropzone categories={categories} article={{ id: article.id, name: `${article.slug}.json`, news }} />
+      <div className="delete-area"><DeleteForm id={article.id} /></div>
+    </>;
+  }
+  const tags = await getTerms('tags');
   return <><Link className="back" href="/mesa-editorial-7k4n/publicaciones">← Publicaciones</Link>
     <h1 className="page-title">Editar publicación</h1>
     <details className="panel article-terms">
