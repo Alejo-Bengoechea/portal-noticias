@@ -8,6 +8,7 @@ Actualizado: **9 de noviembre de 2026**. Estado consolidado del código, no un h
 - **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue. Hoy los avances se publican en Sites mediante Codex; el dominio propio y su proveedor están sin decidir (ver §6).
 - `sites-release/` es una copia histórica de publicación, no la fuente activa; Git la registra como una referencia gitlink histórica, no como el código fuente activo de Next.js; localmente conserva archivos y dependencias propios. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual. Los archivos `*.tar.gz` dejan de versionarse y se conservan localmente, ignorados por Git; las copias antiguas siguen en el historial.
 - **Nunca guardar contraseñas, claves ni notas con credenciales en archivos del proyecto**: el repositorio es público y el historial de Git las conserva aunque se borren. No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
+- **Fase actual (noviembre de 2026): validar diseño y flujos.** Todo el contenido, en el portal y en Supabase, es ficticio. La funcionalidad real y la persistencia completa se abordarán después, cuando el usuario lo indique. Priorizar diseño, navegación y flujos; no tratar las migraciones pendientes ni la pérdida de datos de prueba como urgencias.
 - No desactivar autenticación, RLS ni comprobaciones del administrador para probar. No crear/publicar/eliminar noticias reales como parte de una prueba visual.
 - El usuario tiene poca experiencia en código: implementar lo pedido y explicar en español sencillo. Resolver decisiones rutinarias sin pedir confirmaciones innecesarias.
 - Mantener accesibilidad, móvil y diseño existente. Evitar dependencias redundantes. No cambiar funciones de negocio durante una tarea de documentación o diseño.
@@ -116,7 +117,7 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 | Archivo en `supabase/migrations/` | Propósito | Remoto (comprobado 9 nov 2026) |
 | --- | --- | --- |
 | `202611070001_editorial.sql` | Tablas iniciales, administrador, RLS, bucket editorial | Aplicada |
-| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA | **No** (faltan una o más de las tres categorías) |
+| `202611070002_sections.sql` | ESPAÑA, INTERNACIONAL, ECONOMÍA | **No.** La base tiene ESPAÑA (`espana`), NACIONAL (`nacional`) y TECNOLOGÍA (`tecnologia`), todas de prueba. No aplicar sin decidir antes las categorías definitivas |
 | `202611070003_traffic.sql` | Recogida/resumen de tráfico real | **No** |
 | `202611070004_news_management.sql` | Fechas, histórico de publicación y trigger | Aplicada |
 | `202611080001_category_required.sql` | Categoría obligatoria salvo borrador; restricción NOT VALID para no alterar histórico | Aplicada |
@@ -227,7 +228,8 @@ Pendientes conocidos: conectar el nuevo creador con persistencia/publicación y 
 Riesgos y mejoras identificados (revisión del 9 de noviembre de 2026), sin implementar salvo petición:
 
 - **Usuario:** cambiar la contraseña de Supabase expuesta (§6) y decidir si el repositorio debe ser privado.
-- **Usuario:** aplicar las migraciones pendientes (2, 3, 6 y 7) tras revisar el estado de las categorías.
+- **Usuario, al pasar a funcionalidad real:** aplicar las migraciones 3, 6 y 7 (seguras con el estado actual) y decidir las categorías definitivas antes de la 2.
+- El menú del portal (`app/(public)/layout.tsx`) tiene fijas Internacional, España y Economía. Las categorías creadas desde el panel no aparecen en él, y con las categorías remotas actuales Internacional y Economía dan 404. Las 30 muestras del gestor también usan esos tres slugs. Decidir si el menú debe leer las categorías de Supabase.
 - Los tests usan Supabase simulado; falta comprobar las acciones contra una base aislada con RLS real. Sin cobertura todavía: componentes de interfaz y rutas.
 - Las imágenes subidas desde la preview del creador quedan públicas en Storage aunque la noticia nunca se guarde (huérfanas).
 - Sin `next.config` ni cabeceras de seguridad (CSP, protección contra incrustar el panel en otra web).
