@@ -1,0 +1,274 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "id": "noticia-demo-001",
+    "slug": "un-patio-que-recoge-lluvia",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "esFiccion": true,
+    "avisoVisible": "Artículo ficticio de demostración. Los lugares, las personas, los datos y los materiales son simulados.",
+    "urlsDeEjemplo": {
+      "dominio": "example.invalid",
+      "sonPlaceholders": true,
+      "nota": "Sustituir todas las URLs de este dominio por recursos verificados antes de publicar."
+    },
+    "seccion": "Medio ambiente",
+    "etiquetas": ["agua", "escuelas", "demostración"]
+  },
+  "seo": {
+    "titulo": "Un patio que recoge lluvia | Reportaje ficticio",
+    "descripcion": "Una escuela imaginaria prueba un depósito para regar su huerto. Ejemplo editorial con datos simulados.",
+    "urlCanonica": "https://example.invalid/noticias/un-patio-que-recoge-lluvia",
+    "robots": { "indexar": false, "seguirEnlaces": false },
+    "social": {
+      "titulo": "Un patio que recoge lluvia",
+      "descripcion": "Una historia ficticia sobre cómo aprovechar el agua de lluvia en un huerto escolar.",
+      "imagenId": "foto-portada"
+    }
+  },
+  "autores": [
+    {
+      "id": "autora-01",
+      "nombre": "Inés del Valle",
+      "rol": "Redacción",
+      "bio": "Firma ficticia creada para esta plantilla.",
+      "perfilUrl": "https://example.invalid/autores/ines-del-valle"
+    }
+  ],
+  "fechas": {
+    "creacion": "2026-10-02T09:00:00+02:00",
+    "publicacion": null,
+    "actualizacion": "2026-10-03T11:15:00+02:00"
+  },
+  "titular": "Un patio que recoge lluvia",
+  "subtitulo": "Una escuela imaginaria ensaya un sistema sencillo para regar su huerto.",
+  "entradilla": "En la ficticia Escuela del Mirador, un depósito conectado al tejado permitió recoger 320 litros en tres semanas de una prueba simulada.",
+  "portada": {
+    "recursoId": "foto-portada",
+    "pie": "Ilustración prevista del depósito junto al huerto escolar.",
+    "puntoFocal": { "x": 0.58, "y": 0.46 }
+  },
+  "recursos": {
+    "foto-portada": {
+      "tipo": "imagen",
+      "url": "https://example.invalid/media/patio.jpg",
+      "alt": "Depósito de agua junto a tres bancales escolares.",
+      "anchoPx": 1600,
+      "altoPx": 900,
+      "credito": "Equipo gráfico ficticio",
+      "licencia": null
+    },
+    "foto-filtro": {
+      "tipo": "imagen",
+      "url": "https://example.invalid/media/filtro.jpg",
+      "alt": "Malla que retiene hojas antes de la entrada del depósito.",
+      "anchoPx": 1200,
+      "altoPx": 800,
+      "credito": "Equipo gráfico ficticio",
+      "licencia": null
+    },
+    "foto-huerto": {
+      "tipo": "imagen",
+      "url": "https://example.invalid/media/huerto.jpg",
+      "alt": "Bancales con lechugas y una regadera al fondo.",
+      "anchoPx": 1200,
+      "altoPx": 800,
+      "credito": "Equipo gráfico ficticio",
+      "licencia": null
+    }
+  },
+  "cuerpo": [
+    { "id": "como-funciona", "tipo": "encabezado", "nivel": 2, "texto": "Cómo funciona el sistema" },
+    {
+      "id": "parrafo-inicial",
+      "tipo": "parrafo",
+      "spans": [
+        { "texto": "El depósito", "marcas": ["negrita"] },
+        { "texto": " recibe agua del tejado y la reserva para " },
+        { "texto": "riego", "marcas": ["cursiva"] },
+        { "texto": ". El agua lleva una etiqueta visible de " },
+        { "texto": "no potable", "marcas": ["negrita", "cursiva"] },
+        { "texto": ". Consulta el " },
+        { "texto": "cuaderno de campo", "enlace": { "href": "#registro", "tipo": "interno" } },
+        { "texto": " o el " },
+        { "texto": "glosario de ejemplo", "enlace": { "href": "https://example.invalid/glosario/agua", "tipo": "externo" } },
+        { "texto": "." }
+      ]
+    },
+    { "id": "instalacion", "tipo": "encabezado", "nivel": 3, "texto": "Del tejado al huerto" },
+    { "id": "detalle-filtro", "tipo": "encabezado", "nivel": 4, "texto": "Un filtro para las hojas" },
+    { "id": "imagen-filtro", "tipo": "imagen", "recursoId": "foto-filtro", "pie": "Detalle previsto de la malla del filtro." },
+    {
+      "id": "pasos",
+      "tipo": "lista",
+      "ordenada": true,
+      "elementos": [
+        { "spans": [{ "texto": "Recoger el agua del tejado." }] },
+        { "spans": [{ "texto": "Retener hojas con una malla." }] },
+        { "spans": [{ "texto": "Registrar el volumen recogido." }] }
+      ]
+    },
+    {
+      "id": "galeria",
+      "tipo": "galeria",
+      "titulo": "El recorrido del agua",
+      "elementos": [
+        { "recursoId": "foto-filtro", "pie": "La entrada del depósito." },
+        { "recursoId": "foto-huerto", "pie": "El destino del agua." }
+      ]
+    },
+    {
+      "id": "video",
+      "tipo": "video_externo",
+      "proveedor": "proveedor_de_ejemplo",
+      "titulo": "Del canalón a la regadera",
+      "url": "https://example.invalid/videos/recorrido",
+      "urlEmbed": "https://example.invalid/embed/video/recorrido",
+      "posterId": "foto-portada",
+      "duracionSegundos": 45,
+      "subtitulos": [{ "idioma": "es", "url": "https://example.invalid/media/recorrido-es.vtt" }],
+      "transcripcionUrl": "https://example.invalid/media/recorrido-transcripcion.txt"
+    },
+    {
+      "id": "audio",
+      "tipo": "audio",
+      "titulo": "Crónica sonora del patio",
+      "url": "https://example.invalid/media/patio.mp3",
+      "mime": "audio/mpeg",
+      "duracionSegundos": 30,
+      "transcripcionUrl": "https://example.invalid/media/patio-transcripcion.txt"
+    },
+    {
+      "id": "cita",
+      "tipo": "cita",
+      "texto": "Queríamos que el alumnado pudiera seguir el agua desde el tejado hasta la regadera.",
+      "atribucion": "Mara Montes, docente ficticia",
+      "fuenteId": "fuente-entrevista"
+    },
+    { "id": "destacado", "tipo": "pullquote", "texto": "Desde el tejado hasta la regadera.", "bloqueOrigenId": "cita" },
+    { "id": "resultados", "tipo": "encabezado", "nivel": 2, "texto": "Tres semanas de mediciones" },
+    {
+      "id": "cifras",
+      "tipo": "cifras",
+      "fuenteId": "fuente-registro",
+      "elementos": [
+        { "valor": 320, "unidad": "L", "etiqueta": "Agua recogida en total" },
+        { "valor": 3, "unidad": "semanas", "etiqueta": "Duración de la prueba" }
+      ]
+    },
+    {
+      "id": "registro",
+      "tipo": "tabla",
+      "titulo": "Cuaderno de campo simulado",
+      "columnas": [
+        { "clave": "semana", "etiqueta": "Semana", "tipoDato": "texto" },
+        { "clave": "litros", "etiqueta": "Agua recogida (L)", "tipoDato": "numero" }
+      ],
+      "filas": [
+        { "semana": "Semana 1", "litros": 90 },
+        { "semana": "Semana 2", "litros": 120 },
+        { "semana": "Semana 3", "litros": 110 }
+      ],
+      "fuenteId": "fuente-registro"
+    },
+    {
+      "id": "grafico",
+      "tipo": "grafico",
+      "variante": "barras",
+      "titulo": "Agua recogida por semana",
+      "descripcionAccesible": "Se recogieron 90, 120 y 110 litros, respectivamente. La segunda semana registró el mayor volumen.",
+      "ejes": { "x": "Semana", "y": "Agua recogida (L)" },
+      "datos": [
+        { "x": "Semana 1", "y": 90 },
+        { "x": "Semana 2", "y": 120 },
+        { "x": "Semana 3", "y": 110 }
+      ],
+      "tablaAlternativaId": "registro",
+      "fuenteId": "fuente-registro"
+    },
+    {
+      "id": "cronologia",
+      "tipo": "cronologia",
+      "eventos": [
+        { "fecha": "2026-09-07", "titulo": "Inicio", "texto": "Se instala el depósito y comienza el registro." },
+        { "fecha": "2026-09-27", "titulo": "Cierre", "texto": "Se completa la tercera semana de la prueba." }
+      ]
+    },
+    {
+      "id": "documento",
+      "tipo": "documento",
+      "titulo": "Cuaderno de campo simulado",
+      "url": "https://example.invalid/documentos/cuaderno.pdf",
+      "mime": "application/pdf",
+      "paginas": 2,
+      "fuenteId": "fuente-registro"
+    },
+    {
+      "id": "plano",
+      "tipo": "embed",
+      "proveedor": "proveedor_de_ejemplo",
+      "titulo": "Plano interactivo del patio ficticio",
+      "urlEmbed": "https://example.invalid/embed/plano-patio",
+      "alternativa": {
+        "texto": "El tejado vierte al depósito, situado junto a los bancales.",
+        "url": "https://example.invalid/media/plano-patio.svg"
+      }
+    },
+    {
+      "id": "encuesta",
+      "tipo": "encuesta",
+      "modo": "demostracion",
+      "activa": false,
+      "pregunta": "¿Qué dato te interesaría seguir en la próxima prueba?",
+      "seleccion": "unica",
+      "opciones": [
+        { "id": "volumen", "texto": "Litros recogidos por día" },
+        { "id": "riego", "texto": "Litros usados para regar" },
+        { "id": "lluvia", "texto": "Cantidad de lluvia" }
+      ],
+      "mostrarResultados": false
+    },
+    {
+      "id": "nota-editorial",
+      "tipo": "nota_editorial",
+      "titulo": "Cómo se preparó esta demostración",
+      "texto": "Los tres valores semanales son inventados. Su suma ilustra cómo reutilizar una misma serie en la tabla, el gráfico y el resumen."
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        { "id": "fuente-registro", "tipo": "registro", "titulo": "Cuaderno de campo simulado", "url": "https://example.invalid/documentos/cuaderno.pdf", "esFicticia": true },
+        { "id": "fuente-entrevista", "tipo": "entrevista", "titulo": "Entrevista inventada a Mara Montes", "url": null, "esFicticia": true }
+      ]
+    },
+    {
+      "id": "correccion",
+      "tipo": "correccion",
+      "fecha": "2026-10-03T11:15:00+02:00",
+      "alcance": "borrador",
+      "texto": "En el borrador de demostración figuraban 310 litros. El total correcto es 320 litros según la suma de los valores simulados."
+    },
+    {
+      "id": "relacionados",
+      "tipo": "relacionados",
+      "elementos": [
+        { "titulo": "Cómo se mide la lluvia en un huerto escolar", "url": "https://example.invalid/noticias/medir-la-lluvia", "esFicticio": true },
+        { "titulo": "Un calendario de riego para el patio", "url": "https://example.invalid/noticias/calendario-de-riego", "esFicticio": true }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "anchoLectura": "medio",
+    "portada": { "proporcion": "16:9", "posicion": "antes_del_cuerpo" },
+    "indice": { "mostrar": true, "niveles": [2, 3] },
+    "mostrarFirma": true,
+    "mostrarFechaActualizacion": true,
+    "mostrarAvisoFiccion": true,
+    "reproduccionAutomatica": false,
+    "embeds": { "cargarBajoDemanda": true, "habilitados": false },
+    "modoRecursos": "placeholder"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "primeras-imagenes-james-webb",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "ciencia",
+      "astronomía",
+      "James Webb"
+    ],
+    "tituloAviso": "Ejemplo editorial",
+    "avisoVisible": "Reportaje de demostración basado en el material publicado por NASA y ESA en julio de 2022."
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-09"
+  },
+  "titular": "Lo que revelaron las primeras imágenes del James Webb",
+  "subtitulo": "Una región donde nacen estrellas y un cúmulo que amplifica galaxias lejanas explican por qué el infrarrojo cambió la forma de observar el universo.",
+  "portada": {
+    "recursoId": "carina",
+    "pie": "Los Acantilados Cósmicos, en el borde de una cavidad de gas de la región NGC 3324.",
+    "puntoFocal": {
+      "x": 0.5,
+      "y": 0.55
+    }
+  },
+  "recursos": {
+    "carina": {
+      "tipo": "imagen",
+      "url": "https://cdn.esawebb.org/archives/images/screen/weic2205a.jpg",
+      "alt": "Nubes anaranjadas con un borde irregular bajo un campo de estrellas.",
+      "credito": "NASA, ESA, CSA y STScI"
+    },
+    "campo-profundo": {
+      "tipo": "imagen",
+      "url": "https://cdn.esawebb.org/archives/images/screen/webb-first-deep-field.jpg",
+      "alt": "Cúmulo de galaxias con arcos curvos y puntos brillantes sobre fondo oscuro.",
+      "credito": "NASA, ESA, CSA y STScI"
+    },
+    "carina-compuesta": {
+      "tipo": "imagen",
+      "url": "https://cdn.esawebb.org/archives/images/screen/weic2205b.jpg",
+      "alt": "Vista panorámica de los Acantilados Cósmicos con gas brillante y estrellas.",
+      "credito": "NASA, ESA, CSA y STScI"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "introduccion-webb",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En julio de 2022, la NASA y sus socios presentaron las primeras imágenes científicas del telescopio James Webb. La selección mostraba dos formas de ver más allá de lo que antes ocultaban el polvo y la distancia.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "carina-seccion",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Carina: mirar dentro de una región donde nacen estrellas"
+    },
+    {
+      "id": "carina-texto",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los Acantilados Cósmicos parecen un paisaje de montañas, pero la imagen muestra el borde de una cavidad dentro de una nube de gas. "
+        },
+        {
+          "texto": "La radiación ultravioleta y los vientos de estrellas jóvenes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " van erosionando ese borde y dibujan las crestas de la imagen. Con la cámara NIRCam, Webb registró estrellas que el polvo ocultaba en otras observaciones."
+        }
+      ]
+    },
+    {
+      "id": "carina-comparacion",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La vista compuesta incorpora también datos de MIRI, un instrumento que observa en el infrarrojo medio. Comparar ambas imágenes ayuda a distinguir qué rasgos aparecen en cada rango de longitudes de onda. Las dos cámaras ofrecen pistas complementarias sobre el polvo y sobre las estrellas jóvenes que lo rodean.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "carina-compuesta",
+      "pie": "La combinación de NIRCam y MIRI muestra la misma región con información de dos rangos del infrarrojo."
+    },
+    {
+      "id": "campo-seccion",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "SMACS 0723: un cúmulo que funciona como lente"
+    },
+    {
+      "id": "campo-texto",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En el primer campo profundo de Webb, la masa del cúmulo SMACS 0723 desvía la luz de galaxias que están detrás. El efecto se llama "
+        },
+        {
+          "texto": "lente gravitacional",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Puede amplificar objetos muy tenues y deformar sus imágenes. De ahí vienen algunos de los arcos curvos que se ven alrededor del centro."
+        }
+      ]
+    },
+    {
+      "id": "campo-foto",
+      "tipo": "imagen",
+      "recursoId": "campo-profundo",
+      "pie": "SMACS 0723 y las galaxias de fondo en el primer campo profundo del Webb."
+    },
+    {
+      "id": "datos-campo-profundo",
+      "tipo": "tabla",
+      "titulo": "Datos del primer campo profundo",
+      "columnas": [
+        {
+          "clave": "dato",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "valor",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "dato": "Exposición total",
+          "valor": "12,5 horas"
+        },
+        {
+          "dato": "Época en que vemos el cúmulo",
+          "valor": "Hace 4.600 millones de años"
+        }
+      ]
+    },
+    {
+      "id": "video-seccion",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: la presentación de las primeras imágenes"
+    },
+    {
+      "id": "video-nasa",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "NASA · La revelación de las primeras imágenes del Webb",
+      "url": "https://www.youtube.com/watch?v=69uT90tEJdE"
+    },
+    {
+      "id": "como-leer",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo leer estas imágenes"
+    },
+    {
+      "id": "guia",
+      "tipo": "lista",
+      "ordenada": true,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Fíjate en qué instrumento tomó la imagen: NIRCam y MIRI registran distintos rangos del infrarrojo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Si ves un arco en el campo profundo, compáralo con las galaxias cercanas al centro del cúmulo: puede ser una imagen deformada por la gravedad.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Consulta el pie y la ficha original. Ahí se explica qué parte del cielo ves y qué observaciones se combinaron.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nota-color",
+      "tipo": "nota_editorial",
+      "titulo": "Cómo se construye el color",
+      "texto": "Los detectores registran luz infrarroja. Para que podamos distinguir a simple vista los datos de distintos filtros, el equipo asigna colores visibles a esas observaciones.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes-webb",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "titulo": "NASA · Primeras imágenes del Webb",
+          "url": "https://science.nasa.gov/mission/webb/webbs-first-images/",
+          "id": "fuente-webb-1"
+        },
+        {
+          "titulo": "ESA/Webb · Acantilados Cósmicos con NIRCam",
+          "url": "https://esawebb.org/images/weic2205a/",
+          "id": "fuente-webb-2"
+        },
+        {
+          "titulo": "ESA/Webb · Acantilados Cósmicos con NIRCam y MIRI",
+          "url": "https://esawebb.org/images/weic2205b/",
+          "id": "fuente-webb-3"
+        },
+        {
+          "titulo": "ESA/Webb · Primer campo profundo",
+          "url": "https://esawebb.org/images/webb-first-deep-field/",
+          "id": "fuente-webb-4"
+        },
+        {
+          "titulo": "NASA · Vídeo de la presentación",
+          "url": "https://science.nasa.gov/resource/its-time-to-unfold-the-universe/",
+          "id": "fuente-webb-5"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": true,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": true,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

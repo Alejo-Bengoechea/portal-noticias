@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="52" viewBox="0 0 112 52">
+  <path d="M21 5H5v14m86-14h16v14M5 33v14h16m86-14v14H91" fill="none" stroke="#f4eddf" stroke-width="2" stroke-linecap="square"/>
+  <circle cx="29" cy="26" r="8" fill="#ff304d"/>
+  <text x="45" y="34" fill="#f4eddf" font-family="Consolas,monospace" font-size="23" letter-spacing="1">REC</text>
+</svg>
