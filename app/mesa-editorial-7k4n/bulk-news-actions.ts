@@ -12,14 +12,14 @@ export async function bulkNewsAction(ids: string[], intent: 'delete' | 'publish'
   if (error || data?.length !== ids.length) return { error: 'No se pudieron comprobar todas las noticias seleccionadas. Actualiza la tabla.' };
   if (intent !== 'delete' && data.some(article => !article.published_at && !article.ever_published)) return { error: 'Los borradores deben abrirse en el editor antes de publicarlos.' };
   if (intent === 'publish' && data.some(article => !article.category_id)) return { error: 'Todas las noticias deben tener una categoría antes de publicar.' };
-  let request;
-  if (intent === 'delete') request = client.from('articles').delete().in('id', ids);
-  else {
-    request = client.from('articles').update(intent === 'publish' ? { published_at: new Date().toISOString(), ever_published: true } : { published_at: null }).in('id', ids).or('published_at.not.is.null,ever_published.eq.true');
-    if (intent === 'publish') request = request.not('category_id', 'is', null);
-  }
-  const result = await request.select('id');
+  // Solo cambian las noticias cuyo estado cambia: republicar una ya publicada borraría su fecha de publicación original.
+  const targets: string[] = intent === 'delete' ? ids : data.filter(article => intent === 'publish' ? !article.published_at : article.published_at).map(article => article.id);
+  if (!targets.length) return { error: '' };
+  const articles = client.from('articles');
+  const result = intent === 'delete' ? await articles.delete().in('id', targets).select('id')
+    : intent === 'publish' ? await articles.update({ published_at: new Date().toISOString(), ever_published: true }).in('id', targets).is('published_at', null).not('category_id', 'is', null).select('id')
+    : await articles.update({ published_at: null }).in('id', targets).not('published_at', 'is', null).select('id');
   if (result.error) return { error: 'No se pudo completar la operación. Actualiza la tabla e inténtalo de nuevo.' };
   revalidatePath('/', 'layout');
-  return { error: result.data?.length === ids.length ? '' : 'Algunas noticias cambiaron durante la operación. Actualiza la tabla para comprobar el resultado.' };
+  return { error: result.data?.length === targets.length ? '' : 'Algunas noticias cambiaron durante la operación. Actualiza la tabla para comprobar el resultado.' };
 }

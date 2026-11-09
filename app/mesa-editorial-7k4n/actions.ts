@@ -116,7 +116,8 @@ export async function changePublicationStatus(_: string, form: FormData): Promis
   if (intent === 'publish') {
     const { data, error } = await client.from('articles').select('published_at,ever_published,category_id').eq('id', id).single();
     if (error || !data) return 'No se encontró la noticia.';
-    if (!data.ever_published && !data.published_at) return 'Los borradores deben editarse antes de publicarlos.';
+    if (data.published_at) return 'La noticia ya está publicada.';
+    if (!data.ever_published) return 'Los borradores deben editarse antes de publicarlos.';
     if (!data.category_id) return 'Selecciona una categoría antes de publicar la noticia.';
   }
   const row = intent === 'publish'
