@@ -55,5 +55,5 @@ export function InlineRichText({ value, path }: { value: NewsDocument; path: str
     const doc = inlineDocument(value);
     if (editor && !editor.hasFocus() && !editor.state.doc.eq(doc)) editor.updateState(EditorState.create({ schema: inlineSchema, doc, plugins: editor.state.plugins }));
   }, [serialized, value]);
-  return <span ref={host} />;
+  return <span ref={host} id={`news-field-${path.join('-')}-spans-0-texto`} />;
 }

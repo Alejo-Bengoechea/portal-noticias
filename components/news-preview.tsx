@@ -70,11 +70,9 @@ function PreviewImage({ resources, item, path, cover, onImageChange }: { resourc
   const alt = text(resource.alt);
   const focal = fields(item.puntoFocal);
   const inline = useInlineNewsEditing();
-  const altInvalid = inline?.invalid.has([...path, 'alt'].join('.'));
-  const imageInvalid = inline?.invalid.has(path.join('.'));
   const objectPosition = typeof focal.x === 'number' && typeof focal.y === 'number'
     ? `${Math.max(0, Math.min(1, focal.x)) * 100}% ${Math.max(0, Math.min(1, focal.y)) * 100}%` : undefined;
-  return <figure className="preview-figure" data-invalid={imageInvalid || undefined}>
+  return <figure className="preview-figure" id={inline && !cover ? `news-field-${path.join('-')}` : undefined}>
     {onImageChange && id && <div className="preview-image-controls">
       <button type="button" className="preview-image-edit" disabled={uploading} onClick={() => fileInput.current?.click()}>{uploading ? 'Subiendo…' : 'Subir foto'}</button>
       <button type="button" className="preview-image-edit" disabled={uploading} aria-expanded={editing} onClick={() => { setEditing(value => !value); setError(''); }}>Cambiar URL</button>
@@ -106,8 +104,7 @@ function PreviewImage({ resources, item, path, cover, onImageChange }: { resourc
     </form>}
     {error && <small className="preview-upload-error" role="alert">{error}</small>}
     {uploading && <span className="preview-upload-status" role="status">Guardando la imagen en Supabase Storage…</span>}
-    {inline && id && <p className="preview-image-alt">Texto alternativo <InlineNewsText path={['recursos', id, 'alt']} value={resource.alt} label="Texto alternativo de la imagen" placeholder="Describe la imagen para accesibilidad" /></p>}
-    {altInvalid && <small className="preview-upload-error" role="alert">Añade un texto alternativo a la imagen, para accesibilidad.</small>}
+    {inline && id && <p id={`news-field-${path.join('-')}-alt`} className="preview-image-alt">Texto alternativo <InlineNewsText path={['recursos', id, 'alt']} value={resource.alt} label="Texto alternativo de la imagen" placeholder="Describe la imagen para accesibilidad" /></p>}
     {(item.pie || resource.credito || inline) ? <figcaption>
       <span><InlineNewsText path={[...path, 'pie']} value={item.pie} label="Pie de imagen" /></span>
       {(inline || item.pie && resource.credito) ? ' · ' : null}
@@ -213,8 +210,8 @@ function renderBlock(block: Fields, index: number, resources: Fields, embeds: bo
   }
 }
 
-export function NewsPreview({ news, onImageChange, blockControls, blockInvalid, addComponent }: {
-  news: Fields; onImageChange?: ChangeImage; blockControls?: (block: Fields, index: number) => ReactNode; blockInvalid?: (index: number) => boolean; addComponent?: ReactNode;
+export function NewsPreview({ news, onImageChange, blockControls, addComponent }: {
+  news: Fields; onImageChange?: ChangeImage; blockControls?: (block: Fields, index: number) => ReactNode; addComponent?: ReactNode;
 }) {
   const inline = useInlineNewsEditing();
   const metadata = fields(news.metadatos);
@@ -239,7 +236,7 @@ export function NewsPreview({ news, onImageChange, blockControls, blockInvalid, 
     <p className="eyebrow accent"><InlineNewsCategory value={metadata.seccion} /></p>
     <h1><InlineNewsText path={['titular']} value={news.titular} label="Titular" /></h1>
     <p className="dek"><InlineNewsText path={['subtitulo']} value={news.subtitulo} label="Subtítulo de la noticia" placeholder="Haz clic para escribir el subtítulo" multiline /></p>
-    <div className="byline">
+    <div className="byline" id={inline ? 'news-field-autores' : undefined}>
       {presentation.mostrarFirma !== false && authors.length > 0 && <span>Por <strong>{authors.map((author, i) => <span key={i}>{i > 0 ? ', ' : ''}<InlineNewsText path={['autores', String(i), 'nombre']} value={author.nombre} label={`Firma ${i + 1}`} /></span>)}</strong></span>}
       {date && Number.isFinite(Date.parse(date)) && <time dateTime={date}>{dateLabel(date)}</time>}
       {presentation.mostrarFechaActualizacion !== false && updated && Number.isFinite(Date.parse(updated)) ? <span data-preview-date="actualizacion"><InlineNewsDate path={['fechas', 'actualizacion']} value={updated} prefix="Actualizado el " /></span> : null}
@@ -255,7 +252,7 @@ export function NewsPreview({ news, onImageChange, blockControls, blockInvalid, 
     <div className="rich">
       {text(news.entradilla) && <p className="preview-lede"><InlineNewsText path={['entradilla']} value={news.entradilla} label="Entradilla" multiline /></p>}
       {body.map((block, i) => block.tipo === 'fuentes' || block.tipo === 'relacionados' ? null :
-        <div key={text(block.id) || i} className={blockControls ? 'composer-preview-block' : undefined} data-news-block={text(block.id) || String(i)} data-preview-block={i} data-invalid={blockInvalid?.(i) || undefined} id={text(block.id) || undefined}>
+        <div key={text(block.id) || i} className={blockControls ? 'composer-preview-block' : undefined} data-news-block={text(block.id) || String(i)} data-preview-block={i} id={text(block.id) || undefined}>
           {blockControls?.(block, i)}
           {renderBlock(block, i, resources, fields(presentation.embeds).habilitados !== false, onImageChange)}
         </div>)}

@@ -1,13 +1,30 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { bulkNewsAction } from '@/app/mesa-editorial-7k4n/bulk-news-actions';
 import { useActionState, useEffect, useId, useRef, useState } from 'react';
 import { changeNewsCategory, changePublicationStatus } from '@/app/mesa-editorial-7k4n/actions';
 
-export function NewsRowActions({ id, title, published, draft = false, download, demo = false, onStatusChange, categoryId, categories, onCategoryChange }: {
-  id: string; title: string; published: boolean; draft?: boolean; download: string; demo?: boolean; onStatusChange?: (published: boolean) => void;
+export function NewsRowActions({ id, title, published, draft = false, download, onDeleted, onStatusChange, categoryId, categories, onCategoryChange }: {
+  id: string; title: string; published: boolean; draft?: boolean; download: string; onDeleted: () => void; onStatusChange?: (published: boolean) => void;
   categoryId: string | null; categories: { id: string; name: string }[]; onCategoryChange: (id: string | null) => void;
 }) {
+  const router = useRouter();
+  const [copyMessage, setCopyMessage] = useState('');
+  const [deleting, setDeleting] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+  const [deleteError, setDeleteError] = useState('');
+  const deleteDialog = useRef<HTMLDialogElement>(null);
+  useEffect(() => { if (deleteOpen) deleteDialog.current?.showModal(); else deleteDialog.current?.close(); }, [deleteOpen]);
+  async function remove() {
+    setDeleting(true); setDeleteError('');
+    try { const result = await bulkNewsAction([id], 'delete');
+      if (result.error) { setDeleteError(result.error); return; }
+      setDeleteOpen(false); onDeleted(); router.refresh();
+    } catch { setDeleteError('No se pudo eliminar. Inténtalo de nuevo.'); }
+    finally { setDeleting(false); }
+  }
   const menuId = useId();
   const menu = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });
@@ -22,7 +39,7 @@ export function NewsRowActions({ id, title, published, draft = false, download, 
     const next = String(form.get('category') ?? '');
     if (!next && !draft) return 'Selecciona una categoría.';
     if (next && !categories.some(category => category.id === next)) return 'Selecciona una categoría existente.';
-    const result = demo ? 'Categoría actualizada.' : await changeNewsCategory(previous, form);
+    const result = await changeNewsCategory(previous, form);
     if (result === 'Categoría actualizada.') { onCategoryChange(next || null); setCategoryOpen(false); }
     return result;
   }, '');
@@ -44,19 +61,23 @@ export function NewsRowActions({ id, title, published, draft = false, download, 
     </button>
     <div ref={menu} id={menuId} popover="auto" className="news-row-menu" style={position}>
       <p>Gestionar noticia</p>
-      {!draft && (demo ? <div className="news-row-menu-options">
-        <button type="button" onClick={() => { onStatusChange?.(!published); menu.current?.hidePopover(); }}>{published ? 'Despublicar' : 'Publicar'}</button>
-      </div> : <form autoComplete="off" action={action}>
+      {!draft && <form autoComplete="off" action={action}>
         <input autoComplete="off" type="hidden" name="id" value={id} />
         <button name="intent" value={published ? 'unpublish' : 'publish'} disabled={pending}>{pending ? 'Actualizando…' : published ? 'Despublicar' : 'Publicar'}</button>
-        {message && <span className="news-action-message" role="status">{message}</span>}
-      </form>)}
-      {demo ? <button type="button" disabled title="Esta noticia es ficticia. Usa las noticias guardadas para editar.">Editar · muestra</button>
-        : <Link href={`/mesa-editorial-7k4n/articulos/${id}`}>Editar</Link>}
+        {message && message !== 'Estado actualizado.' && <span className="news-action-message" role="status">{message}</span>}
+      </form>}
+      {published ? <button type="button" disabled title="Despublica la noticia antes de editarla.">Editar</button> : <Link href={`/mesa-editorial-7k4n/articulos/${id}`}>Editar</Link>}
+      <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(id); setCopyMessage(''); } catch { setCopyMessage('No se pudo copiar el ID.'); } }}>Copiar ID</button>
+      {copyMessage && <span role="status">{copyMessage}</span>}
       <button type="button" onClick={() => { setChoice(categoryId ?? ''); menu.current?.hidePopover(); setCategoryOpen(true); }}>Cambiar categoría</button>
-      {!draft && <a href={download} download={demo ? `${id}.json` : true} onClick={() => menu.current?.hidePopover()}>Descargar JSON</a>}
-      {demo && <small>Cambios de muestra, sin guardar.</small>}
+      {!draft && <a href={download} download onClick={() => menu.current?.hidePopover()}>Descargar JSON</a>}
+      <button type="button" className="danger" onClick={() => { menu.current?.hidePopover(); setDeleteError(''); setDeleteOpen(true); }}>Eliminar</button>
     </div>
+    <dialog ref={deleteDialog} className="category-confirm-dialog" aria-label="Confirmar eliminación" onCancel={event => { if (deleting) event.preventDefault(); else setDeleteOpen(false); }}>
+      <h2>¿Eliminar {draft ? 'borrador' : 'noticia'}?</h2><p>{title}</p><p>Esta acción es definitiva. Los archivos multimedia se conservarán.</p>
+      {deleteError && <p role="alert">{deleteError}</p>}
+      <div className="json-replace-actions"><button type="button" className="json-replace-cancel" autoFocus disabled={deleting} onClick={() => setDeleteOpen(false)}>Cancelar</button><button type="button" className="json-replace-discard" disabled={deleting} onClick={remove}>{deleting ? 'Eliminando…' : 'Eliminar'}</button></div>
+    </dialog>
     <dialog ref={categoryDialog} className="category-confirm-dialog" aria-label={`Cambiar categoría de ${title}`} onCancel={() => setCategoryOpen(false)} onClose={() => { if (!categoryDialog.current?.open) setCategoryOpen(false); }}>
       <h2>Cambiar categoría</h2><p>{title}</p>
       <form autoComplete="off" action={categoryAction} className="stack">

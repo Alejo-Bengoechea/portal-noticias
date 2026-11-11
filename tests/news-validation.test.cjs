@@ -94,9 +94,22 @@ test('un vídeo sin enlace de YouTube válido queda señalado', () => {
   assert.ok(paths(issues).includes('cuerpo.1.url'));
 });
 
+test('un gráfico nuevo nace vacío y no se guarda sin datos', () => {
+  const news = minimalValid();
+  const grafico = createNewsBlock('grafico');
+  assert.deepEqual(grafico.block.datos, []);
+  assert.equal(grafico.block.titulo, '');
+  news.cuerpo.push(grafico.block);
+  assert.ok(paths(validateNewsDocument(news, categories)).includes('cuerpo.1.datos'));
+  grafico.block.titulo = 'Mediciones';
+  grafico.block.datos = [{ x: 'Medición', y: 12 }];
+  assert.deepEqual(validateNewsDocument(news, categories), []);
+});
+
 test('un gráfico con datos de ejemplo sin sustituir queda señalado', () => {
   const news = minimalValid();
   const grafico = createNewsBlock('grafico');
+  grafico.block.muestra = true;
   news.cuerpo.push(grafico.block);
   const issues = validateNewsDocument(news, categories, { requireCategory: true, requireCover: true });
   assert.ok(paths(issues).includes('cuerpo.1.muestra'));

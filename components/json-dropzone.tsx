@@ -1,17 +1,36 @@
 'use client';
 
-import { startTransition, useActionState, useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { startTransition, useActionState, useEffect, useMemo, useRef, useState } from 'react';
 import { parseNewsPreview } from './news-preview';
 import { NewsComposer } from './news-composer';
 import { createNewsDocument, type NewsDocument } from '@/lib/news-components';
-import { validateNewsDocument, type NewsValidationIssue } from '@/lib/news-validation';
+import { validateNewsDocument } from '@/lib/news-validation';
 import { saveNewsDocument } from '@/app/mesa-editorial-7k4n/actions';
+import { NewsValidationPanel } from './news-validation-panel';
 
 type IncomingNews = { name: string; news: ReturnType<typeof parseNewsPreview> };
 type Preview = IncomingNews & { revision: number };
-type EditingArticle = { id: string; name: string; news: NewsDocument };
+type EditingArticle = { draft?: boolean; id: string; name: string; news: NewsDocument };
 
-export function JsonDropzone({ categories = [], article }: { categories?: { id: string; name: string }[]; article?: EditingArticle }) {
+export function JsonDropzone({ categories = [], article, drafts = [], draftsUnavailable = false }: {
+  drafts?: { id: string; title: string }[];
+  draftsUnavailable?: boolean;
+  categories?: { id: string; name: string }[];
+  article?: EditingArticle;
+}) {
+  const editor = useRef<HTMLDivElement>(null);
+  const highlight = useRef<Animation | null>(null);
+  const draftPicker = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    const closeOutside = (event: PointerEvent) => {
+      if (event.target instanceof Node && !draftPicker.current?.contains(event.target) && draftPicker.current) draftPicker.current.open = false;
+    };
+    const closeEscape = (event: KeyboardEvent) => { if (event.key === 'Escape' && draftPicker.current?.open) { draftPicker.current.open = false; draftPicker.current.querySelector('summary')?.focus(); } };
+    document.addEventListener('pointerdown', closeOutside);
+    document.addEventListener('keydown', closeEscape);
+    return () => { document.removeEventListener('pointerdown', closeOutside); document.removeEventListener('keydown', closeEscape); };
+  }, []);
   const input = useRef<HTMLInputElement>(null);
   const errorDialog = useRef<HTMLDialogElement>(null);
   const [jsonError, setJsonError] = useState('');
@@ -29,8 +48,14 @@ export function JsonDropzone({ categories = [], article }: { categories?: { id: 
   const [componentsMode, setComponentsMode] = useState(Boolean(article));
   const selectionVersion = useRef(0);
   const [loading, setLoading] = useState(false);
-  const [issues, setIssues] = useState<NewsValidationIssue[]>([]);
+  const [showValidation, setShowValidation] = useState(false);
+  const [validationAttempt, setValidationAttempt] = useState(0);
+  const issues = useMemo(() => showValidation && preview ? validateNewsDocument(preview.news, categories) : [], [showValidation, preview, categories]);
+  const [saveIntent, setSaveIntent] = useState<'crear' | 'borrador' | null>(null);
   const [saveMessage, dispatchSave, saving] = useActionState(saveNewsDocument, '');
+  const saveError = !saving && saveIntent ? saveMessage : '';
+
+  useEffect(() => () => highlight.current?.cancel(), []);
 
   useEffect(() => {
     if (pending && !confirmation.current?.open) confirmation.current?.showModal();
@@ -45,7 +70,9 @@ export function JsonDropzone({ categories = [], article }: { categories?: { id: 
     setComponentsMode(false);
     setPending(null);
     setError('');
-    setIssues([]);
+    highlight.current?.cancel();
+    setShowValidation(false);
+    setSaveIntent(null);
   }
   function requestOpen(next: IncomingNews) {
     if (latest.current && JSON.stringify(latest.current.news) !== baseline.current) setPending(next);
@@ -68,36 +95,52 @@ export function JsonDropzone({ categories = [], article }: { categories?: { id: 
   }
 
   function jumpTo(path: string[]) {
-    const body = Array.isArray(latest.current?.news.cuerpo) ? latest.current!.news.cuerpo as Record<string, unknown>[] : [];
-    const blockId = path[0] === 'cuerpo' && path[1] !== undefined ? body[Number(path[1])]?.id : undefined;
-    const candidates = typeof blockId === 'string' && blockId
-      ? [`[data-news-block="${CSS.escape(blockId)}"]`]
-      : [`#news-field-${CSS.escape(path.join('-'))}`, `#news-field-${CSS.escape(path[0])}`];
-    for (const selector of candidates) {
-      const target = document.querySelector(selector);
-      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    const root = editor.current;
+    if (!root) return;
+    const inBlock = path[0] === 'cuerpo' && path.length > 1;
+    let target: HTMLElement | null = null;
+    for (let length = path.length; length >= (inBlock ? 2 : 1) && !target; length--) {
+      const id = CSS.escape(`news-field-${path.slice(0, length).join('-')}`);
+      target = root.querySelector<HTMLElement>(`#${id}`);
     }
+    if (!target && inBlock) target = root.querySelector<HTMLElement>(`[data-preview-block="${CSS.escape(path[1])}"]`);
+    if (!target) return;
+
+    highlight.current?.cancel();
+    target.scrollIntoView({ behavior: 'instant', block: 'center', inline: 'nearest' });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const red = { outline: '2px solid #ff687a', outlineOffset: '3px' };
+    const clear = { outline: '2px solid transparent', outlineOffset: '3px' };
+    const animation = target.animate(reducedMotion ? [red, red] : [red, clear, clear], {
+      duration: reducedMotion ? 1300 : 480,
+      iterations: reducedMotion ? 1 : 3,
+    });
+    highlight.current = animation;
+    animation.onfinish = () => { if (highlight.current === animation) highlight.current = null; };
   }
 
   function attempt(action: 'crear' | 'borrador') {
     if (!preview || saving) return;
-    const found = validateNewsDocument(preview.news, categories, { requireCategory: action === 'crear', requireCover: action === 'crear' });
-    setIssues(found);
-    if (found.length) { jumpTo(found[0].path); return; }
+    const found = action === 'borrador' ? [] : validateNewsDocument(preview.news, categories, { requireCategory: true, requireCover: true });
+    highlight.current?.cancel();
+    setValidationAttempt(previous => previous + 1);
+    setShowValidation(found.length > 0);
+    if (found.length) { setSaveIntent(null); return; }
     const data = new FormData();
     data.set('id', article?.id ?? '');
     data.set('intent', action);
     data.set('document', JSON.stringify(preview.news));
+    setSaveIntent(action);
     startTransition(() => dispatchSave(data));
   }
 
-  const strictLabel = article ? 'Guardar cambios' : 'Crear';
+  const strictLabel = article && !article.draft ? 'Guardar cambios' : 'Crear';
 
-  return <div className="news-import">
+  return <div ref={editor} className="news-import">
+    <header className="news-editor-header"><div><p className="eyebrow accent">Creación editorial</p><h1>Editor de noticia</h1></div>
+    </header>
     <input autoComplete="off" ref={input} hidden type="file" accept=".json,application/json" onChange={event => { select(event.currentTarget.files); event.currentTarget.value = ''; }} />
-    {componentsMode && <div className="news-import-topbar"><div className="component-json-shortcut"><button type="button" disabled={loading || Boolean(pending)} onClick={() => input.current?.click()}>↥ Cargar un JSON</button></div></div>}
-    <div className="news-import-entry" data-hidden={componentsMode} inert={componentsMode}>
-      <div className="news-import-controls" data-loaded={Boolean(preview)}>
+    <div className="news-import-controls" data-loaded={Boolean(preview)}>
         <div className="json-upload" data-compact={Boolean(preview)}>
           <button type="button" className="json-dropzone" data-dragging={dragging} disabled={loading}
             onClick={() => input.current?.click()}
@@ -105,31 +148,38 @@ export function JsonDropzone({ categories = [], article }: { categories?: { id: 
             onDragLeave={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setDragging(false); }}
             onDrop={event => { event.preventDefault(); setDragging(false); select(event.dataTransfer.files); }}>
             <svg aria-hidden="true" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M4 16v4h16v-4M12 16V4m-5 5 5-5 5 5" /></svg>
-            <span>{preview ? 'Cambiar archivo JSON' : 'Arrastra un archivo JSON aquí'}</span>
-            <span>{preview ? preview.name : 'o haz clic para seleccionarlo'}</span>
+            <span>{preview ? (componentsMode ? 'Cargar un JSON' : 'Cambiar archivo JSON') : 'Arrastra un archivo JSON aquí'}</span>
+            <span>{preview ? (componentsMode ? 'Arrastra o selecciona un archivo .json' : preview.name) : 'o haz clic para seleccionarlo'}</span>
           </button>
           <p className="json-upload-status" role="status">{error || (loading ? 'Preparando vista previa…' : '')}</p>
         </div>
-        <div className="news-create-alternative"><span>o</span><button type="button" disabled={loading} onClick={() => {
-          selectionVersion.current += 1; setError('');
-          if (!latest.current) {
-            const value = { revision: 1, name: 'noticia-por-componentes.json', news: createNewsDocument() };
-            baseline.current = JSON.stringify(value.news); latest.current = value; setPreview(value);
-          }
-          setComponentsMode(true);
-        }}>Generar en componentes</button></div>
-      </div>
-    </div>
-    {preview && issues.length > 0 && <div className="news-validation-summary" role="alert" aria-live="assertive">
-      <strong>Revisa estos {issues.length === 1 ? 'campo' : 'campos'} antes de continuar</strong>
-      <ul>{issues.map((issue, i) => <li key={i}><button type="button" onClick={() => jumpTo(issue.path)}>{issue.message}</button></li>)}</ul>
+
+      {preview && <div className="news-import-actions news-editor-top-actions" aria-label="Acciones superiores de la noticia">
+      <button type="button" disabled={saving} onClick={() => attempt('crear')}>{saving && saveIntent === 'crear' ? 'Guardando…' : strictLabel}</button>
+      <button type="button" disabled={saving} onClick={() => attempt('borrador')}>{saving && saveIntent === 'borrador' ? 'Guardando…' : 'Guardar borrador'}</button>
     </div>}
-    {preview && saveMessage && <div className="news-validation-summary" role="alert" aria-live="assertive"><strong>No se pudo guardar</strong><p>{saveMessage}</p></div>}
-    {preview && <NewsComposer key={preview.revision} showToolbar={componentsMode} categories={categories} news={preview.news} issues={issues}
+      <details ref={draftPicker} className="saved-drafts-picker"><summary>Abrir borrador <span aria-hidden="true">⌄</span></summary><nav aria-label="Borradores guardados">
+        {drafts.length ? drafts.map(draft => <Link key={draft.id} href={`/mesa-editorial-7k4n/articulos/${draft.id}`} onClick={event => {
+          if (latest.current && JSON.stringify(latest.current.news) !== baseline.current && !window.confirm('Tienes cambios sin guardar. ¿Abrir el borrador y descartarlos?')) event.preventDefault();
+        }}>{draft.title}</Link>) : <p>{draftsUnavailable ? 'No se pudo cargar la lista de borradores.' : 'No hay borradores guardados.'}</p>}
+        <Link href="/mesa-editorial-7k4n/borradores">Ver todos los borradores →</Link>
+      </nav></details>
+      {(!preview || !componentsMode) && <div className="news-create-alternative"><span>o</span><button type="button" disabled={loading} onClick={() => {
+        selectionVersion.current += 1; setError('');
+        if (!latest.current) {
+          const value = { revision: 1, name: 'noticia-por-componentes.json', news: createNewsDocument() };
+          baseline.current = JSON.stringify(value.news); latest.current = value; setPreview(value);
+        }
+        setComponentsMode(true);
+      }}>Generar en componentes</button></div>}
+    </div>
+    {preview && (issues.length > 0 || saveError) && <NewsValidationPanel issues={issues} saveError={saveError}
+      attempt={validationAttempt} onSelect={jumpTo} />}
+    {preview && <NewsComposer key={preview.revision} showToolbar={false} categories={categories} news={preview.news} issues={issues}
       onChange={news => { const value = { ...preview, news }; latest.current = value; setPreview(value); }} />}
     {preview && <div className="news-import-actions news-preview-actions" aria-label="Acciones de la noticia">
-      <button type="button" disabled={saving} onClick={() => attempt('crear')}>{saving ? 'Guardando…' : strictLabel}</button>
-      <button type="button" disabled={saving} onClick={() => attempt('borrador')}>{saving ? 'Guardando…' : 'Guardar borrador'}</button>
+      <button type="button" disabled={saving} onClick={() => attempt('crear')}>{saving && saveIntent === 'crear' ? 'Guardando…' : strictLabel}</button>
+      <button type="button" disabled={saving} onClick={() => attempt('borrador')}>{saving && saveIntent === 'borrador' ? 'Guardando…' : 'Guardar borrador'}</button>
     </div>}
     {componentsMode && <p className="json-upload-status" role="status">{error || (loading ? 'Preparando JSON…' : '')}</p>}
     <dialog ref={errorDialog} className="category-confirm-dialog json-error-dialog" aria-labelledby="json-error-title" onCancel={() => setJsonError('')} onClose={() => setJsonError('')}>

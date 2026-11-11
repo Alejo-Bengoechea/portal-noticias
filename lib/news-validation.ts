@@ -112,6 +112,9 @@ export function validateNewsDocument(
       case 'grafico':
         if (block.muestra === true) fail([...path, 'muestra'], 'Sustituye los datos de ejemplo del gráfico por los de la noticia.');
         if (!text(block.titulo).trim()) fail([...path, 'titulo'], 'El gráfico necesita un título.');
+        if (!Array.isArray(block.datos) || !block.datos.length || block.datos.length > 30 || block.datos.some(point => !object(point) || !text(point.x).trim() || typeof point.y !== 'number' || !Number.isFinite(point.y) || Math.abs(point.y) > 1e12)) {
+          fail([...path, 'datos'], 'Añade entre 1 y 30 datos al gráfico, con nombre y número válido.');
+        }
         break;
       case 'fuentes': {
         const items = list(block.elementos).map(item => object(item) ? item : {});

@@ -23,7 +23,6 @@ export function NewsTable({ block, path }: { block: NewsDocument; path: string[]
         onClick={() => editing.change([...path, 'filas'], rows.filter((_, index) => index !== i))}>×</button></td>}</tr>)}</tbody>
     </table></div>
     {editing && <div className="table-edit-controls">
-      <span>{rows.length} filas · {columns.length} columnas · Máximo 8 × 5</span>
       <button type="button" disabled={columns.length >= 5} onClick={() => {
         if (columns.length >= 5) return;
         const key = `col-${crypto.randomUUID()}`;

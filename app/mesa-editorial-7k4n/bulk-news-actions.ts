@@ -8,9 +8,9 @@ export async function bulkNewsAction(ids: string[], intent: 'delete' | 'publish'
   if (!client) return { error: 'Tu sesión ha caducado. Inicia sesión de nuevo.' };
   const uuid = /^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i;
   if (!Array.isArray(ids) || !ids.length || ids.length > 500 || ids.some(id => typeof id !== 'string' || !uuid.test(id)) || new Set(ids).size !== ids.length || !['delete', 'publish', 'unpublish'].includes(intent)) return { error: 'La selección no es válida (máximo 500 noticias).' };
-  const { data, error } = await client.from('articles').select('id,published_at,ever_published,category_id').in('id', ids);
+  const { data, error } = await client.from('articles').select('id,published_at,ever_published,category_id,editorial_state:body->metadatos->>estado').in('id', ids);
   if (error || data?.length !== ids.length) return { error: 'No se pudieron comprobar todas las noticias seleccionadas. Actualiza la tabla.' };
-  if (intent !== 'delete' && data.some(article => !article.published_at && !article.ever_published)) return { error: 'Los borradores deben abrirse en el editor antes de publicarlos.' };
+  if (intent !== 'delete' && data.some(article => !article.published_at && !article.ever_published && article.editorial_state !== 'despublicado')) return { error: 'Los borradores deben abrirse en el editor antes de publicarlos.' };
   // Solo cambian las noticias cuyo estado cambia: republicar una ya publicada borraría su fecha de publicación original.
   const changes = intent === 'delete' ? data : data.filter(article => intent === 'publish' ? !article.published_at : article.published_at);
   if (intent === 'publish' && changes.some(article => !article.category_id)) return { error: 'Todas las noticias que se van a publicar deben tener una categoría.' };
@@ -18,7 +18,7 @@ export async function bulkNewsAction(ids: string[], intent: 'delete' | 'publish'
   if (!targets.length) return { error: '' };
   const articles = client.from('articles');
   const result = intent === 'delete' ? await articles.delete().in('id', targets).select('id')
-    : intent === 'publish' ? await articles.update({ published_at: new Date().toISOString(), ever_published: true }).in('id', targets).is('published_at', null).eq('ever_published', true).not('category_id', 'is', null).select('id')
+    : intent === 'publish' ? await articles.update({ published_at: new Date().toISOString(), ever_published: true }).in('id', targets).is('published_at', null).or('ever_published.eq.true,body->metadatos->>estado.eq.despublicado').not('category_id', 'is', null).select('id')
     : await articles.update({ published_at: null }).in('id', targets).not('published_at', 'is', null).select('id');
   if (result.error) return { error: 'No se pudo completar la operación. Actualiza la tabla e inténtalo de nuevo.' };
   revalidatePath('/', 'layout');

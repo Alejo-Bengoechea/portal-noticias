@@ -217,7 +217,7 @@ export function InlineNewsDate({ path, value, prefix = '' }: { path: Path; value
 
 export function InlineNewsTags({ tags }: { tags: unknown[] }) {
   const editing = useInlineNewsEditing();
-  return <ul className="tags">
+  return <ul className="tags" id={editing ? 'news-field-metadatos-etiquetas' : undefined}>
     {tags.map((tag, i) => {
       const duplicate = tags.findIndex(other => tagKey(other) === tagKey(tag)) < i;
       return <li key={i} data-duplicate={duplicate} title={duplicate ? 'Esta etiqueta ya existe. Cambia su nombre.' : undefined}>

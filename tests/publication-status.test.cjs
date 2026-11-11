@@ -15,6 +15,7 @@ function setup(rows, { authorized = true, onRead } = {}) {
     constructor() { this.filters = []; }
     select() { return this; }
     in(key, values) { this.filters.push(row => values.includes(row[key])); return this; }
+    or(value) { assert.equal(value, 'ever_published.eq.true,body->metadatos->>estado.eq.despublicado'); this.filters.push(row => row.ever_published === true || row.editorial_state === 'despublicado'); return this; }
     eq(key, value) { this.filters.push(row => row[key] === value); return this; }
     is(key, value) { return this.eq(key, value); }
     not(key, operator, value) { assert.equal(operator, 'is'); this.filters.push(row => row[key] !== value); return this; }
@@ -37,7 +38,7 @@ function setup(rows, { authorized = true, onRead } = {}) {
     '@/lib/supabase': { adminClient: async () => authorized ? client : null },
     'next/cache': { revalidatePath() {} },
     'next/navigation': { redirect() { throw new Error('Unexpected redirect'); } },
-    '@/lib/format': {}, '@/lib/news-manager-demo': {},
+    '@/lib/format': {},
     '@/lib/articles': { getTerms: async () => [] }, '@/lib/news-validation': { validateNewsDocument: () => [] },
   };
   const load = path => {
@@ -107,3 +108,14 @@ for (const mode of ['bulk', 'single']) {
     });
   }
 }
+
+test('una noticia creada nunca publicada permite publicar por fila o en lote', async () => {
+  for (const mode of ['bulk', 'single']) {
+    const rows = [{ ...article(1), ever_published: false, editorial_state: 'despublicado' }];
+    const api = setup(rows);
+    if (mode === 'bulk') assert.equal((await api.bulk([id(1)], 'publish')).error, '');
+    else assert.equal(await api.single(id(1), 'publish'), 'Estado actualizado.');
+    assert.ok(rows[0].published_at);
+    assert.equal(rows[0].ever_published, true);
+  }
+});

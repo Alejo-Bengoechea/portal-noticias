@@ -13,7 +13,6 @@ export function NewsComposer({ news, onChange, categories = [], showToolbar = tr
   const body = news.cuerpo as NewsBlock[];
   const resources = (news.recursos ?? {}) as NewsResources;
   const invalid = new Set(issues.map(issue => issue.path.join('.')));
-  const blockIssues = (index: number) => issues.filter(issue => issue.path[0] === 'cuerpo' && issue.path[1] === String(index));
   const dialog = useRef<HTMLDialogElement>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const root = useRef<HTMLElement>(null);
@@ -74,7 +73,6 @@ export function NewsComposer({ news, onChange, categories = [], showToolbar = tr
 
   function controls(block: NewsBlock, index: number) {
     const name = block.tipo === 'lista' && block.ordenada ? 'Lista numerada' : componentTypes.find(item => item.type === block.tipo)?.name ?? 'Componente';
-    const errors = blockIssues(index);
     return <><div className="component-block-controls" role="group" aria-label={`Opciones de ${name} ${index + 1}`}>
       <button type="button" aria-label={`Subir ${name} ${index + 1}`} disabled={index === 0}
         onClick={() => move(index, -1)}>↑</button>
@@ -85,16 +83,15 @@ export function NewsComposer({ news, onChange, categories = [], showToolbar = tr
         update({ ...news, cuerpo: body.filter((_, position) => position !== index) });
       }}>Quitar</button>
     </div>
-    {errors.length > 0 && <p className="composer-block-error" role="alert">{errors.map(error => error.message).join(' ')}</p>}
     <button className="component-insert-between component-insert-first" type="button" onClick={() => add(index)} aria-label={`Añadir componente antes de ${name} ${index + 1}`}>＋</button>{index < body.length - 1 && <button className="component-insert-between" type="button" onClick={() => add(index + 1)} aria-label={`Añadir componente después de ${name} ${index + 1}`}>＋</button>}</>;
   }
 
   return <section ref={root} className="news-composer">
     {showToolbar && <div className="composer-toolbar">
-      <div><p className="eyebrow accent">Creación editorial</p><h1 ref={heading} tabIndex={-1}>Noticia por componentes</h1></div>
+      <div><p className="eyebrow accent">Creación editorial</p><h1 ref={heading} tabIndex={-1}>Editor de noticia</h1></div>
     </div>}
     {removed && <div className="composer-undo" role="status">
-      Componente retirado.
+
       <button type="button" onClick={() => {
         const next = [...body];
         next.splice(Math.min(removed.index, next.length), 0, removed.block);
@@ -103,10 +100,9 @@ export function NewsComposer({ news, onChange, categories = [], showToolbar = tr
       }}>Deshacer</button>
     </div>}
     <InlineNewsEditor news={news} onChange={update} categories={categories} invalid={invalid}>
-      <NewsPreview news={news} blockControls={controls} blockInvalid={index => blockIssues(index).length > 0}
+      <NewsPreview news={news} blockControls={controls}
         addComponent={<div id="news-field-cuerpo" className="composer-add-row">
           <button type="button" onClick={() => add(body.length)}>＋ Añadir componente</button>
-          {invalid.has('cuerpo') && <p className="composer-block-error" role="alert">Añade al menos un componente al cuerpo de la noticia.</p>}
         </div>}
         onImageChange={(id, url) => update({
           ...news,

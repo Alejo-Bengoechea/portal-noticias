@@ -1,6 +1,6 @@
 import { getTerms } from './articles';
 import { adminClient } from './supabase';
-import { demoNews, demoCategories, type ManagedNews } from './news-manager-demo';
+import type { ManagedNews } from './managed-news';
 
 export type NewsQuery = { q?: string; estado?: string; orden?: string; datos?: string; vista?: string };
 const sorts: Record<string, { label: string; column: string; ascending: boolean }> = {
@@ -20,41 +20,22 @@ export async function managedNewsBatch(params: NewsQuery, offset: number, client
   const requestedSort = Object.hasOwn(sorts, params.orden ?? '') ? params.orden! : drafts ? 'actualizadas' : 'recientes';
   const sort = drafts && ['recientes', 'antiguas'].includes(requestedSort) ? 'actualizadas' : requestedSort;
   const sorting = sorts[sort];
-  const demo = params.datos !== 'reales';
   const start = offset;
   let data: ManagedNews[] = [];
   let count = 0;
   let error: { code: string } | null = null;
-  let categories: { id: string; name: string }[] = demoCategories;
-  if (demo) {
-    const actual = await getTerms('categories');
-    categories = actual.length ? actual : demoCategories;
-    const associated = demoNews.map(article => ({ ...article,
-      category_id: actual.find(category => category.slug === article.category_id)?.id ?? article.category_id,
-    }));
-    const term = q.toLocaleLowerCase('es');
-    const filtered = associated.filter(article => {
-      const status = article.published_at ? 'publicado' : article.ever_published ? 'despublicado' : 'borrador';
-      return (drafts ? status === 'borrador' : status !== 'borrador') && (!state || state === status) && (!term || article.title.toLocaleLowerCase('es').includes(term) || article.id.toLowerCase().includes(term));
-    });
-    const value = (article: ManagedNews) => sorting.column === 'category(name)'
-      ? categories.find(category => category.id === article.category_id)?.name ?? ''
-      : article[sorting.column as 'created_at' | 'updated_at'] ?? '';
-    filtered.sort((a, b) => value(a).localeCompare(value(b), 'es') * (sorting.ascending ? 1 : -1));
-    count = filtered.length;
-    data = filtered.slice(start, start + 15);
-  } else {
-  let request = client.from('articles').select('id,title,slug,published_at,featured,category_id,created_at,updated_at,ever_published,category:categories(name)', { count: 'exact' });
+  let categories: { id: string; name: string }[] = [];
+  let request = client.from('articles').select('id,title,slug,published_at,featured,category_id,created_at,updated_at,ever_published,editorial_state:body->metadatos->>estado,category:categories(name)', { count: 'exact' });
   if (q) {
     const term = q.replace(/[^\p{L}\p{N}\s-]/gu, ' ').trim();
     if (/^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$/i.test(q)) request = request.or(`id.eq.${q},title.ilike.%${q}%`);
     else if (term) request = request.ilike('title', `%${term}%`);
     else request = request.eq('id', '00000000-0000-0000-0000-000000000000');
   }
-  if (!drafts && !state) request = request.or('published_at.not.is.null,ever_published.eq.true');
+  if (!drafts && !state) request = request.or('published_at.not.is.null,ever_published.eq.true,body->metadatos->>estado.eq.despublicado');
   if (state === 'publicado') request = request.not('published_at', 'is', null);
-  if (state === 'despublicado') request = request.is('published_at', null).eq('ever_published', true);
-  if (state === 'borrador') request = request.is('published_at', null).eq('ever_published', false);
+  if (state === 'despublicado') request = request.is('published_at', null).or('ever_published.eq.true,body->metadatos->>estado.eq.despublicado');
+  if (state === 'borrador') request = request.is('published_at', null).eq('ever_published', false).or('body->metadatos->>estado.is.null,body->metadatos->>estado.neq.despublicado');
   const [result, terms] = await Promise.all([
     request.order(sorting.column, { ascending: sorting.ascending, nullsFirst: false }).order('id').range(start, start + 14),
     getTerms('categories'),
@@ -64,6 +45,5 @@ export async function managedNewsBatch(params: NewsQuery, offset: number, client
     count = result.count ?? 0;
     error = result.error;
     categories = terms;
-  }
-  return { data, count, categories, error, q, state, sort, sorting, demo, drafts, view };
+  return { data, count, categories, error, q, state, sort, sorting, drafts, view };
 }

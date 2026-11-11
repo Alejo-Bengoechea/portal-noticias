@@ -68,10 +68,10 @@ export function createNewsBlock(type: ComponentType): { block: NewsBlock; resour
     embed: { titulo: 'Contenido externo', alternativa: { texto: 'Descripción del contenido.', url: '' } },
     cifras: { elementos: [{ valor: 0, unidad: '', etiqueta: 'Descripción de la cifra' }] },
     tabla: { titulo: '', columnas: [{ clave: 'col-1', etiqueta: 'Columna 1' }, { clave: 'col-2', etiqueta: 'Columna 2' }], filas: [{ 'col-1': '', 'col-2': '' }] },
-    grafico: { titulo: 'Comparativa por categoría', variante: 'barras', unidad: '', fuente: '', descripcionAccesible: '', muestra: true, datos: [{ id: crypto.randomUUID(), x: 'Categoría A', y: 42 }, { id: crypto.randomUUID(), x: 'Categoría B', y: 68 }, { id: crypto.randomUUID(), x: 'Categoría C', y: 55 }] },
+    grafico: { titulo: '', variante: 'barras', unidad: '', fuente: '', descripcionAccesible: '', datos: [] },
     cronologia: { eventos: [{ fecha: new Date().toISOString().slice(0, 10), titulo: 'Acontecimiento', texto: '' }] },
     encuesta: { pregunta: '¿Qué quieres preguntar?', modo: 'demostracion', activa: false, opciones: [{ id: crypto.randomUUID(), texto: 'Opción 1' }, { id: crypto.randomUUID(), texto: 'Opción 2' }] },
-    nota_editorial: { titulo: 'Nota de la edición', texto: 'Escribe la nota.', icono: 'info', color: 'rojo' },
+    nota_editorial: { titulo: 'Nota de la edición', texto: '', icono: 'info', color: 'rojo' },
     fuentes: { elementos: [{ id: crypto.randomUUID(), titulo: '', url: '' }] },
     correccion: { titulo: 'Corrección', fecha: new Date().toISOString().slice(0, 10), texto: '' },
   };

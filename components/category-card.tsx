@@ -1,10 +1,14 @@
 'use client';
 
-import { startTransition, useActionState, useEffect, useRef, useState } from 'react';
+import { startTransition, useActionState, useEffect, useId, useRef, useState } from 'react';
 import { manageTerm } from '@/app/mesa-editorial-7k4n/actions';
 import type { Term } from '@/lib/articles';
 
-export function CategoryCard({ category }: { category: Term & { articleCount: number; demoArticleCount?: number } }) {
+export function CategoryCard({ category, selected, onSelect }: { selected: boolean; onSelect: () => void; category: Term & { articleCount: number } }) {
+  const [editing, setEditing] = useState(false);
+  const nameInput = useRef<HTMLInputElement>(null);
+  useEffect(() => { if (editing) nameInput.current?.focus(); }, [editing]);
+  const formId = useId();
   const original = category.name.toLocaleUpperCase('es');
   const [name, setName] = useState(original);
   const [saved, setSaved] = useState(original);
@@ -20,39 +24,42 @@ export function CategoryCard({ category }: { category: Term & { articleCount: nu
   const [message, action, pending] = useActionState(async (previous: string, form: FormData) => {
     try {
       const result = await manageTerm(previous, form);
-      if (result === 'Cambio guardado.' && form.get('intent') !== 'delete') setSaved(String(form.get('name')).trim());
+      if (result === 'Cambio guardado.' && form.get('intent') !== 'delete') { setSaved(String(form.get('name')).trim()); setEditing(false); }
       return result;
     } finally { setSubmittedName(null); }
   }, '');
   const dirty = name.trim() !== saved;
   const blocked = category.articleCount > 0;
   const reason = 'No se puede eliminar: esta categoría tiene noticias asociadas.';
-  function cancel() { setName(saved); setIntent(null); }
-  return <section className="category-card" aria-label={`Categoría ${original}`}>
-    <div className="category-card-heading"><span aria-hidden="true">◇</span><span>{category.articleCount} {category.articleCount === 1 ? 'noticia' : 'noticias'}</span></div>
-    {!!category.demoArticleCount && <small className="category-demo-count">{category.demoArticleCount} de muestra · {category.articleCount - category.demoArticleCount} guardadas</small>}
-    <form autoComplete="off" ref={formRef} className="category-inline-form" onSubmit={event => {
+  function cancel() { setName(saved); setIntent(null); setEditing(false); }
+  return <tr className="category-table-row" aria-label={`Categoría ${original}`} data-selected={selected}>
+    <td className="manager-center"><input autoComplete="off" type="checkbox" aria-label={`Seleccionar ${original}`} checked={selected} onChange={onSelect} /></td>
+    <td>
+    <form id={formId} autoComplete="off" ref={formRef} className="category-inline-form" onSubmit={event => {
       event.preventDefault();
       const intent = ((event.nativeEvent as SubmitEvent).submitter as HTMLButtonElement | null)?.value;
       if (intent === 'delete' && blocked) return;
       setIntent(intent === 'delete' ? 'delete' : 'save');
     }}>
       <input autoComplete="off" type="hidden" name="id" value={category.id} /><input autoComplete="off" type="hidden" name="table" value="categories" />
-      <h3><input autoComplete="off" className="category-inline-name" aria-label={`Nombre de la categoría ${original}`} title="Haz clic para editar el nombre"
+      <h3>{editing ? <input ref={nameInput} autoComplete="off" className="category-inline-name" aria-label={`Nombre de la categoría ${original}`} title="Nombre de la categoría"
         name="name" value={name} maxLength={60} required disabled={pending} onChange={event => setName(event.target.value.toLocaleUpperCase('es'))}
         onKeyDown={event => {
           if (event.key === 'Enter') { event.preventDefault(); if (dirty && name.trim()) setIntent('save'); }
-          if (event.key === 'Escape') { setName(saved); event.currentTarget.blur(); }
-        }} /></h3>
-      <div className="category-card-actions">
-        <span className="category-delete-control" title={blocked ? reason : undefined}>
-          <button type="submit" className="danger" name="intent" value="delete" formNoValidate disabled={pending || blocked}>Eliminar</button>
+          if (event.key === 'Escape') { setName(saved); setEditing(false); event.currentTarget.blur(); }
+        }} /> : <span>{saved}</span>}</h3>
+    </form></td>
+    <td className="manager-center">{category.articleCount}</td>
+    <td><div className="category-card-actions">
+        {!editing && <button type="button" disabled={pending} onClick={() => setEditing(true)}>Editar</button>}
+        {editing && <button type="button" disabled={pending} onClick={cancel}>Cancelar</button>}
+        {!editing && <span className="category-delete-control" title={blocked ? reason : undefined}>
+          <button form={formId} type="submit" className="danger" name="intent" value="delete" formNoValidate disabled={pending || blocked}>Eliminar</button>
           {blocked && <span role="tooltip" className="category-delete-tooltip">{reason}</span>}
-        </span>
-        {dirty && !submittedName && name.trim() && <button type="submit" name="intent" value="save">Guardar</button>}
+        </span>}
+        {dirty && !submittedName && name.trim() && <button form={formId} type="submit" name="intent" value="save">Guardar</button>}
       </div>
       {message && message !== 'Cambio guardado.' && <p role="status">{message}</p>}
-    </form>
     <dialog className="category-confirm-dialog" ref={dialog} aria-label="Confirmar cambio de categoría"
       onCancel={cancel} onClose={() => { if (!dialog.current?.open) setIntent(null); }}>
       <h2>{intent === 'delete' ? 'Eliminar categoría' : 'Guardar categoría'}</h2>
@@ -69,5 +76,6 @@ export function CategoryCard({ category }: { category: Term & { articleCount: nu
         }}>Confirmar</button>
       </div>
     </dialog>
-  </section>;
+    </td>
+  </tr>;
 }

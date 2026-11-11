@@ -15,7 +15,7 @@ function SourceRow({ source, index, path, onRemove, initiallyOpen = false }: { s
     if (!open) { setTitle(String(source.titulo ?? '')); setUrl(String(source.url ?? '')); setError(''); }
   }, [source.titulo, source.url, open]);
   const href = webUrl(source.url);
-  return <li className="source-preview-item">
+  return <li className="source-preview-item" id={editing ? `news-field-${path.join('-')}-titulo` : undefined}>
     {href ? <a href={href} rel="noreferrer" target={editing ? '_blank' : undefined}>{String(source.titulo ?? '') || href}</a> : String(source.titulo ?? '')}
     {editing && <div className="source-preview-controls">
       <button type="button" aria-label={`Editar fuente ${index + 1}`} onClick={() => setOpen(!open)}>Editar</button>

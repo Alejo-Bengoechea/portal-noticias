@@ -4,7 +4,6 @@ import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { adminClient, sessionClient } from '@/lib/supabase';
 import { slugify, webUrl } from '@/lib/format';
-import { demoCategoryCount } from '@/lib/news-manager-demo';
 import { getTerms } from '@/lib/articles';
 import { validateNewsDocument } from '@/lib/news-validation';
 
@@ -97,8 +96,17 @@ export async function saveNewsDocument(_: string, form: FormData): Promise<strin
   } catch {
     return 'El documento de la noticia no es válido.';
   }
+  let existing: { body_format: string; published_at: string | null; ever_published: boolean } | null = null;
+  if (id) {
+    const result = await client.from('articles').select('body_format,published_at,ever_published').eq('id', id).single();
+    if (result.error || !result.data) return 'No se encontró la publicación.';
+    existing = result.data;
+    if (existing.body_format !== 'editorial') return 'Esta noticia se edita con el editor clásico.';
+  }
+  const incompleteDraft = intent === 'borrador' && !existing?.published_at && !existing?.ever_published;
+  if (!Array.isArray(news.cuerpo) || !Array.isArray(news.autores) || !news.recursos || typeof news.recursos !== 'object' || Array.isArray(news.recursos)) return 'La estructura del documento no es válida.';
   const categories = await getTerms('categories');
-  const issues = validateNewsDocument(news, categories, { requireCategory: intent === 'crear', requireCover: intent === 'crear' });
+  const issues = incompleteDraft ? [] : validateNewsDocument(news, categories, { requireCategory: true, requireCover: true });
   if (issues.length) return `Revisa ${issues.length === 1 ? 'este campo' : 'estos campos'} antes de guardar: ${issues[0].message}`;
 
   const metadata = news.metadatos && typeof news.metadatos === 'object' && !Array.isArray(news.metadatos) ? news.metadatos as Record<string, unknown> : {};
@@ -106,14 +114,14 @@ export async function saveNewsDocument(_: string, form: FormData): Promise<strin
   let categoryId: string | null = null;
   if (seccion) {
     const match = categories.find(category => category.name.toLocaleUpperCase('es') === seccion.toLocaleUpperCase('es'));
-    if (!match) return 'La categoría seleccionada ya no existe. Elige otra.';
-    categoryId = match.id;
+    if (!match && !incompleteDraft) return 'La categoría seleccionada ya no existe. Elige otra.';
+    categoryId = match?.id ?? null;
   }
   const authors = Array.isArray(news.autores) ? news.autores as unknown[] : [];
   const author = authors.map(value => value && typeof value === 'object' ? String((value as Record<string, unknown>).nombre ?? '').trim() : '')
     .filter(Boolean).join(', ').slice(0, 100);
   const title = String(news.titular ?? '').trim();
-  if (!author || !title) return 'Revisa el titular y la firma.';
+  if (!incompleteDraft && (!author || !title)) return 'Revisa el titular y la firma.';
   const subtitle = String(news.subtitulo ?? '').trim();
   const resources = news.recursos && typeof news.recursos === 'object' && !Array.isArray(news.recursos) ? news.recursos as Record<string, Record<string, unknown>> : {};
   const portada = news.portada && typeof news.portada === 'object' && !Array.isArray(news.portada) ? news.portada as Record<string, unknown> : null;
@@ -122,7 +130,7 @@ export async function saveNewsDocument(_: string, form: FormData): Promise<strin
   const coverAlt = coverResource && typeof coverResource.alt === 'string' ? coverResource.alt : '';
 
   const base = {
-    title, subtitle, author, body: news, body_format: 'editorial' as const,
+    title: title.slice(0, 160) || 'Borrador sin título', subtitle, author: author || 'Sin firma', body: { ...news, metadatos: { ...metadata, estado: intent === 'crear' || existing?.ever_published ? 'despublicado' : 'borrador' } }, body_format: 'editorial' as const,
     category_id: categoryId, tag_ids: [] as string[], cover_url: coverUrl, cover_alt: coverAlt, featured: false,
   };
   if (id) {
@@ -130,12 +138,12 @@ export async function saveNewsDocument(_: string, form: FormData): Promise<strin
     if (readError || !existing) return 'No se encontró la publicación.';
     if (existing.body_format !== 'editorial') return 'Esta noticia no se puede editar desde el creador nuevo.';
     if (!categoryId && (existing.published_at || existing.ever_published)) return 'Selecciona una categoría. Solo los borradores pueden quedar sin categoría.';
-    const { error } = await client.from('articles').update(base).eq('id', id).select('id').single();
+    const { error } = await client.from('articles').update({ ...base, ...(intent === 'crear' && !existing.ever_published ? { slug: slugify(title) } : {}) }).eq('id', id).select('id').single();
     if (error) return 'No se pudo guardar la noticia.';
     revalidatePath('/', 'layout');
     redirect(`/mesa-editorial-7k4n/articulos/${id}`);
   }
-  const { data, error } = await client.from('articles').insert({ ...base, slug: slugify(title), published_at: null }).select('id').single();
+  const { data, error } = await client.from('articles').insert({ ...base, slug: incompleteDraft ? `borrador-${crypto.randomUUID()}` : slugify(title), published_at: null }).select('id').single();
   if (error?.code === '23505') return 'Ya existe una publicación con un identificador de URL muy parecido. Cambia el titular.';
   if (error) return 'No se pudo guardar la noticia.';
   revalidatePath('/', 'layout');
@@ -165,9 +173,6 @@ export async function manageTerm(_: string, form: FormData): Promise<string> {
     const { count, error } = await client.from('articles').select('id', { count: 'exact', head: true }).eq('category_id', id);
     if (error || count === null) return 'No se pudo comprobar si la categoría tiene noticias.';
     if (count) return 'No se puede eliminar: esta categoría tiene noticias asociadas.';
-    const { data, error: categoryError } = await client.from('categories').select('slug').eq('id', id).single();
-    if (categoryError || !data) return 'No se pudo comprobar la categoría.';
-    if (demoCategoryCount(data.slug)) return 'No se puede eliminar: esta categoría tiene noticias de muestra asociadas.';
   }
   const { error } = remove ? await client.from(table).delete().eq('id', id)
     : id ? await client.from(table).update(table === 'categories' ? { name } : { name, slug }).eq('id', id)
@@ -183,11 +188,11 @@ export async function changePublicationStatus(_: string, form: FormData): Promis
   const id = field(form, 'id');
   const intent = field(form, 'intent');
   if (!client || !uuid.test(id) || !['publish', 'unpublish'].includes(intent)) return 'No se pudo autorizar el cambio.';
-  const { data, error: readError } = await client.from('articles').select('published_at,ever_published,category_id').eq('id', id).single();
+  const { data, error: readError } = await client.from('articles').select('published_at,ever_published,category_id,editorial_state:body->metadatos->>estado').eq('id', id).single();
   if (readError || !data) return 'No se encontró la noticia.';
   if (intent === 'publish') {
     if (data.published_at) return 'La noticia ya está publicada.';
-    if (!data.ever_published) return 'Los borradores deben editarse antes de publicarlos.';
+    if (!data.ever_published && data.editorial_state !== 'despublicado') return 'Los borradores deben editarse antes de publicarlos.';
     if (!data.category_id) return 'Selecciona una categoría antes de publicar la noticia.';
   } else if (!data.published_at) return 'La noticia no está publicada.';
   const row = intent === 'publish'
@@ -195,7 +200,7 @@ export async function changePublicationStatus(_: string, form: FormData): Promis
     : { published_at: null };
   const request = client.from('articles').update(row).eq('id', id);
   const { error } = intent === 'publish'
-    ? await request.is('published_at', null).eq('ever_published', true).not('category_id', 'is', null).select('id').single()
+    ? await request.is('published_at', null).or('ever_published.eq.true,body->metadatos->>estado.eq.despublicado').not('category_id', 'is', null).select('id').single()
     : await request.not('published_at', 'is', null).select('id').single();
   if (error?.code === 'PGRST116') return 'La noticia cambió durante la operación. Actualiza la tabla y comprueba su estado.';
   if (error) return 'No se pudo cambiar el estado de la noticia.';
@@ -208,15 +213,15 @@ export async function changeNewsCategory(_: string, form: FormData): Promise<str
   const id = field(form, 'id');
   const category = field(form, 'category');
   if (!client || !uuid.test(id) || category && !uuid.test(category)) return 'No se pudo autorizar el cambio.';
-  const { data: article, error } = await client.from('articles').select('published_at,ever_published').eq('id', id).single();
+  const { data: article, error } = await client.from('articles').select('published_at,ever_published,editorial_state:body->metadatos->>estado').eq('id', id).single();
   if (error || !article) return 'No se encontró la noticia.';
-  if (!category && (article.published_at || article.ever_published)) return 'Solo los borradores pueden quedar sin categoría.';
+  if (!category && (article.published_at || article.ever_published || article.editorial_state === 'despublicado')) return 'Solo los borradores pueden quedar sin categoría.';
   if (category) {
     const { data, error } = await client.from('categories').select('id').eq('id', category).maybeSingle();
     if (error || !data) return 'Selecciona una categoría existente.';
   }
   let request = client.from('articles').update({ category_id: category || null }).eq('id', id);
-  if (!category) request = request.is('published_at', null).eq('ever_published', false);
+  if (!category) request = request.is('published_at', null).eq('ever_published', false).or('body->metadatos->>estado.is.null,body->metadatos->>estado.neq.despublicado');
   const result = await request.select('id').single();
   if (result.error) return 'No se pudo cambiar la categoría. Actualiza la tabla e inténtalo de nuevo.';
   revalidatePath('/', 'layout');

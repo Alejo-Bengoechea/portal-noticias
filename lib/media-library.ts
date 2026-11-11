@@ -2,8 +2,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 
 export type MediaAsset = { path: string; url: string; size: number | null; mime: string; created: string; links: { id: string; title: string; cover: boolean }[] };
 
-export async function mediaLibrary(client: SupabaseClient): Promise<MediaAsset[]> {
-  const bucket = client.storage.from('editorial');
+export async function listEditorialAssets(bucket: ReturnType<SupabaseClient['storage']['from']>): Promise<MediaAsset[]> {
   const assets: MediaAsset[] = [];
   const folders = [''];
   for (let folderIndex = 0; folderIndex < folders.length; folderIndex++) {
@@ -20,6 +19,12 @@ export async function mediaLibrary(client: SupabaseClient): Promise<MediaAsset[]
       if (!data || data.length < 100) break;
     }
   }
+  return assets;
+}
+
+export async function mediaLibrary(client: SupabaseClient): Promise<MediaAsset[]> {
+  const bucket = client.storage.from('editorial');
+  const assets = await listEditorialAssets(bucket);
   const paths = new Map(assets.map(asset => [asset.path, asset]));
   const base = new URL(bucket.getPublicUrl('probe').data.publicUrl);
   function references(value: unknown, found: Set<string>) {

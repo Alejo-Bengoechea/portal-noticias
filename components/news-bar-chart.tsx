@@ -65,7 +65,7 @@ export function NewsBarChart({ block, path }: { block: NewsDocument; path: strin
           <button type="button" aria-label={`Eliminar dato ${i + 1}`} disabled={rows.length <= 1} onClick={() => setRows(previous => previous.filter((_, index) => index !== i))}>×</button>
         </div>)}
       </div>
-      <button className="chart-add-row" type="button" disabled={rows.length >= 30} onClick={() => setRows(previous => [...previous, { id: crypto.randomUUID(), x: 'Nueva categoría', y: '0' }])}>＋ Añadir dato</button>
+      <button className="chart-add-row" type="button" disabled={rows.length >= 30} onClick={() => setRows(previous => [...previous, { id: crypto.randomUUID(), x: '', y: '' }])}>＋ Añadir dato</button>
       <label>Descripción (opcional)<textarea autoComplete="off" aria-label="Descripción del gráfico" value={description} rows={2} maxLength={300} onChange={event => setDescription(event.target.value)} /></label>
       <label>Fuente (opcional)<input autoComplete="off" aria-label="Fuente del gráfico" value={source} maxLength={180} placeholder="Institución o documento de origen" onChange={event => setSource(event.target.value)} /></label>
       {error && <p role="alert">{error}</p>}

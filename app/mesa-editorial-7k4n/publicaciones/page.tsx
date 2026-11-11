@@ -6,10 +6,10 @@ import { InfiniteNewsManager } from '@/components/infinite-news-manager';
 import { managedNewsBatch, type NewsQuery } from '@/lib/news-management';
 
 export default async function NewsManager({ searchParams }: { searchParams: Promise<NewsQuery> }) {
-  const [client] = await Promise.all([adminClient(), getTerms('categories')]);
+  const client = await adminClient();
   if (!client) redirect('/mesa-editorial-7k4n/login');
-  const { data, count, categories, error, q, state, sort, sorting, demo, drafts, view } = await managedNewsBatch(await searchParams, 0, client);
-  const mode = demo ? 'ejemplo' : 'reales';
+  const { data, count, categories, error, q, state, sort, sorting, drafts, view } = await managedNewsBatch(await searchParams, 0, client);
+  const mode = 'reales';
   const base = drafts ? '/mesa-editorial-7k4n/borradores' : '/mesa-editorial-7k4n/publicaciones';
   const query = { q, estado: state, orden: sort, datos: mode, vista: view };
   const listKey = new URLSearchParams(query).toString();
@@ -19,7 +19,6 @@ export default async function NewsManager({ searchParams }: { searchParams: Prom
   });
   return <>
     <h1 className="sr-only">{drafts ? 'Gestor de borradores' : 'Gestor de noticias'}</h1>
-    <p className="manager-data-mode">{demo ? '30 noticias ficticias de muestra.' : 'Noticias guardadas en Supabase.'} <Link href={`${base}?${new URLSearchParams({ ...query, datos: demo ? 'reales' : 'ejemplo' })}`}>{demo ? 'Ver noticias guardadas' : 'Ver datos de muestra'}</Link></p>
     <form autoComplete="off" className="news-manager-toolbar" action={base}>
       <input autoComplete="off" type="hidden" name="vista" value={view} />
       <input autoComplete="off" type="hidden" name="datos" value={mode} />
@@ -33,13 +32,12 @@ export default async function NewsManager({ searchParams }: { searchParams: Prom
     </form>
     {error ? <p className="panel">Para habilitar esta tabla, aplica la migración 202611070004_news_management.sql en Supabase.</p> : <>
       <p className="manager-count">{count} {drafts ? 'borradores' : 'noticias creadas'}{q || (!drafts && state) ? ' encontrados' : ''}</p>
-      {!demo && drafts && <p className="manager-data-mode">Los borradores locales del editor se recuperan desde Nueva noticia; esta tabla muestra los guardados en Supabase.</p>}
-      <InfiniteNewsManager key={`${listKey}:${count}`} initialArticles={data} total={count} query={query} categories={categories} demo={demo} drafts={drafts} sortHeaders={{
+      <InfiniteNewsManager key={`${listKey}:${count}`} initialArticles={data} total={count} query={query} categories={categories} drafts={drafts} sortHeaders={{
         category: sortHeader('category(name)', 'categoria', 'categoria_desc'),
         created: sortHeader('created_at', 'antiguas', 'recientes'),
         updated: sortHeader('updated_at', 'actualizadas_asc', 'actualizadas'),
       }} />
-      {!data.length && <p className="empty">{drafts ? 'No hay borradores que coincidan con esta búsqueda.' : 'No hay noticias creadas que coincidan con esta búsqueda.'}</p>}
+      {!data.length && <p className="empty editorial-empty">{drafts ? 'No hay borradores que coincidan con esta búsqueda.' : 'No hay noticias creadas que coincidan con esta búsqueda.'}</p>}
     </>}
   </>;
 }

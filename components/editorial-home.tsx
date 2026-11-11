@@ -39,6 +39,6 @@ export function EditorialHome({ data }: { data: EditorialHomeData }) {
         </> : <div className="home-empty home-cover-empty"><span className="home-empty-icon" aria-hidden="true">▧</span><h3>Tu portada está por escribir.</h3><p>La noticia destacada aparecerá aquí cuando esté publicada.</p><Link href={`${base}/publicaciones?datos=reales`}>Ver noticias guardadas →</Link></div>}
       </section>
     </div>
-    <p className="home-data-note">Resumen de tus noticias guardadas. Las noticias de muestra del gestor no se incluyen.</p>
+    <p className="home-data-note">Resumen de tus noticias guardadas en Supabase.</p>
   </section>;
 }

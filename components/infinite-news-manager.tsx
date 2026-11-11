@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ComponentProps } from 'r
 import { NewsManagerTable } from './news-manager-table';
 import { loadMoreNews } from '@/app/mesa-editorial-7k4n/news-actions';
 import type { NewsQuery } from '@/lib/news-management';
-import type { ManagedNews } from '@/lib/news-manager-demo';
+import type { ManagedNews } from '@/lib/managed-news';
 
 export function InfiniteNewsManager({ initialArticles, total, query, ...tableProps }: {
   initialArticles: ManagedNews[]; total: number; query: NewsQuery;
@@ -52,7 +52,7 @@ export function InfiniteNewsManager({ initialArticles, total, query, ...tablePro
     <NewsManagerTable articles={articles} {...tableProps} />
     <div ref={sentinel} className="manager-load-more" role="status" aria-live="polite">
       {error ? <>{error}<button type="button" onClick={() => void load()}>Reintentar</button></>
-        : loading ? 'Cargando 15 noticias más…' : hasMore ? 'Desplázate hasta el final para cargar más noticias.' : `${articles.length} noticias cargadas.`}
+        : loading ? 'Cargando 15 noticias más…' : hasMore ? 'Desplázate hasta el final para cargar más noticias.' : ''}
     </div>
   </>;
 }

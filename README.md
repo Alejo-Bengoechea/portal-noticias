@@ -1,12 +1,12 @@
 # Alejo Bengoechea · Periodismo y análisis
 
-El proyecto se desarrolla con dos asistentes de código, Codex y Claude Code, con Codex como coordinador de integración y Claude Code como colaborador, según lo indicado por el usuario. [CONTEXTO_IA.md](CONTEXTO_IA.md) es la referencia común e incluye el protocolo para trabajar juntos (§1.1). Codex entra por [AGENTS.md](AGENTS.md) y Claude Code por [CLAUDE.md](CLAUDE.md). Contexto consolidado al 9 de noviembre de 2026.
+El proyecto se desarrolla con dos asistentes de código, Codex y Claude Code, con Codex como coordinador de integración y Claude Code como colaborador, según lo indicado por el usuario. [CONTEXTO_IA.md](CONTEXTO_IA.md) es la referencia común e incluye el protocolo para trabajar juntos (§1.1). Codex entra por [AGENTS.md](AGENTS.md) y Claude Code por [CLAUDE.md](CLAUDE.md). Contexto consolidado al 11 de noviembre de 2026.
 
-El creador nuevo por JSON/componentes es una previsualización editable: sus botones generales Crear y Guardar borrador siguen deshabilitados y no guardan en Supabase. El aviso al sustituir un trabajo permite guardar una copia local recuperable; no hay autoguardado general. El editor de noticias ya guardadas sí tiene persistencia. Las 30 noticias del gestor de muestra son ficticias y no son filas de Supabase.
+El creador permite editar una noticia importada desde JSON o construirla con componentes. **Guardar borrador** guarda el trabajo en Supabase y admite campos incompletos en noticias nunca publicadas. **Crear** valida el contenido y guarda la noticia lista para publicar desde el gestor. Los errores aparecen en una checklist flotante que lleva a cada campo. El selector **Abrir borrador** muestra borradores editoriales guardados. Si falla la consulta, el editor abre y el selector avisa.
 
-El inicio reúne resumen real, borradores recientes y portada. El menú incluye gestores separados de noticias/borradores, Organización (agenda e ideas), Fuentes (directorio privado) y Multimedia. Audiencia y tráfico muestra datos simulados identificados.
+El inicio reúne el resumen de Supabase, borradores recientes y portada. El menú incluye gestores separados de noticias y borradores, Organización, Fuentes y Multimedia. Audiencia y tráfico muestra un estado vacío hasta conectar las métricas reales.
 
-Portal editorial en español con Next.js, React, TypeScript y Tailwind CSS. El contenido y las cuentas viven en Supabase. Tiptap guarda el cuerpo de cada noticia como JSON, que el portal convierte a elementos React con enlaces validados y vídeos limitados a YouTube.
+Portal editorial en español con Next.js, React, TypeScript y Tailwind CSS. El contenido y las cuentas viven en Supabase. El cuerpo se guarda como JSON editorial o Tiptap, según el editor de la noticia. Desde el gestor, primero hay que despublicar una noticia publicada para editarla, en ambos formatos.
 
 ## Ejecutar en local
 
@@ -17,9 +17,10 @@ npm ci
 npm run dev
 ```
 
-Abre http://localhost:3000. Sin variables de Supabase, el portal muestra piezas de ejemplo identificadas en pantalla. El panel está en http://localhost:3000/mesa-editorial-7k4n.
+Abre http://localhost:3000. Sin variables de Supabase, el portal muestra un estado vacío. El panel está en http://localhost:3000/mesa-editorial-7k4n.
 
 ```sh
+npm test
 npm run check
 npm run build
 npm start
@@ -27,7 +28,7 @@ npm start
 
 ## Habilitar Supabase
 
-1. Crea un proyecto de Supabase y aplica las migraciones pendientes de `supabase/migrations/` en orden desde SQL Editor o con Supabase CLI. En un proyecto existente, comprueba primero cuáles se aplicaron; que el SQL exista en disco no confirma su ejecución remota.
+1. Crea un proyecto de Supabase y revisa la tabla de migraciones en [CONTEXTO_IA.md](CONTEXTO_IA.md#6-seguridad-y-configuración-externa). Aplica las que necesite tu instalación en orden desde SQL Editor o con Supabase CLI. En un proyecto existente, comprueba primero cuáles se aplicaron. Aplica la carga inicial de categorías solo si quieres esas categorías.
 2. En Authentication, desactiva el registro público y crea manualmente el único usuario editorial con correo y contraseña. Copia su UUID.
 3. En SQL Editor, asigna el UUID a la única fila de autorización. Sustituye el valor de ejemplo por el UUID real.
 
@@ -37,7 +38,7 @@ npm start
    ```
 
 4. Copia `.env.example` a `.env.local`. Introduce la URL del proyecto, la clave publicable de Supabase y el mismo UUID en `ADMIN_USER_ID`. Reinicia el servidor. La aplicación usa la sesión del administrador y políticas RLS para escribir.
-5. Entra en `/mesa-editorial-7k4n` para gestionar las categorías y las noticias existentes. Estas últimas pueden editarse y guardarse con el editor persistente. El nuevo creador JSON/componentes todavía no tiene conectado el alta/publicación en Supabase: no asumir que habilitar las tablas activa esos botones. Las imágenes sí pueden subirse inmediatamente como JPG, PNG, WebP o AVIF de hasta 3 MB; los vídeos usan enlaces de YouTube.
+5. Entra en `/mesa-editorial-7k4n` para gestionar las categorías, noticias y borradores. **Subir foto** guarda archivos JPG, PNG, WebP o AVIF de hasta 3 MB en el bucket `editorial`. **Cambiar URL** guarda la dirección del archivo externo. Los vídeos usan enlaces de YouTube.
 
 El bucket de imágenes tiene lectura pública por URL. Los borradores están protegidos en la base de datos, pero quien conozca la URL exacta de una imagen subida puede abrirla. Eliminar una noticia conserva sus imágenes, porque pueden estar enlazadas desde otras piezas.
 
@@ -47,7 +48,9 @@ La migración [202611090002_editorial_workspace.sql](supabase/migrations/2026110
 
 Los estados de la agenda organizan la producción; marcar una noticia como preparada no la publica. El directorio de fuentes es independiente de las fuentes citadas en una noticia. Los errores de conexión o permisos no cambian silenciosamente el almacenamiento de Supabase a local.
 
-La biblioteca Multimedia necesita también las políticas preparadas en [202611090001_media_library.sql](supabase/migrations/202611090001_media_library.sql). Consulta el contexto para los límites, permisos y migraciones restantes.
+La biblioteca Multimedia usa las políticas de [202611090001_media_library.sql](supabase/migrations/202611090001_media_library.sql). La migración [202611110001_reset_editorial_storage.sql](supabase/migrations/202611110001_reset_editorial_storage.sql) también instala esas políticas y habilita la comprobación del inventario para la limpieza.
+
+**Limpiar base de datos** es una herramienta temporal de pruebas. Requiere las funciones instaladas por las migraciones [202611090005_reset_safe_delete.sql](supabase/migrations/202611090005_reset_safe_delete.sql) y [202611110001_reset_editorial_storage.sql](supabase/migrations/202611110001_reset_editorial_storage.sql). Al confirmar con `LIMPIAR`, vacía las tablas editoriales y después elimina los archivos del bucket `editorial`. Si falla el borrado de archivos, el panel indica que la limpieza quedó parcial.
 
 ## Publicación
 

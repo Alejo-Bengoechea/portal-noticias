@@ -14,9 +14,9 @@ export async function editorialHomeData(client: SupabaseClient): Promise<Editori
   const fields = 'id,slug,title,subtitle,cover_url,cover_alt,published_at,featured,category:categories(name)';
   const [published, unpublished, draftCount, recent, featured, latest] = await Promise.all([
     client.from('articles').select('id', { count: 'exact', head: true }).not('published_at', 'is', null),
-    client.from('articles').select('id', { count: 'exact', head: true }).is('published_at', null).eq('ever_published', true),
-    client.from('articles').select('id', { count: 'exact', head: true }).is('published_at', null).eq('ever_published', false),
-    client.from('articles').select('id,title,updated_at,category:categories(name)').is('published_at', null).eq('ever_published', false).order('updated_at', { ascending: false, nullsFirst: false }).order('id').limit(6),
+    client.from('articles').select('id', { count: 'exact', head: true }).is('published_at', null).or('ever_published.eq.true,body->metadatos->>estado.eq.despublicado'),
+    client.from('articles').select('id', { count: 'exact', head: true }).is('published_at', null).eq('ever_published', false).or('body->metadatos->>estado.is.null,body->metadatos->>estado.neq.despublicado'),
+    client.from('articles').select('id,title,updated_at,category:categories(name)').is('published_at', null).eq('ever_published', false).or('body->metadatos->>estado.is.null,body->metadatos->>estado.neq.despublicado').order('updated_at', { ascending: false, nullsFirst: false }).order('id').limit(6),
     client.from('articles').select(fields).eq('featured', true).lte('published_at', now).order('published_at', { ascending: false }).order('id').limit(1).maybeSingle(),
     client.from('articles').select(fields).lte('published_at', now).order('published_at', { ascending: false }).order('id').limit(1).maybeSingle(),
   ]);

@@ -39,6 +39,6 @@ export function TermForm({ table, term }: { table: 'categories' | 'tags'; term?:
     }} /></label>
     <button disabled={pending}>{term ? 'Guardar' : 'Añadir'}</button>
     {term && <button className="danger" name="intent" value="delete" formNoValidate disabled={pending}>Eliminar</button>}
-    {message && !(table === 'categories' && message === 'Cambio guardado.') && <p role="status">{message}</p>}
+    {message && message !== 'Cambio guardado.' && <p role="status">{message}</p>}
   </form>;
 }

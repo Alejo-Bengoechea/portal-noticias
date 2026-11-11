@@ -23,7 +23,7 @@ export function NewsVideo({ block, path, title, embeds }: { block: NewsDocument;
       setError('');
       setEditingUrl(!next);
     }}>
-      <label>Enlace de YouTube<input autoComplete="off" type="url" maxLength={2048} aria-label="Enlace de YouTube" placeholder="https://www.youtube.com/watch?v=…" value={url} onChange={event => { setUrl(event.target.value); setError(''); }} /></label>
+      <label>Enlace de YouTube<input id={`news-field-${path.join('-')}-url`} autoComplete="off" type="url" maxLength={2048} aria-label="Enlace de YouTube" placeholder="https://www.youtube.com/watch?v=…" value={url} onChange={event => { setUrl(event.target.value); setError(''); }} /></label>
       <button type="submit">{video ? 'Aplicar cambios' : 'Insertar vídeo'}</button>
       {video && <button type="button" onClick={() => { setUrl(saved); setEditingUrl(false); }}>Cancelar</button>}
       {error && <span role="alert">{error}</span>}
