@@ -14,7 +14,7 @@ Work on this project locally. Publish or update its Sites deployment only when t
 
 ## Project context
 
-Read `CONTEXTO_IA.md` for the current architecture, editor behavior, demo/real data distinction, security rules, and validation workflow before modifying this project.
+Read `CONTEXTO_IA.md` for the current architecture, editor behavior, security rules, and validation workflow before modifying this project.
 
 ## Collaboration
 
