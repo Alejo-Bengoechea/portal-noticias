@@ -76,7 +76,8 @@ Todas las rutas siguientes del panel llevan el prefijo `/mesa-editorial-7k4n`.
 | `/borradores` | Gestor solo de borradores guardados; sin columnas Estado/Creación |
 | `/organizacion` | Agenda editorial y banco de ideas |
 | `/fuentes` | Directorio privado de fuentes/contactos |
-| `/redes-sociales` | Panel privado de métricas de X, YouTube, Instagram y TikTok, con datos de ejemplo y detalle por red |
+| `/redes-sociales` | Panel privado de redes sociales, con enlace a Instagram y ejemplos para X, YouTube y TikTok |
+| `/redes-sociales/instagram` | Estadísticas de Instagram en directo: resumen, contenido y audiencia |
 | `/estadisticas` | Estado vacío hasta conectar estadísticas reales |
 | `/multimedia` | Biblioteca multimedia |
 | `/media` | **Endpoint POST de subida**, no página |
@@ -221,6 +222,8 @@ No truncar datos al importar: rechazar con explicación. Un renderizador histór
 **Audiencia:** `AnalyticsDashboard` muestra un estado vacío, sin inventar ceros ni métricas. Se retiró `analytics-demo.ts`. No eliminar la recogida de tráfico existente ni afirmar que el dashboard ya está conectado a ella.
 
 **Multimedia:** subida autenticada a `/media`, JPG/PNG/WebP/AVIF, firma de archivo y máximo 3 MB; bucket público `editorial`, nombres UUID. No aceptar SVG/HTML ni borrar la imagen anterior automáticamente. La URL es pública incluso antes de guardar/publicar la noticia.
+
+**Instagram:** la ruta privada usa Meta Graph v26.0 con inicio unificado. `INSTAGRAM_ACCESS_TOKEN` se configura como secreto del servidor. Si el token no puede listar activos, `INSTAGRAM_ACCOUNT_ID` admite el ID numérico explícito; en ambos casos se comprueba que sea @alejobengo. Se consultan las métricas bajo demanda. Las historias son las activas que devuelve Meta; no hay almacenamiento histórico propio.
 
 La biblioteca `/multimedia` recorre carpetas/páginas de Storage y noticias guardadas; muestra peso/formato/fecha/URL y asociaciones de portada/body. Comparte el listado paginado `listEditorialAssets` con la limpieza. Cada operación reutiliza la referencia al bucket `editorial` para sus llamadas de Storage. No detecta uso en JSON locales, previews sin guardar ni otras webs; sin vínculo detectado no significa necesariamente sin uso. Si falla la comprobación, no mostrar asociaciones parciales como completas. Borrado definitivo con confirmación; si hay enlaces a noticias, aceptación adicional. No limpiar artículos automáticamente. Sin política SELECT de Storage el inventario puede parecer vacío.
 

@@ -29,3 +29,4 @@
 .dialog caption { text-align:left; font-weight:600; margin-bottom:.45rem; }
 .dialog :is(th,td) { padding:.45rem 0; border-bottom:1px solid #484848; text-align:left; }
 .dialog tr > :last-child { text-align:right; }
+.platformLink { display:inline-flex; align-items:center; gap:.4rem; min-height:2.75rem; padding:.35rem .7rem; border:1px solid #9674b8; border-radius:.4rem; color:#eddbff; }

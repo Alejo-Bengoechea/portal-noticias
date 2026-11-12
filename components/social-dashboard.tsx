@@ -2,12 +2,12 @@
 
 import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
+import Link from 'next/link';
 import styles from './social-dashboard.module.css';
 
 const platforms = [
   { name: 'X', color: '#c9cdd5', followers: 1680, gained: 64, views: [7200, 8900, 10500, 9400], interactions: 822, posts: 14 },
   { name: 'YouTube', color: '#ff8588', followers: 3240, gained: 185, views: [9200, 10400, 12300, 16600], interactions: 1860, posts: 5 },
-  { name: 'Instagram', color: '#c5a2fa', followers: 5820, gained: 216, views: [12400, 15800, 14700, 18200], interactions: 3620, posts: 10 },
   { name: 'TikTok', color: '#7addcc', followers: 7460, gained: 480, views: [18200, 24800, 22100, 30600], interactions: 5910, posts: 12 },
 ];
 
@@ -30,9 +30,18 @@ export function SocialDashboard() {
 
   return <div className={styles.dashboard}>
     <header className={styles.heading}>
-      <div><h1>Redes Sociales</h1><p>Rendimiento de tus canales durante cuatro semanas.</p></div>
-      <span className={styles.sample}>Datos de ejemplo</span>
+      <h1>Redes Sociales</h1>
     </header>
+    <section className={styles.panel} aria-labelledby="social-instagram">
+      <div className={styles.heading}>
+        <div><h2 id="social-instagram">Instagram</h2><p>@alejobengo · Resumen, contenido y audiencia</p></div>
+        <Link prefetch={false} className={styles.platformLink} href="/mesa-editorial-7k4n/redes-sociales/instagram">Ver estadísticas <span aria-hidden="true">↗</span></Link>
+      </div>
+    </section>
+    <div className={styles.heading}>
+      <div><h2>Resumen de X, YouTube y TikTok</h2><p>Rendimiento de cuatro semanas.</p></div>
+      <span className={styles.sample}>Datos de ejemplo</span>
+    </div>
 
     <dl className={styles.metrics}>
       {metrics.map(([label, value]) => <div className={styles.panel} key={label}>
