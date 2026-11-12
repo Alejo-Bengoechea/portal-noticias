@@ -1,7 +1,7 @@
 export const metadata = { title: 'Derechos', alternates: { canonical: '/derechos' } };
 
 export default function RightsPage() {
-  return <article className="story">
+  return <article className="story legal">
     <h1>Derechos</h1>
     <div className="rich">
       <p>© 2026 Alejo Bengoechea. Todos los derechos reservados sobre el contenido original del sitio.</p>

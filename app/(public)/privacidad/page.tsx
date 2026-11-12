@@ -1,7 +1,7 @@
 export const metadata = { title: 'Privacidad', alternates: { canonical: '/privacidad' } };
 
 export default function PrivacyPage() {
-  return <article className="story">
+  return <article className="story legal">
     <h1>Privacidad</h1>
     <div className="rich">
       <p>Puedes leer las publicaciones sin crear una cuenta. El acceso con cuenta se utiliza para administrar el sitio.</p>

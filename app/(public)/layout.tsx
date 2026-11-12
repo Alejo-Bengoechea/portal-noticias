@@ -16,8 +16,12 @@ export default async function PublicLayout({ children }: { children: React.React
       <span className="eyebrow archive-label">Archivos desclasificados</span>
       <EditionDate />
     </div>
+    <svg className="rec-badge" aria-hidden="true" width="112" height="52" viewBox="0 0 112 52">
+      <path d="M21 5H5v14m86-14h16v14M5 33v14h16m86-14v14H91" fill="none" stroke="#f4eddf" strokeWidth="2" strokeLinecap="square" />
+      <circle cx="29" cy="26" r="8" fill="#ff304d" />
+      <text x="45" y="34" fill="#f4eddf" fontSize="23" letterSpacing="1">REC</text>
+    </svg>
     <header className="shell public-header">
-      <img className="rec-badge" src="/rec.svg" alt="" width="112" height="52" />
       <div className="masthead">
         <Link href="/" className="masthead-logo">
           <span className="masthead-name">Alejo <strong>Bengoechea</strong></span>

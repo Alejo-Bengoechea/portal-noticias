@@ -30,6 +30,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <p>Mesa de trabajo</p>
           <Link href="/mesa-editorial-7k4n/organizacion"><span aria-hidden="true">▦</span>Organización</Link>
           <Link href="/mesa-editorial-7k4n/fuentes"><span aria-hidden="true">◉</span>Fuentes</Link>
+          <Link href="/mesa-editorial-7k4n/redes-sociales"><span aria-hidden="true">↗</span>Redes Sociales</Link>
           <p>Supabase</p>
           <Link href="/mesa-editorial-7k4n/multimedia"><span aria-hidden="true">▧</span>Multimedia</Link>
         </nav>

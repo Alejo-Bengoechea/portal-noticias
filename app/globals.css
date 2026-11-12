@@ -491,12 +491,12 @@ label, legend { font-size: .9rem; font-weight: bold; }
 .masthead-name { display: block; border-bottom: 2px solid currentColor; padding-bottom: .22em; font-size: clamp(1.28rem, 6vw, 3.9rem); font-weight: 300; line-height: 1.05; letter-spacing: -.045em; }
 .masthead-name strong { font-weight: 800; }
 .masthead-tagline { display: block; margin-top: .72em; font-size: clamp(.57rem, 1.75vw, 1.1rem); letter-spacing: .28em; }
-.rec-badge { position: absolute; top: .65rem; right: 0; width: clamp(70px, 10vw, 112px); height: auto; }
+.rec-badge { position: fixed; top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px); z-index: 2; width: clamp(70px, 10vw, 112px); height: auto; pointer-events: none; }
 .public-portal .nav {
   align-items: center;
   justify-content: flex-start;
   border-bottom-color: var(--line);
-  font-family: var(--mono);
+  font-family: inherit;
   font-size: 1rem;
   letter-spacing: .045em;
   text-transform: uppercase;
@@ -535,7 +535,7 @@ label, legend { font-size: .9rem; font-weight: bold; }
 .edition-date time::after { content: ''; display: inline-block; width: .45em; height: .85em; margin-left: .5em; background: var(--accent); animation: date-cursor 1.1s step-end infinite; }
 @keyframes date-scan { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0); } }
 @keyframes date-cursor { 50% { opacity: 0; } }
-.public-portal .eyebrow, .public-portal .demo, .public-portal time { font-family: var(--mono); }
+.public-portal .archive-label, .public-portal .story :is(.eyebrow, time) { font-family: var(--mono); }
 .public-portal .archive-label { display: inline-flex; align-items: center; gap: .55rem; color: var(--accent); border: 1px solid var(--line); padding: .3rem .6rem; }
 .archive-label::before { content: ''; width: .48rem; aspect-ratio: 1; border-radius: 50%; background: currentColor; }
 .public-portal .hero { margin-top: 1.5rem; background: #292929; border-left: 2px solid var(--accent); }
@@ -546,6 +546,7 @@ label, legend { font-size: .9rem; font-weight: bold; }
 }
 .public-portal .section-title { border-top: 1px solid var(--line); }
 .public-portal .hero + section .section-title { margin-top: clamp(3.4rem, 6vw, 5rem); }
+.public-portal :is(.section-title, .page-title, .legal :is(h1, .rich)) { font-family: inherit; }
 .public-portal .cover-art {
   color: #dce3ed;
   background: repeating-linear-gradient(0deg, transparent 0 5px, #0003 6px 7px), radial-gradient(ellipse at 72% 35%, #3c3c3c, #242424 72%);
@@ -562,12 +563,12 @@ label, legend { font-size: .9rem; font-weight: bold; }
   border-top: 1px solid var(--line);
   padding: 1.4rem 0;
   color: var(--muted);
-  font: 300 .82rem/1.5 var(--mono);
+  font: 300 .82rem/1.5 Inter, sans-serif;
 }
 .footer-links { display: flex; gap: 1.25rem; margin-inline-start: auto; }
 .public-portal .rich pre { background: #262626; }
 .public-portal input:not([type=checkbox]) { background: #292929; border-color: #687489; }
-.public-portal .index-search input[type=search] { min-width: 0; border-color: #86505a; padding: .25rem .65rem; font: .85rem/1.4 var(--mono); }
+.public-portal .index-search input[type=search] { min-width: 0; border-color: #86505a; padding: .25rem .65rem; font: .85rem/1.4 Inter, sans-serif; }
 .public-portal .index-search input[type=search]:focus { border-color: var(--accent); outline: none; }
 .index-search input::placeholder { color: #db8794; opacity: 1; }
 .index-search input:not(:focus)::placeholder { animation: search-placeholder 1.25s step-end infinite; }
@@ -604,7 +605,7 @@ label, legend { font-size: .9rem; font-weight: bold; }
   .edition-date-label { font-size: .6rem; }
   .public-portal .archive-label { font-size: .6rem; line-height: 1.4; letter-spacing: .06em; padding: .3rem .4rem; }
   .archive-label::before { flex-shrink: 0; }
-  .rec-badge { width: 64px; top: .75rem; }
+  .rec-badge { width: 64px; }
   .public-portal .masthead { padding-top: 9rem; padding-bottom: 1.25rem; }
   .masthead-name { font-size: clamp(1.4rem, 5.8vw, 2.6rem); }
   .masthead-tagline { font-size: clamp(.62rem, 1.7vw, .8rem); letter-spacing: .22em; }

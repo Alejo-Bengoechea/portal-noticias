@@ -76,6 +76,7 @@ Todas las rutas siguientes del panel llevan el prefijo `/mesa-editorial-7k4n`.
 | `/borradores` | Gestor solo de borradores guardados; sin columnas Estado/Creación |
 | `/organizacion` | Agenda editorial y banco de ideas |
 | `/fuentes` | Directorio privado de fuentes/contactos |
+| `/redes-sociales` | Panel privado de métricas de X, YouTube, Instagram y TikTok, con datos de ejemplo y detalle por red |
 | `/estadisticas` | Estado vacío hasta conectar estadísticas reales |
 | `/multimedia` | Biblioteca multimedia |
 | `/media` | **Endpoint POST de subida**, no página |
