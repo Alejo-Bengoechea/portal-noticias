@@ -16,7 +16,7 @@ export function EditorialHome({ data }: { data: EditorialHomeData }) {
   const cover = data.cover;
   const coverUrl = webUrl(cover?.coverUrl);
   return <section className="editorial-home">
-    <header className="home-heading"><div><span className="home-kicker">INICIO / ESPACIO DE TRABAJO</span><p>Retoma una historia o empieza la siguiente.</p></div><Link className="home-new-story" href={`${base}/articulos/nuevo`}><span aria-hidden="true">＋</span>Nueva noticia<span aria-hidden="true">↗</span></Link></header>
+    <header className="home-heading"><h1 className="sr-only">Mesa de trabajo</h1><div><span className="home-kicker">INICIO / ESPACIO DE TRABAJO</span><p>Retoma una historia o empieza la siguiente.</p></div><Link className="home-new-story" href={`${base}/articulos/nuevo`}><span aria-hidden="true">＋</span>Nueva noticia<span aria-hidden="true">↗</span></Link></header>
     <div className="home-summary" aria-label="Resumen editorial">
       <Link href={`${base}/publicaciones?datos=reales&estado=publicado`} className="home-stat"><span><i data-state="published" />Publicadas</span><strong>{count(data.counts.published)}</strong><small>Noticias con publicación activa <span aria-hidden="true">↗</span></small></Link>
       <Link href={`${base}/publicaciones?datos=reales&estado=despublicado`} className="home-stat"><span><i data-state="unpublished" />Despublicadas</span><strong>{count(data.counts.unpublished)}</strong><small>Noticias retiradas del portal <span aria-hidden="true">↗</span></small></Link>
