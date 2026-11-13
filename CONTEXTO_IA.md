@@ -89,6 +89,7 @@ Portal público: `/`, `/noticia/[slug]`, `/categoria/[slug]`, `/buscar`, `/derec
 
 ## 5. Diseño que debe conservarse
 
+- El indicador [REC] se fija a la esquina superior derecha. El portal usa Inter salvo la marca, «Archivos desclasificados», la fecha del sistema y los estilos propios de las noticias.
 - Portal, preview y panel usan grises oscuros, texto claro y acento rojo; estética editorial confidencial, minimalista, inspirada en Codex. No recuperar el antiguo fondo azul.
 - Texto normal de noticias en **Inter Light 300**, negritas 700; títulos/subtítulos mantienen serif. Texto administrativo en Inter, con estilos heredados puntuales en la barra.
 - Marca **Alejo Bengoechea** en texto; Alejo muy fino. Lema: "Periodismo y análisis". "Alejo Dice" es una denominación antigua errónea: no usarla en código, metadatos ni textos. Metadatos, firma por defecto del editor, ejemplos y portada sin imagen (`AB.`) ya usan la marca correcta. Las filas ya guardadas en Supabase pueden conservar la firma antigua; no se han modificado datos remotos. El nombre interno del paquete npm (`periodismo-alejodice`) coincide con la carpeta y no es visible. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
