@@ -4,6 +4,7 @@ La fuente común es `CONTEXTO_IA.md`, incluido el protocolo de colaboración (§
 
 @AGENTS.md
 @CONTEXTO_IA.md
+@MEMORIA_IA.md
 
 ## Entorno de Claude Code
 
