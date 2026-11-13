@@ -30,7 +30,6 @@ export function CategoryCard({ category, selected, onSelect }: { selected: boole
   }, '');
   const dirty = name.trim() !== saved;
   const blocked = category.articleCount > 0;
-  const reason = 'No se puede eliminar: esta categoría tiene noticias asociadas.';
   function cancel() { setName(saved); setIntent(null); setEditing(false); }
   return <tr className="category-table-row" aria-label={`Categoría ${original}`} data-selected={selected}>
     <td className="manager-center"><input autoComplete="off" type="checkbox" aria-label={`Seleccionar ${original}`} checked={selected} onChange={onSelect} /></td>
@@ -53,9 +52,8 @@ export function CategoryCard({ category, selected, onSelect }: { selected: boole
     <td><div className="category-card-actions">
         {!editing && <button type="button" disabled={pending} onClick={() => setEditing(true)}>Editar</button>}
         {editing && <button type="button" disabled={pending} onClick={cancel}>Cancelar</button>}
-        {!editing && <span className="category-delete-control" title={blocked ? reason : undefined}>
+        {!editing && <span className="category-delete-control">
           <button form={formId} type="submit" className="danger" name="intent" value="delete" formNoValidate disabled={pending || blocked}>Eliminar</button>
-          {blocked && <span role="tooltip" className="category-delete-tooltip">{reason}</span>}
         </span>}
         {dirty && !submittedName && name.trim() && <button form={formId} type="submit" name="intent" value="save">Guardar</button>}
       </div>

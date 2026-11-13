@@ -4,35 +4,36 @@ import { adminClient } from '@/lib/supabase';
 import { logout } from './actions';
 import { EditorialSidebar } from '@/components/editorial-sidebar';
 export const metadata = { title: 'Administración', robots: { index: false, follow: false } };
+
+function SidebarLink({ href, icon, label, prefetch }: { href: string; icon: string; label: string; prefetch?: boolean }) {
+  return <Link href={href} prefetch={prefetch} aria-label={label} title={label}>
+    <span className="sidebar-link-icon" aria-hidden="true">{icon}</span>
+    <span className="sidebar-link-label">{label}</span>
+  </Link>;
+}
+
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const authorized = Boolean(await adminClient());
   return <div className={`editorial-console${authorized ? ' with-sidebar' : ''}`}>
     {authorized && <EditorialSidebar>
-      <summary aria-label="Alternar barra lateral">
-        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="3" y="5" width="18" height="14" rx="2" /><path d="M9 5v14" />
-        </svg>
-        <span className="sidebar-title">Ocultar barra lateral</span>
-        <span className="sr-only">Alternar menú lateral</span>
-      </summary>
       <div className="console-sidebar-body">
         <nav aria-label="Menú editorial">
           <div className="console-workspace"><span className="console-workspace-icon" aria-hidden="true">⌘</span><div><strong>Mesa editorial</strong><span>ÁREA EDITORIAL · PRIVADO</span></div><i aria-hidden="true" /></div>
           <p>Portal</p>
-          <Link href="/mesa-editorial-7k4n"><span aria-hidden="true">⌂</span>Inicio editorial</Link>
+          <SidebarLink href="/mesa-editorial-7k4n" icon="⌂" label="Inicio editorial" />
           <p>Creación editorial</p>
-          <Link href="/mesa-editorial-7k4n/articulos/nuevo"><span aria-hidden="true">＋</span>Nueva noticia</Link>
-          <Link href="/mesa-editorial-7k4n/categorias/nueva"><span aria-hidden="true">◇</span>Nueva categoría</Link>
+          <SidebarLink href="/mesa-editorial-7k4n/articulos/nuevo" icon="＋" label="Nueva noticia" />
+          <SidebarLink href="/mesa-editorial-7k4n/categorias/nueva" icon="◇" label="Nueva categoría" />
           <p>Gestión editorial</p>
-          <Link prefetch={true} href="/mesa-editorial-7k4n/publicaciones"><span aria-hidden="true">▤</span>Gestor de noticias</Link>
-          <Link prefetch={true} href="/mesa-editorial-7k4n/borradores"><span aria-hidden="true">▱</span>Gestor de borradores</Link>
-          <Link href="/mesa-editorial-7k4n/estadisticas"><span aria-hidden="true">▥</span>Audiencia y tráfico</Link>
+          <SidebarLink prefetch href="/mesa-editorial-7k4n/publicaciones" icon="▤" label="Gestor de noticias" />
+          <SidebarLink prefetch href="/mesa-editorial-7k4n/borradores" icon="▱" label="Gestor de borradores" />
+          <SidebarLink href="/mesa-editorial-7k4n/estadisticas" icon="▥" label="Audiencia y tráfico" />
           <p>Mesa de trabajo</p>
-          <Link href="/mesa-editorial-7k4n/organizacion"><span aria-hidden="true">▦</span>Organización</Link>
-          <Link href="/mesa-editorial-7k4n/fuentes"><span aria-hidden="true">◉</span>Fuentes</Link>
-          <Link href="/mesa-editorial-7k4n/redes-sociales"><span aria-hidden="true">◎</span>Redes Sociales</Link>
+          <SidebarLink href="/mesa-editorial-7k4n/organizacion" icon="▦" label="Organización" />
+          <SidebarLink href="/mesa-editorial-7k4n/fuentes" icon="◉" label="Fuentes" />
+          <SidebarLink href="/mesa-editorial-7k4n/redes-sociales" icon="◎" label="Redes Sociales" />
           <p>Supabase</p>
-          <Link href="/mesa-editorial-7k4n/multimedia"><span aria-hidden="true">▧</span>Multimedia</Link>
+          <SidebarLink href="/mesa-editorial-7k4n/multimedia" icon="▧" label="Multimedia" />
         </nav>
         <div className="console-sidebar-footer">
           <ResetEditorialData />

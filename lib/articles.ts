@@ -35,7 +35,7 @@ export const getFeatured = cache(async (): Promise<Article | null> => {
   const client = publicClient();
   if (!client) return null;
   const { data, error } = await client.from('articles').select('*').eq('featured', true)
-    .lte('published_at', new Date().toISOString()).order('published_at', { ascending: false }).limit(1).maybeSingle();
+    .lte('published_at', new Date().toISOString()).order('published_at', { ascending: false }).order('id').limit(1).maybeSingle();
   if (error) throw error;
   return data;
 });

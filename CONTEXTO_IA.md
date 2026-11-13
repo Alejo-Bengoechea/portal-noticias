@@ -8,7 +8,7 @@ Actualizado: **11 de noviembre de 2026**. Estado consolidado del código y refer
 - **No publicar ni actualizar Sites salvo petición explícita del usuario en la tarea actual.** Una autorización antigua no habilita otro despliegue. Hoy los avances se publican en Sites mediante Codex; el dominio propio y su proveedor están sin decidir (ver §6).
 - `sites-release/` es una copia histórica de publicación, no la fuente activa; Git la registra como una referencia gitlink histórica, no como el código fuente activo de Next.js; localmente conserva archivos y dependencias propios. Los `alejo-sites-*.tar.gz` de la raíz son compilaciones históricas de Sites (vinext/wrangler), no código fuente. No sincronizarlos, modificarlos ni usarlos como referencia del código actual. Los archivos `*.tar.gz` dejan de versionarse y se conservan localmente, ignorados por Git; las copias antiguas siguen en el historial.
 - **Nunca guardar contraseñas, claves ni notas con credenciales en archivos del proyecto**: el repositorio es público y el historial de Git las conserva aunque se borren. No leer/imprimir credenciales de `.env.local` en respuestas, logs o documentación. Consultar `.env.example` para los nombres de variables. No usar una clave service-role en el navegador.
-- **Fase actual (11 de noviembre de 2026): funcionalidad real en marcha.** El creador por componentes ya guarda noticias y borradores de verdad en Supabase (§3, §8.2); se retiraron los datos ficticios del portal, los gestores y las estadísticas. Hay una herramienta temporal para vaciar Supabase durante las pruebas (§13), con estado de aplicación remota sin confirmar todavía. No tratar las migraciones aún no aplicadas ni la pérdida de datos de prueba como urgencias, pero sí tratar con cuidado cualquier dato ya guardado por el usuario a través del flujo real.
+- **Fase actual: funcionalidad real en marcha.** El creador por componentes guarda noticias y borradores en Supabase (§3, §8.2). El portal y los gestores usan datos reales. La vista privada de Audiencia y tráfico usa una muestra identificada (§9). Hay una herramienta temporal para vaciar Supabase durante las pruebas (§13), con estado de aplicación remota sin confirmar todavía. Tratar con cuidado cualquier dato ya guardado por el usuario a través del flujo real.
 - No desactivar autenticación, RLS ni comprobaciones del administrador para probar. No crear/publicar/eliminar noticias reales como parte de una prueba visual.
 - El usuario tiene poca experiencia en código: implementar lo pedido y explicar en español sencillo. Resolver decisiones rutinarias sin pedir confirmaciones innecesarias.
 - Mantener accesibilidad, móvil y diseño existente. Los controles administrativos comparten Inter, radios y paleta gris con texto claro; acciones principales del editor son claras con texto oscuro, destructivas rojas. Generar en componentes mantiene fondo claro y texto negro tanto antes como después de cargar, también al hacer hover. Evitar dependencias redundantes. No cambiar funciones de negocio durante una tarea de documentación o diseño.
@@ -55,7 +55,7 @@ Ejecuta `npm.cmd test` para las pruebas de `tests/*.test.cjs`, que usan Supabase
 | Imágenes subidas | Se guardan inmediatamente en Storage, aunque la noticia siga siendo una preview sin guardar. |
 | Gestores de noticias/borradores | Solo consultan Supabase, incluso con URLs antiguas `datos=ejemplo`. No hay muestras ni acciones simuladas. |
 | Inicio / Mesa de trabajo | Consultas reales de noticias guardadas en Supabase. No hay borradores locales: el creador ya no guarda nada en el navegador. |
-| Audiencia y tráfico | Estado vacío sin métricas inventadas. La vista todavía no consulta el RPC de tráfico real. El usuario reportó un error de permisos al limpiar editorial_page_views: su existencia y configuración remotas deben revisarse; el estado anterior que la daba por ausente ya no es fiable. La recogida real de visitas no se ha vuelto a verificar. |
+| Audiencia y tráfico | Datos simulados de siete días, definidos en código y señalizados en pantalla. La vista todavía no consulta el RPC de tráfico real. El usuario reportó un error de permisos al limpiar editorial_page_views: su existencia y configuración remotas deben revisarse; el estado anterior que la daba por ausente ya no es fiable. La recogida real de visitas no se ha vuelto a verificar. |
 | Organización, ideas y directorio de fuentes | Hoy **modo local** (solo en el navegador): las tablas de la migración 7 no existen en la base remota. Supabase si existen las tablas nuevas. Solo ante tabla ausente, modo local identificado; incluye copia descargable e importación posterior a Supabase. |
 | Biblioteca multimedia | Inventario real del bucket `editorial`, sujeto a sus políticas. Sin la migración 6 (no aplicada en remoto) el inventario puede aparecer vacío y el borrado falla. La subida sí funciona (migración 1). |
 
@@ -67,7 +67,7 @@ Todas las rutas siguientes del panel llevan el prefijo `/mesa-editorial-7k4n`.
 
 | Ruta | Función |
 | --- | --- |
-| `/` (del panel) | Mesa de trabajo: resumen, borradores recientes, portada y Nueva noticia |
+| `/` (del panel) | Mesa de trabajo: resumen, borradores recientes, novedades del día, portada y Nueva noticia |
 | `/login` | Login privado rediseñado, sin línea horizontal superior |
 | `/articulos/nuevo` | Creador por JSON/componentes |
 | `/articulos/[id]` | Editor persistente de una noticia existente |
@@ -78,7 +78,7 @@ Todas las rutas siguientes del panel llevan el prefijo `/mesa-editorial-7k4n`.
 | `/fuentes` | Directorio privado de fuentes/contactos |
 | `/redes-sociales` | Panel privado de redes sociales, con enlace a Instagram y ejemplos para X, YouTube y TikTok |
 | `/redes-sociales/instagram` | Estadísticas de Instagram en directo: resumen, contenido y audiencia |
-| `/estadisticas` | Estado vacío hasta conectar estadísticas reales |
+| `/estadisticas` | Audiencia y tráfico con datos simulados |
 | `/multimedia` | Biblioteca multimedia |
 | `/media` | **Endpoint POST de subida**, no página |
 | `/publicaciones/[id]/json` | Descargar JSON de una noticia real, con autenticación |
@@ -95,8 +95,8 @@ Portal público: `/`, `/noticia/[slug]`, `/categoria/[slug]`, `/buscar`, `/derec
 - Marca **Alejo Bengoechea** en texto; Alejo muy fino. Lema: "Periodismo y análisis". "Alejo Dice" es una denominación antigua errónea: no usarla en código, metadatos ni textos. Metadatos, firma por defecto del editor, ejemplos y portada sin imagen (`AB.`) ya usan la marca correcta. Las filas ya guardadas en Supabase pueden conservar la firma antigua; no se han modificado datos remotos. El nombre interno del paquete npm (`periodismo-alejodice`) coincide con la carpeta y no es visible. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
 - Identificación discreta `Mesa editorial / ÁREA EDITORIAL · PRIVADO` dentro del menú. No restaurar el rótulo flotante ni `admin-head` con línea superior.
 - Pie del menú: **Ir al portal** amarillo, después **Cerrar sesión** rojo y el nombre centrado abajo, sin enlace. Ambos controles comparten `console-footer-action`: misma tipografía, tamaño, iconos, alineación y padding.
-- Menú: Gestión editorial aparece antes de Mesa de trabajo. La ruta activa tiene fondo más claro y aria-current=page.
-- Inicio: resumen arriba, borradores en columna amplia y portada al lado. No restaurar INICIO/BIENVENIDO con tres cuadrados.
+- Menú: Gestión editorial aparece antes de Mesa de trabajo. La ruta activa tiene fondo más claro y aria-current=page. Al contraerlo queda una barra vertical de iconos que enlazan a las mismas vistas y conservan sus nombres accesibles y su posición vertical. En móvil, la barra empieza contraída y el menú ampliado se superpone al contenido.
+- Inicio: resumen arriba, borradores compactos y novedades del día en la columna amplia, portada al lado. En móvil se apilan. No restaurar INICIO/BIENVENIDO con tres cuadrados.
 - Las tablas ocupan el 90% del área sin menú; el ancho depende de `.manager-table-scroll`, no de un título opcional. Las tablas de gestores se ajustan al ancho incluso en móvil, con texto partido en celdas y sin anchos mínimos que provoquen scroll lateral. Calendarios/tablas no deben ensanchar la página.
 - El CSS tiene muchas reglas sucesivas y media/container queries. Revisar especificidad y reglas anteriores antes de añadir otra sobrescritura. Respetar `prefers-reduced-motion`.
 - Mantener `autoComplete="off"` en formularios/inputs/textarea/select nuevos. Esto solicita no sugerir historial, no borra el historial antiguo ni controla extensiones.
@@ -218,13 +218,15 @@ No truncar datos al importar: rechazar con explicación. Un renderizador histór
 
 ## 9. Mesa de trabajo, estadísticas y multimedia
 
-**Inicio:** `editorial-home.ts` consulta recuentos reales, últimos seis borradores (solo Supabase; ya no hay borradores locales) y portada publicada (destacada o última). `EditorialHome` muestra esos borradores con enlaces funcionales para retomarlos. Errores se muestran como no disponibles, no como ceros. No hay noticias de muestra.
+**Inicio:** `editorial-home.ts` consulta Supabase para los recuentos, los cuatro borradores más recientes y la portada. Los contadores abren los gestores con el estado correspondiente. Cada borrador enlaza a su editor y la cabecera enlaza al gestor completo. La portada sigue la prioridad del portal (destacada publicada o última publicada) y enlaza al artículo público y a su fila en el gestor de noticias. Un fallo de lectura afecta a la sección correspondiente y se puede reintentar desde el inicio.
 
-**Audiencia:** `AnalyticsDashboard` muestra un estado vacío, sin inventar ceros ni métricas. Se retiró `analytics-demo.ts`. No eliminar la recogida de tráfico existente ni afirmar que el dashboard ya está conectado a ella.
+**Novedades del día:** tabla debajo de los borradores con columnas Tipo, Detalle y Hora, reservada para ideas, sugerencias, propuestas de mejora, avisos y alertas. Tiene un estado vacío hasta que se implemente el proceso que generará sus entradas.
+
+**Audiencia:** `AnalyticsDashboard` muestra cuatro gráficos con datos simulados de siete días: noticia, categoría, portal y origen del tráfico. Los selectores cambian entre noticias o categorías de ejemplo. La muestra vive en `lib/analytics-demo.ts`. La recogida de tráfico existente sigue separada de esta vista.
 
 **Instagram:** la ruta privada usa Meta Graph v26.0 con inicio unificado. `INSTAGRAM_ACCESS_TOKEN` se configura como secreto del servidor. Si el token no puede listar activos, `INSTAGRAM_ACCOUNT_ID` admite el ID numérico explícito; en ambos casos se comprueba que sea @alejobengo. El token esperado es de usuario del sistema de integración empresarial (SUAT), con `instagram_basic` e `instagram_manage_insights`. Las lecturas usan una caché local breve, que puede renovarse con Actualizar. Cada bloque informa su estado; las fechas visibles usan Europe/Madrid, con el cierre diario de Meta pendiente de contrastar. Las historias son las activas que devuelve Meta; no hay almacenamiento histórico propio.
 
-**Instagram:** la ruta privada usa Meta Graph v26.0 con inicio unificado. `INSTAGRAM_ACCESS_TOKEN` se configura como secreto del servidor. Si el token no puede listar activos, `INSTAGRAM_ACCOUNT_ID` admite el ID numérico explícito; en ambos casos se comprueba que sea @alejobengo. Se consultan las métricas bajo demanda. Las historias son las activas que devuelve Meta; no hay almacenamiento histórico propio.
+**Multimedia:** subida autenticada a `/media`, JPG/PNG/WebP/AVIF, firma de archivo y máximo 3 MB; bucket público `editorial`, nombres UUID. No aceptar SVG/HTML ni borrar la imagen anterior automáticamente. La URL es pública incluso antes de guardar/publicar la noticia.
 
 La biblioteca `/multimedia` recorre carpetas/páginas de Storage y noticias guardadas; muestra peso/formato/fecha/URL y asociaciones de portada/body. Comparte el listado paginado `listEditorialAssets` con la limpieza. Cada operación reutiliza la referencia al bucket `editorial` para sus llamadas de Storage. No detecta uso en JSON locales, previews sin guardar ni otras webs; sin vínculo detectado no significa necesariamente sin uso. Si falla la comprobación, no mostrar asociaciones parciales como completas. Borrado definitivo con confirmación; si hay enlaces a noticias, aceptación adicional. No limpiar artículos automáticamente. Sin política SELECT de Storage el inventario puede parecer vacío.
 
@@ -257,7 +259,7 @@ Tablas: `editorial_plans`, `editorial_ideas`, `editorial_sources`, con UUID y ti
 | Categorías | `category-manager.tsx`, `category-card.tsx`, `admin-forms.tsx` |
 | Multimedia | `lib/media-upload.ts`, `image-signature.ts`, `media-library.ts`, `components/media-library.tsx`, rutas media/multimedia |
 | Organización/fuentes | `lib/editorial-workspace.ts`, `editorial-workspace-server.ts`, `components/workspace-common.tsx`, `editorial-planner.tsx`, `source-directory.tsx`, `workspace-actions.ts` |
-| Audiencia pendiente de conexión | `components/analytics-dashboard.tsx` (estado vacío) |
+| Audiencia y tráfico | `components/analytics-dashboard.tsx`, `lib/analytics-demo.ts` |
 | Diseño global | `app/globals.css` y fuentes locales de `public/fonts/` |
 
 `components/preview-text-editor.tsx` y `components/news-component-fields.tsx` no se importan desde ningún sitio; otros formularios antiguos pueden permanecer en disco sin usarse en el flujo actual. Buscar sus imports antes de reutilizarlos; no reactivar el editor flotante ni una paleta retirada por encontrar un archivo existente.
