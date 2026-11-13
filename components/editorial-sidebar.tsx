@@ -16,7 +16,7 @@ export function EditorialSidebar({ children }: { children: ReactNode }) {
   useEffect(() => {
     sidebar.current?.querySelectorAll('nav a').forEach(link => {
       const href = link.getAttribute('href');
-      const active = href === pathname || (href === '/mesa-editorial-7k4n/articulos/nuevo' && pathname.startsWith('/mesa-editorial-7k4n/articulos/'));
+      const active = href === pathname || Boolean(href && href !== '/mesa-editorial-7k4n' && pathname.startsWith(href + '/')) || (href === '/mesa-editorial-7k4n/articulos/nuevo' && pathname.startsWith('/mesa-editorial-7k4n/articulos/'));
       if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
     });
   }, [pathname]);
