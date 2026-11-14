@@ -64,7 +64,7 @@ export async function saveArticle(_: string, form: FormData): Promise<string> {
   }
   if (!category && (publish || publishedAt || everPublished)) return 'Selecciona una categoría. Solo los borradores pueden quedar sin categoría.';
   const row = { title, subtitle, author, slug, body, category_id: category || null, tag_ids: tagIds,
-    cover_url: cover || null, cover_alt: coverAlt, featured: form.has('featured'),
+    cover_url: cover || null, cover_alt: coverAlt,
     published_at: publish ? publishedAt ?? new Date().toISOString() : null };
   const { error } = id ? await client.from('articles').update(row).eq('id', id).select('id').single() : await client.from('articles').insert(row);
   if (error?.code === '23505') return 'Ya existe una publicación con esa URL.';
@@ -131,7 +131,7 @@ export async function saveNewsDocument(_: string, form: FormData): Promise<strin
 
   const base = {
     title: title.slice(0, 160) || 'Borrador sin título', subtitle, author: author || 'Sin firma', body: { ...news, metadatos: { ...metadata, estado: intent === 'crear' || existing?.ever_published ? 'despublicado' : 'borrador' } }, body_format: 'editorial' as const,
-    category_id: categoryId, tag_ids: [] as string[], cover_url: coverUrl, cover_alt: coverAlt, featured: false,
+    category_id: categoryId, tag_ids: [] as string[], cover_url: coverUrl, cover_alt: coverAlt,
   };
   if (id) {
     const { data: existing, error: readError } = await client.from('articles').select('body_format,published_at,ever_published').eq('id', id).single();
@@ -226,4 +226,16 @@ export async function changeNewsCategory(_: string, form: FormData): Promise<str
   if (result.error) return 'No se pudo cambiar la categoría. Actualiza la tabla e inténtalo de nuevo.';
   revalidatePath('/', 'layout');
   return 'Categoría actualizada.';
+}
+
+export async function designateHomeCover(_: string, form: FormData): Promise<string> {
+  const client = await adminClient();
+  const id = field(form, 'id');
+  if (!client || !uuid.test(id)) return 'No se pudo autorizar el cambio de portada.';
+  const { data, error } = await client.rpc('set_home_cover', { article_id: id });
+  if (error?.code === 'PGRST202') return 'Aplica la migración 202611140001_home_cover.sql en Supabase para elegir la portada.';
+  if (error) return 'No se pudo cambiar la portada. Inténtalo de nuevo.';
+  if (!data) return 'La noticia debe estar publicada para designarla como portada.';
+  revalidatePath('/', 'layout');
+  return '';
 }

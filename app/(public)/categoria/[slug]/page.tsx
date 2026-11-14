@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Cards, Pagination, pageNumber } from '@/components/cards';
-import { getArticles, getTerms } from '@/lib/articles';
+import { articlePageSize, getArticles, getTerms } from '@/lib/articles';
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ pagina?: string }> };
 export async function generateMetadata({ params }: Props) {
@@ -16,6 +16,6 @@ export default async function Category({ params, searchParams }: Props) {
   const category = categories.find(c => c.slug === slug);
   if (!category) notFound();
   const articles = await getArticles(category.id, '', page);
-  return <><h1 className="page-title">{category.name}</h1><Cards articles={articles.slice(0, 12)} categories={categories} />
-    <Pagination page={page} more={articles.length > 12} href={n => `/categoria/${slug}?pagina=${n}`} /></>;
+  return <><h1 className="page-title">{category.name}</h1><Cards articles={articles.slice(0, articlePageSize)} categories={categories} />
+    <Pagination page={page} more={articles.length > articlePageSize} href={n => `/categoria/${slug}?pagina=${n}`} /></>;
 }

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { adminClient } from '@/lib/supabase';
-import { getTerms } from '@/lib/articles';
+import { getHomeCover } from '@/lib/articles';
 import { InfiniteNewsManager } from '@/components/infinite-news-manager';
 import { managedNewsBatch, type NewsQuery } from '@/lib/news-management';
 
@@ -9,6 +9,7 @@ export default async function NewsManager({ searchParams }: { searchParams: Prom
   const client = await adminClient();
   if (!client) redirect('/mesa-editorial-7k4n/login');
   const { data, count, categories, error, q, state, sort, sorting, drafts, view } = await managedNewsBatch(await searchParams, 0, client);
+  const cover = drafts || error ? null : await getHomeCover().catch(() => null);
   const mode = 'reales';
   const base = drafts ? '/mesa-editorial-7k4n/borradores' : '/mesa-editorial-7k4n/publicaciones';
   const query = { q, estado: state, orden: sort, datos: mode, vista: view };
@@ -32,7 +33,7 @@ export default async function NewsManager({ searchParams }: { searchParams: Prom
     </form>
     {error ? <p className="panel">Para habilitar esta tabla, aplica la migración 202611070004_news_management.sql en Supabase.</p> : <>
       <p className="manager-count">{count} {drafts ? 'borradores' : 'noticias creadas'}{q || (!drafts && state) ? ' encontrados' : ''}</p>
-      <InfiniteNewsManager key={`${listKey}:${count}`} initialArticles={data} total={count} query={query} categories={categories} drafts={drafts} sortHeaders={{
+      <InfiniteNewsManager key={`${listKey}:${count}`} initialArticles={data} total={count} query={query} categories={categories} drafts={drafts} coverId={cover?.id} sortHeaders={{
         category: sortHeader('category(name)', 'categoria', 'categoria_desc'),
         created: sortHeader('created_at', 'antiguas', 'recientes'),
         updated: sortHeader('updated_at', 'actualizadas_asc', 'actualizadas'),

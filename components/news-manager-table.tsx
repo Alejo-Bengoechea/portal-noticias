@@ -13,8 +13,8 @@ const date = (value: string | null) => value ? new Intl.DateTimeFormat('es-ES', 
   dateStyle: 'short', timeStyle: 'short', timeZone: 'Europe/Madrid',
 }).format(new Date(value)) : 'Sin registro';
 
-export function NewsManagerTable({ articles, categories, sortHeaders, drafts = false }: {
-  articles: ManagedNews[]; categories: { id: string; name: string }[]; drafts?: boolean;
+export function NewsManagerTable({ articles, categories, sortHeaders, drafts = false, coverId }: {
+  articles: ManagedNews[]; categories: { id: string; name: string }[]; drafts?: boolean; coverId?: string;
   sortHeaders: Record<'category' | 'created' | 'updated', SortHeader>;
 }) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -83,6 +83,7 @@ export function NewsManagerTable({ articles, categories, sortHeaders, drafts = f
         const published = Object.hasOwn(statusOverrides, article.id) ? statusOverrides[article.id] : Boolean(article.published_at);
         const state = published ? 'publicado' : article.ever_published || article.editorial_state === 'despublicado' || Object.hasOwn(statusOverrides, article.id) ? 'despublicado' : 'borrador';
         const categoryId = Object.hasOwn(categoryOverrides, article.id) ? categoryOverrides[article.id] : article.category_id;
+        const isCover = published && article.id === coverId;
         return <tr key={article.id} data-selected={selected.has(article.id)}>
           <td className="manager-center"><label className="manager-checkbox-control"><input autoComplete="off" type="checkbox" aria-label={`Seleccionar ${article.title}`}
             checked={selected.has(article.id)} disabled={busy} onChange={() => setSelected(previous => {
@@ -90,12 +91,12 @@ export function NewsManagerTable({ articles, categories, sortHeaders, drafts = f
               if (next.has(article.id)) next.delete(article.id); else next.add(article.id);
               return next;
             })} /></label></td>
-          <td>{article.title}</td>
+          <td>{article.title}{isCover && <small className="manager-cover-label">Portada</small>}</td>
           <td>{(categories.find(category => category.id === categoryId)?.name ?? 'Sin categoría').toLocaleUpperCase('es')}</td>
           {!drafts && <td className="manager-state-cell"><span className="manager-status" data-status={state}>{statuses[state]}</span></td>}
           {!drafts && <td className="manager-center">{date(article.created_at)}</td>}
           <td className="manager-center">{date(article.updated_at)}</td>
-          <td className="manager-center"><NewsRowActions id={article.id} title={article.title} published={published} draft={state === 'borrador'}
+          <td className="manager-center"><NewsRowActions id={article.id} title={article.title} published={published} draft={state === 'borrador'} designatedCover={isCover && article.featured}
             onDeleted={() => setRemoved(previous => new Set([...previous, article.id]))} categoryId={categoryId} categories={categories} onCategoryChange={value => setCategoryOverrides(previous => ({ ...previous, [article.id]: value }))}
             download={`/mesa-editorial-7k4n/publicaciones/${article.id}/json`}
             onStatusChange={value => setStatusOverrides(previous => ({ ...previous, [article.id]: value }))} /></td>

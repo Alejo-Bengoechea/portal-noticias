@@ -102,7 +102,6 @@ export function ArticleForm({ article, categories, tags }: { article: Article | 
     <label>Categoría<select name="category" required={Boolean(article?.published_at || article?.ever_published)} defaultValue={article?.category_id ?? ''}><option value="" disabled={Boolean(article?.published_at || article?.ever_published)}>Sin categoría (solo borrador)</option>
       {categories.map(term => <option key={term.id} value={term.id}>{term.name}</option>)}</select></label>
     {tags.length > 0 && <fieldset className="checks"><legend>Etiquetas</legend>{tags.map(term => <label key={term.id}><input autoComplete="off" type="checkbox" name="tags" value={term.id} defaultChecked={article?.tag_ids.includes(term.id)} />{term.name}</label>)}</fieldset>}
-    <label className="check"><input autoComplete="off" name="featured" type="checkbox" defaultChecked={article?.featured} /> Destacar en portada</label>
     <div className="stack">
       <label>URL de la portada<input autoComplete="off" name="cover" type="url" value={cover} onChange={event => setCover(event.target.value)} /></label>
       <button className="secondary" type="button" disabled={uploading} onClick={() => chooseUpload('cover')}>Subir portada</button>

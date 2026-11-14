@@ -8,6 +8,9 @@ export type Article = {
   body: JSONContent; body_format: 'tiptap' | 'editorial'; category_id: string | null; tag_ids: string[]; cover_url: string | null;
   cover_alt: string; featured: boolean; published_at: string | null; ever_published?: boolean;
 };
+export type ArticleCard = Pick<Article, 'id' | 'slug' | 'title' | 'subtitle' | 'category_id' | 'cover_url' | 'cover_alt' | 'published_at' | 'featured'>;
+const cardFields = 'id,slug,title,subtitle,category_id,cover_url,cover_alt,published_at,featured';
+export const articlePageSize = 12;
 export const getTerms = cache(async (table: 'categories' | 'tags'): Promise<Term[]> => {
   const client = publicClient();
   if (!client) return [];
@@ -16,26 +19,27 @@ export const getTerms = cache(async (table: 'categories' | 'tags'): Promise<Term
   return table === 'categories' ? data.map(term => ({ ...term, name: String(term.name).toLocaleUpperCase('es') })) : data;
 });
 
-export const getArticles = cache(async (category?: string, query = '', page = 1): Promise<Article[]> => {
+export const getArticles = cache(async (category?: string, query = '', page = 1, coverId?: string): Promise<ArticleCard[]> => {
   const client = publicClient();
-  const start = (page - 1) * 12;
+  const start = (page - 1) * articlePageSize;
   const term = query.replace(/[^\p{L}\p{N}\s-]/gu, ' ').trim();
   if (query && !term) return [];
   if (!client) return [];
-  let request = client.from('articles').select('*').lte('published_at', new Date().toISOString())
-    .order('published_at', { ascending: false }).order('id').range(start, start + 12);
+  let request = client.from('articles').select(cardFields).lte('published_at', new Date().toISOString())
+    .order('published_at', { ascending: false }).order('id').range(start, start + articlePageSize);
   if (category) request = request.eq('category_id', category);
+  if (coverId) request = request.neq('id', coverId);
   if (term) request = request.or(`title.ilike.%${term}%,subtitle.ilike.%${term}%`);
   const { data, error } = await request;
   if (error) throw error;
   return data;
 });
 
-export const getFeatured = cache(async (): Promise<Article | null> => {
+export const getHomeCover = cache(async (): Promise<ArticleCard | null> => {
   const client = publicClient();
   if (!client) return null;
-  const { data, error } = await client.from('articles').select('*').eq('featured', true)
-    .lte('published_at', new Date().toISOString()).order('published_at', { ascending: false }).order('id').limit(1).maybeSingle();
+  const { data, error } = await client.from('articles').select(cardFields).lte('published_at', new Date().toISOString())
+    .order('featured', { ascending: false }).order('published_at', { ascending: false }).order('id').limit(1).maybeSingle();
   if (error) throw error;
   return data;
 });
