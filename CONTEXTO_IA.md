@@ -18,44 +18,17 @@ Actualizado: **14 de noviembre de 2026**. Estado consolidado del código y refer
 
 ### 1.1 Protocolo común Codex + Claude Code
 
-El usuario determina los roles. En la colaboración actual, Codex coordina la integración y Claude Code contribuye con cambios revisables. Ambos siguen este protocolo y preservan el trabajo ajeno.
+Codex y Claude Code se turnan para trabajar en la carpeta principal. El usuario determina quién toma cada tarea.
 
 0. **Memoria compartida:** `MEMORIA_IA.md` guarda el relevo entre agentes (cambios recientes, tareas en curso, pendientes y decisiones). Se lee al empezar y se actualiza al terminar cada tarea, según las reglas de `AGENTS.md` («Memoria compartida»). Este documento guarda lo estable; la memoria, lo que cambia.
 1. **Al empezar:** leer `MEMORIA_IA.md`, revisar `git status` y los commits posteriores a su commit base, y las secciones pertinentes de este documento. Consultar GitHub con `git fetch origin` cuando sea necesario; actualizar con `git pull --ff-only` solo con el árbol limpio y tras revisar los cambios.
-2. **Cambios ajenos sin commit:** no revertirlos, reformatearlos ni incluirlos en el propio commit. Continuar con archivos independientes; aislar o pedir aclaración solo si existe un conflicto que no puede resolverse de forma segura. Proteger el trabajo antes de integrar ramas.
-3. **Trabajo simultáneo:** una rama y un worktree por tarea, con reservas compartidas y entrega por SHA (ver abajo). El usuario autoriza los commits locales por tarea. Codex es el integrador, desde la carpeta principal.
+2. **Cambios ajenos sin commit:** no revertirlos, reformatearlos ni incluirlos en el propio commit. Continuar con archivos independientes; aislar o pedir aclaración solo si existe un conflicto que no puede resolverse de forma segura.
+3. **Un agente a la vez.** Usar la carpeta principal en `main`. La web local se sirve desde esa carpeta.
 4. **Cambios localizados:** evitar limpiezas fuera de alcance y dependencias redundantes. Las rutas, dependencias y capas necesarias para la tarea están autorizadas por su alcance; no requieren otra confirmación rutinaria. Seguir el estilo del archivo y leer la guía local de Next.js antes de modificar código.
-5. **Al terminar:** en modo serie actualizar `MEMORIA_IA.md`. En paralelo registrar la nota y las pruebas con `entregar` para que Codex consolide la memoria. Excluir cambios ajenos y credenciales. Cada push o publicación requiere su propia autorización.
-6. **Si cambia el comportamiento real**, actualizar aquí la documentación en modo serie. En paralelo indicar en la entrega qué sección debe actualizar el integrador.
-7. **Claude Code en la nube** trabaja en un clon de GitHub, normalmente en ramas `claude/...`. Sus cambios llegan al proyecto local tras fetch, revisión y fusión autorizada; los cambios locales solo serán visibles en la nube después del push correspondiente.
+5. **Al terminar:** actualizar `MEMORIA_IA.md`. Commits con alcance claro y mensaje en español, con la memoria incluida; excluir cambios ajenos y credenciales. Hacer push cuando esté autorizado por el usuario en la tarea. Un push de Git no autoriza publicar Sites.
+6. **Si cambia el comportamiento real**, actualizar este documento en el mismo commit, reemplazando lo obsoleto. Corregir contradicciones relacionadas con la tarea; explicar las discrepancias relevantes que queden pendientes.
+7. **Claude Code en la nube:** un clon remoto requiere trasladar los cambios al entorno local para verlos en `localhost`. Coordinarlo con el usuario.
 8. **Antes de declarar terminado:** cumplir §12 e informar de qué se comprobó y qué no. No aplicar migraciones ni mutar datos reales como prueba sin autorización específica.
-
-#### Operación del trabajo simultáneo
-
-La herramienta requiere Node 22.13 o superior con `node:sqlite` y Git con `merge-tree --write-tree`. El registro está en `<git-common-dir>/coord/registro.sqlite`. Las marcas permanecen en el git-dir privado de cada worktree. Las reservas manuales de nube dejan su marca junto al registro. Las entregas se fijan en `refs/coord/entregas/`. Son metadatos locales del clon. El estado se comprueba al operar y el registro se reconstruye a partir de Git si se pierde. Las reservas se mantienen hasta su cierre explícito. Los agentes deben respetarlas antes de editar. La CLI controla la entrega y la integración. Las ramas y worktrees antiguos necesitan incorporar la versión vigente de las reglas antes de editar en paralelo.
-
-Desde la carpeta principal, crear una tarea por agente. La salida indica la carpeta hermana `periodismo-alejodice-wt` y el worktree que debe abrir el agente. Los argumentos de ruta se interpretan desde el directorio actual. Las reservas pueden repetirse por archivo exacto o carpeta. En Windows se comparan sin distinguir mayúsculas. Usar comillas para pasar rutas literalmente.
-
-```powershell
-node scripts/coord.mjs estado
-node scripts/coord.mjs iniciar --agente claude --tarea tarjetas --archivo 'components/cards.tsx'
-# Estos comandos se ejecutan en la carpeta del worktree de la tarea.
-node scripts/coord.mjs validar
-node scripts/coord.mjs ampliar --archivo 'app/(public)/page.tsx'
-# Después del commit de tarea autorizado, con árbol limpio.
-node scripts/coord.mjs entregar --nota 'Ajusta tarjetas e inicio' --pruebas 'npm test' --depende otra-tarea
-```
-
-- Para adoptar un worktree existente, usar `adoptar --agente claude --tarea tarjetas --archivo 'components/cards.tsx' --base SHA` desde ese worktree. El SHA debe incluir las reglas vigentes y ser ancestro de la rama. Preferir abrir el worktree creado por la herramienta directamente como proyecto local de Claude. Si el sandbox bloquea el acceso común a Git, solicitar el permiso puntual de la app. No abrir el alcance de escritura a toda la carpeta principal.
-- Abrir servidores en puertos distintos y usar `.next` y dependencias propias. Los worktrees de tareas se preparan con datos simulados. La CLI deja la configuración real fuera del worktree. `package.json` y `package-lock.json` se reservan juntos. Las migraciones se reservan por nombre exacto y prefijo numérico. Los archivos de protocolo quedan reservados al integrador.
-- Las reservas de una entrega siguen vigentes hasta integrar o liberar. Si falta permiso para hacer commit, conservar el worktree y describir el pendiente. Para abandonar o transferir, usar `liberar` en el worktree limpio antes de reservar el alcance para otra tarea. Liberar mantiene la rama y los objetos Git. Si el worktree tiene cambios, preservarlos y resolverlos antes de liberar. Una sesión antigua que perdió la reserva debe volver a coordinar antes de editar.
-- Para la nube, Codex reserva localmente con `adoptar --agente claude-nube --tarea ID --rama claude/RAMA --base SHA --archivo RUTA` desde main. El usuario transmite la reserva y la base publicada. Una vez publicada la rama con autorización, Codex trae el ref con `git fetch origin` y ejecuta `entregar --tarea ID --nota TEXTO --pruebas TEXTO`. El registro de SQLite vive en el equipo local.
-
-**Integración.** Desde la carpeta principal en `main`, Codex usa `integrar preparar --agente codex --tarea ID --confirmar` con autorización para crear el candidato local. Git fusiona los objetos. Un conflicto conserva la entrega. Coordinar la resolución con el agente y, si procede, liberar la tarea y entregar la corrección con un ID nuevo. Acordar el cambio con las tareas que dependían del ID anterior. El candidato incluye la nota de memoria y se prueba en el worktree independiente con `npm test`, `npm run check` y `npm run build`. Si hay dependencias, se integran antes. Tras revisar el SHA candidato y con autorización de integración, ejecutar `integrar confirmar --agente codex --tarea ID --sha SHA --confirmar`. Solo admite fast-forward con `main` limpia y en la base esperada. Antes de confirmar, revisar las secciones de memoria «En curso» y «Pendientes». Los estados de coordinación vigentes se consultan con `estado`.
-
-**Tarea inicial.** `tarea-0` protege la portada existente en `main`. Su ref de respaldo apunta a un árbol Git que incluye la migración que estaba sin seguimiento. Tras el commit autorizado y con `main` limpia, ejecutar `liberar` desde la carpeta principal. Si los archivos difieren del respaldo, el integrador revisa el diff y confirma la liberación. La integración de otras tareas espera mientras la tarea inicial siga activa.
-
-**Recuperación.** Tras una interrupción, consultar `estado`. Si el SHA de entrega es ancestro de `main`, se reconcilia como integrado. Para repetir la preparación se reutiliza el candidato asociado a la misma base y se vuelven a ejecutar las pruebas. Un worktree de integración con cambios se revisa antes de tocarlo. Si falta SQLite se reconstruye el listado desde worktrees, marcas y refs. Si está dañado, cerrar las sesiones, conservar el archivo dañado con `estado --recuperar --agente codex --confirmar` previa autorización y redeclarar las reservas desconocidas mediante `adoptar`. Para una entrega recuperada, volver a registrar nota, pruebas y dependencias con `entregar` sobre el SHA previamente fijado.
 
 ## 2. Tecnología y ejecución
 
@@ -117,10 +90,12 @@ Portal público: `/`, `/noticia/[slug]`, `/categoria/[slug]`, `/buscar`, `/derec
 
 ## 5. Diseño que debe conservarse
 
-- El indicador [REC] se fija a la esquina superior derecha. El portal usa Inter salvo la marca, «Archivos desclasificados», la fecha del sistema y los estilos propios de las noticias.
+- El portal muestra «Archivos desclasificados» y la fecha de Madrid en la esquina superior derecha. Su contenido ocupa el 80% de la pantalla en escritorio y conserva márgenes reducidos en móvil. La cabecera incluye la ilustración aportada por el usuario con fondo transparente. Inicio muestra una selección de cuatro noticias recientes en «Más populares» mientras no haya métricas verificadas, tres en «Lo más reciente» y el resto en «Últimas noticias». Las tarjetas muestran día y mes.
+- El portal ofrece tema claro y oscuro mediante el selector superior izquierdo. La preferencia se guarda en `localStorage`; el tema predeterminado es oscuro. La administración conserva su diseño propio.
+- Las imágenes y categorías de las tarjetas y la portada enlazan a la noticia. «Últimas noticias» alterna grupos de tres con disposición 1–2, tres columnas y 2–1; en móvil se apilan.
 - Portal, preview y panel usan grises oscuros, texto claro y acento rojo; estética editorial confidencial, minimalista, inspirada en Codex. No recuperar el antiguo fondo azul.
 - Texto normal de noticias en **Inter Light 300**, negritas 700; títulos/subtítulos mantienen serif. Texto administrativo en Inter, con estilos heredados puntuales en la barra.
-- Marca **Alejo Bengoechea** en texto; Alejo muy fino. Lema: "Periodismo y análisis". "Alejo Dice" es una denominación antigua errónea: no usarla en código, metadatos ni textos. Metadatos, firma por defecto del editor, ejemplos y portada sin imagen (`AB.`) ya usan la marca correcta. Las filas ya guardadas en Supabase pueden conservar la firma antigua; no se han modificado datos remotos. El nombre interno del paquete npm (`periodismo-alejodice`) coincide con la carpeta y no es visible. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
+- Marca **Alejo Bengoechea** en texto. El portal usa el lema «Periodismo independiente» bajo el nombre y una línea horizontal. "Alejo Dice" es una denominación antigua errónea: no usarla en código, metadatos ni textos. Las filas ya guardadas en Supabase pueden conservar la firma antigua; no se han modificado datos remotos. El nombre interno del paquete npm (`periodismo-alejodice`) coincide con la carpeta y no es visible. Menú contraíble hacia la izquierda, sin reflujo vertical ni letras asomando al cerrarlo.
 - Identificación discreta `Mesa editorial / ÁREA EDITORIAL · PRIVADO` dentro del menú. No restaurar el rótulo flotante ni `admin-head` con línea superior.
 - Pie del menú: **Ir al portal** amarillo, después **Cerrar sesión** rojo y el nombre centrado abajo, sin enlace. Ambos controles comparten `console-footer-action`: misma tipografía, tamaño, iconos, alineación y padding.
 - Menú: Gestión editorial aparece antes de Mesa de trabajo. La ruta activa tiene fondo más claro y aria-current=page. Al contraerlo queda una barra vertical de iconos que enlazan a las mismas vistas y conservan sus nombres accesibles y su posición vertical. En móvil, la barra empieza contraída y el menú ampliado se superpone al contenido.

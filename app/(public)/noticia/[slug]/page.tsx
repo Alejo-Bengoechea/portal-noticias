@@ -28,7 +28,7 @@ export default async function ArticlePage({ params }: Props) {
     ? (Array.isArray(editorialTags) ? editorialTags.map(String) : [])
     : tags.filter(t => article.tag_ids.includes(t.id)).map(t => t.name);
   return <article className="story">
-    {category && <Link className="eyebrow accent" href={`/categoria/${category.slug}`}>{category.name}</Link>}
+    {category && <Link className="eyebrow accent" href={`/noticia/${article.slug}`}>{category.name}</Link>}
     <h1>{article.title}</h1>
     <p className="dek">{article.subtitle}</p>
     <p className="byline">Por <strong>{article.author}</strong> {article.published_at && <time dateTime={article.published_at}>{dateLabel(article.published_at)}</time>}</p>

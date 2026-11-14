@@ -18,6 +18,8 @@ function loadPublicLayout(getTerms) {
     '@/components/page-view': { PageView: 'PageView' },
     '@/lib/supabase': { configured: false },
     '@/lib/articles': { getTerms },
+    '@/components/public-nav-link': { PublicNavLink: 'Link' },
+    '@/components/theme-switcher': { ThemeSwitcher: 'ThemeSwitcher' },
   };
   const module = { exports: {} };
   new Function('require', 'module', 'exports', 'React', code)(
@@ -81,4 +83,20 @@ test('con muchas categorías, el menú muestra todas sin recortar', async () => 
   const tree = await PublicLayout({ children: null });
   const navLinks = links(tree);
   assert.equal(navLinks.filter(l => l.href.startsWith('/categoria/')).length, 6);
+});
+
+test('el enlace activo sigue la ruta actual', () => {
+  const file = join(__dirname, '..', 'components', 'public-nav-link.tsx');
+  const code = ts.transpileModule(readFileSync(file, 'utf8'), {
+    compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.React },
+  }).outputText;
+  let pathname = '/categoria/espana';
+  const mocks = { 'next/link': { default: 'Link' }, 'next/navigation': { usePathname: () => pathname } };
+  const module = { exports: {} };
+  new Function('require', 'module', 'exports', 'React', code)(name => mocks[name], module, module.exports, React);
+  const { PublicNavLink } = module.exports;
+  assert.equal(PublicNavLink({ href: '/categoria/espana', children: 'España' }).props['aria-current'], 'page');
+  pathname = '/categoria/cultura';
+  assert.equal(PublicNavLink({ href: '/categoria/espana', children: 'España' }).props['aria-current'], undefined);
+  assert.equal(PublicNavLink({ href: '/categoria/cultura', children: 'Cultura' }).props['aria-current'], 'page');
 });

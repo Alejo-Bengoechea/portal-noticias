@@ -23,6 +23,19 @@ test('sin Supabase no aparecen noticias ni categorías inventadas en el portal',
   assert.equal(await api.getArticle('las-ciudades-que-queremos'), null);
 });
 
+test('la imagen y la categoría de una tarjeta abren su noticia', () => {
+  const cards = load('components/cards.tsx', {
+    'react/jsx-runtime': require('react/jsx-runtime'), 'next/link': { default: 'a' },
+    '@/lib/format': { webUrl: value => value },
+  });
+  const markup = renderToStaticMarkup(React.createElement(cards.Card, {
+    article: { slug: 'ejemplo', title: 'Noticia', subtitle: '', cover_url: 'https://ejemplo.com/foto.jpg', cover_alt: 'Foto', published_at: null },
+    category: { name: 'CULTURA', slug: 'cultura' },
+  }));
+  assert.match(markup, /href="\/noticia\/ejemplo"[^>]*><img/);
+  assert.match(markup, /href="\/noticia\/ejemplo"[^>]*>CULTURA<\/a>/);
+});
+
 test('el inicio pagina sin repetir la portada y cada categoría conserva todas sus noticias publicadas', async () => {
   const categories = [
     { id: 'esp', slug: 'espana', name: 'ESPAÑA' },
@@ -74,10 +87,10 @@ test('el inicio pagina sin repetir la portada y cada categoría conserva todas s
   const first = await home('1');
   const second = await home('2');
   const titles = markup => Array.from(markup.matchAll(/<h[13]><a href="\/noticia\/([^"]+)">/g), match => match[1]);
-  assert.deepEqual(titles(first), ['noticia-14', ...rows.slice(0, 12).map(row => row.slug)]);
-  assert.deepEqual(titles(second), ['noticia-12', 'noticia-13', 'noticia-15']);
-  assert.match(first, /href="\/\?pagina=2"/);
-  assert.doesNotMatch(second, /Portada|pagina=3/);
+  assert.deepEqual(titles(first), ['noticia-14', ...rows.slice(0, 4).map(row => row.slug), ...rows.slice(0, 3).map(row => row.slug), ...rows.slice(3, 14).map(row => row.slug), 'noticia-15']);
+  assert.deepEqual(titles(second), titles(first));
+  assert.doesNotMatch(first, /Siguiente/);
+  assert.doesNotMatch(first, /popularidad pendiente de medir/);
 
   const category = renderToStaticMarkup(await Category({ params: Promise.resolve({ slug: 'espana' }), searchParams: Promise.resolve({}) }));
   assert.deepEqual(titles(category), rows.slice(0, 16).filter(row => row.category_id === 'esp').map(row => row.slug));

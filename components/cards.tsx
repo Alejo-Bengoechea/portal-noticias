@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { ArticleCard, Term } from '@/lib/articles';
-import { dateLabel, webUrl } from '@/lib/format';
+import { webUrl } from '@/lib/format';
+
+const cardDate = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' });
 
 export function Cover({ article, priority = false }: { article: Pick<ArticleCard, 'cover_url' | 'cover_alt' | 'category_id'>; priority?: boolean }) {
   const src = webUrl(article.cover_url);
@@ -10,12 +12,23 @@ export function Cover({ article, priority = false }: { article: Pick<ArticleCard
 
 export function Card({ article, category }: { article: ArticleCard; category?: Term }) {
   return <article className="card">
-    <Cover article={article} />
-    {category && <Link className="eyebrow accent" href={`/categoria/${category.slug}`}>{category.name}</Link>}
+    <Link className="card-cover-link" href={`/noticia/${article.slug}`} aria-label={`Leer ${article.title}`}><Cover article={article} /></Link>
+    {category && <Link className="eyebrow accent" href={`/noticia/${article.slug}`}>{category.name}</Link>}
     <h3><Link href={`/noticia/${article.slug}`}>{article.title}</Link></h3>
     <p>{article.subtitle}</p>
-    {article.published_at && <time dateTime={article.published_at}>{dateLabel(article.published_at)}</time>}
+    {article.published_at && <time dateTime={article.published_at}>{cardDate.format(new Date(article.published_at))}</time>}
   </article>;
+}
+
+export function ArchiveCards({ articles, categories }: { articles: ArticleCard[]; categories: Term[] }) {
+  const groups = [];
+  for (let start = 0; start < articles.length; start += 3) {
+    const group = articles.slice(start, start + 3);
+    groups.push(<div className={`archive-group archive-group-${(start / 3) % 3}`} key={group[0].id}>
+      {group.map(article => <Card key={article.id} article={article} category={categories.find(category => category.id === article.category_id)} />)}
+    </div>);
+  }
+  return <div className="archive-groups">{groups}</div>;
 }
 
 export function Cards({ articles, categories }: { articles: ArticleCard[]; categories: Term[] }) {

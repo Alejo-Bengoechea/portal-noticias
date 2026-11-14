@@ -19,20 +19,30 @@ export const getTerms = cache(async (table: 'categories' | 'tags'): Promise<Term
   return table === 'categories' ? data.map(term => ({ ...term, name: String(term.name).toLocaleUpperCase('es') })) : data;
 });
 
-export const getArticles = cache(async (category?: string, query = '', page = 1, coverId?: string): Promise<ArticleCard[]> => {
+export const getArticles = cache(async (category?: string, query = '', page = 1, coverId?: string, pageSize = articlePageSize): Promise<ArticleCard[]> => {
   const client = publicClient();
-  const start = (page - 1) * articlePageSize;
+  const start = (page - 1) * pageSize;
   const term = query.replace(/[^\p{L}\p{N}\s-]/gu, ' ').trim();
   if (query && !term) return [];
   if (!client) return [];
   let request = client.from('articles').select(cardFields).lte('published_at', new Date().toISOString())
-    .order('published_at', { ascending: false }).order('id').range(start, start + articlePageSize);
+    .order('published_at', { ascending: false }).order('id').range(start, start + pageSize);
   if (category) request = request.eq('category_id', category);
   if (coverId) request = request.neq('id', coverId);
   if (term) request = request.or(`title.ilike.%${term}%,subtitle.ilike.%${term}%`);
   const { data, error } = await request;
   if (error) throw error;
   return data;
+});
+
+export const getHomeArticles = cache(async (coverId?: string): Promise<ArticleCard[]> => {
+  const articles: ArticleCard[] = [];
+  const pageSize = 100;
+  for (let page = 1; ; page++) {
+    const batch = await getArticles(undefined, '', page, coverId, pageSize);
+    articles.push(...batch.slice(0, pageSize));
+    if (batch.length <= pageSize) return articles;
+  }
 });
 
 export const getHomeCover = cache(async (): Promise<ArticleCard | null> => {

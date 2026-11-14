@@ -4,13 +4,13 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Sincronización
 
-- Última actualización: 2026-11-14 · Codex
-- Commit base: `e3d9791`
-- Árbol al cerrar: limpio tras el commit de cierre.
+- Última actualización: 2026-11-15 · Codex
+- Commit base: `cc26bb1`
+- Árbol al cerrar: con cambios sin commit del protocolo y del rediseño del portal.
 
 ## En curso
 
-- Nada en curso.
+- Rediseño editorial y temas del portal en la carpeta principal. Pendiente revisión visual, accesibilidad y cobertura completa de colores en ambos temas.
 
 ## Pendientes
 
@@ -22,18 +22,17 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Decisiones vigentes
 
-- Las ediciones van en un worktree con `iniciar` o `adoptar`, `validar`, `ampliar` y `entregar`. Claude entrega y Codex integra con autorización. Las lecturas pueden hacerse en main.
 - 2026-11-13 · Audiencia y tráfico muestra datos simulados identificados (`lib/analytics-demo.ts`) hasta conectar el tráfico real.
 
 ## Registro
 
 Más reciente arriba. Máximo 8 entradas; borrar las más antiguas (Git conserva el historial).
 
-- 2026-11-14 · Codex · Cerró la puesta en marcha. Claude validó, amplió y entregó sin bloqueos reportados. Integraciones `c1e2869` y `e3d9791`. Limpieza en este commit.
-- 2026-11-14 · Codex · Prueba local de coordinación de Codex · `127d9f6`.
-- 2026-11-14 · Claude Code · Prueba de coordinacion de Claude Code: dos archivos temporales · `56a5f4e`.
-- 2026-11-14 · Codex · CLI, reservas y protocolo compartido. Respaldo de las 15 rutas iniciales en `refs/coord/respaldos/tarea-0/`. `3091a52`.
-- 2026-11-14 · Claude Code · A pedido del usuario: 3 categorías nuevas (CULTURA, DEPORTES, CIENCIA Y TECNOLOGÍA) y 5 noticias completas publicadas vía el panel/Supabase real (una por categoría nueva más ECONOMÍA y ECONO), para ver el portal con contenido. Sin cambios de código ni commit.
-- 2026-11-14 · Codex · Portada elegible en el gestor, respaldo automático y paginación del portal por inicio/categoría (`lib/articles.ts`, `app/(public)/`). `aad78ce`.
-- 2026-11-13 · Usuario · Incorpora el protocolo de memoria compartida al historial. `917101f`.
-- 2026-11-13 · Claude Code · Sistema de memoria compartida: crea `MEMORIA_IA.md`, añade sus reglas a `AGENTS.md`, la importa en `CLAUDE.md` y la cita en `CONTEXTO_IA.md` §1.1. Sin commit.
+- 2026-11-15 · Claude Code · A pedido del usuario: 20 noticias de prueba (lorem ipsum, con portada e imagen, 4 por categoría) creadas y publicadas en Supabase real. Sin cambios de código ni commit. Con el panel del navegador oculto las páginas no cargan.
+- 2026-11-15 · Codex · Ajusta enlaces, tipografía y distribución de noticias; amplía la ilustración. `components/cards.tsx`, `app/(public)/page.tsx`, `app/globals.css`. Sin commit.
+- 2026-11-15 · Codex · Simplifica selector, ajusta cabecera e ilustración y muestra tres noticias recientes. `app/(public)/`, `app/globals.css`. Sin commit.
+- 2026-11-15 · Codex · Reorganiza inicio en más populares, lo más reciente y últimas noticias. Popularidad pendiente de métricas reales. `app/(public)/page.tsx`. Sin commit.
+- 2026-11-15 · Codex · Añade temas claro, oscuro y automático al portal. `components/theme-switcher.tsx`, `app/globals.css`. Sin commit.
+- 2026-11-15 · Codex · Ajusta cabecera, ilustración, fechas y paginación de cuatro noticias. `app/(public)/`, `components/cards.tsx`. Sin commit.
+- 2026-11-14 · Codex · Compacta portada y últimas noticias; centra categorías y añade lupa. `app/(public)/layout.tsx`, `app/globals.css`. Sin commit.
+- 2026-11-14 · Codex · Ajusta tipografía, categoría activa y buscador del portal. `components/public-nav-link.tsx`, `app/globals.css`. Sin commit.

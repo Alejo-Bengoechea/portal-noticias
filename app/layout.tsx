@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="es"><body><a className="skip" href="#contenido">Saltar al contenido</a>{children}</body></html>;
+  return <html lang="es" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: `try{document.documentElement.dataset.portalTheme=localStorage.getItem('portal-theme')==='claro'?'claro':'oscuro'}catch(e){document.documentElement.dataset.portalTheme='oscuro'}` }} /></head><body><a className="skip" href="#contenido">Saltar al contenido</a>{children}</body></html>;
 }
