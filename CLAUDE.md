@@ -8,6 +8,6 @@ La fuente común es `CONTEXTO_IA.md`, incluido el protocolo de colaboración (§
 
 ## Entorno de Claude Code
 
-- En la nube se trabaja sobre un clon de GitHub, no sobre la carpeta local. Usar ramas separadas para proponer cambios y seguir el protocolo común para integrarlos.
-- En Windows usar `npm.cmd` en PowerShell. Para trabajo simultáneo, usar clones o worktrees distintos.
+- En local, abrir la sesión en la carpeta del worktree creado por `scripts/coord.mjs iniciar` y ejecutar `validar`. Si la app ya creó el worktree, pedir su adopción antes de editar.
+- En la nube, usar la rama y la base publicada de la reserva manual registrada por Codex. En Windows, usar `npm.cmd` en PowerShell y citar las rutas que llevan paréntesis o corchetes.
 - `.claude/settings.json` restringe lecturas de archivos de entorno. No eludir estas restricciones mediante shell ni mostrar credenciales. Consultar `.env.example` para los nombres de variables.

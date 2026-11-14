@@ -1,6 +1,6 @@
 # Contexto del proyecto para asistentes de código
 
-Actualizado: **11 de noviembre de 2026**. Estado consolidado del código y referencia común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
+Actualizado: **14 de noviembre de 2026**. Estado consolidado del código y referencia común para **Codex** (entra por [AGENTS.md](AGENTS.md)) y **Claude Code** (entra por [CLAUDE.md](CLAUDE.md)).
 
 ## 1. Reglas de trabajo
 
@@ -23,12 +23,39 @@ El usuario determina los roles. En la colaboración actual, Codex coordina la in
 0. **Memoria compartida:** `MEMORIA_IA.md` guarda el relevo entre agentes (cambios recientes, tareas en curso, pendientes y decisiones). Se lee al empezar y se actualiza al terminar cada tarea, según las reglas de `AGENTS.md` («Memoria compartida»). Este documento guarda lo estable; la memoria, lo que cambia.
 1. **Al empezar:** leer `MEMORIA_IA.md`, revisar `git status` y los commits posteriores a su commit base, y las secciones pertinentes de este documento. Consultar GitHub con `git fetch origin` cuando sea necesario; actualizar con `git pull --ff-only` solo con el árbol limpio y tras revisar los cambios.
 2. **Cambios ajenos sin commit:** no revertirlos, reformatearlos ni incluirlos en el propio commit. Continuar con archivos independientes; aislar o pedir aclaración solo si existe un conflicto que no puede resolverse de forma segura. Proteger el trabajo antes de integrar ramas.
-3. **Un agente a la vez sobre la misma carpeta.** Para trabajo simultáneo hacen falta worktrees o clones separados, además de ramas separadas. Una rama por sí sola no aísla los archivos.
+3. **Trabajo simultáneo:** una rama y un worktree por tarea, con reservas compartidas y entrega por SHA (ver abajo). El usuario autoriza los commits locales por tarea. Codex es el integrador, desde la carpeta principal.
 4. **Cambios localizados:** evitar limpiezas fuera de alcance y dependencias redundantes. Las rutas, dependencias y capas necesarias para la tarea están autorizadas por su alcance; no requieren otra confirmación rutinaria. Seguir el estilo del archivo y leer la guía local de Next.js antes de modificar código.
-5. **Al terminar:** actualizar `MEMORIA_IA.md`. Commits con alcance claro y mensaje en español, con la memoria incluida; excluir cambios ajenos y credenciales. Hacer push cuando esté autorizado por el usuario en la tarea. Un push de Git no autoriza publicar Sites.
-6. **Si cambia el comportamiento real**, actualizar este documento en el mismo commit, reemplazando lo obsoleto. Corregir contradicciones relacionadas con la tarea; explicar las discrepancias relevantes que queden pendientes.
+5. **Al terminar:** en modo serie actualizar `MEMORIA_IA.md`. En paralelo registrar la nota y las pruebas con `entregar` para que Codex consolide la memoria. Excluir cambios ajenos y credenciales. Cada push o publicación requiere su propia autorización.
+6. **Si cambia el comportamiento real**, actualizar aquí la documentación en modo serie. En paralelo indicar en la entrega qué sección debe actualizar el integrador.
 7. **Claude Code en la nube** trabaja en un clon de GitHub, normalmente en ramas `claude/...`. Sus cambios llegan al proyecto local tras fetch, revisión y fusión autorizada; los cambios locales solo serán visibles en la nube después del push correspondiente.
 8. **Antes de declarar terminado:** cumplir §12 e informar de qué se comprobó y qué no. No aplicar migraciones ni mutar datos reales como prueba sin autorización específica.
+
+#### Operación del trabajo simultáneo
+
+La herramienta requiere Node 22.13 o superior con `node:sqlite` y Git con `merge-tree --write-tree`. El registro está en `<git-common-dir>/coord/registro.sqlite`. Las marcas permanecen en el git-dir privado de cada worktree. Las reservas manuales de nube dejan su marca junto al registro. Las entregas se fijan en `refs/coord/entregas/`. Son metadatos locales del clon. El estado se comprueba al operar y el registro se reconstruye a partir de Git si se pierde. Las reservas se mantienen hasta su cierre explícito. Los agentes deben respetarlas antes de editar. La CLI controla la entrega y la integración. Las ramas y worktrees antiguos necesitan incorporar la versión vigente de las reglas antes de editar en paralelo.
+
+Desde la carpeta principal, crear una tarea por agente. La salida indica la carpeta hermana `periodismo-alejodice-wt` y el worktree que debe abrir el agente. Los argumentos de ruta se interpretan desde el directorio actual. Las reservas pueden repetirse por archivo exacto o carpeta. En Windows se comparan sin distinguir mayúsculas. Usar comillas para pasar rutas literalmente.
+
+```powershell
+node scripts/coord.mjs estado
+node scripts/coord.mjs iniciar --agente claude --tarea tarjetas --archivo 'components/cards.tsx'
+# Estos comandos se ejecutan en la carpeta del worktree de la tarea.
+node scripts/coord.mjs validar
+node scripts/coord.mjs ampliar --archivo 'app/(public)/page.tsx'
+# Después del commit de tarea autorizado, con árbol limpio.
+node scripts/coord.mjs entregar --nota 'Ajusta tarjetas e inicio' --pruebas 'npm test' --depende otra-tarea
+```
+
+- Para adoptar un worktree existente, usar `adoptar --agente claude --tarea tarjetas --archivo 'components/cards.tsx' --base SHA` desde ese worktree. El SHA debe incluir las reglas vigentes y ser ancestro de la rama. Preferir abrir el worktree creado por la herramienta directamente como proyecto local de Claude. Si el sandbox bloquea el acceso común a Git, solicitar el permiso puntual de la app. No abrir el alcance de escritura a toda la carpeta principal.
+- Abrir servidores en puertos distintos y usar `.next` y dependencias propias. Los worktrees de tareas se preparan con datos simulados. La CLI deja la configuración real fuera del worktree. `package.json` y `package-lock.json` se reservan juntos. Las migraciones se reservan por nombre exacto y prefijo numérico. Los archivos de protocolo quedan reservados al integrador.
+- Las reservas de una entrega siguen vigentes hasta integrar o liberar. Si falta permiso para hacer commit, conservar el worktree y describir el pendiente. Para abandonar o transferir, usar `liberar` en el worktree limpio antes de reservar el alcance para otra tarea. Liberar mantiene la rama y los objetos Git. Si el worktree tiene cambios, preservarlos y resolverlos antes de liberar. Una sesión antigua que perdió la reserva debe volver a coordinar antes de editar.
+- Para la nube, Codex reserva localmente con `adoptar --agente claude-nube --tarea ID --rama claude/RAMA --base SHA --archivo RUTA` desde main. El usuario transmite la reserva y la base publicada. Una vez publicada la rama con autorización, Codex trae el ref con `git fetch origin` y ejecuta `entregar --tarea ID --nota TEXTO --pruebas TEXTO`. El registro de SQLite vive en el equipo local.
+
+**Integración.** Desde la carpeta principal en `main`, Codex usa `integrar preparar --agente codex --tarea ID --confirmar` con autorización para crear el candidato local. Git fusiona los objetos. Un conflicto conserva la entrega. Coordinar la resolución con el agente y, si procede, liberar la tarea y entregar la corrección con un ID nuevo. Acordar el cambio con las tareas que dependían del ID anterior. El candidato incluye la nota de memoria y se prueba en el worktree independiente con `npm test`, `npm run check` y `npm run build`. Si hay dependencias, se integran antes. Tras revisar el SHA candidato y con autorización de integración, ejecutar `integrar confirmar --agente codex --tarea ID --sha SHA --confirmar`. Solo admite fast-forward con `main` limpia y en la base esperada. Antes de confirmar, revisar las secciones de memoria «En curso» y «Pendientes». Los estados de coordinación vigentes se consultan con `estado`.
+
+**Tarea inicial.** `tarea-0` protege la portada existente en `main`. Su ref de respaldo apunta a un árbol Git que incluye la migración que estaba sin seguimiento. Tras el commit autorizado y con `main` limpia, ejecutar `liberar` desde la carpeta principal. Si los archivos difieren del respaldo, el integrador revisa el diff y confirma la liberación. La integración de otras tareas espera mientras la tarea inicial siga activa.
+
+**Recuperación.** Tras una interrupción, consultar `estado`. Si el SHA de entrega es ancestro de `main`, se reconcilia como integrado. Para repetir la preparación se reutiliza el candidato asociado a la misma base y se vuelven a ejecutar las pruebas. Un worktree de integración con cambios se revisa antes de tocarlo. Si falta SQLite se reconstruye el listado desde worktrees, marcas y refs. Si está dañado, cerrar las sesiones, conservar el archivo dañado con `estado --recuperar --agente codex --confirmar` previa autorización y redeclarar las reservas desconocidas mediante `adoptar`. Para una entrega recuperada, volver a registrar nota, pruebas y dependencias con `entregar` sobre el SHA previamente fijado.
 
 ## 2. Tecnología y ejecución
 
@@ -132,6 +159,7 @@ Supabase Auth debe tener registro público deshabilitado y el único administrad
 | `202611090004_reset_editorial_test_data.sql` | RPC de limpieza atómica de tablas para pruebas, solo administrador | La RPC respondió en el panel |
 | `202611090005_reset_safe_delete.sql` | Actualiza la RPC con condiciones WHERE para los borrados | Aplicación por confirmar |
 | `202611110001_reset_editorial_storage.sql` | Políticas SELECT/DELETE y recuento autorizado de archivos en `editorial` | Aplicación por confirmar |
+| `202611140001_home_cover.sql` | Elección de portada en una transacción mediante `set_home_cover` | Pendiente |
 
 **Que un archivo exista no demuestra que se haya aplicado.** La columna Remoto procede de una consulta de solo lectura ejecutada por el usuario en SQL Editor el 9 de noviembre de 2026 (comprueba tablas, columnas, restricciones y políticas; el administrador también está configurado), más la aplicación confirmada por el usuario de `202611090003` el mismo día tras probar el guardado real del creador. Volver a comprobar tras aplicar cambios. Los agentes no tienen acceso a la base remota. Para validar el histórico de categorías, revisar primero filas antiguas sin categoría y luego validar la restricción.
 
@@ -144,6 +172,7 @@ Crear, renombrar y eliminar categorías; asociarlas a una noticia desde el edito
 - Panel: `app/mesa-editorial-7k4n/categorias/nueva/page.tsx` + `CategoryManager`/`CategoryCard` listan y editan en una tabla (checkbox, Nombre, Noticias y columna de acciones sin título visible); `CategoryCard` ahora renderiza una fila, no una tarjeta; `manageTerm` en `actions.ts` crea/renombra/elimina con bloqueo si hay noticias asociadas.
 - Asociar a una noticia: el `<select>` de `ArticleForm` (editor completo) y el diálogo "Cambiar categoría" de `NewsRowActions` (menú de fila del gestor, vía `changeNewsCategory`). Ambos exigen categoría salvo en borradores.
 - Portal público: `categoria/[slug]/page.tsx` ya resolvía por slug de forma dinámica. El menú de `app/(public)/layout.tsx` tenía fijos Internacional/España/Economía: se cambió a leer `getTerms('categories')`, igual que el resto del portal. Si esa consulta falla, el menú se degrada a solo "Inicio" (con `.catch(() => [])`) en vez de romper también `/derechos` y `/privacidad`, que no dependían de Supabase. Cubierto por `tests/public-nav.test.cjs`.
+- Cada categoría pagina las noticias publicadas con su `category_id`, incluida la portada cuando pertenece a esa categoría. Inicio muestra la portada en la primera página y pagina el resto de noticias publicadas, de todas las categorías, en grupos de 12. El filtro que excluye la portada se aplica antes de paginar.
 - Pendiente, no implementado: el recuadro de portada sin imagen (`cover-art`, en `cards.tsx`) solo tiene variantes de color para los IDs de muestra `1`/`2`/`3`; con categorías reales (UUID) todas usan el color por defecto. Es solo estético.
 
 ### 7.2 Noticias y operaciones de tabla
@@ -155,6 +184,7 @@ Crear, renombrar y eliminar categorías; asociarlas a una noticia desde el edito
 - Checkbox de cabecera selecciona filas cargadas. Barra de selección: Eliminar con confirmación en ambos gestores, Publicar/Despublicar solo en noticias. Validación de servidor, máximo 500 IDs únicos. No permitir publicación rápida de borradores ni noticias sin categoría. Las noticias preparadas mediante Crear sí admiten su primera publicación.
 - Publicar (en lote o por fila) solo cambia noticias despublicadas o preparadas mediante Crear; las ya publicadas conservan su `published_at` original y se ignoran en el lote. Despublicar solo cambia las publicadas. No reintroducir actualizaciones que reescriban la fecha de publicación de noticias ya publicadas.
 - Menú por fila: publicar o despublicar según estado, copiar ID al portapapeles, cambiar categoría, descargar JSON y eliminar con confirmación. El título de la fila no es enlace. Editar está en el menú: habilitado para borradores y noticias despublicadas; deshabilitado para publicadas (requieren despublicar antes). No se muestra la columna ID.
+- En el gestor, las noticias publicadas se pueden **Designar como portada** desde el menú de fila. Una vez aplicada la migración, Supabase sustituye la selección manual en una transacción y el gestor señala la portada visible. Los editores conservan la selección al guardar. Si ninguna destacada está publicada, Inicio usa la publicación más reciente. Con una sola noticia, aparece una vez como portada.
 - Categorías siempre en mayúsculas. Selección con checkbox por fila y seleccionar todas en cabecera. El nombre es texto hasta pulsar Editar; Guardar aparece tras un cambio, a la derecha de Eliminar. Cancelar la confirmación restaura el nombre y oculta Guardar. Renombrar conserva slug. Eliminar bloqueado si hay noticias asociadas, sin conteos ficticios.
 - Eliminar una noticia no elimina sus imágenes de Storage.
 
