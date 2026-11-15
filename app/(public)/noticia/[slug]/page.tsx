@@ -5,6 +5,7 @@ import { dateLabel, webUrl } from '@/lib/format';
 import { Cover } from '@/components/cards';
 import { RichText } from '@/components/rich-text';
 import { EditorialArticleBody } from '@/components/news-preview';
+import { ArticleScrollReset } from '@/components/article-scroll-reset';
 
 type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props) {
@@ -28,6 +29,7 @@ export default async function ArticlePage({ params }: Props) {
     ? (Array.isArray(editorialTags) ? editorialTags.map(String) : [])
     : tags.filter(t => article.tag_ids.includes(t.id)).map(t => t.name);
   return <article className="story">
+    <ArticleScrollReset slug={slug} />
     {category && <Link className="eyebrow accent" href={`/noticia/${article.slug}`}>{category.name}</Link>}
     <h1>{article.title}</h1>
     <p className="dek">{article.subtitle}</p>

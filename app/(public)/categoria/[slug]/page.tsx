@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
-import { Cards, Pagination, pageNumber } from '@/components/cards';
-import { articlePageSize, getArticles, getTerms } from '@/lib/articles';
+import { Cards, HeroStory, Pagination, pageNumber } from '@/components/cards';
+import { CoverCarousel } from '@/components/cover-carousel';
+import { articlePageSize, getArticles, getCategoryCovers, getTerms } from '@/lib/articles';
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ pagina?: string }> };
 export async function generateMetadata({ params }: Props) {
@@ -15,7 +16,13 @@ export default async function Category({ params, searchParams }: Props) {
   const categories = await getTerms('categories');
   const category = categories.find(c => c.slug === slug);
   if (!category) notFound();
-  const articles = await getArticles(category.id, '', page);
-  return <><h1 className="page-title">{category.name}</h1><Cards articles={articles.slice(0, articlePageSize)} categories={categories} />
+  // Las portadas (1 a 3) se muestran arriba en la primera página y no se repiten en el listado.
+  const covers = await getCategoryCovers(category.id);
+  const articles = await getArticles(category.id, '', page, covers.map(cover => cover.id));
+  return <><h1 className="page-title">{category.name}</h1>
+    {page === 1 && covers.length > 0 && <div className="category-cover-area"><CoverCarousel label={`Portadas de ${category.name}`}>
+      {covers.map((cover, i) => <HeroStory key={cover.id} article={cover} heading="h2" priority={i === 0} />)}
+    </CoverCarousel></div>}
+    {(articles.length > 0 || !covers.length || page > 1) && <Cards wide articles={articles.slice(0, articlePageSize)} categories={categories} />}
     <Pagination page={page} more={articles.length > articlePageSize} href={n => `/categoria/${slug}?pagina=${n}`} /></>;
 }

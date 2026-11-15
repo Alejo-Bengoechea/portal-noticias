@@ -4,18 +4,20 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Sincronización
 
-- Última actualización: 2026-11-15 · Codex
-- Commit base: `cc26bb1`
-- Árbol al cerrar: con cambios sin commit del protocolo y del rediseño del portal.
+- Última actualización: 2026-11-16 · Codex
+- Commit base: `5837dd3`
+- Árbol al cerrar: con cambios sin commit (rediseño, navegación, portadas por categoría, memoria y contexto).
 
 ## En curso
 
-- Rediseño editorial y temas del portal en la carpeta principal. Pendiente revisión visual, accesibilidad y cobertura completa de colores en ambos temas.
+- Rediseño editorial en la carpeta principal. Pendiente revisión visual integral de páginas, dispositivos y ambos temas.
+- Rendimiento del portal: portada limitada a 17 noticias y transiciones de carga en categoría y artículo. Pendiente medir latencia con Supabase real en producción.
 
 ## Pendientes
 
 - Usuario decide cuándo autorizar el push.
-- Portada manual: aplicar `202611140001_home_cover.sql` en Supabase y comprobar el flujo con datos reales. Chrome en escritorio/móvil verificado con Supabase simulado.
+- Más populares: aplicar `202611160001_popular_articles.sql` en Supabase (incluye el contador de visitas) y comprobar que las visitas se registran (`/api/traffic`). Sin ella, «Más populares» cae a las más recientes.
+- Portadas por categoría: aplicar `202611150001_category_covers.sql` en Supabase y probar el guardado real. Panel (escritorio y móvil, aviso de migración) y rotación del portal verificados en local con datos forzados.
 - Instagram: comprobaciones con Meta real (bloque B de `entregables/Prompt-para-Codex.md`); requieren autorización expresa del usuario.
 - Usuario decide: captura periódica de Instagram (dónde se ejecuta y con qué credencial), datos de ejemplo de X/YouTube/TikTok, «Novedades del día».
 - Usuario decide: si `entregables/`, `output/` y `tmp/` (PDF, imágenes, script) deben quedar en el repositorio público. Ya están en el commit `8067974`.
@@ -28,11 +30,11 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 Más reciente arriba. Máximo 8 entradas; borrar las más antiguas (Git conserva el historial).
 
-- 2026-11-15 · Claude Code · Gestores de noticias y borradores ordenan por última actualización por defecto, así la noticia tocada sube arriba. `lib/news-management.ts`, `publicaciones/page.tsx`; arregla tipo en `components/cards.tsx`. Sin commit.
-- 2026-11-15 · Claude Code · Inicio: intercambia los títulos de las dos primeras secciones (el orden no cambia); líneas únicas en «Últimas noticias» (sin línea bajo el título ni dobles); sección de suscripción solo de diseño (no funcional). `app/(public)/page.tsx`, `app/globals.css` (final). Sin commit.
-- 2026-11-15 · Claude Code · «Últimas noticias» del inicio: patrón único 1-3 / 4 / 2-1 / 3 (máx. 14 noticias, no se muestran más). `components/cards.tsx` (`ArchiveCards`), `app/globals.css` (final). Sin commit.
-- 2026-11-15 · Claude Code · Portal: ilustración de cabecera más grande y pegada al nombre; etiqueta «PORTADA»; la altura de la portada la marca el texto y la imagen rellena la fila (solo escritorio). `app/globals.css`, `app/(public)/page.tsx`. Sin commit.
-- 2026-11-15 · Claude Code · A pedido del usuario: 20 noticias de prueba (lorem ipsum, con portada e imagen, 4 por categoría) creadas y publicadas en Supabase real. Sin cambios de código ni commit. Con el panel del navegador oculto las páginas no cargan.
-- 2026-11-15 · Codex · Ajusta enlaces, tipografía y distribución de noticias; amplía la ilustración. `components/cards.tsx`, `app/(public)/page.tsx`, `app/globals.css`. Sin commit.
-- 2026-11-15 · Codex · Simplifica selector, ajusta cabecera e ilustración y muestra tres noticias recientes. `app/(public)/`, `app/globals.css`. Sin commit.
-- 2026-11-15 · Codex · Reorganiza inicio en más populares, lo más reciente y últimas noticias. Popularidad pendiente de métricas reales. `app/(public)/page.tsx`. Sin commit.
+- 2026-11-16 · Codex · Aumenta el contraste de «Más populares» en temas claro y oscuro mediante `app/globals.css`. Sin commit.
+- 2026-11-16 · Codex · Corrige scroll lateral, enlaza la marca superior al inicio y reorganiza el footer en `app/(public)/layout.tsx` y `app/globals.css`. Sin commit.
+- 2026-11-16 · Claude Code · El carrusel de portadas ya no se pausa con el cursor encima (`components/cover-carousel.tsx`). Sin commit.
+- 2026-11-16 · Claude Code · Más margen entre las noticias de «Últimas noticias» (final de `app/globals.css`, bloque `.archive-group`). Sin commit.
+- 2026-11-16 · Claude Code · Inicio: «Lo más reciente» y «Últimas noticias» por fecha de creación (4 + 14 siguientes); «Más populares» = 3 con más visitas en 30 días (`getPopularArticles`, migración `202611160001_popular_articles.sql` sin aplicar; mientras tanto usa las más recientes). `lib/articles.ts`, `app/(public)/page.tsx`, tests. Sin commit.
+- 2026-11-16 · Claude Code · Nuevo cargador del portal tipo maqueta de portada con tinta («Preparando la edición» / «Abriendo el reportaje») en categorías y noticias. `components/public-loader.tsx`, `categoria/[slug]/loading.tsx`, `noticia/[slug]/loading.tsx`, `globals.css`. Sin commit.
+- 2026-11-16 · Claude Code · Carrusel de portadas cada 5 s con controles bajo «Leer el artículo» (`components/cover-carousel.tsx`, portal en cada `.hero-copy`); línea separadora entre portada y listado en categorías (`.category-cover-area`). Sin commit.
+- 2026-11-15 · Claude Code · Inicio admite hasta 3 portadas (carrusel) y se guarda sin migración (`setHomeCovers`, `getHomeCovers`; `designateHomeCover`/RPC retirados). Categorías: listado en 2 columnas con tarjeta horizontal (`Cards wide`). Sin commit.

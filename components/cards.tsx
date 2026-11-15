@@ -37,9 +37,9 @@ export function ArchiveCards({ articles, categories }: { articles: ArticleCard[]
   return <div className="archive-groups">{groups}</div>;
 }
 
-export function Cards({ articles, categories }: { articles: ArticleCard[]; categories: Term[] }) {
+export function Cards({ articles, categories, wide = false }: { articles: ArticleCard[]; categories: Term[]; wide?: boolean }) {
   if (!articles.length) return <p className="empty">No hay publicaciones para mostrar.</p>;
-  return <div className="cards">{articles.map(article => <Card key={article.id} article={article} category={categories.find(c => c.id === article.category_id)} />)}</div>;
+  return <div className={wide ? 'cards cards-wide' : 'cards'}>{articles.map(article => <Card key={article.id} article={article} category={categories.find(c => c.id === article.category_id)} />)}</div>;
 }
 
 export function Pagination({ page, more, href }: { page: number; more: boolean; href: (page: number) => string }) {
@@ -53,4 +53,20 @@ export function Pagination({ page, more, href }: { page: number; more: boolean; 
 export function pageNumber(value: string | undefined) {
   const number = Number(value);
   return Number.isInteger(number) && number > 0 && number <= 10000 ? number : 1;
+}
+
+// Estructura única de portada (inicio y categorías).
+export function HeroStory({ article, category, heading = 'h1', priority = true }: { article: ArticleCard; category?: Term; heading?: 'h1' | 'h2'; priority?: boolean }) {
+  const Heading = heading;
+  const href = `/noticia/${article.slug}`;
+  return <article className="hero">
+    <div className="hero-copy">
+      <p className="eyebrow accent">PORTADA</p>
+      {category && <Link className="eyebrow" href={href}>{category.name}</Link>}
+      <Heading className="hero-title"><Link href={href}>{article.title}</Link></Heading>
+      <p>{article.subtitle}</p>
+      <Link className="read" href={href}>Leer el artículo <span aria-hidden>→</span></Link>
+    </div>
+    <Link className="hero-cover-link" href={href} aria-label={`Leer ${article.title}`}><Cover article={article} priority={priority} /></Link>
+  </article>;
 }

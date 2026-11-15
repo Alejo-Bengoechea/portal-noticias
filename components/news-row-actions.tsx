@@ -4,11 +4,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { bulkNewsAction } from '@/app/mesa-editorial-7k4n/bulk-news-actions';
 import { useActionState, useEffect, useId, useRef, useState } from 'react';
-import { changeNewsCategory, changePublicationStatus, designateHomeCover } from '@/app/mesa-editorial-7k4n/actions';
+import { changeNewsCategory, changePublicationStatus } from '@/app/mesa-editorial-7k4n/actions';
 
-export function NewsRowActions({ id, title, published, draft = false, designatedCover, download, onDeleted, onStatusChange, categoryId, categories, onCategoryChange }: {
+export function NewsRowActions({ id, title, published, draft = false, download, onDeleted, onStatusChange, categoryId, categories, onCategoryChange }: {
   id: string; title: string; published: boolean; draft?: boolean; download: string; onDeleted: () => void; onStatusChange?: (published: boolean) => void;
-  designatedCover: boolean;
   categoryId: string | null; categories: { id: string; name: string }[]; onCategoryChange: (id: string | null) => void;
 }) {
   const router = useRouter();
@@ -49,11 +48,6 @@ export function NewsRowActions({ id, title, published, draft = false, designated
     if (result === 'Estado actualizado.') { onStatusChange?.(!published); menu.current?.hidePopover(); }
     return result;
   }, '');
-  const [coverError, coverAction, designatingCover] = useActionState(async (previous: string, form: FormData) => {
-    const error = await designateHomeCover(previous, form);
-    if (!error) menu.current?.hidePopover();
-    return error;
-  }, '');
   return <>
     <button type="button" className="news-config-button" aria-label={`Opciones de ${title}`} popoverTarget={menuId}
       onClick={event => {
@@ -71,11 +65,6 @@ export function NewsRowActions({ id, title, published, draft = false, designated
         <input autoComplete="off" type="hidden" name="id" value={id} />
         <button name="intent" value={published ? 'unpublish' : 'publish'} disabled={pending}>{pending ? 'Actualizando…' : published ? 'Despublicar' : 'Publicar'}</button>
         {message && message !== 'Estado actualizado.' && <span className="news-action-message" role="status">{message}</span>}
-      </form>}
-      {published && !designatedCover && <form autoComplete="off" action={coverAction}>
-        <input autoComplete="off" type="hidden" name="id" value={id} />
-        <button disabled={designatingCover}>{designatingCover ? 'Actualizando portada…' : 'Designar como portada'}</button>
-        {coverError && <span className="news-action-message" role="alert">{coverError}</span>}
       </form>}
       {published ? <button type="button" disabled title="Despublica la noticia antes de editarla.">Editar</button> : <Link href={`/mesa-editorial-7k4n/articulos/${id}`}>Editar</Link>}
       <button type="button" onClick={async () => { try { await navigator.clipboard.writeText(id); setCopyMessage(''); } catch { setCopyMessage('No se pudo copiar el ID.'); } }}>Copiar ID</button>

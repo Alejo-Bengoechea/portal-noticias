@@ -228,14 +228,34 @@ export async function changeNewsCategory(_: string, form: FormData): Promise<str
   return 'Categoría actualizada.';
 }
 
-export async function designateHomeCover(_: string, form: FormData): Promise<string> {
+export async function setHomeCovers(ids: string[]): Promise<string> {
   const client = await adminClient();
-  const id = field(form, 'id');
-  if (!client || !uuid.test(id)) return 'No se pudo autorizar el cambio de portada.';
-  const { data, error } = await client.rpc('set_home_cover', { article_id: id });
-  if (error?.code === 'PGRST202') return 'Aplica la migración 202611140001_home_cover.sql en Supabase para elegir la portada.';
-  if (error) return 'No se pudo cambiar la portada. Inténtalo de nuevo.';
-  if (!data) return 'La noticia debe estar publicada para designarla como portada.';
+  if (!client || !Array.isArray(ids)) return 'No se pudo autorizar el cambio de portadas.';
+  if (ids.length > 3 || ids.some(id => typeof id !== 'string' || !uuid.test(id)) || new Set(ids).size !== ids.length) return 'El inicio admite hasta tres portadas distintas.';
+  const failure = 'No se pudieron guardar las portadas. Inténtalo de nuevo.';
+  if (ids.length) {
+    const { data, error } = await client.from('articles').select('id').in('id', ids).lte('published_at', new Date().toISOString());
+    if (error) return failure;
+    if (data.length !== ids.length) return 'Solo se pueden elegir noticias publicadas.';
+  }
+  let clear = client.from('articles').update({ featured: false }).eq('featured', true);
+  if (ids.length) clear = clear.not('id', 'in', `(${ids.join(',')})`);
+  if ((await clear).error) return failure;
+  if (ids.length && (await client.from('articles').update({ featured: true }).in('id', ids)).error) return failure;
+  revalidatePath('/', 'layout');
+  return '';
+}
+
+const categoryCoversMigration = 'Aplica la migración 202611150001_category_covers.sql en Supabase para elegir portadas por categoría.';
+
+export async function setCategoryCovers(category: string, ids: string[]): Promise<string> {
+  const client = await adminClient();
+  if (!client || typeof category !== 'string' || !uuid.test(category) || !Array.isArray(ids)) return 'No se pudo autorizar el cambio de portadas.';
+  if (ids.length > 3 || ids.some(id => typeof id !== 'string' || !uuid.test(id)) || new Set(ids).size !== ids.length) return 'Cada categoría admite hasta tres portadas distintas.';
+  const { data, error } = await client.rpc('set_category_covers', { category, article_ids: ids });
+  if (error?.code === 'PGRST202' || error?.code === '42703') return categoryCoversMigration;
+  if (error) return 'No se pudieron guardar las portadas. Inténtalo de nuevo.';
+  if (!data) return 'Solo se pueden elegir noticias publicadas de esta categoría.';
   revalidatePath('/', 'layout');
   return '';
 }
