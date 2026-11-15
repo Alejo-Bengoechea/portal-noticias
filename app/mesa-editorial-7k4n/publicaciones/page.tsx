@@ -29,7 +29,7 @@ export default async function NewsManager({ searchParams }: { searchParams: Prom
         <option value="publicado">Publicado</option><option value="despublicado">Despublicado</option>
       </select></label>}
       <button type="submit">Aplicar</button>
-      {(q || (!drafts && state) || sort !== (drafts ? 'actualizadas' : 'recientes')) && <Link href={`${base}?${new URLSearchParams({ datos: mode, vista: view })}`}>Limpiar</Link>}
+      {(q || (!drafts && state) || sort !== 'actualizadas') && <Link href={`${base}?${new URLSearchParams({ datos: mode, vista: view })}`}>Limpiar</Link>}
     </form>
     {error ? <p className="panel">Para habilitar esta tabla, aplica la migración 202611070004_news_management.sql en Supabase.</p> : <>
       <p className="manager-count">{count} {drafts ? 'borradores' : 'noticias creadas'}{q || (!drafts && state) ? ' encontrados' : ''}</p>

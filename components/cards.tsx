@@ -20,14 +20,20 @@ export function Card({ article, category }: { article: ArticleCard; category?: T
   </article>;
 }
 
+// Patrón único (una sola vez): 1-3 / 4 / 2-1 / 3. No se muestran más noticias.
+const archivePattern = [4, 4, 3, 3];
+
 export function ArchiveCards({ articles, categories }: { articles: ArticleCard[]; categories: Term[] }) {
-  const groups = [];
-  for (let start = 0; start < articles.length; start += 3) {
-    const group = articles.slice(start, start + 3);
-    groups.push(<div className={`archive-group archive-group-${(start / 3) % 3}`} key={group[0].id}>
+  const groups: React.ReactNode[] = [];
+  let start = 0;
+  archivePattern.forEach((size, index) => {
+    const group = articles.slice(start, start + size);
+    start += size;
+    if (!group.length) return;
+    groups.push(<div className={`archive-group archive-group-${index}`} key={group[0].id}>
       {group.map(article => <Card key={article.id} article={article} category={categories.find(category => category.id === article.category_id)} />)}
     </div>);
-  }
+  });
   return <div className="archive-groups">{groups}</div>;
 }
 

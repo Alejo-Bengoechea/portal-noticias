@@ -28,11 +28,11 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 Más reciente arriba. Máximo 8 entradas; borrar las más antiguas (Git conserva el historial).
 
+- 2026-11-15 · Claude Code · Gestores de noticias y borradores ordenan por última actualización por defecto, así la noticia tocada sube arriba. `lib/news-management.ts`, `publicaciones/page.tsx`; arregla tipo en `components/cards.tsx`. Sin commit.
+- 2026-11-15 · Claude Code · Inicio: intercambia los títulos de las dos primeras secciones (el orden no cambia); líneas únicas en «Últimas noticias» (sin línea bajo el título ni dobles); sección de suscripción solo de diseño (no funcional). `app/(public)/page.tsx`, `app/globals.css` (final). Sin commit.
+- 2026-11-15 · Claude Code · «Últimas noticias» del inicio: patrón único 1-3 / 4 / 2-1 / 3 (máx. 14 noticias, no se muestran más). `components/cards.tsx` (`ArchiveCards`), `app/globals.css` (final). Sin commit.
+- 2026-11-15 · Claude Code · Portal: ilustración de cabecera más grande y pegada al nombre; etiqueta «PORTADA»; la altura de la portada la marca el texto y la imagen rellena la fila (solo escritorio). `app/globals.css`, `app/(public)/page.tsx`. Sin commit.
 - 2026-11-15 · Claude Code · A pedido del usuario: 20 noticias de prueba (lorem ipsum, con portada e imagen, 4 por categoría) creadas y publicadas en Supabase real. Sin cambios de código ni commit. Con el panel del navegador oculto las páginas no cargan.
 - 2026-11-15 · Codex · Ajusta enlaces, tipografía y distribución de noticias; amplía la ilustración. `components/cards.tsx`, `app/(public)/page.tsx`, `app/globals.css`. Sin commit.
 - 2026-11-15 · Codex · Simplifica selector, ajusta cabecera e ilustración y muestra tres noticias recientes. `app/(public)/`, `app/globals.css`. Sin commit.
 - 2026-11-15 · Codex · Reorganiza inicio en más populares, lo más reciente y últimas noticias. Popularidad pendiente de métricas reales. `app/(public)/page.tsx`. Sin commit.
-- 2026-11-15 · Codex · Añade temas claro, oscuro y automático al portal. `components/theme-switcher.tsx`, `app/globals.css`. Sin commit.
-- 2026-11-15 · Codex · Ajusta cabecera, ilustración, fechas y paginación de cuatro noticias. `app/(public)/`, `components/cards.tsx`. Sin commit.
-- 2026-11-14 · Codex · Compacta portada y últimas noticias; centra categorías y añade lupa. `app/(public)/layout.tsx`, `app/globals.css`. Sin commit.
-- 2026-11-14 · Codex · Ajusta tipografía, categoría activa y buscador del portal. `components/public-nav-link.tsx`, `app/globals.css`. Sin commit.

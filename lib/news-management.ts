@@ -17,7 +17,7 @@ export async function managedNewsBatch(params: NewsQuery, offset: number, client
   const drafts = params.vista === 'borradores';
   const view = drafts ? 'borradores' : 'creadas';
   const state = drafts ? 'borrador' : ['publicado', 'despublicado'].includes(params.estado ?? '') ? params.estado! : '';
-  const requestedSort = Object.hasOwn(sorts, params.orden ?? '') ? params.orden! : drafts ? 'actualizadas' : 'recientes';
+  const requestedSort = Object.hasOwn(sorts, params.orden ?? '') ? params.orden! : 'actualizadas';
   const sort = drafts && ['recientes', 'antiguas'].includes(requestedSort) ? 'actualizadas' : requestedSort;
   const sorting = sorts[sort];
   const start = offset;
