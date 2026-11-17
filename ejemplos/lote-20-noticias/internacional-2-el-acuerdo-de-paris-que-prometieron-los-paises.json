@@ -1,0 +1,370 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-acuerdo-de-paris-que-prometieron-los-paises",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "clima",
+      "Acuerdo de París",
+      "COP"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Acuerdo de París: qué prometieron los países",
+  "subtitulo": "En 2015, casi doscientos países pactaron frenar el calentamiento global. Explicamos qué dice el tratado, qué significa el límite de 1,5 grados y qué se ha cumplido.",
+  "portada": {
+    "recursoId": "perito",
+    "pie": "El glaciar Perito Moreno, en Argentina, uno de los grandes glaciares de la Patagonia."
+  },
+  "recursos": {
+    "perito": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG?width=1200",
+      "alt": "Glaciar Perito Moreno, en el Parque Nacional Los Glaciares, en el sur de Argentina.",
+      "credito": "Luca Galuzzi, CC BY-SA 2.5 (Wikimedia Commons)"
+    },
+    "kerry": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Secretary_Kerry_Addresses_Delegates_Before_Signing_the_COP21_Climate_Change_Agreement_on_Earth_Day_in_New_York_(26554283406).jpg?width=1200",
+      "alt": "John Kerry se dirige a los delegados antes de firmar el Acuerdo de París en Nueva York.",
+      "credito": "Departamento de Estado de EE. UU., Dominio público (Wikimedia Commons)"
+    },
+    "wind": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maranch%C3%B3n_Complex_Windpark.JPG?width=1200",
+      "alt": "Aerogeneradores del parque eólico de Maranchón, en Guadalajara.",
+      "credito": "Jfga, CC BY 3.0 (Wikimedia Commons)"
+    },
+    "treito": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2025_Monte_Treito_Wind_Farm._Galiza.jpg?width=1200",
+      "alt": "Parque eólico del monte Treito, junto a una aldea de Rianxo, en Galicia.",
+      "credito": "Lmbuga, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El 12 de diciembre de 2015, en la cumbre del clima de París (",
+          "marcas": []
+        },
+        {
+          "texto": "COP21",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": "), los delegados de casi doscientos países aprobaron el ",
+          "marcas": []
+        },
+        {
+          "texto": "Acuerdo de París",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", el primer tratado climático de alcance casi universal. Entró en vigor el 4 de noviembre de 2016.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El objetivo: no pasar de 2 grados"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El acuerdo fija como meta mantener el aumento de la temperatura media global ",
+          "marcas": []
+        },
+        {
+          "texto": "«muy por debajo de 2 °C»",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " respecto a los niveles preindustriales y ",
+          "marcas": []
+        },
+        {
+          "texto": "proseguir los esfuerzos para limitarlo a 1,5 °C",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La razón es que cada fracción de grado agrava los riesgos: olas de calor, sequías, subida del nivel del mar y pérdida de ecosistemas. El 22 de abril de 2016, en Nueva York, firmaron el texto 175 países en un solo día, un récord para un tratado internacional.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "kerry",
+      "pie": "John Kerry se dirige a los delegados antes de firmar el acuerdo en Nueva York, el 22 de abril de 2016."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cada país pone su parte"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Acuerdo de París no impone a cada país una cuota concreta de reducción de emisiones. En su lugar, cada Estado presenta sus propias ",
+          "marcas": []
+        },
+        {
+          "texto": "contribuciones determinadas a nivel nacional (NDC)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": los objetivos que se compromete a alcanzar. Esas promesas deben revisarse y reforzarse ",
+          "marcas": []
+        },
+        {
+          "texto": "cada cinco años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es un modelo basado en la transparencia y la presión entre países, sin sanciones automáticas para quien no cumple.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "El Acuerdo de París en datos",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Adopción",
+          "c1": "12 de diciembre de 2015 (COP21)"
+        },
+        {
+          "c0": "Entrada en vigor",
+          "c1": "4 de noviembre de 2016"
+        },
+        {
+          "c0": "Meta de temperatura",
+          "c1": "Muy por debajo de 2 °C; esfuerzos para 1,5 °C"
+        },
+        {
+          "c0": "Revisión de los compromisos",
+          "c1": "Cada cinco años"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "¿Se está cumpliendo?"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las cuentas aún no salen. Según el servicio europeo Copernicus, ",
+          "marcas": []
+        },
+        {
+          "texto": "2024 fue el primer año natural en superar los 1,5 °C",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de calentamiento medio respecto al período preindustrial. Eso no significa que el objetivo del acuerdo se haya incumplido de forma definitiva, porque este se refiere a una media de varias décadas, pero indica lo cerca que está el límite. Los informes de la ONU sobre las promesas nacionales concluyen que, sumadas, no bastan para mantenerse en la senda de 1,5 °C.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "wind",
+      "pie": "Aerogeneradores del parque eólico de Maranchón, en Guadalajara: la energía renovable es una pieza clave."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se reducen las emisiones"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Energías renovables:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " sustituir el carbón, el petróleo y el gas por eólica, solar y otras fuentes limpias.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Eficiencia energética:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " consumir menos para lograr lo mismo, en edificios, transporte e industria.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Electrificación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " pasar al coche eléctrico y a las bombas de calor, alimentados con electricidad limpia.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Bosques y suelos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " conservar los sumideros naturales que absorben dióxido de carbono.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "treito",
+      "pie": "Parque eólico del monte Treito, junto a una aldea de Rianxo, en Galicia."
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un acuerdo con altibajos"
+    },
+    {
+      "id": "b14",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La participación de algunos grandes emisores ha sido irregular. Estados Unidos ha entrado y salido del acuerdo en distintos momentos, según el Gobierno de turno. Aun así, los países en desarrollo reclaman más financiación de las naciones ricas, que prometieron movilizar cantidades crecientes para ayudarles a reducir emisiones y a adaptarse a los efectos del clima. Cada año, la ",
+          "marcas": []
+        },
+        {
+          "texto": "COP",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la conferencia de las partes, sirve para evaluar los avances y negociar nuevos compromisos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Cifra a contrastar",
+      "texto": "Los datos de temperatura se actualizan cada año. Consulta los boletines de Copernicus y de la Organización Meteorológica Mundial para las cifras más recientes.",
+      "icono": "verificado",
+      "color": "verde"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "ONU Cambio Climático · El Acuerdo de París",
+          "url": "https://unfccc.int/es/process-and-meetings/the-paris-agreement"
+        },
+        {
+          "id": "f2",
+          "titulo": "Copernicus · Resumen climático global",
+          "url": "https://climate.copernicus.eu/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

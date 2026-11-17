@@ -1,0 +1,353 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-tribunal-de-justicia-de-la-union-europea",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Tribunal de Justicia",
+      "Derecho europeo",
+      "Luxemburgo"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Tribunal de Justicia de la UE: quién vigila las normas",
+  "subtitulo": "Desde Luxemburgo, veintisiete jueces garantizan que el Derecho europeo se interprete y se aplique igual en todos los países. Explicamos qué casos resuelve y por qué importa.",
+  "portada": {
+    "recursoId": "cjeu01",
+    "pie": "El Tribunal de Justicia de la Unión Europea, en el barrio de Kirchberg, en Luxemburgo."
+  },
+  "recursos": {
+    "cjeu01": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Court_of_Justice_of_the_European_Union_Luxembourg_01.jpg?width=1200",
+      "alt": "Edificio del Tribunal de Justicia de la Unión Europea, en Luxemburgo.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "cjeu03": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Court_of_Justice_of_the_European_Union_Luxembourg_03.jpg?width=1200",
+      "alt": "Torres del Tribunal de Justicia de la Unión Europea, en el barrio de Kirchberg.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "cjeu02": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Court_of_Justice_of_the_European_Union_Luxembourg_02.jpg?width=1200",
+      "alt": "Vista vertical del complejo del Tribunal de Justicia de la Unión Europea.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "cjeu05": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Court_of_Justice_of_the_European_Union_Luxembourg_05.jpg?width=1200",
+      "alt": "Detalle de las torres del Tribunal de Justicia de la Unión Europea.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las leyes europeas solo funcionan si se aplican de la misma manera en todos los países. Esa es la misión del ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal de Justicia de la Unión Europea (TJUE)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con sede en ",
+          "marcas": []
+        },
+        {
+          "texto": "Luxemburgo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": asegurar que el Derecho de la Unión se respete y se interprete de forma uniforme en los veintisiete Estados miembros.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Dos tribunales en una sola institución"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La institución se compone de dos órganos. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal de Justicia",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es la máxima instancia y cuenta con ",
+          "marcas": []
+        },
+        {
+          "texto": "un juez por cada Estado miembro",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", auxiliados por ",
+          "marcas": []
+        },
+        {
+          "texto": "abogados generales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " que presentan conclusiones independientes. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal General",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " resuelve en primera instancia muchos recursos de particulares y empresas contra decisiones de las instituciones europeas, y sus sentencias pueden recurrirse ante el Tribunal de Justicia. Los jueces se nombran por seis años, con posibilidad de renovación.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "cjeu03",
+      "pie": "Torres del Tribunal de Justicia de la Unión Europea."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué casos resuelve"
+    },
+    {
+      "id": "b05",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Cuestiones prejudiciales:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los jueces nacionales pueden (o deben) preguntar al TJUE cómo interpretar una norma europea antes de dictar sentencia. Es la vía más frecuente.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Recursos por incumplimiento:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la Comisión puede llevar ante el Tribunal a un país que no cumple el Derecho europeo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Recursos de anulación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " permiten pedir que se anule un acto de una institución europea por ser contrario a los tratados.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Responsabilidad:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " reclamar daños causados por una institución europea.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Dos sentencias que cambiaron Europa"
+    },
+    {
+      "id": "b07",
+      "tipo": "tabla",
+      "titulo": "Principios nacidos en el tribunal",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Sentencia"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Qué estableció"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Van Gend en Loos (1963)",
+          "c1": "Los ciudadanos pueden invocar el Derecho europeo ante sus tribunales (efecto directo)"
+        },
+        {
+          "c0": "Costa contra ENEL (1964)",
+          "c1": "El Derecho europeo prevalece sobre el nacional (primacía)"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "cjeu02",
+      "pie": "Vista del complejo del Tribunal de Justicia de la Unión Europea."
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Estos dos principios no figuran de forma expresa en los tratados: los formuló el propio Tribunal. Gracias a ellos, el Derecho europeo no es solo un acuerdo entre gobiernos, sino un conjunto de reglas que los ciudadanos y las empresas pueden hacer valer.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "No lo confundas con el Tribunal de Estrasburgo"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Con frecuencia se mezclan el ",
+          "marcas": []
+        },
+        {
+          "texto": "TJUE",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que pertenece a la Unión Europea y está en Luxemburgo, y el ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal Europeo de Derechos Humanos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en Estrasburgo, que depende del Consejo de Europa y vela por el Convenio Europeo de Derechos Humanos. Son instituciones distintas, con miembros y competencias diferentes.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "cjeu05",
+      "pie": "Detalle de las torres del tribunal luxemburgués."
+    },
+    {
+      "id": "b13",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "¿Por qué existe el Tribunal de Justicia de la Unión Europea?",
+      "url": "https://www.youtube.com/watch?v=vjzSv3YpUgs"
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un ejemplo cotidiano",
+      "texto": "Muchas normas que se aplican en tu día a día, como los derechos de los pasajeros aéreos o la protección de datos, se han precisado con sentencias del Tribunal de Justicia.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Tribunal de Justicia de la Unión Europea · Portal oficial",
+          "url": "https://curia.europa.eu/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Unión Europea · Perfil del Tribunal de Justicia",
+          "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/institutions-and-bodies-profiles/court-justice-european-union-cjeu_es"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

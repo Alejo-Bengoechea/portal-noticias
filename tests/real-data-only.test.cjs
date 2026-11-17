@@ -83,7 +83,8 @@ test('el inicio pagina sin repetir la portada y cada categoría conserva todas s
   const jsx = { 'react/jsx-runtime': require('react/jsx-runtime'), 'next/link': { default: 'a' } };
   const cards = load('components/cards.tsx', { ...jsx, '@/lib/format': { dateLabel: value => value, webUrl: () => null } });
   const carousel = load('components/cover-carousel.tsx', { react: React, 'react-dom': require('react-dom'), 'react/jsx-runtime': require('react/jsx-runtime') });
-  const imports = { ...jsx, '@/lib/articles': articles, '@/components/cards': cards, '@/components/cover-carousel': carousel };
+  const subscribe = load('components/subscribe-section.tsx', jsx);
+  const imports = { ...jsx, '@/lib/articles': articles, '@/components/cards': cards, '@/components/cover-carousel': carousel, '@/components/subscribe-section': subscribe };
   const { default: Home } = load('app/(public)/page.tsx', imports);
   const { default: Category } = load('app/(public)/categoria/[slug]/page.tsx', {
     ...imports, 'next/navigation': { notFound: () => assert.fail('La categoría existe') },

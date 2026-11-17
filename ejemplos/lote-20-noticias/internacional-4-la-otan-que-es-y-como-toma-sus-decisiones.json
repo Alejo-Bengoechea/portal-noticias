@@ -1,0 +1,366 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-otan-que-es-y-como-toma-sus-decisiones",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "OTAN",
+      "defensa",
+      "alianza"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La OTAN: qué es y cómo toma sus decisiones",
+  "subtitulo": "Nació en 1949 como alianza defensiva y hoy reúne a 32 países. Sus decisiones se adoptan por consenso y su artículo 5 solo se ha activado una vez en toda su historia.",
+  "portada": {
+    "recursoId": "nato1",
+    "pie": "La sede de la OTAN en Bruselas, inaugurada en 2018."
+  },
+  "recursos": {
+    "nato1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/New_HQ_NATO_7.jpg?width=1200",
+      "alt": "Sede de la OTAN en Bruselas.",
+      "credito": "Swadim, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "nato2018": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2018_NATO_Summit_in_Brussels_(29510554308).jpg?width=1200",
+      "alt": "Sede de la OTAN durante la cumbre de 2018 en Bruselas.",
+      "credito": "Departamento de Estado de EE. UU., Dominio público (Wikimedia Commons)"
+    },
+    "blinken": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Secretary_Blinken_Arrives_at_NATO_Headquarters_in_Brussels.jpg?width=1200",
+      "alt": "El secretario de Estado de EE. UU. llega a la sede de la OTAN en Bruselas.",
+      "credito": "Departamento de Estado de EE. UU., Dominio público (Wikimedia Commons)"
+    },
+    "nato_romaine": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brussels_NATO_Headquarters.jpg?width=1200",
+      "alt": "Fachada de la sede de la OTAN en Bruselas.",
+      "credito": "Ad Meskens, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "Organización del Tratado del Atlántico Norte (OTAN)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es una alianza político-militar de países de Europa y América del Norte. Su idea central cabe en una frase: un ataque contra uno de sus miembros se considera un ataque contra todos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "De 12 a 32 miembros"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El Tratado del Atlántico Norte se firmó el ",
+          "marcas": []
+        },
+        {
+          "texto": "4 de abril de 1949",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en Washington. Lo firmaron doce países, entre ellos Estados Unidos, Canadá, Reino Unido y Francia, en los primeros años de la Guerra Fría. Con el tiempo, la alianza se amplió. España entró en 1982 y confirmó su permanencia en un referéndum en 1986. Finlandia ingresó en abril de 2023 y Suecia en marzo de 2024, hasta alcanzar los ",
+          "marcas": []
+        },
+        {
+          "texto": "32 miembros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su sede está en Bruselas.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "nato2018",
+      "pie": "La sede de la OTAN durante la cumbre de 2018 en Bruselas."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El artículo 5"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El corazón del tratado es el ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 5",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que establece la defensa colectiva. Cada aliado decide qué ayuda presta en caso de ataque, que puede incluir el uso de la fuerza armada, pero no existe una obligación automática de entrar en guerra. En toda la historia de la alianza, el artículo 5 solo se ha invocado una vez: tras los atentados del ",
+          "marcas": []
+        },
+        {
+          "texto": "11 de septiembre de 2001",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en Estados Unidos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "La OTAN en pocas líneas",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Fundación",
+          "c1": "4 de abril de 1949, con 12 países"
+        },
+        {
+          "c0": "Miembros actuales",
+          "c1": "32"
+        },
+        {
+          "c0": "Sede",
+          "c1": "Bruselas (Bélgica)"
+        },
+        {
+          "c0": "Forma de decidir",
+          "c1": "Consenso entre todos los aliados"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se decide"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La OTAN no vota por mayoría. Las decisiones se adoptan por ",
+          "marcas": []
+        },
+        {
+          "texto": "consenso",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": si un país se opone, no hay decisión. El máximo órgano político es el ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo del Atlántico Norte",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", donde se sientan los embajadores de los países miembros, y a nivel de jefes de Estado y de Gobierno se reúnen en las cumbres. Al frente de la secretaría está el secretario general, un cargo civil que desde octubre de 2024 ocupa el neerlandés Mark Rutte.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "blinken",
+      "pie": "El secretario de Estado de Estados Unidos llega a la sede de la OTAN en Bruselas."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un debate permanente: el gasto"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Uno de los temas recurrentes es cuánto gasta cada aliado en defensa. Durante años, el objetivo fue destinar el 2 % del producto interior bruto. En la cumbre de ",
+          "marcas": []
+        },
+        {
+          "texto": "La Haya, en 2025",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", los aliados acordaron elevar la meta a un ",
+          "marcas": []
+        },
+        {
+          "texto": "5 % del PIB para 2035",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en el que se incluyen inversiones en defensa y gastos relacionados, como infraestructuras y seguridad. Los países discrepan sobre el ritmo y la forma de calcularlo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué hace además de defender"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Disuasión:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " mantener fuerzas desplegadas en el flanco oriental de Europa.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Gestión de crisis:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " participó en misiones en los Balcanes y en Afganistán.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Cooperación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " mantiene programas de asociación con decenas de países no miembros.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "imagen",
+      "recursoId": "nato_romaine",
+      "pie": "Fachada de la sede de la OTAN en Bruselas."
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Para entender el contexto",
+      "texto": "La OTAN es una alianza militar distinta de la Unión Europea, aunque la mayoría de los miembros de la UE pertenece a ambas.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "OTAN · Qué es la OTAN",
+          "url": "https://www.nato.int/en/about-us"
+        },
+        {
+          "id": "f2",
+          "titulo": "OTAN · El Tratado del Atlántico Norte",
+          "url": "https://www.nato.int/cps/es/natohq/official_texts_17120.htm"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

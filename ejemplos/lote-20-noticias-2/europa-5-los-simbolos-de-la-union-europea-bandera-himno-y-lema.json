@@ -1,0 +1,347 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "los-simbolos-de-la-union-europea-bandera-himno-y-lema",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "símbolos",
+      "bandera",
+      "himno"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Bandera, himno y lema: los símbolos de la UE",
+  "subtitulo": "Doce estrellas doradas, una melodía de Beethoven y un lema sobre la diversidad. Contamos de dónde vienen los símbolos de la Unión Europea y qué significa cada uno.",
+  "portada": {
+    "recursoId": "flag_karls",
+    "pie": "La bandera europea ondea en lo alto de un palacio durante el Día de Europa."
+  },
+  "recursos": {
+    "flag_karls": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Karlsruhe_Palace_Flag_of_Europe_2025-05-09_01.jpg?width=1200",
+      "alt": "La bandera europea ondea en lo alto de un palacio durante el Día de Europa.",
+      "credito": "Entbert, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "flag_zee": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zeebrugge_Belgium_Signpost-with-EU-Flag-and-Belgium-Flag-01.jpg?width=1200",
+      "alt": "Poste con la bandera de la Unión Europea y la de Bélgica, en Zeebrugge.",
+      "credito": "CEphoto, Uwe Aranas, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "ninth": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ninth_Symphony_original.png?width=1200",
+      "alt": "Página del manuscrito original de la Novena Sinfonía de Beethoven.",
+      "credito": "Ludwig van Beethoven, Dominio público (Wikimedia Commons)"
+    },
+    "flags_fd": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Flags_(4627256510).jpg?width=1200",
+      "alt": "Banderas europeas ondeando juntas.",
+      "credito": "fdecomite, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "coins_notes": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_coins_and_banknotes.jpg?width=1200",
+      "alt": "Billetes y monedas de euro de distintos valores.",
+      "credito": "Avij, Dominio público (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Como los países, la Unión Europea tiene sus propios símbolos. Algunos son más antiguos que la Unión misma, porque nacieron en el ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo de Europa",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", una organización distinta y anterior, y luego fueron adoptados por las instituciones europeas.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La bandera: doce estrellas"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "Es un ",
+          "marcas": []
+        },
+        {
+          "texto": "círculo de doce estrellas doradas sobre fondo azul",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El Consejo de Europa la adoptó en ",
+          "marcas": []
+        },
+        {
+          "texto": "1955",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y los jefes de Estado y de Gobierno de la Comunidad la hicieron suya en ",
+          "marcas": []
+        },
+        {
+          "texto": "1985",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Las doce estrellas ",
+          "marcas": []
+        },
+        {
+          "texto": "no representan a los países miembros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": el número es un símbolo de perfección y de unidad, y no cambia cuando entran nuevos socios.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "flag_zee",
+      "pie": "Poste con la bandera de la Unión Europea y la de Bélgica, en Zeebrugge."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El himno: la «Oda a la alegría»"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El himno es la melodía del último movimiento de la ",
+          "marcas": []
+        },
+        {
+          "texto": "Novena Sinfonía de Beethoven",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", estrenada en 1824, que pone música a un poema de Friedrich Schiller escrito en 1785. El Consejo de Europa lo adoptó en 1972, en un arreglo del director Herbert von Karajan, y la Comunidad lo hizo suyo en 1985. No tiene ",
+          "marcas": []
+        },
+        {
+          "texto": "letra oficial",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": se interpreta solo con música para que ninguna lengua prevalezca sobre otra.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "ninth",
+      "pie": "Página del manuscrito original de la Novena Sinfonía de Beethoven."
+    },
+    {
+      "id": "b07",
+      "tipo": "tabla",
+      "titulo": "Los símbolos de un vistazo",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Símbolo"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Detalle"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Bandera",
+          "c1": "Doce estrellas doradas en círculo sobre fondo azul"
+        },
+        {
+          "c0": "Himno",
+          "c1": "Melodía de la «Oda a la alegría», de Beethoven"
+        },
+        {
+          "c0": "Lema",
+          "c1": "«Unida en la diversidad», desde el año 2000"
+        },
+        {
+          "c0": "Día de Europa",
+          "c1": "9 de mayo, aniversario de la declaración de Schuman"
+        },
+        {
+          "c0": "Moneda",
+          "c1": "El euro, con su símbolo €"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El lema y la fecha"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El lema ",
+          "marcas": []
+        },
+        {
+          "texto": "«Unida en la diversidad»",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " nació en el año 2000 tras un concurso entre estudiantes de escuelas europeas. Quiere expresar que los europeos se unen para trabajar por la paz y la prosperidad sin renunciar a sus culturas y lenguas. El ",
+          "marcas": []
+        },
+        {
+          "texto": "9 de mayo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se celebra el ",
+          "marcas": []
+        },
+        {
+          "texto": "Día de Europa",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", porque ese día de 1950 Robert Schuman propuso poner en común la producción de carbón y acero, el germen de la Unión actual.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "flags_fd",
+      "pie": "Banderas europeas ondeando juntas."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El euro como símbolo"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La moneda única también funciona como símbolo. Su signo, ",
+          "marcas": []
+        },
+        {
+          "texto": "€",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", recuerda a la letra griega épsilon y a la inicial de Europa, cruzada por dos líneas que simbolizan estabilidad. Los billetes de euro muestran puentes, ventanas y puertas que no pertenecen a ningún monumento real, para evitar favorecer a un país.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "coins_notes",
+      "pie": "Monedas y billetes de euro de distintos valores."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Para recordar",
+      "texto": "Un símbolo no sustituye a los de cada país: la bandera europea suele ondear junto a las nacionales, no en lugar de ellas.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Unión Europea · Símbolos",
+          "url": "https://european-union.europa.eu/principles-countries-history/symbols_es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Unión Europea · Historia del Día de Europa",
+          "url": "https://european-union.europa.eu/principles-countries-history/history-eu/1945-59_es"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

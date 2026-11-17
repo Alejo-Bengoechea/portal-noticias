@@ -1,0 +1,299 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "como-nace-una-moneda-de-euro-espanola",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "euro",
+      "monedas",
+      "FNMT"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Cómo nace una moneda de euro española",
+  "subtitulo": "Una cara común a todos los países y otra propia de cada uno. Repasamos quién fabrica las monedas españolas, qué motivos llevan y qué las hace difíciles de falsificar.",
+  "portada": {
+    "recursoId": "fnmt1",
+    "pie": "Fachada de la Real Casa de la Moneda, sede de la Fábrica Nacional de Moneda y Timbre, en Madrid."
+  },
+  "recursos": {
+    "fnmt1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/F%C3%A1brica_Nacional_de_Moneda_y_Timbre_-_Real_Casa_de_la_Moneda_-_01.jpg?width=1200",
+      "alt": "Fachada de la Real Casa de la Moneda, sede de la Fábrica Nacional de Moneda y Timbre, en Madrid.",
+      "credito": "Carlos Delgado, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "fnmt_old": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1898-06-15%2C_La_Ilustraci%C3%B3n_Espa%C3%B1ola_y_Americana%2C_Madrid%2C_F%C3%A1brica_Nacional_de_la_Moneda_y_Timbre%2C_La_acu%C3%B1aci%C3%B3n_de_plata%2C_Vista_general_de_la_f%C3%A1brica%2C_Franzen.jpg?width=1200",
+      "alt": "Grabado de 1898 que muestra la acuñación de moneda de plata en la Fábrica Nacional de Moneda y Timbre.",
+      "credito": "Christian Franzen, Dominio público (Wikimedia Commons)"
+    },
+    "coins_notes": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_coins_and_banknotes.jpg?width=1200",
+      "alt": "Billetes y monedas de euro de distintos valores.",
+      "credito": "Avij, Dominio público (Wikimedia Commons)"
+    },
+    "uv10": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/UV_Euro_Banknote.jpg?width=1200",
+      "alt": "Billete de diez euros iluminado con luz ultravioleta, que revela sus elementos de seguridad.",
+      "credito": "Lorenzo Cozzella, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "fnmt_pano": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Real_Casa_de_la_Moneda%2C_Fabrica_Nacional_de_Moneda_y_Timbre_-_panoramio.jpg?width=1200",
+      "alt": "Edificio de la Real Casa de la Moneda, en Madrid.",
+      "credito": "Ricardo Ricote Rodríguez, CC BY 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando pagas con una moneda de euro quizá no te fijas en que cada una tiene ",
+          "marcas": []
+        },
+        {
+          "texto": "dos caras muy distintas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La cara común indica el valor y es igual en toda la zona euro; la cara nacional lleva un motivo elegido por cada país. Las monedas españolas se acuñan en Madrid, en la ",
+          "marcas": []
+        },
+        {
+          "texto": "Fábrica Nacional de Moneda y Timbre (FNMT)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una fábrica con larga historia"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La institución está unida a la Real Casa de la Moneda y mantiene una larga tradición de acuñación en Madrid. Este grabado de 1898 muestra cómo se acuñaba entonces la moneda de plata. Hoy, además de monedas, la FNMT produce sellos y documentos oficiales y presta servicios de certificación electrónica, como el certificado digital que usan muchos ciudadanos para hacer trámites en internet.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "fnmt_old",
+      "pie": "Grabado de 1898 sobre la acuñación de plata en la Fábrica Nacional de Moneda y Timbre."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Ocho valores, un diseño común"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Existen ",
+          "marcas": []
+        },
+        {
+          "texto": "ocho monedas de euro",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": 1, 2, 5, 10, 20 y 50 céntimos, y 1 y 2 euros. Circulan desde el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de enero de 2002",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La cara común, diseñada por el belga Luc Luycx, es igual en todos los países. En la cara nacional, cada Estado escoge su motivo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Qué llevan las monedas españolas",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Valor"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Motivo de la cara nacional"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1, 2 y 5 céntimos",
+          "c1": "Catedral de Santiago de Compostela"
+        },
+        {
+          "c0": "10, 20 y 50 céntimos",
+          "c1": "Miguel de Cervantes"
+        },
+        {
+          "c0": "1 y 2 euros",
+          "c1": "Efigie del rey"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "coins_notes",
+      "pie": "Monedas y billetes de euro de distintos valores."
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Medidas contra la falsificación"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las monedas de euro tienen ",
+          "marcas": []
+        },
+        {
+          "texto": "bordes con distinto diseño",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", dos metales en las de 1 y 2 euros y un peso y un tamaño exactos. Los billetes, que se emiten desde el Eurosistema, incorporan además ",
+          "marcas": []
+        },
+        {
+          "texto": "marcas de agua, hilo de seguridad, holograma y tinta que cambia de color",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Algunos elementos solo se ven con luz ultravioleta.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "uv10",
+      "pie": "Billete de diez euros iluminado con luz ultravioleta, que revela sus elementos de seguridad."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Las monedas conmemorativas"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cada país puede acuñar al año monedas de ",
+          "marcas": []
+        },
+        {
+          "texto": "2 euros conmemorativas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con un motivo especial para recordar un aniversario o un acontecimiento. Tienen curso legal en toda la zona euro, aunque rara vez se ven en el cambio. Hay además monedas de colección con valores nominales distintos, que no se usan para pagar.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "fnmt_pano",
+      "pie": "Otra vista del edificio de la Real Casa de la Moneda, en Madrid."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Cómo comprobar una moneda",
+      "texto": "Mira el canto, el color de cada metal y el peso: una moneda falsa suele diferir en uno de esos detalles. Si dudas, entrégala en una entidad bancaria.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Fábrica Nacional de Moneda y Timbre · Portal oficial",
+          "url": "https://www.fnmt.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco Central Europeo · Billetes de euro",
+          "url": "https://www.ecb.europa.eu/euro/banknotes/html/index.es.html"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

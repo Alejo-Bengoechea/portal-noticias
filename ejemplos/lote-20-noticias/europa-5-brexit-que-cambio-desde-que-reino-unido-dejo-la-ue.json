@@ -1,0 +1,350 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "brexit-que-cambio-desde-que-reino-unido-dejo-la-ue",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Brexit",
+      "Reino Unido",
+      "Unión Europea"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Brexit: qué cambió desde que Reino Unido dejó la UE",
+  "subtitulo": "Un referéndum, cuatro años de negociaciones y un acuerdo comercial. Repasamos qué se decidió, qué se perdió y qué se mantiene en la relación entre Londres y Bruselas.",
+  "portada": {
+    "recursoId": "bigben",
+    "pie": "El Big Ben y el Parlamento británico, vistos desde la noria London Eye."
+  },
+  "recursos": {
+    "bigben": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Big_Ben_and_the_Houses_of_Parliament_from_the_London_Eye.jpg?width=1200",
+      "alt": "El Big Ben y el Parlamento británico, vistos desde la noria London Eye.",
+      "credito": "PhilDaBirdMan, CC0 (Wikimedia Commons)"
+    },
+    "proeu": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/London_Brexit_pro-EU_protest_March_25_2017_05.jpg?width=1200",
+      "alt": "Manifestación a favor de la Unión Europea en Londres en marzo de 2017.",
+      "credito": "Ilovetheeu, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "banner": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_Membership_Banner_(48797867156).jpg?width=1200",
+      "alt": "Pancarta a favor de la pertenencia a la UE frente al Parlamento británico.",
+      "credito": "ChiralJon, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "manchester": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Manchester_anti-Brexit_protest_for_Conservative_conference%2C_October_1%2C_2017_IMG_2665.jpg?width=1200",
+      "alt": "Protesta contra el Brexit en Mánchester durante la conferencia del Partido Conservador.",
+      "credito": "Ilovetheeu, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "Brexit",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la salida del Reino Unido de la Unión Europea, fue uno de los acontecimientos políticos más importantes de Europa en este siglo. Por primera vez, un Estado abandonaba el club comunitario al que se había unido en 1973.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Del referéndum a la salida"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "23 de junio de 2016",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", los británicos votaron en un referéndum sobre su permanencia: ganó la salida con el ",
+          "marcas": []
+        },
+        {
+          "texto": "51,9 %",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de los votos, frente al 48,1 % a favor de quedarse. La participación fue del 72 %. Siguieron años de negociaciones difíciles y de crisis políticas en Londres. Finalmente, el Reino Unido abandonó formalmente la UE el ",
+          "marcas": []
+        },
+        {
+          "texto": "31 de enero de 2020",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", y hasta el 31 de diciembre de ese año aplicó las normas europeas durante un período transitorio.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "proeu",
+      "pie": "Manifestación a favor de la Unión Europea en Londres, en marzo de 2017."
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "Cronología del Brexit",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Fecha"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "23 jun 2016",
+          "c1": "Referéndum: gana la salida con el 51,9 %"
+        },
+        {
+          "c0": "31 ene 2020",
+          "c1": "Salida formal de la UE"
+        },
+        {
+          "c0": "31 dic 2020",
+          "c1": "Termina el período transitorio"
+        },
+        {
+          "c0": "1 ene 2021",
+          "c1": "Se aplica el nuevo acuerdo comercial"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué se acordó"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las dos partes firmaron un ",
+          "marcas": []
+        },
+        {
+          "texto": "Acuerdo de Comercio y Cooperación",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " a finales de 2020. Garantiza que los productos que cumplan las reglas de origen no paguen aranceles ni cuotas, pero el Reino Unido salió del mercado único y de la unión aduanera. Eso significa que cada mercancía que cruza el Canal debe pasar por trámites de aduana, declaraciones y controles sanitarios, algo que antes no existía.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "banner",
+      "pie": "Una pancarta a favor de la permanencia en la UE, frente al Parlamento británico."
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El caso de Irlanda del Norte"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Uno de los asuntos más delicados fue la frontera en la isla de Irlanda. Para no levantar un control físico entre la República de Irlanda (miembro de la UE) e Irlanda del Norte (parte del Reino Unido), que pondría en riesgo el proceso de paz, se pactó un protocolo especial. Tras años de tensiones, en 2023 Londres y Bruselas acordaron una versión revisada, el ",
+          "marcas": []
+        },
+        {
+          "texto": "Marco de Windsor",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con menos controles para los productos que se quedan en Irlanda del Norte.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cambios para las personas"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Libre circulación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " terminó. Los ciudadanos europeos que quieren trabajar en el Reino Unido necesitan visado, y viceversa.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Estancias cortas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los viajeros de la UE pueden entrar como turistas sin visado, pero con pasaporte y una autorización electrónica de viaje.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Estudiantes:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el Reino Unido dejó de participar en Erasmus y creó su propio programa de intercambios.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Derechos adquiridos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los residentes europeos en Reino Unido antes de 2021 pudieron solicitar un estatus de residente.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "manchester",
+      "pie": "Protesta contra el Brexit en Mánchester durante la conferencia del Partido Conservador, en 2017."
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un debate que sigue abierto"
+    },
+    {
+      "id": "b14",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A casi siete años de la salida formal, economistas y políticos discuten sus efectos. Varios análisis independientes, como los de la Oficina de Responsabilidad Presupuestaria británica, estiman que el Brexit reducirá la productividad y el comercio a largo plazo respecto a un escenario de permanencia. Sus defensores, en cambio, subrayan la recuperación del control sobre las leyes, las fronteras y la política comercial. La relación entre Londres y Bruselas continúa evolucionando con nuevos acuerdos en ámbitos como la seguridad o la energía.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Para ir más allá",
+      "texto": "Las estimaciones económicas del Brexit dependen de supuestos y metodologías distintas. Compara siempre varias fuentes antes de sacar conclusiones.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comisión Europea · Relaciones UE-Reino Unido",
+          "url": "https://commission.europa.eu/strategy-and-policy/relations-united-kingdom_en"
+        },
+        {
+          "id": "f2",
+          "titulo": "Parlamento británico · Biblioteca de la Cámara de los Comunes",
+          "url": "https://commonslibrary.parliament.uk/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

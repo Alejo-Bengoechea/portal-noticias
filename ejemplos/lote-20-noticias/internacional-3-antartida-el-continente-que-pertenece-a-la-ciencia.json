@@ -1,0 +1,393 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "antartida-el-continente-que-pertenece-a-la-ciencia",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "Antártida",
+      "Tratado Antártico",
+      "ciencia"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Antártida: el continente que pertenece a la ciencia",
+  "subtitulo": "No tiene gobierno, ni habitantes permanentes ni fronteras reconocidas. Desde 1959, un tratado internacional reserva este continente para la investigación y la paz.",
+  "portada": {
+    "recursoId": "ant_land",
+    "pie": "Un paisaje típico de la Antártida, con icebergs, montañas y nieve."
+  },
+  "recursos": {
+    "ant_land": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Antarctica_Landscape.jpg?width=1200",
+      "alt": "Paisaje típico de la Antártida con icebergs, montañas y nieve.",
+      "credito": "Pedro Szekely, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "ant_1961": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Antarctic_Treaty_Consultative_Meeting_1961.jpg?width=1200",
+      "alt": "Reunión consultiva del Tratado Antártico de 1961.",
+      "credito": "Archivos Nacionales de Australia, CC BY 3.0 (Wikimedia Commons)"
+    },
+    "halley": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Halley_VI_Antarctic_Research_Station_-_Science_modules.jpg?width=1200",
+      "alt": "Módulos científicos de la estación de investigación británica Halley VI.",
+      "credito": "Hugh Broughton Architects, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "penguins": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Penguins_moving_on_ice_Coral_Princess_Antarctica.jpg?width=1200",
+      "alt": "Pingüinos desplazándose sobre el hielo en la Antártida.",
+      "credito": "amanderson2, CC BY 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "Antártida",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el continente más frío, ventoso y seco del planeta, con una superficie de unos ",
+          "marcas": []
+        },
+        {
+          "texto": "14 millones de kilómetros cuadrados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " cubierta casi por completo por hielo. En algunos puntos, el casquete glaciar supera los cuatro kilómetros de espesor. Contiene alrededor de ",
+          "marcas": []
+        },
+        {
+          "texto": "el 70 % del agua dulce",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " del mundo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Siete reclamaciones congeladas"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A principios del siglo XX, varios países reclamaron partes del continente: ",
+          "marcas": []
+        },
+        {
+          "texto": "Argentina, Australia, Chile, Francia, Nueva Zelanda, Noruega y Reino Unido",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Algunas de esas reclamaciones se superponen, en especial en la península Antártica, donde coinciden las de Argentina, Chile y el Reino Unido. Otros países, como Estados Unidos y Rusia, no reconocen ninguna de ellas y se reservan el derecho a reclamar.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "Para evitar que esa disputa derivara en conflicto en plena Guerra Fría, doce países firmaron el ",
+          "marcas": []
+        },
+        {
+          "texto": "Tratado Antártico",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de diciembre de 1959",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en Washington. Entró en vigor el 23 de junio de 1961. Establece que el continente se usará solo con ",
+          "marcas": []
+        },
+        {
+          "texto": "fines pacíficos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", prohíbe las actividades militares y las pruebas nucleares y garantiza la ",
+          "marcas": []
+        },
+        {
+          "texto": "libertad de investigación científica",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su artículo IV congela las reclamaciones: ninguna actividad mientras el tratado esté vigente puede servir para apoyar, negar o ampliar una reivindicación.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "ant_1961",
+      "pie": "Reunión consultiva del Tratado Antártico, en 1961."
+    },
+    {
+      "id": "b05",
+      "tipo": "tabla",
+      "titulo": "Tratado Antártico y Protocolo de Madrid",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Hito"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Dato"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Firma del Tratado",
+          "c1": "1 de diciembre de 1959"
+        },
+        {
+          "c0": "Entrada en vigor",
+          "c1": "23 de junio de 1961"
+        },
+        {
+          "c0": "Protocolo de Madrid",
+          "c1": "Firmado en 1991; en vigor desde 1998"
+        },
+        {
+          "c0": "Partes del Tratado",
+          "c1": "Más de 50 países"
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una ciencia sin fronteras"
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "halley",
+      "pie": "Módulos científicos de la estación británica Halley VI, construida sobre una plataforma de hielo."
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Decenas de países mantienen bases de investigación en el continente, donde estudian el clima, el hielo, los océanos o la vida en condiciones extremas. Argentina, con bases permanentes como Marambio o Esperanza, es una de las naciones con más presencia. España tiene dos: ",
+          "marcas": []
+        },
+        {
+          "texto": "Juan Carlos I",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en la isla Livingston, y ",
+          "marcas": []
+        },
+        {
+          "texto": "Gabriel de Castilla",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en la isla Decepción. Los sondeos de hielo permiten reconstruir la atmósfera de hace cientos de miles de años, lo que aporta una información valiosa para entender el cambio climático.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Protegida por un protocolo"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En 1991, en Madrid, se firmó el ",
+          "marcas": []
+        },
+        {
+          "texto": "Protocolo sobre Protección del Medio Ambiente",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que prohíbe cualquier actividad relacionada con los recursos minerales, salvo la científica, y obliga a evaluar el impacto ambiental de cualquier actividad. Entró en vigor en 1998. El protocolo no tiene fecha de caducidad, pero a partir de 2048 cualquier parte puede pedir una conferencia para revisarlo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "penguins",
+      "pie": "Pingüinos desplazándose sobre el hielo antártico."
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Amenazas y turismo"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Cambio climático:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la península Antártica se encuentra entre las zonas que más se han calentado en las últimas décadas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Pesca y krill:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el krill es la base de la cadena alimentaria y su pesca está regulada por una comisión internacional.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Turismo:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " crece cada año el número de visitantes, con el riesgo de alterar un ecosistema frágil.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: quién reclama qué en la Antártida"
+    },
+    {
+      "id": "b15",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "BBC News Mundo · Qué países reclaman soberanía en la Antártida y por qué",
+      "url": "https://www.youtube.com/watch?v=HwQIES5OuyQ"
+    },
+    {
+      "id": "b16",
+      "tipo": "nota_editorial",
+      "titulo": "Un matiz",
+      "texto": "El número de países parte del Tratado Antártico aumenta con cada adhesión. La lista actualizada la mantiene la Secretaría del Tratado Antártico.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Secretaría del Tratado Antártico",
+          "url": "https://www.ats.aq/index_e.html"
+        },
+        {
+          "id": "f2",
+          "titulo": "Comité Científico de Investigación Antártica (SCAR)",
+          "url": "https://scar.org/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

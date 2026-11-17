@@ -1,0 +1,356 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-pac-como-se-reparte-el-dinero-del-campo-europeo",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "PAC",
+      "agricultura",
+      "presupuesto"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La PAC: cómo se reparte el dinero del campo europeo",
+  "subtitulo": "Es una de las políticas más antiguas de la Unión Europea y una de las que más presupuesto mueve. Explicamos por qué nació, cómo ha cambiado y a quién llega el dinero.",
+  "portada": {
+    "recursoId": "olive",
+    "pie": "Olivares en Andalucía, una de las zonas agrícolas beneficiadas por las ayudas de la Política Agrícola Común."
+  },
+  "recursos": {
+    "olive": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Olive_groves_in_Andalucia.jpg?width=1200",
+      "alt": "Olivares en Andalucía.",
+      "credito": "Wildmountainscene, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "combine_dk": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Claas_combine_in_Denmark.jpg?width=1200",
+      "alt": "Cosechadora de cereal al atardecer en Dinamarca.",
+      "credito": "Lars Plougmann, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "subbeticas": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Sierras_Subbeticas%2C_Andalucia.jpg?width=1200",
+      "alt": "Paisaje de olivares en las Sierras Subbéticas, en Andalucía.",
+      "credito": "Hugh Llewelyn, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "wheat_de": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Unload_wheat_by_the_combine_Claas_Lexion_584.jpg?width=1200",
+      "alt": "Cosechadora descargando trigo durante la cosecha en Alemania.",
+      "credito": "Michael Gäbler, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando el 25 de marzo de 1957 se firmó el Tratado de Roma, Europa salía de una posguerra en la que el hambre había sido real. La agricultura era una prioridad: la ",
+          "marcas": []
+        },
+        {
+          "texto": "Política Agrícola Común (PAC)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se puso en marcha en ",
+          "marcas": []
+        },
+        {
+          "texto": "1962",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " para garantizar alimentos a un precio razonable y una vida digna a quienes trabajan el campo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los objetivos de origen"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Tratado fijó cinco metas: aumentar la productividad agrícola, asegurar un nivel de vida equitativo a los agricultores, estabilizar los mercados, garantizar el abastecimiento y asegurar precios razonables al consumidor. Funcionó hasta el punto de que Europa pasó de la escasez a la ",
+          "marcas": []
+        },
+        {
+          "texto": "sobreproducción",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": los almacenes se llenaron de mantequilla y leche en polvo, en lo que se llamó, con humor amargo, «las montañas de mantequilla y los lagos de leche».",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La respuesta fue reformar el sistema. En ",
+          "marcas": []
+        },
+        {
+          "texto": "1992",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se redujeron los precios garantizados y se pasó a ",
+          "marcas": []
+        },
+        {
+          "texto": "pagar ayudas directas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " a los agricultores. En ",
+          "marcas": []
+        },
+        {
+          "texto": "2003",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se desvincularon esas ayudas de lo que se produce, para que el campo respondiera más a lo que pide el mercado. Más recientemente se han añadido exigencias ambientales a cambio de cobrar las ayudas.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "combine_dk",
+      "pie": "Cosechadora de cereal al atardecer en Dinamarca."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Dos pilares"
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Cómo se organiza la PAC",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Pilar"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Qué financia"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Primero",
+          "c1": "Pagos directos a agricultores y medidas de mercado"
+        },
+        {
+          "c0": "Segundo",
+          "c1": "Desarrollo rural: modernización, jóvenes agricultores, empleo en zonas rurales"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La PAC supone alrededor de ",
+          "marcas": []
+        },
+        {
+          "texto": "un tercio del presupuesto de la Unión",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", una proporción que ha ido bajando con los años, ya que en los comienzos absorbía la mayor parte de los fondos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "subbeticas",
+      "pie": "Paisaje de olivares en las Sierras Subbéticas, en Andalucía."
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El caso de España"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "España es uno de los grandes beneficiarios de la PAC y es el ",
+          "marcas": []
+        },
+        {
+          "texto": "primer productor mundial de aceite de oliva",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Cultivos como el olivar, la vid, los cereales o la fruta reciben apoyos europeos. Cada Estado elabora su plan estratégico para aplicar la política común y distribuye el dinero entre comunidades y sectores.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Las críticas"
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Concentración de las ayudas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " una parte importante del dinero va a las explotaciones más grandes.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Medio ambiente:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " se pide que las ayudas premien más las prácticas sostenibles.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Relevo generacional:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el campo envejece y a los jóvenes les cuesta empezar.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Burocracia:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los agricultores señalan la complejidad de los trámites.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "wheat_de",
+      "pie": "Cosechadora descargando trigo durante la cosecha en Alemania."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Dónde mirar",
+      "texto": "Cada año se publican los beneficiarios de las ayudas y los importes, de forma que cualquier ciudadano puede consultar a quién llega el dinero.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comisión Europea · Política Agrícola Común",
+          "url": "https://agriculture.ec.europa.eu/common-agricultural-policy_es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Ministerio de Agricultura, Pesca y Alimentación",
+          "url": "https://www.mapa.gob.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

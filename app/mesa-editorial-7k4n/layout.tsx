@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { adminClient } from '@/lib/supabase';
 import { logout } from './actions';
 import { EditorialSidebar } from '@/components/editorial-sidebar';
+import { SidebarLinkIcon } from '@/components/sidebar-link-icon';
 export const metadata = { title: 'Administración', robots: { index: false, follow: false } };
 
 function SidebarLink({ href, icon, label, prefetch }: { href: string; icon: string; label: string; prefetch?: boolean }) {
   return <Link href={href} prefetch={prefetch} aria-label={label} title={label}>
-    <span className="sidebar-link-icon" aria-hidden="true">{icon}</span>
+    <SidebarLinkIcon icon={icon} />
     <span className="sidebar-link-label">{label}</span>
   </Link>;
 }

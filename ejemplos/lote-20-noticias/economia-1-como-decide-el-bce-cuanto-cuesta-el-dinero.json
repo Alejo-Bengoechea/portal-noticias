@@ -1,0 +1,377 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "como-decide-el-bce-cuanto-cuesta-el-dinero",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "BCE",
+      "tipos de interés",
+      "euro"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Cómo decide el BCE cuánto cuesta el dinero",
+  "subtitulo": "Una sala en Fráncfort fija cada pocas semanas el precio del crédito para más de veinte países. Así se toma esa decisión y por qué te afecta, aunque no pises un banco.",
+  "portada": {
+    "recursoId": "ecb_dawn",
+    "pie": "La sede del Banco Central Europeo, en Fráncfort, junto al perfil de rascacielos de la ciudad."
+  },
+  "recursos": {
+    "ecb_dawn": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Seat_of_the_European_Central_Bank_and_Frankfurt_Skyline_at_dawn_20150422_1.jpg?width=1200",
+      "alt": "Sede del Banco Central Europeo junto al perfil de los rascacielos de Fráncfort al amanecer.",
+      "credito": "DXR, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "lagarde": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Christine_Lagarde%2C_2023.jpg?width=1200",
+      "alt": "Christine Lagarde, presidenta del BCE, durante una intervención ante el pleno del Parlamento Europeo.",
+      "credito": "Parlamento Europeo, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "eurotower": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eurotower_mit_Euro-Skulptur.jpg?width=1200",
+      "alt": "Rascacielos Eurotower de Fráncfort con la escultura del símbolo del euro delante.",
+      "credito": "Thomas Wolf, CC BY-SA 3.0 DE (Wikimedia Commons)"
+    },
+    "banknotes_europa": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_banknotes%2C_Europa_series.png?width=1200",
+      "alt": "Billetes de euro de la serie Europa, de 5 a 200 euros.",
+      "credito": "Bericht, CC0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando oyes que «el BCE ha subido los tipos», la frase suena lejana. Sin embargo, esa decisión acaba en la cuota de una hipoteca, en el interés de un préstamo para una empresa o en lo que rinde una cuenta de ahorro. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Banco Central Europeo (BCE)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es la institución que fija el precio del dinero para los países que comparten el euro.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién decide y cómo"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El BCE tiene su sede en Fráncfort y empezó a funcionar en 1998, un año antes de que el euro existiera como moneda contable. Las decisiones de política monetaria las toma el ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo de Gobierno",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", formado por los seis miembros del Comité Ejecutivo y los gobernadores de los bancos centrales nacionales de la zona euro. Desde noviembre de 2019 preside la institución Christine Lagarde. El Consejo se reúne en sesión de política monetaria ocho veces al año, más o menos cada seis semanas, y busca el consenso antes de votar.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "lagarde",
+      "pie": "Christine Lagarde, presidenta del BCE, ante el pleno del Parlamento Europeo en 2023."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una meta: precios estables"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El mandato principal del BCE es mantener la ",
+          "marcas": []
+        },
+        {
+          "texto": "estabilidad de precios",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". En la práctica, eso significa que la inflación se sitúe en el ",
+          "marcas": []
+        },
+        {
+          "texto": "2 % a medio plazo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Si los precios suben mucho más deprisa, el dinero compra cada vez menos; si caen de forma sostenida, la economía se frena porque nadie quiere gastar hoy lo que puede comprar más barato mañana.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Para acercarse a esa meta, el BCE utiliza varios tipos de interés. El más seguido es el ",
+          "marcas": []
+        },
+        {
+          "texto": "tipo de la facilidad de depósito",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", el que cobran los bancos por dejar su dinero sobrante en el banco central. Cuando sube, a los bancos les sale más caro financiarse y trasladan ese coste a sus clientes: el crédito se encarece, el consumo y la inversión se enfrían y la inflación tiende a bajar. Cuando baja, ocurre lo contrario.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "tabla",
+      "titulo": "El BCE en cuatro datos",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Sede",
+          "c1": "Fráncfort del Meno (Alemania)"
+        },
+        {
+          "c0": "Objetivo de inflación",
+          "c1": "2 % a medio plazo"
+        },
+        {
+          "c0": "Reuniones de política monetaria",
+          "c1": "Ocho al año"
+        },
+        {
+          "c0": "Presidenta",
+          "c1": "Christine Lagarde (desde 2019)"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Del dinero casi gratis a la mayor subida en décadas"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Durante años, con la inflación por debajo de lo deseado, los tipos estuvieron en mínimos e incluso en negativo. Todo cambió con el repunte de precios posterior a la pandemia y a la guerra en Ucrania. En ",
+          "marcas": []
+        },
+        {
+          "texto": "julio de 2022",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " el BCE subió los tipos por primera vez en once años y encadenó diez subidas seguidas hasta septiembre de 2023, cuando el tipo de depósito llegó al 4 %. A partir de ",
+          "marcas": []
+        },
+        {
+          "texto": "junio de 2024",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con la inflación más contenida, empezó a recortarlos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "eurotower",
+      "pie": "El Eurotower de Fráncfort, con la escultura del símbolo del euro, fue sede del BCE hasta 2014."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué te afecta"
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Hipotecas variables:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " se revisan según el euríbor, que sigue de cerca las expectativas sobre los tipos del BCE.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Ahorro:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cuando los tipos suben, los depósitos y las letras suelen pagar más.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Empresas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " financiar una inversión sale más caro o más barato según el nivel de los tipos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Euro:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " unos tipos más altos que en otras economías tienden a atraer capital y a reforzar la moneda.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El BCE no controla los precios con un botón. Sus decisiones tardan meses en notarse y chocan con factores que escapan a su control, como el precio de la energía o las cadenas de suministro. Por eso el Consejo repasa en cada reunión los datos de inflación, el crecimiento y el empleo antes de moverse.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "imagen",
+      "recursoId": "banknotes_europa",
+      "pie": "Billetes de la serie Europa, con los que circula hoy la moneda común."
+    },
+    {
+      "id": "b15",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: el BCE en tres minutos"
+    },
+    {
+      "id": "b16",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Banco Central Europeo · El BCE y el Eurosistema explicados en tres minutos",
+      "url": "https://www.youtube.com/watch?v=wmUzyLfCgsY"
+    },
+    {
+      "id": "b17",
+      "tipo": "nota_editorial",
+      "titulo": "Una aclaración",
+      "texto": "Este texto explica cómo funciona el BCE. Los tipos de interés vigentes cambian con cada reunión: consúltalos siempre en la web oficial del BCE.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "BCE · Política monetaria",
+          "url": "https://www.ecb.europa.eu/mopo/html/index.en.html"
+        },
+        {
+          "id": "f2",
+          "titulo": "BCE · Consejo de Gobierno",
+          "url": "https://www.ecb.europa.eu/ecb/orga/decisions/govc/html/index.en.html"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

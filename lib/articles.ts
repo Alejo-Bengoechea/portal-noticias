@@ -36,8 +36,8 @@ export const getArticles = cache(async (category?: string, query = '', page = 1,
 });
 
 export const getHomeArticles = cache(async (coverId?: string | string[]): Promise<ArticleCard[]> => {
-  // Por orden de creación: 4 en «Lo más reciente» y hasta 14 en «Últimas noticias», que empieza en la quinta.
-  return getArticles(undefined, '', 1, coverId, 17, 'created_at');
+  // Por orden de creación: 4 en «Lo más reciente» y hasta 15 en «Últimas noticias», que empieza en la quinta.
+  return getArticles(undefined, '', 1, coverId, 19, 'created_at');
 });
 
 // «Más populares»: las 3 publicadas con más visitas en los últimos 30 días.

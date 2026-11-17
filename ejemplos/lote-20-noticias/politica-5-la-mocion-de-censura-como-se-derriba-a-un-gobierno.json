@@ -1,0 +1,401 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-mocion-de-censura-como-se-derriba-a-un-gobierno",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "moción de censura",
+      "Gobierno",
+      "Congreso"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La moción de censura: cómo se derriba a un Gobierno",
+  "subtitulo": "En España no basta con votar «no» al presidente: hay que presentar un candidato alternativo. Seis intentos desde 1978 y un solo éxito explican cómo funciona este mecanismo.",
+  "portada": {
+    "recursoId": "moncloa",
+    "pie": "El Palacio de la Moncloa, sede de la Presidencia del Gobierno."
+  },
+  "recursos": {
+    "moncloa": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_de_la_Moncloa_(Madrid)_01.jpg?width=1200",
+      "alt": "Fachada noroeste del Palacio de la Moncloa, sede de la Presidencia del Gobierno.",
+      "credito": "Luis García (Zaqarbal), CC BY-SA 3.0 ES (Wikimedia Commons)"
+    },
+    "rajoy": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariano_Rajoy%2C_presidente_del_Gobierno_en_funciones_en_el_Congreso_de_los_Diputados.jpg?width=1200",
+      "alt": "Mariano Rajoy, entonces presidente del Gobierno en funciones, en el Congreso de los Diputados.",
+      "credito": "Marta Jara (eldiario.es), CC BY-SA 3.0 ES (Wikimedia Commons)"
+    },
+    "rajoy_sanchez": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pedro_S%C3%A1nchez_y_Mariano_Rajoy%2C_en_la_constituci%C3%B3n_del_Congreso%2C_el_19_de_julio_de_2016.jpg?width=1200",
+      "alt": "Pedro Sánchez y Mariano Rajoy en la sesión de constitución del Congreso, el 19 de julio de 2016.",
+      "credito": "Marta Jara (eldiario.es), CC BY-SA 3.0 ES (Wikimedia Commons)"
+    },
+    "hemi3": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100648.jpg?width=1200",
+      "alt": "Vista del hemiciclo del Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "moción de censura",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el instrumento con el que el Congreso puede retirar la confianza al presidente del Gobierno y sustituirlo. Está regulada en el artículo 113 de la Constitución y es, probablemente, el mecanismo más drástico de control parlamentario.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una censura «constructiva»"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "En España la moción es ",
+          "marcas": []
+        },
+        {
+          "texto": "constructiva",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", como en Alemania: no basta con derribar al Gobierno, hay que proponer a la vez un ",
+          "marcas": []
+        },
+        {
+          "texto": "candidato alternativo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El objetivo es evitar vacíos de poder. Para presentarla se necesita la firma de al menos ",
+          "marcas": []
+        },
+        {
+          "texto": "una décima parte de los diputados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", es decir, 35. El texto debe incluir el nombre del candidato a presidente. Solo prospera si obtiene la ",
+          "marcas": []
+        },
+        {
+          "texto": "mayoría absoluta",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " del Congreso: 176 votos. Si se aprueba, el candidato queda investido de manera automática.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "rajoy",
+      "pie": "Mariano Rajoy, entonces presidente del Gobierno en funciones, en el Congreso de los Diputados."
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "Cómo se tramita",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Paso"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Plazo"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Presentación con 35 firmas y un candidato",
+          "c1": "En cualquier momento"
+        },
+        {
+          "c0": "Otras mociones alternativas",
+          "c1": "Hasta dos días después"
+        },
+        {
+          "c0": "Debate y votación",
+          "c1": "No antes de cinco días"
+        },
+        {
+          "c0": "Mayoría necesaria",
+          "c1": "176 votos (absoluta)"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La Constitución añade cautelas. Los firmantes de una moción rechazada no pueden presentar otra durante el mismo período de sesiones. Además, el presidente del Gobierno no puede disolver las Cámaras mientras haya una moción pendiente.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Seis intentos, una sola victoria"
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Desde la aprobación de la Constitución se han presentado ",
+          "marcas": []
+        },
+        {
+          "texto": "seis mociones de censura",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Solo una triunfó. Las demás se quedaron lejos de los 176 votos, pero cumplieron otra función: dar visibilidad a la alternativa y poner al Gobierno bajo el foco.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "tabla",
+      "titulo": "Las mociones de censura desde 1978",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Promotor"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Contra"
+        },
+        {
+          "clave": "c3",
+          "etiqueta": "Resultado"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1980",
+          "c1": "PSOE (Felipe González)",
+          "c2": "Adolfo Suárez",
+          "c3": "Rechazada"
+        },
+        {
+          "c0": "1987",
+          "c1": "AP (Antonio Hernández Mancha)",
+          "c2": "Felipe González",
+          "c3": "Rechazada"
+        },
+        {
+          "c0": "2017",
+          "c1": "Podemos (Pablo Iglesias)",
+          "c2": "Mariano Rajoy",
+          "c3": "Rechazada"
+        },
+        {
+          "c0": "2018",
+          "c1": "PSOE (Pedro Sánchez)",
+          "c2": "Mariano Rajoy",
+          "c3": "Aprobada"
+        },
+        {
+          "c0": "2020",
+          "c1": "Vox (Santiago Abascal)",
+          "c2": "Pedro Sánchez",
+          "c3": "Rechazada"
+        },
+        {
+          "c0": "2023",
+          "c1": "Vox (Ramón Tamames, candidato)",
+          "c2": "Pedro Sánchez",
+          "c3": "Rechazada"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "rajoy_sanchez",
+      "pie": "Pedro Sánchez y Mariano Rajoy en la constitución del Congreso, el 19 de julio de 2016."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "1 de junio de 2018: la única que triunfó"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La moción que prosperó se debatió el 31 de mayo y el 1 de junio de 2018, tras la sentencia del caso Gürtel. El PSOE la presentó con Pedro Sánchez como candidato y obtuvo ",
+          "marcas": []
+        },
+        {
+          "texto": "180 votos a favor",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", frente a 169 en contra y una abstención. Rajoy se convirtió así en el primer presidente del Gobierno destituido por este mecanismo desde el regreso de la democracia. Sánchez tomó posesión el 2 de junio.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Diferencias con la cuestión de confianza"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Moción de censura:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la plantean los diputados contra el Gobierno, y exige un candidato alternativo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Cuestión de confianza:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la plantea el propio presidente del Gobierno para comprobar si mantiene el respaldo del Congreso.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Investidura:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el voto para elegir a un presidente al comienzo de la legislatura o cuando el cargo queda vacante.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "imagen",
+      "recursoId": "hemi3",
+      "pie": "El hemiciclo del Congreso, donde se debaten y votan las mociones de censura."
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Cómo comprobarlo",
+      "texto": "El resultado de cada moción consta en el Diario de Sesiones del Congreso, accesible en la web de la Cámara.",
+      "icono": "verificado",
+      "color": "verde"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Congreso de los Diputados · Mociones de censura",
+          "url": "https://www.congreso.es/es/busqueda-de-iniciativas"
+        },
+        {
+          "id": "f2",
+          "titulo": "Constitución Española · Artículo 113",
+          "url": "https://www.congreso.es/constitucion"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

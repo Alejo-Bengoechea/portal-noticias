@@ -1,0 +1,350 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-senado-la-otra-camara-de-las-cortes-generales",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "Senado",
+      "Cortes Generales",
+      "territorios"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Senado: la otra cámara de las Cortes Generales",
+  "subtitulo": "Se define como la cámara de representación territorial, pero su peso real genera debate. Cómo se elige, qué puede hacer y cuándo su voto resulta decisivo.",
+  "portada": {
+    "recursoId": "senado1",
+    "pie": "La fachada del Palacio del Senado, en Madrid."
+  },
+  "recursos": {
+    "senado1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_del_Senado_-_Madrid_-_20250920_001.jpg?width=1200",
+      "alt": "Fachada del Palacio del Senado, en Madrid.",
+      "credito": "Américo Toledano, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "senado_hemi": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hemiciclo_del_nuevo_edificio_del_Senado_de_Espa%C3%B1a_(2012).jpg?width=1200",
+      "alt": "Sala de plenos del nuevo edificio del Senado de España.",
+      "credito": "Rastrojo, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "senado_aranas": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Senado_-_141204_104721.jpg?width=1200",
+      "alt": "Lámparas del hemiciclo histórico del Senado de España, en Madrid.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "senado5": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_del_Senado_-_Madrid_-_20250920_005.jpg?width=1200",
+      "alt": "Detalle exterior del Palacio del Senado.",
+      "credito": "Américo Toledano, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las ",
+          "marcas": []
+        },
+        {
+          "texto": "Cortes Generales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " están formadas por dos cámaras: el Congreso de los Diputados y el ",
+          "marcas": []
+        },
+        {
+          "texto": "Senado",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Mientras que el Congreso concentra buena parte del protagonismo, el Senado cumple funciones propias y, en algunos casos, decisivas. La Constitución lo define en su artículo 69 como la ",
+          "marcas": []
+        },
+        {
+          "texto": "cámara de representación territorial",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se elige"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "A diferencia del Congreso, en el Senado el reparto no depende de la población. En cada provincia peninsular se eligen ",
+          "marcas": []
+        },
+        {
+          "texto": "cuatro senadores",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": "; en las islas mayores (Gran Canaria, Mallorca y Tenerife), tres; en el resto de islas, uno por isla o agrupación; y en Ceuta y Melilla, dos cada una. A ellos se suman los designados por los ",
+          "marcas": []
+        },
+        {
+          "texto": "parlamentos autonómicos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": uno por comunidad y otro más por cada millón de habitantes. En total, la Cámara cuenta con más de 260 senadores.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "senado_hemi",
+      "pie": "Sala de plenos del nuevo edificio del Senado de España."
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "El Senado en breve",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Definición",
+          "c1": "Cámara de representación territorial"
+        },
+        {
+          "c0": "Senadores por provincia peninsular",
+          "c1": "4"
+        },
+        {
+          "c0": "Mandato",
+          "c1": "Cuatro años"
+        },
+        {
+          "c0": "Plazo para vetar o enmendar una ley",
+          "c1": "Dos meses"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué puede hacer"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En la mayoría de las leyes, el Senado actúa como cámara de segunda lectura: puede ",
+          "marcas": []
+        },
+        {
+          "texto": "enmendar",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " el texto o ",
+          "marcas": []
+        },
+        {
+          "texto": "vetarlo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Pero el Congreso tiene la última palabra. Si el Senado veta una ley, el Congreso puede levantar el veto por mayoría absoluta o, pasados dos meses, por mayoría simple. Si solo introduce enmiendas, el Congreso decide si las acepta o las rechaza.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "senado_aranas",
+      "pie": "Lámparas del histórico hemiciclo del Senado, en Madrid."
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cuándo es decisivo"
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Artículo 155:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " para que el Gobierno pueda adoptar medidas contra una comunidad autónoma que incumple sus obligaciones, necesita la aprobación por mayoría absoluta del Senado.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Mayorías distintas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " si la mayoría del Senado es de un signo político diferente al del Gobierno, puede retrasar leyes con un veto o enmiendas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Control:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el Senado tiene también comisiones de investigación y sesiones de control al Gobierno.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los críticos recuerdan que, pese a su definición territorial, las senadoras y senadores se organizan por partidos y no por comunidades. Se han planteado reformas desde hace décadas para convertirlo en una verdadera cámara de las autonomías, similar al Bundesrat alemán, pero ninguna ha prosperado porque exigiría reformar la Constitución.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un palacio con historia"
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "senado5",
+      "pie": "Detalle exterior del Palacio del Senado, antiguo colegio de la Plaza de la Marina Española."
+    },
+    {
+      "id": "b13",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Senado tiene su sede en el edificio del antiguo ",
+          "marcas": []
+        },
+        {
+          "texto": "Colegio de Doña María de Aragón",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en la plaza de la Marina Española, en Madrid, que alberga la Cámara alta desde el siglo XIX. Con los años se ha ampliado y reformado, y en su interior, junto al histórico hemiciclo, se ha incorporado un edificio moderno con una sala de plenos para las sesiones actuales.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Para saber más",
+      "texto": "El Senado publica en su web los plenos, las iniciativas y la composición de la Cámara, con la lista actual de senadoras y senadores.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Senado de España · Portal oficial",
+          "url": "https://www.senado.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española (artículos 66 a 69)",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

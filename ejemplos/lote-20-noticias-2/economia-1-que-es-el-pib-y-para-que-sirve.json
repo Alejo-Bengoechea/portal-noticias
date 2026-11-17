@@ -1,0 +1,369 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "que-es-el-pib-y-para-que-sirve",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "PIB",
+      "INE",
+      "contabilidad nacional"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Qué es el PIB y para qué sirve",
+  "subtitulo": "Es el dato económico más repetido en los telediarios, pero pocas veces se explica qué mide exactamente y qué se deja fuera. Lo repasamos paso a paso.",
+  "portada": {
+    "recursoId": "ine10",
+    "pie": "Sede del Instituto Nacional de Estadística, en Madrid, organismo que calcula el PIB de España."
+  },
+  "recursos": {
+    "ine10": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Instituto_Nacional_de_Estad%C3%ADstica_(INE)_10.jpg?width=1200",
+      "alt": "Sede del Instituto Nacional de Estadística, en Madrid.",
+      "credito": "Zarateman, CC0 (Wikimedia Commons)"
+    },
+    "ine04": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Instituto_Nacional_de_Estad%C3%ADstica_(INE)_04.JPG?width=1200",
+      "alt": "Edificio del Instituto Nacional de Estadística, visto desde la calle.",
+      "credito": "Zarateman, CC0 (Wikimedia Commons)"
+    },
+    "carts": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shopping_carts_Tegut_Tauberbischofsheim.jpg?width=1200",
+      "alt": "Hilera de carritos de la compra a la entrada de un supermercado.",
+      "credito": "Triplec85, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bloques": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuevos_bloques.jpg?width=1200",
+      "alt": "Bloques de viviendas de nueva construcción en una localidad española.",
+      "credito": "Rodelar, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cada trimestre aparece la misma frase en las noticias: «la economía creció un tanto por ciento». Detrás de esa frase está el ",
+          "marcas": []
+        },
+        {
+          "texto": "producto interior bruto (PIB)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la magnitud con la que se mide el tamaño de una economía.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una definición sencilla"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El PIB es el ",
+          "marcas": []
+        },
+        {
+          "texto": "valor de todos los bienes y servicios finales producidos dentro de un país durante un periodo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de tiempo, normalmente un trimestre o un año. «Finales» significa que no se cuenta dos veces lo que ya está incluido en otro producto: el trigo no se suma por separado si ya está dentro del precio del pan.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "En España lo calcula el ",
+          "marcas": []
+        },
+        {
+          "texto": "Instituto Nacional de Estadística (INE)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", dentro de la llamada Contabilidad Nacional. El organismo publica una ",
+          "marcas": []
+        },
+        {
+          "texto": "estimación rápida",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " poco después de cerrarse cada trimestre y la revisa más adelante, cuando dispone de más datos. Por eso las cifras pueden cambiar con el tiempo: no son un error, sino el resultado de ir completando la información.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "ine04",
+      "pie": "Edificio del Instituto Nacional de Estadística, en Madrid."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Tres maneras de llegar al mismo número"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El PIB puede calcularse desde tres ángulos distintos, que en teoría deben coincidir:",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "tabla",
+      "titulo": "Las tres ópticas del PIB",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Óptica"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Qué suma"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Oferta",
+          "c1": "El valor añadido de todos los sectores: agricultura, industria, construcción y servicios"
+        },
+        {
+          "c0": "Demanda",
+          "c1": "Consumo de los hogares, gasto público, inversión y exportaciones menos importaciones"
+        },
+        {
+          "c0": "Rentas",
+          "c1": "Sueldos, beneficios de las empresas e impuestos menos subvenciones"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "PIB nominal, PIB real y PIB per cápita"
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "PIB nominal:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " se mide a los precios de cada momento, así que sube también cuando suben los precios.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "PIB real:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " descuenta la inflación para comparar de verdad cuánto se produce. Es el que se usa cuando se dice que la economía «crece».",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "PIB per cápita:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " divide el total entre la población y da una idea del nivel medio de renta, aunque no dice cómo se reparte.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "carts",
+      "pie": "El consumo de los hogares es uno de los grandes componentes del PIB desde el lado de la demanda."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué es una recesión"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Se suele hablar de ",
+          "marcas": []
+        },
+        {
+          "texto": "recesión técnica",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " cuando el PIB real cae durante dos trimestres consecutivos. Es una regla práctica, no una definición legal, y no siempre refleja lo que vive cada familia: puede haber recesión sin que suba mucho el paro, y al revés.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Lo que el PIB no cuenta"
+    },
+    {
+      "id": "b14",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El economista Simon Kuznets, que sentó las bases de estas estadísticas en Estados Unidos en los años treinta, ya advirtió de que el bienestar de un país no puede deducirse solo de su renta nacional. El PIB no incluye el ",
+          "marcas": []
+        },
+        {
+          "texto": "trabajo doméstico y de cuidados no remunerado",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", no descuenta el ",
+          "marcas": []
+        },
+        {
+          "texto": "deterioro ambiental",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y no dice nada sobre la ",
+          "marcas": []
+        },
+        {
+          "texto": "desigualdad",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": dos países con el mismo PIB per cápita pueden vivir de forma muy distinta.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "imagen",
+      "recursoId": "bloques",
+      "pie": "La construcción es uno de los sectores que se suman al PIB desde la óptica de la oferta."
+    },
+    {
+      "id": "b16",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Qué es el PIB, explicado de forma sencilla",
+      "url": "https://www.youtube.com/watch?v=lg6bOeTRSeg"
+    },
+    {
+      "id": "b17",
+      "tipo": "nota_editorial",
+      "titulo": "Para leer bien un titular",
+      "texto": "Fíjate en tres cosas: si el dato es real o nominal, si compara con el trimestre anterior o con el mismo trimestre del año pasado, y si es una estimación provisional.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Instituto Nacional de Estadística · Portal oficial",
+          "url": "https://www.ine.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco de España · Portal oficial",
+          "url": "https://www.bde.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

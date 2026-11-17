@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Cards, HeroStory, Pagination, pageNumber } from '@/components/cards';
 import { CoverCarousel } from '@/components/cover-carousel';
+import { SubscribeSection } from '@/components/subscribe-section';
 import { articlePageSize, getArticles, getCategoryCovers, getTerms } from '@/lib/articles';
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ pagina?: string }> };
@@ -24,5 +25,6 @@ export default async function Category({ params, searchParams }: Props) {
       {covers.map((cover, i) => <HeroStory key={cover.id} article={cover} heading="h2" priority={i === 0} />)}
     </CoverCarousel></div>}
     {(articles.length > 0 || !covers.length || page > 1) && <Cards wide articles={articles.slice(0, articlePageSize)} categories={categories} />}
-    <Pagination page={page} more={articles.length > articlePageSize} href={n => `/categoria/${slug}?pagina=${n}`} /></>;
+    <Pagination page={page} more={articles.length > articlePageSize} href={n => `/categoria/${slug}?pagina=${n}`} />
+    <SubscribeSection /></>;
 }

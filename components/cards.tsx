@@ -20,8 +20,8 @@ export function Card({ article, category }: { article: ArticleCard; category?: T
   </article>;
 }
 
-// Patrón único (una sola vez): 1-3 / 4 / 2-1 / 3. No se muestran más noticias.
-const archivePattern = [4, 4, 3, 3];
+// Patrón único (una sola vez): 1-3 / 4 / 3-1 / 3. No se muestran más noticias.
+const archivePattern = [4, 4, 4, 3];
 
 export function ArchiveCards({ articles, categories }: { articles: ArticleCard[]; categories: Term[] }) {
   const groups: React.ReactNode[] = [];

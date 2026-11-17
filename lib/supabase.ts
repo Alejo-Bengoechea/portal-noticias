@@ -29,8 +29,9 @@ export async function sessionClient() {
 export const adminClient = cache(async () => {
   const client = await sessionClient();
   if (!client || !process.env.ADMIN_USER_ID) return null;
-  const { data } = await client.auth.getUser();
-  if (data.user?.id !== process.env.ADMIN_USER_ID) return null;
-  const { data: allowed } = await client.rpc('is_editorial_admin');
+  // getClaims verifica la firma del token (en local si el proyecto usa claves asimétricas).
+  // Ambas comprobaciones se lanzan a la vez y las dos deben pasar.
+  const [{ data }, { data: allowed }] = await Promise.all([client.auth.getClaims(), client.rpc('is_editorial_admin')]);
+  if (data?.claims.sub !== process.env.ADMIN_USER_ID) return null;
   return allowed === true ? client : null;
 });

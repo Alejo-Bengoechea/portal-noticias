@@ -1,0 +1,349 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-investidura-como-se-elige-al-presidente-del-gobierno",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "investidura",
+      "Gobierno",
+      "Congreso"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La investidura: cómo se elige al presidente del Gobierno",
+  "subtitulo": "En España no se vota directamente al presidente del Gobierno: lo elige el Congreso de los Diputados. Explicamos los pasos, los plazos y qué ocurre si nadie logra los apoyos necesarios.",
+  "portada": {
+    "recursoId": "hemi1",
+    "pie": "El hemiciclo del Congreso de los Diputados, donde se celebra el debate de investidura."
+  },
+  "recursos": {
+    "hemi1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100858.jpg?width=1200",
+      "alt": "Hemiciclo del Congreso de los Diputados, en Madrid.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "hemi2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100638.jpg?width=1200",
+      "alt": "Escaños y tribuna del hemiciclo del Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "hemi3": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100648.jpg?width=1200",
+      "alt": "Vista del hemiciclo del Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "moncloa": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_de_la_Moncloa_(Madrid)_01.jpg?width=1200",
+      "alt": "Fachada noroeste del Palacio de la Moncloa, sede de la Presidencia del Gobierno.",
+      "credito": "Luis García (Zaqarbal), CC BY-SA 3.0 ES (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando se vota en unas elecciones generales, los ciudadanos eligen a los diputados y a los senadores, ",
+          "marcas": []
+        },
+        {
+          "texto": "no al presidente del Gobierno",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es el Congreso quien, después, otorga su confianza a un candidato mediante la ",
+          "marcas": []
+        },
+        {
+          "texto": "investidura",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un procedimiento regulado en el ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 99",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la Constitución.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los pasos del proceso"
+    },
+    {
+      "id": "b03",
+      "tipo": "tabla",
+      "titulo": "De las urnas a La Moncloa",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Paso"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Qué ocurre"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1. Elecciones",
+          "c1": "Se renueva el Congreso y se constituye la nueva Cámara"
+        },
+        {
+          "c0": "2. Consultas",
+          "c1": "El rey se reúne con los representantes de los grupos parlamentarios"
+        },
+        {
+          "c0": "3. Propuesta",
+          "c1": "A través del presidente del Congreso, el rey propone un candidato"
+        },
+        {
+          "c0": "4. Debate",
+          "c1": "El candidato expone su programa ante el Congreso"
+        },
+        {
+          "c0": "5. Votación",
+          "c1": "Se vota la confianza de la Cámara"
+        },
+        {
+          "c0": "6. Nombramiento",
+          "c1": "El rey nombra presidente al elegido"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "En la ",
+          "marcas": []
+        },
+        {
+          "texto": "primera votación",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " el candidato necesita la ",
+          "marcas": []
+        },
+        {
+          "texto": "mayoría absoluta",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que son ",
+          "marcas": []
+        },
+        {
+          "texto": "176 votos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de 350. Si no la obtiene, se repite la votación ",
+          "marcas": []
+        },
+        {
+          "texto": "cuarenta y ocho horas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " más tarde y entonces basta con la ",
+          "marcas": []
+        },
+        {
+          "texto": "mayoría simple",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", es decir, más votos a favor que en contra.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "hemi2",
+      "pie": "Escaños y tribuna del hemiciclo del Congreso de los Diputados."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Si nadie consigue apoyos"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Si ningún candidato obtiene la confianza, se tramitan nuevas propuestas del mismo modo. Cuando pasan ",
+          "marcas": []
+        },
+        {
+          "texto": "dos meses desde la primera votación",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y ninguno ha logrado la mayoría simple, el rey ",
+          "marcas": []
+        },
+        {
+          "texto": "disuelve las Cortes y convoca nuevas elecciones",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con la firma del presidente del Congreso. Esta cláusula existe para evitar bloqueos indefinidos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "hemi3",
+      "pie": "Vista del hemiciclo del Congreso, con la tribuna desde la que interviene el candidato."
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Del nombramiento a la toma de posesión"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una vez nombrado, el presidente ",
+          "marcas": []
+        },
+        {
+          "texto": "promete o jura el cargo ante el rey",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y propone los ministros, que son nombrados también por el monarca. Entre las elecciones y la toma de posesión, el Gobierno anterior continúa en funciones, con facultades limitadas.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "moncloa",
+      "pie": "Fachada del Palacio de la Moncloa, sede de la Presidencia del Gobierno."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La otra vía: la moción de censura"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Un presidente puede también perder el cargo si el Congreso aprueba una ",
+          "marcas": []
+        },
+        {
+          "texto": "moción de censura",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que debe incluir un candidato alternativo y necesita mayoría absoluta. Es el único caso en que la Cámara cambia al presidente sin pasar por las urnas.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Un dato",
+      "texto": "La confianza del Congreso no se limita a la investidura: el presidente puede plantear además una cuestión de confianza para comprobar si mantiene apoyos.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Congreso de los Diputados · La Constitución",
+          "url": "https://www.congreso.es/constitucion"
+        },
+        {
+          "id": "f2",
+          "titulo": "Gobierno de España · La Moncloa",
+          "url": "https://www.lamoncloa.gob.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

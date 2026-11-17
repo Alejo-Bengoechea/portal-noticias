@@ -1,0 +1,391 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "los-convenios-de-ginebra-y-la-cruz-roja",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "Cruz Roja",
+      "Convenios de Ginebra",
+      "derecho humanitario"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Los Convenios de Ginebra y el origen de la Cruz Roja",
+  "subtitulo": "Una batalla en 1859 y el empeño de un empresario suizo dieron lugar a las normas que protegen a heridos, prisioneros y civiles en las guerras. Repasamos su historia.",
+  "portada": {
+    "recursoId": "icrc",
+    "pie": "Sede del Comité Internacional de la Cruz Roja, en Ginebra."
+  },
+  "recursos": {
+    "icrc": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/International_Committee_of_the_Red_Cross%2C_Geneva_(46907115094).jpg?width=1200",
+      "alt": "Sede del Comité Internacional de la Cruz Roja, en Ginebra.",
+      "credito": "Torbjorn Toby Jorgensen, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "dunant1855": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry_Dunant_1855.jpg?width=1200",
+      "alt": "Retrato de Henry Dunant, impulsor de la Cruz Roja.",
+      "credito": "CICR, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "dunant_old": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry_Dunant-young.jpg?width=1200",
+      "alt": "Retrato fotográfico de Henry Dunant.",
+      "credito": "Frédéric Boissonnas, Dominio público (Wikimedia Commons)"
+    },
+    "croix2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Croix-Rouge-genevoise-2.jpg?width=1200",
+      "alt": "Edificio de la Cruz Roja de Ginebra con el emblema de la cruz roja.",
+      "credito": "Alexey M., CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Incluso la guerra tiene reglas. Quienes combaten no pueden atacar a los heridos, maltratar a los prisioneros ni dirigir ataques contra la población civil. Esas normas se recogen en los ",
+          "marcas": []
+        },
+        {
+          "texto": "Convenios de Ginebra",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", y su origen está en la historia de un hombre: el suizo ",
+          "marcas": []
+        },
+        {
+          "texto": "Henry Dunant",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La batalla de Solferino"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "En junio de 1859, Dunant, que viajaba por negocios, llegó a la localidad italiana de ",
+          "marcas": []
+        },
+        {
+          "texto": "Solferino",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", donde acababa de librarse una batalla entre el ejército francosardo y el austriaco con decenas de miles de bajas. Vio a miles de heridos abandonados sin atención y organizó con los vecinos una ayuda improvisada. Años después, en 1862, publicó ",
+          "marcas": []
+        },
+        {
+          "texto": "Un recuerdo de Solferino",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": ", un libro que conmovió a Europa y proponía crear sociedades de socorro y un acuerdo que protegiera a los heridos.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "dunant1855",
+      "pie": "Retrato de Henry Dunant, impulsor de la Cruz Roja."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Del comité al convenio"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En ",
+          "marcas": []
+        },
+        {
+          "texto": "1863",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se fundó en Ginebra el comité que daría lugar al ",
+          "marcas": []
+        },
+        {
+          "texto": "Comité Internacional de la Cruz Roja (CICR)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Al año siguiente, doce Estados firmaron el ",
+          "marcas": []
+        },
+        {
+          "texto": "primer Convenio de Ginebra",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (1864), que obligaba a atender a los soldados heridos y respetaba al personal sanitario. Como emblema se escogió una ",
+          "marcas": []
+        },
+        {
+          "texto": "cruz roja sobre fondo blanco",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", los colores de la bandera suiza invertidos. Más tarde se añadieron la media luna roja y, en 2005, el cristal rojo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "dunant_old",
+      "pie": "Retrato fotográfico de Henry Dunant."
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Dunant recibió en 1901 el primer Premio Nobel de la Paz, junto con el pacifista francés Frédéric Passy. El propio CICR ha sido galardonado con el Nobel de la Paz en tres ocasiones: 1917, 1944 y 1963.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los cuatro convenios de 1949"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Tras la Segunda Guerra Mundial se ampliaron y actualizaron las normas. En ",
+          "marcas": []
+        },
+        {
+          "texto": "1949",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se aprobaron los cuatro convenios vigentes, que han sido ratificados por ",
+          "marcas": []
+        },
+        {
+          "texto": "todos los Estados del mundo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Se completan con tres protocolos adicionales, dos de 1977 y uno de 2005.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "tabla",
+      "titulo": "Los cuatro Convenios de Ginebra",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Convenio"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Protege a"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Primero",
+          "c1": "Heridos y enfermos de las fuerzas armadas en campaña"
+        },
+        {
+          "c0": "Segundo",
+          "c1": "Heridos, enfermos y náufragos de las fuerzas armadas en el mar"
+        },
+        {
+          "c0": "Tercero",
+          "c1": "Prisioneros de guerra"
+        },
+        {
+          "c0": "Cuarto",
+          "c1": "Personas civiles en tiempo de guerra"
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "croix2",
+      "pie": "Edificio de la Cruz Roja de Ginebra con el emblema de la cruz roja."
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué hace hoy el CICR"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Visita a prisioneros",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " y detenidos para comprobar su trato.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Reúne a familias",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " separadas por los conflictos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Presta asistencia",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " a la población civil: agua, alimentos y atención sanitaria.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Recuerda a los Estados",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " sus obligaciones de acuerdo con el derecho humanitario.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "¿Qué son los Convenios de Ginebra?, por el CICR",
+      "url": "https://www.youtube.com/watch?v=7IBSIY_Vydg"
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Un matiz importante",
+      "texto": "Los convenios fijan límites a la violencia, pero su cumplimiento depende de los Estados y de las partes en conflicto. El CICR trabaja con la neutralidad y la imparcialidad como principios.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comité Internacional de la Cruz Roja · Portal en español",
+          "url": "https://www.icrc.org/es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Nobel Prize · Premio Nobel de la Paz",
+          "url": "https://www.nobelprize.org/prizes/peace/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

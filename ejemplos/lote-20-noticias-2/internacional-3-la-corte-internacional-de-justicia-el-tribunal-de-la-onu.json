@@ -1,0 +1,379 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-corte-internacional-de-justicia-el-tribunal-de-la-onu",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "ONU",
+      "justicia internacional",
+      "La Haya"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La Corte Internacional de Justicia: el tribunal de la ONU",
+  "subtitulo": "Desde el Palacio de la Paz de La Haya, quince jueces resuelven las disputas entre Estados. Explicamos qué hace, qué puede imponer y en qué se diferencia de la Corte Penal Internacional.",
+  "portada": {
+    "recursoId": "peace",
+    "pie": "El Palacio de la Paz, en La Haya, sede de la Corte Internacional de Justicia."
+  },
+  "recursos": {
+    "peace": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La_haye_palais_paix_jardin_face.JPG?width=1200",
+      "alt": "Palacio de la Paz, en La Haya, sede de la Corte Internacional de Justicia.",
+      "credito": "Velvet, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "peace2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Peace_Palace_The_Hague.jpg?width=1200",
+      "alt": "El Palacio de la Paz de La Haya, que alberga la Corte Internacional de Justicia.",
+      "credito": "Iamthestig, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "suttner": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bertha_Von_Suttner%2C_Peace_Palace_(The_Hague).jpg?width=1200",
+      "alt": "Estatua de Bertha von Suttner, primera mujer Nobel de la Paz, junto al Palacio de la Paz.",
+      "credito": "Hope Elizabeth May, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "peace3": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedenspalast_Den_Haag.jpg?width=1200",
+      "alt": "Vista general del Palacio de la Paz, en La Haya.",
+      "credito": "Thomas Wolf, CC BY-SA 3.0 DE (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando dos países discrepan sobre una frontera, un tratado o el uso de un recurso, pueden recurrir a un tribunal en lugar de a la fuerza. Ese tribunal existe y se llama ",
+          "marcas": []
+        },
+        {
+          "texto": "Corte Internacional de Justicia (CIJ)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es el principal órgano judicial de las ",
+          "marcas": []
+        },
+        {
+          "texto": "Naciones Unidas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un palacio con historia"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "La Corte tiene su sede en el ",
+          "marcas": []
+        },
+        {
+          "texto": "Palacio de la Paz",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en La Haya (Países Bajos), un edificio inaugurado en ",
+          "marcas": []
+        },
+        {
+          "texto": "1913",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " gracias a una donación del filántropo Andrew Carnegie. Allí trabaja también la Corte Permanente de Arbitraje, creada en 1899. La CIJ se fundó con la Carta de la ONU en 1945 y celebró sus primeras audiencias en 1946, y es la sucesora de un tribunal anterior de la Sociedad de Naciones.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "peace2",
+      "pie": "El Palacio de la Paz de La Haya."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quince jueces"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La Corte tiene ",
+          "marcas": []
+        },
+        {
+          "texto": "quince jueces",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", elegidos por la Asamblea General y el Consejo de Seguridad de la ONU de forma independiente, para mandatos de ",
+          "marcas": []
+        },
+        {
+          "texto": "nueve años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Cada tres años se renueva un tercio. No puede haber dos jueces de la misma nacionalidad. Sus idiomas oficiales son el ",
+          "marcas": []
+        },
+        {
+          "texto": "inglés",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y el ",
+          "marcas": []
+        },
+        {
+          "texto": "francés",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "suttner",
+      "pie": "Estatua de Bertha von Suttner, primera mujer Nobel de la Paz, junto al Palacio de la Paz."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué puede hacer"
+    },
+    {
+      "id": "b08",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Resolver litigios entre Estados:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " solo los Estados pueden ser parte en los casos, no las personas ni las empresas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Emitir opiniones consultivas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " responde a preguntas jurídicas que le plantean la Asamblea General, el Consejo de Seguridad u otros órganos autorizados de la ONU.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una condición esencial es el ",
+          "marcas": []
+        },
+        {
+          "texto": "consentimiento",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": la Corte solo puede juzgar un caso si los Estados implicados han aceptado su jurisdicción, por un tratado, por un acuerdo especial o por una declaración previa. Sus sentencias son ",
+          "marcas": []
+        },
+        {
+          "texto": "obligatorias y definitivas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", sin recurso de apelación. Si un Estado no las cumple, el otro puede acudir al Consejo de Seguridad.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "peace3",
+      "pie": "Vista general del Palacio de la Paz, en La Haya."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "No es la Corte Penal Internacional"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Con frecuencia se confunden. La ",
+          "marcas": []
+        },
+        {
+          "texto": "Corte Penal Internacional (CPI)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", creada por el Estatuto de Roma de 1998, que entró en vigor en 2002, ",
+          "marcas": []
+        },
+        {
+          "texto": "juzga a personas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " acusadas de genocidio, crímenes de guerra y crímenes de lesa humanidad. No forma parte de la ONU, aunque colabora con ella.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "tabla",
+      "titulo": "Dos tribunales en La Haya",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Aspecto"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Corte Internacional de Justicia"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Corte Penal Internacional"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Quién es parte",
+          "c1": "Estados",
+          "c2": "Personas acusadas"
+        },
+        {
+          "c0": "Qué decide",
+          "c1": "Disputas entre países",
+          "c2": "Responsabilidad penal individual"
+        },
+        {
+          "c0": "Origen",
+          "c1": "Carta de la ONU (1945)",
+          "c2": "Estatuto de Roma (1998)"
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un caso histórico",
+      "texto": "El primer asunto que juzgó la Corte, en 1949, fue el del estrecho de Corfú, entre el Reino Unido y Albania.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Corte Internacional de Justicia · Portal oficial",
+          "url": "https://www.icj-cij.org/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Naciones Unidas · Órganos principales",
+          "url": "https://www.un.org/es/about-us/main-bodies"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

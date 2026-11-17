@@ -1,0 +1,411 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-oms-y-la-erradicacion-de-la-viruela",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "OMS",
+      "salud",
+      "vacunas"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La OMS y la erradicación de la viruela",
+  "subtitulo": "Es la única enfermedad humana que se ha eliminado del planeta. Contamos cómo lo logró una campaña mundial impulsada por la Organización Mundial de la Salud.",
+  "portada": {
+    "recursoId": "who2007",
+    "pie": "Sede de la Organización Mundial de la Salud, en Ginebra."
+  },
+  "recursos": {
+    "who2007": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/World_Health_Organisation_headquarters%2C_Geneva%2C_north_and_west_sides_2007.jpg?width=1200",
+      "alt": "Sede de la Organización Mundial de la Salud, en Ginebra.",
+      "credito": "Yann Forget, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "who_flag": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/World_Health_Organization_Headquarters_and_Flag.jpg?width=1200",
+      "alt": "Edificio de la OMS en Ginebra con su bandera.",
+      "credito": "Misión de EE. UU. en Ginebra, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "smallpox_kit": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smallpox_vaccine.jpg?width=1200",
+      "alt": "Elementos de un equipo de vacunación contra la viruela.",
+      "credito": "James Gathany (CDC), Dominio público (Wikimedia Commons)"
+    },
+    "smallpox_inj": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smallpox_vaccine_injection.jpg?width=1200",
+      "alt": "Un médico muestra el uso de la aguja bifurcada con la que se administraba la vacuna de la viruela.",
+      "credito": "James Gathany (CDC), Dominio público (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "8 de mayo de 1980",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la Asamblea Mundial de la Salud declaró que el mundo estaba libre de viruela. Hasta hoy es la ",
+          "marcas": []
+        },
+        {
+          "texto": "única enfermedad humana erradicada",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La proeza fue obra de la ",
+          "marcas": []
+        },
+        {
+          "texto": "Organización Mundial de la Salud (OMS)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con ayuda de miles de sanitarios y de países de todo el mundo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué es la OMS"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La OMS es el organismo de las Naciones Unidas especializado en salud pública. Su Constitución entró en vigor el ",
+          "marcas": []
+        },
+        {
+          "texto": "7 de abril de 1948",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", fecha que hoy se celebra como el Día Mundial de la Salud, y tiene su sede en ",
+          "marcas": []
+        },
+        {
+          "texto": "Ginebra",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Cuenta con ",
+          "marcas": []
+        },
+        {
+          "texto": "194 Estados miembros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su órgano supremo es la ",
+          "marcas": []
+        },
+        {
+          "texto": "Asamblea Mundial de la Salud",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que se reúne cada año, y un Consejo Ejecutivo guía su trabajo entre reuniones.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "who_flag",
+      "pie": "Edificio de la OMS en Ginebra con su bandera."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una enfermedad milenaria"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La viruela mató a cientos de millones de personas a lo largo de la historia. Solo en el siglo XX se calcula que causó unos ",
+          "marcas": []
+        },
+        {
+          "texto": "trescientos millones de muertes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Quienes sobrevivían quedaban a menudo marcados por cicatrices o ciegos. El médico inglés ",
+          "marcas": []
+        },
+        {
+          "texto": "Edward Jenner",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " demostró en ",
+          "marcas": []
+        },
+        {
+          "texto": "1796",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " que inocular un material procedente de las vacas protegía contra ella, lo que dio origen al término «vacuna».",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "smallpox_kit",
+      "pie": "Elementos de un equipo de vacunación contra la viruela."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La campaña mundial"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Aunque la vacuna existía desde hacía casi dos siglos, la enfermedad seguía presente en decenas de países. En ",
+          "marcas": []
+        },
+        {
+          "texto": "1967",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " la OMS puso en marcha un ",
+          "marcas": []
+        },
+        {
+          "texto": "programa intensificado de erradicación",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su clave fue la estrategia de ",
+          "marcas": []
+        },
+        {
+          "texto": "vigilancia y contención",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": en lugar de vacunar a todo el mundo, se buscaban los casos, se aislaba a los enfermos y se vacunaba a su entorno para cortar la cadena de contagio.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "tabla",
+      "titulo": "Una cuenta atrás",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hito"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1796",
+          "c1": "Jenner prueba la vacuna"
+        },
+        {
+          "c0": "1967",
+          "c1": "La OMS lanza el programa intensificado"
+        },
+        {
+          "c0": "1977",
+          "c1": "Último caso natural conocido, en Somalia"
+        },
+        {
+          "c0": "1980",
+          "c1": "Declaración oficial de erradicación"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "smallpox_inj",
+      "pie": "Un médico muestra el uso de la aguja bifurcada con la que se administraba la vacuna de la viruela."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué fue posible"
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Un solo huésped:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el virus solo infecta a personas, sin animales que lo mantengan.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Síntomas visibles:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la erupción permite identificar los casos con facilidad.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Vacuna eficaz y barata:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " una dosis daba protección duradera.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Cooperación internacional:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " países en conflicto colaboraron para llegar al objetivo.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Cómo conquistamos el virus de la letal viruela (TED-Ed)",
+      "url": "https://www.youtube.com/watch?v=XI6M4a0bEZY"
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un legado",
+      "texto": "La experiencia de la viruela inspiró otras campañas, como la de erradicación de la poliomielitis, que aún no ha terminado.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Organización Mundial de la Salud · Portal en español",
+          "url": "https://www.who.int/es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Organización Mundial de la Salud · Acerca de la OMS",
+          "url": "https://www.who.int/es/about"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

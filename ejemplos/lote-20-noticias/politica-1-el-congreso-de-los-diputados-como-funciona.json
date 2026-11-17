@@ -1,0 +1,380 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-congreso-de-los-diputados-como-funciona",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "Congreso",
+      "Cortes Generales",
+      "democracia"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Congreso de los Diputados: cómo funciona",
+  "subtitulo": "Trescientos cincuenta diputados, un hemiciclo con casi dos siglos de historia y una función central: hacer las leyes y controlar al Gobierno. Repasamos cómo trabaja la Cámara baja.",
+  "portada": {
+    "recursoId": "hemi1",
+    "pie": "El hemiciclo del Congreso de los Diputados, en Madrid."
+  },
+  "recursos": {
+    "hemi1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100858.jpg?width=1200",
+      "alt": "Hemiciclo del Congreso de los Diputados, en Madrid.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "congreso": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Congreso_de_los_Diputados_(Espa%C3%B1a)_04.jpg?width=1200",
+      "alt": "Detalle de la fachada principal del Congreso de los Diputados.",
+      "credito": "Fernando Arconada, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "hemi2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100638.jpg?width=1200",
+      "alt": "Escaños y tribuna del hemiciclo del Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "const_congreso": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Congreso_de_los_diputados_-_Constituci%C3%B3n_141203_095513.jpg?width=1200",
+      "alt": "Ejemplar original de la Constitución de 1978 expuesto en el Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando se habla de «las Cortes» o de «la sesión de investidura» se piensa en el mismo edificio: el ",
+          "marcas": []
+        },
+        {
+          "texto": "Palacio del Congreso de los Diputados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en la Carrera de San Jerónimo, en Madrid. Allí trabaja la Cámara baja de las ",
+          "marcas": []
+        },
+        {
+          "texto": "Cortes Generales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que representan al pueblo español según el artículo 66 de la Constitución.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un edificio con leones"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El palacio, obra del arquitecto Narciso Pascual y Colomer, se inauguró en ",
+          "marcas": []
+        },
+        {
+          "texto": "1850",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y es sede del Congreso desde entonces. A ambos lados de su puerta principal hay dos leones de bronce, llamados ",
+          "marcas": []
+        },
+        {
+          "texto": "Daoíz y Velarde",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", fundidos con cañones tomados en la guerra de África y colocados en 1865. En el interior, en el techo del hemiciclo todavía pueden verse las marcas de los disparos del golpe de Estado del 23 de febrero de 1981.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "congreso",
+      "pie": "Detalle de la fachada principal del Congreso de los Diputados."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "350 diputados elegidos cada cuatro años"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Congreso tiene ",
+          "marcas": []
+        },
+        {
+          "texto": "350 diputados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", aunque la Constitución permite entre 300 y 400. Se eligen en 52 circunscripciones (las 50 provincias, Ceuta y Melilla) y su mandato dura cuatro años, salvo disolución anticipada. Para aprobar leyes se necesita, en general, la mayoría simple; para algunas decisiones, la ",
+          "marcas": []
+        },
+        {
+          "texto": "mayoría absoluta",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que son ",
+          "marcas": []
+        },
+        {
+          "texto": "176 votos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "El Congreso en cifras",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Diputados",
+          "c1": "350"
+        },
+        {
+          "c0": "Mayoría absoluta",
+          "c1": "176 votos"
+        },
+        {
+          "c0": "Circunscripciones",
+          "c1": "52"
+        },
+        {
+          "c0": "Duración de la legislatura",
+          "c1": "Cuatro años"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué hace el Congreso"
+    },
+    {
+      "id": "b08",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Legislar:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " aprueba, junto con el Senado, las leyes del Estado. La última palabra en caso de desacuerdo le corresponde al Congreso.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Presupuestos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " examina y aprueba los Presupuestos Generales del Estado, que se tramitan primero en esta Cámara.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Investir al presidente:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el candidato propuesto por el rey necesita la confianza de la Cámara.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Controlar al Gobierno:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " mediante preguntas, interpelaciones, comparecencias y comisiones de investigación.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "hemi2",
+      "pie": "Los escaños y la tribuna del hemiciclo del Congreso."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se organiza"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "Mesa del Congreso",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el órgano de gobierno de la Cámara: lo preside la presidenta o presidente del Congreso, e incluye vicepresidentes y secretarios. Decide, entre otras cosas, qué iniciativas se tramitan y cuándo. Los diputados se agrupan en ",
+          "marcas": []
+        },
+        {
+          "texto": "grupos parlamentarios",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que necesitan un mínimo de quince diputados, o de cinco si han obtenido un determinado porcentaje de votos. Los grupos tienen derecho a intervenir en los debates, a presentar iniciativas y a participar en las comisiones.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El camino de una ley"
+    },
+    {
+      "id": "b13",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una ley puede nacer de un proyecto del Gobierno, de una proposición de un grupo parlamentario o de una iniciativa popular con medio millón de firmas. Se debate en el pleno y se estudia en comisión, se enmienda y se vota. Después pasa al Senado, que puede vetarla o enmendarla, y vuelve al Congreso para la decisión final. Cuando se aprueba, el rey la sanciona y se publica en el Boletín Oficial del Estado.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "imagen",
+      "recursoId": "const_congreso",
+      "pie": "El ejemplar original de la Constitución de 1978, expuesto en el Congreso de los Diputados."
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Dónde seguirlo",
+      "texto": "Las sesiones plenarias son públicas y se retransmiten; el Congreso publica en su web el Diario de Sesiones con todo lo dicho en cada pleno.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Congreso de los Diputados · Portal oficial",
+          "url": "https://www.congreso.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Congreso de los Diputados · Historia del Palacio",
+          "url": "https://www.congreso.es/historia-del-congreso"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

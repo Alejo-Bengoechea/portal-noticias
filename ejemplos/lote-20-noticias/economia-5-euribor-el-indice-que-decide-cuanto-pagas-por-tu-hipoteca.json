@@ -1,0 +1,373 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "euribor-el-indice-que-decide-cuanto-pagas-por-tu-hipoteca",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "euríbor",
+      "hipotecas",
+      "vivienda"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Euríbor: el índice que decide lo que pagas por tu hipoteca",
+  "subtitulo": "Millones de hipotecas españolas se revisan según un número que se publica cada día. Qué es, cómo se calcula y cuánto cambia tu cuota cuando se mueve unos puntos.",
+  "portada": {
+    "recursoId": "bloques",
+    "pie": "Bloques de viviendas de nueva construcción: la mayoría de las hipotecas en España se han concedido a tipo variable."
+  },
+  "recursos": {
+    "bloques": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuevos_bloques.jpg?width=1200",
+      "alt": "Bloques de viviendas de nueva construcción en una localidad española.",
+      "credito": "Rodelar, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "bde": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Banco_de_Espa%C3%B1a_(Madrid)_06.jpg?width=1200",
+      "alt": "Sede del Banco de España vista desde la plaza de Cibeles, en Madrid.",
+      "credito": "Luis García (Zaqarbal), CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "coins_notes": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_coins_and_banknotes.jpg?width=1200",
+      "alt": "Billetes y monedas de euro de distintos valores.",
+      "credito": "Avij, Dominio público (Wikimedia Commons)"
+    },
+    "vpo": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Viviendas_de_Protecci%C3%B3n_Oficial_en_Astillero.jpg?width=1200",
+      "alt": "Edificio de viviendas de protección oficial en El Astillero, Cantabria.",
+      "credito": "Enrique Arruti, CC BY 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Si tienes una hipoteca a tipo variable, hay un número que decide tu cuota: el ",
+          "marcas": []
+        },
+        {
+          "texto": "euríbor",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su nombre viene del inglés ",
+          "marcas": []
+        },
+        {
+          "texto": "Euro Interbank Offered Rate",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": " y refleja el tipo de interés medio al que los grandes bancos de la zona euro se prestan dinero entre sí. Lo publica cada día una entidad europea, la EMMI, con datos de operaciones reales.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se aplica a tu hipoteca"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "La referencia más habitual en España es el ",
+          "marcas": []
+        },
+        {
+          "texto": "euríbor a doce meses",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Los contratos variables fijan un tipo así: ",
+          "marcas": []
+        },
+        {
+          "texto": "euríbor + diferencial",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": ". El diferencial es el margen que el banco añade y que se mantiene durante toda la vida del préstamo; el euríbor cambia en cada revisión, que suele ser semestral o anual. Si el euríbor sube, la cuota aumenta en la siguiente revisión; si baja, se reduce. El Banco de España vigila estas operaciones y publica información para los clientes.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "bde",
+      "pie": "El Banco de España, en la plaza de Cibeles, supervisa a las entidades que conceden hipotecas."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un ejemplo, con números"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Supongamos una hipoteca de ",
+          "marcas": []
+        },
+        {
+          "texto": "150.000 euros a 25 años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Con un tipo de interés total del 3 %, la cuota mensual sería de unos ",
+          "marcas": []
+        },
+        {
+          "texto": "711 euros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Si el tipo sube hasta el 4 %, la cuota pasa a unos ",
+          "marcas": []
+        },
+        {
+          "texto": "792 euros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": ",
+          "marcas": []
+        },
+        {
+          "texto": "80 euros más cada mes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", casi 970 al año, por un solo punto porcentual. Esas diferencias explican por qué las subidas del euríbor generaron tanta preocupación entre los hogares con préstamos variables.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Cuota mensual de 150.000 € a 25 años",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Tipo de interés"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Cuota aproximada"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "2 %",
+          "c1": "636 €"
+        },
+        {
+          "c0": "3 %",
+          "c1": "711 €"
+        },
+        {
+          "c0": "4 %",
+          "c1": "792 €"
+        },
+        {
+          "c0": "5 %",
+          "c1": "877 €"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué se mueve el euríbor"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El euríbor no lo decide el Banco Central Europeo, pero lo condiciona. Cuando el BCE sube sus tipos oficiales o los mercados esperan que lo haga, los bancos piden más para prestarse entre sí y el euríbor sube. Cuando se anticipan recortes, baja. Por eso conviene seguir las reuniones del BCE y los datos de inflación si se tiene una hipoteca variable.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "coins_notes",
+      "pie": "El euríbor refleja el precio al que se prestan dinero en euros los bancos europeos."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Variable, fija o mixta"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Variable:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cuota más baja cuando el euríbor baja, pero con incertidumbre si sube.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Fija:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el tipo no cambia; da tranquilidad, aunque suele arrancar más alto.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Mixta:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " tipo fijo los primeros años y variable el resto.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cada opción tiene ventajas según el presupuesto y la tolerancia al riesgo. Antes de firmar, los bancos deben entregar la ",
+          "marcas": []
+        },
+        {
+          "texto": "Ficha Europea de Información Normalizada (FEIN)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un documento que detalla las condiciones y permite comparar ofertas. También es posible negociar una novación o subrogar la hipoteca a otra entidad si las condiciones no convencen.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "vpo",
+      "pie": "Viviendas de protección oficial en El Astillero (Cantabria): para muchas familias, la hipoteca es el mayor gasto mensual."
+    },
+    {
+      "id": "b14",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: cómo afectan las bajadas de tipos a las hipotecas"
+    },
+    {
+      "id": "b15",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "EL PAÍS · ¿Cómo afecta la bajada de tipos de interés del BCE a las hipotecas?",
+      "url": "https://www.youtube.com/watch?v=EfU7bUcU1j8"
+    },
+    {
+      "id": "b16",
+      "tipo": "nota_editorial",
+      "titulo": "Cálculo ilustrativo",
+      "texto": "Las cuotas del ejemplo son aproximadas, con amortización constante (sistema francés) y sin comisiones ni seguros. Tu cuota real depende de tu contrato.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Banco de España · Portal del cliente bancario",
+          "url": "https://clientebancario.bde.es/pcb/es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "EMMI · Euríbor",
+          "url": "https://www.emmi-benchmarks.eu/benchmarks/euribor/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

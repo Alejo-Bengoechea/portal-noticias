@@ -1,0 +1,330 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "schengen-como-funciona-el-espacio-sin-fronteras",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Schengen",
+      "Unión Europea",
+      "fronteras"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Schengen: cómo funciona el espacio sin fronteras",
+  "subtitulo": "Se firmó en 1985 en un barco sobre el río Mosela. Hoy permite cruzar casi toda Europa sin enseñar el pasaporte, aunque los países pueden volver a poner controles.",
+  "portada": {
+    "recursoId": "schengen_lv",
+    "pie": "Señal del espacio Schengen en la frontera entre Letonia y Estonia."
+  },
+  "recursos": {
+    "schengen_lv": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Latvian_Schengen_border_sign_near_Aina%C5%BEi%2C_Salacgr%C4%ABva_Municipality.jpg?width=1200",
+      "alt": "Señal de frontera del espacio Schengen junto a una bandera de Letonia.",
+      "credito": "Tohaomg, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "schengen_mem": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luxembourg-Schengen-Memorial_free_borders-01ESD.jpg?width=1200",
+      "alt": "Monumento al Acuerdo de Schengen en la localidad luxemburguesa de Schengen.",
+      "credito": "Rikki Mitterer, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "schengen_cz": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schengen_area_-_Czech_border.jpg?width=1200",
+      "alt": "Cartel de bienvenida a Chequia en una frontera interior del espacio Schengen.",
+      "credito": "jooray, CC BY-SA 2.0 (Wikimedia Commons)"
+    },
+    "schengen_castle": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Luxembourg-Schengen-Castle_Schengen-28ASD.jpg?width=1200",
+      "alt": "Castillo de Schengen, un edificio medieval rodeado por un foso, en Luxemburgo.",
+      "credito": "Asurnipal, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Conducir de Madrid a Varsovia pasando por Francia, Alemania y Polonia sin detenerse en una sola frontera es posible gracias al ",
+          "marcas": []
+        },
+        {
+          "texto": "espacio Schengen",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", una de las realizaciones más visibles de la Unión Europea. Su nombre viene de un pueblo luxemburgués de unos pocos centenares de habitantes situado a orillas del río Mosela.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un acuerdo firmado en un barco"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "14 de junio de 1985",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", Bélgica, Francia, la entonces Alemania Occidental, Luxemburgo y los Países Bajos firmaron el acuerdo a bordo del barco ",
+          "marcas": []
+        },
+        {
+          "texto": "Princesse Marie-Astrid",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": ", anclado en el Mosela, frente a la localidad de Schengen. El texto se completó con un convenio de aplicación en 1990 y los controles en las fronteras interiores empezaron a desaparecer en 1995. Un monumento recuerda hoy aquel pacto en el mismo lugar.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "schengen_mem",
+      "pie": "Monumento al Acuerdo de Schengen, en la localidad luxemburguesa del mismo nombre."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué cambia para el viajero"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Dentro del espacio Schengen no hay controles de pasaportes en las fronteras entre países miembros: se pueden cruzar por carretera, tren o avión en vuelos interiores sin trámites sistemáticos. Las fronteras exteriores, en cambio, se vigilan de forma común. Los viajeros de fuera de la UE que obtienen un visado Schengen pueden moverse por todos los países del espacio durante el período autorizado.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Schengen en fechas",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1985",
+          "c1": "Primer acuerdo, firmado por cinco países"
+        },
+        {
+          "c0": "1990",
+          "c1": "Convenio de aplicación"
+        },
+        {
+          "c0": "1995",
+          "c1": "Se suprimen los controles interiores"
+        },
+        {
+          "c0": "2023",
+          "c1": "Croacia se incorpora"
+        },
+        {
+          "c0": "2024–2025",
+          "c1": "Bulgaria y Rumanía completan su entrada"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién forma parte"
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "schengen_cz",
+      "pie": "Cartel de bienvenida a Chequia: en el interior de Schengen las fronteras se cruzan sin controles sistemáticos."
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Hoy son ",
+          "marcas": []
+        },
+        {
+          "texto": "29 países",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". No todos son de la UE: Islandia, Noruega, Suiza y Liechtenstein participan sin ser miembros. Por el contrario, algunos miembros de la UE, como Irlanda, no forman parte del espacio, y otros han tardado años en incorporarse porque debían demostrar que podían vigilar bien sus fronteras exteriores.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cuando vuelven los controles"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Schengen no es irreversible. Las normas permiten que un país restablezca ",
+          "marcas": []
+        },
+        {
+          "texto": "controles temporales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en sus fronteras interiores si hay una amenaza grave al orden público o a la seguridad. Ocurrió durante la crisis migratoria de 2015, tras atentados terroristas y, de forma generalizada, durante la pandemia de covid-19. Esos controles deben notificarse a la Comisión Europea y ser proporcionados y limitados en el tiempo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "schengen_castle",
+      "pie": "El castillo de Schengen, del siglo XIII, en una localidad que da nombre al espacio sin fronteras."
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los argumentos a favor y las críticas"
+    },
+    {
+      "id": "b14",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "A favor:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " facilita el comercio, el turismo y la vida de los 3,5 millones de personas que, según la Comisión, cruzan cada día una frontera interior para trabajar o estudiar.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Críticas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " parte de la opinión pública y algunos gobiernos creen que la ausencia de controles dificulta gestionar la inmigración irregular.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Reforma:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la UE ha reforzado las normas para dar más herramientas a los países sin romper el espacio común.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Cifra a verificar",
+      "texto": "La cifra de 3,5 millones de desplazamientos diarios procede de las estimaciones publicadas por la Comisión Europea; consulta su web para la actualización más reciente.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comisión Europea · Espacio Schengen",
+          "url": "https://home-affairs.ec.europa.eu/policies/schengen_en"
+        },
+        {
+          "id": "f2",
+          "titulo": "Parlamento Europeo · Qué es Schengen",
+          "url": "https://www.europarl.europa.eu/factsheets/es/sheet/153/el-espacio-schengen"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

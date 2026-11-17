@@ -1,0 +1,403 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "onu-asi-funciona-el-consejo-de-seguridad",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "ONU",
+      "Consejo de Seguridad",
+      "diplomacia"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "ONU: así funciona el Consejo de Seguridad",
+  "subtitulo": "Quince países, cinco con derecho de veto y un poder que ningún otro órgano de la ONU tiene: adoptar decisiones obligatorias. Explicamos cómo se vota y por qué el veto genera tanta polémica.",
+  "portada": {
+    "recursoId": "un_hq",
+    "pie": "La sede de las Naciones Unidas en Nueva York, a orillas del East River."
+  },
+  "recursos": {
+    "un_hq": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shore_of_the_East_River_with_Headquarters_of_the_United_Nations%2C_New_York_City%2C_20231005_1131_2226.jpg?width=1200",
+      "alt": "Sede de las Naciones Unidas en Nueva York, junto al East River.",
+      "credito": "Jakub Hałun, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "unga": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United_Nations_General_Assembly_Hall_(3).jpg?width=1200",
+      "alt": "Salón de la Asamblea General de las Naciones Unidas.",
+      "credito": "Basil D Soufi, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "unsc": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United_Nations_Headquarters_-_Security_Council_chamber%2C_angled_view_(cropped).jpg?width=1200",
+      "alt": "Sala vacía del Consejo de Seguridad en la sede de la ONU.",
+      "credito": "Jdforrester, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "unga_emblem": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United_Nations_General_Assembly_Hall_-_Closeup_of_Emblem.jpg?width=1200",
+      "alt": "Emblema de la ONU en el salón de la Asamblea General.",
+      "credito": "Basil D Soufi, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando estalla una guerra o se produce una crisis que amenaza la paz, el mundo mira hacia una sala en Nueva York: la del ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo de Seguridad",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de las Naciones Unidas. Es el órgano de la ONU con más poder, y también uno de los más criticados.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una organización nacida de la guerra"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "ONU",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se fundó el ",
+          "marcas": []
+        },
+        {
+          "texto": "24 de octubre de 1945",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", al terminar la Segunda Guerra Mundial, con 51 miembros fundadores. Hoy reúne a ",
+          "marcas": []
+        },
+        {
+          "texto": "193 Estados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su sede principal está en Nueva York, en un complejo a orillas del East River terminado a principios de los años cincuenta. En él se reúne la Asamblea General, donde todos los países tienen un voto, pero cuyas resoluciones son recomendaciones que no obligan a cumplir.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "unga",
+      "pie": "El salón de la Asamblea General de la ONU, donde cada Estado miembro tiene un voto."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quince miembros, dos categorías"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Consejo de Seguridad tiene ",
+          "marcas": []
+        },
+        {
+          "texto": "15 miembros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Cinco son ",
+          "marcas": []
+        },
+        {
+          "texto": "permanentes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y tienen derecho de veto: Estados Unidos, Reino Unido, Francia, Rusia y China, los vencedores de 1945. Los otros diez son ",
+          "marcas": []
+        },
+        {
+          "texto": "no permanentes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": los elige la Asamblea General por dos años, con criterios de reparto regional. España ha ocupado uno de esos puestos varias veces, la última en 2015-2016.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "El Consejo de Seguridad en cifras",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Miembros en total",
+          "c1": "15"
+        },
+        {
+          "c0": "Miembros permanentes (con veto)",
+          "c1": "5"
+        },
+        {
+          "c0": "Miembros no permanentes",
+          "c1": "10, elegidos por dos años"
+        },
+        {
+          "c0": "Votos necesarios para aprobar",
+          "c1": "9 y ningún veto"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se decide"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Para aprobar una resolución se necesitan ",
+          "marcas": []
+        },
+        {
+          "texto": "nueve votos a favor",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y que ninguno de los cinco permanentes use su veto. Basta un solo «no» de uno de ellos para bloquear el texto, aunque los otros catorce lo apoyen. Una abstención no cuenta como veto. La presidencia del Consejo rota cada mes entre los miembros, por orden alfabético en inglés.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "unsc",
+      "pie": "La sala del Consejo de Seguridad de la ONU, vista desde un lateral."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué puede hacer"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Recomendar soluciones pacíficas",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " a una disputa entre Estados.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Imponer sanciones",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": ", como embargos de armas o congelación de activos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Autorizar misiones de paz",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": ", con los llamados «cascos azules».",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Autorizar el uso de la fuerza",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cuando considera que hay una amenaza a la paz o una agresión.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A diferencia de la Asamblea, las decisiones del Consejo adoptadas bajo el capítulo VII de la Carta de la ONU ",
+          "marcas": []
+        },
+        {
+          "texto": "son vinculantes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": los Estados miembros se comprometen a cumplirlas. Otra cosa es que se logre su aplicación efectiva: la ONU no tiene un ejército propio y depende de los países para llevarlas a la práctica.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La polémica del veto"
+    },
+    {
+      "id": "b14",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los críticos sostienen que el veto bloquea decisiones en los conflictos que afectan a los intereses de los propios miembros permanentes. Desde hace años se discuten reformas: ampliar el número de miembros, limitar el uso del veto en casos de atrocidades masivas o dar un puesto permanente a países como India, Brasil, Japón o Alemania. Hasta ahora, ninguna propuesta ha reunido el consenso necesario, porque los propios cinco permanentes tendrían que aprobarla.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b15",
+      "tipo": "imagen",
+      "recursoId": "unga_emblem",
+      "pie": "El emblema de la ONU en el salón de la Asamblea General."
+    },
+    {
+      "id": "b16",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: ¿qué es el Consejo de Seguridad?"
+    },
+    {
+      "id": "b17",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Naciones Unidas · ¿Qué es el Consejo de Seguridad?",
+      "url": "https://www.youtube.com/watch?v=4dbahNyT53s"
+    },
+    {
+      "id": "b18",
+      "tipo": "nota_editorial",
+      "titulo": "Para seguir las votaciones",
+      "texto": "La ONU publica en su web los textos de las resoluciones y el resultado de cada votación, país por país.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Naciones Unidas · Consejo de Seguridad",
+          "url": "https://main.un.org/securitycouncil/es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Naciones Unidas · Carta de las Naciones Unidas",
+          "url": "https://www.un.org/es/about-us/un-charter/full-text"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

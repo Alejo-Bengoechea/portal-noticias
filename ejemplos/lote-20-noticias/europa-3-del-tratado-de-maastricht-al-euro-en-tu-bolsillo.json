@@ -1,0 +1,344 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "del-tratado-de-maastricht-al-euro-en-tu-bolsillo",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "euro",
+      "Maastricht",
+      "moneda única"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Del Tratado de Maastricht al euro en tu bolsillo",
+  "subtitulo": "Tres décadas separan la decisión de crear una moneda común de las monedas que llevas hoy en el monedero. Así se construyó el euro y qué lo hace distinto de cualquier divisa nacional.",
+  "portada": {
+    "recursoId": "coins_cropped",
+    "pie": "Monedas y billetes de euro, la moneda común de más de veinte países europeos."
+  },
+  "recursos": {
+    "coins_cropped": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_coins_and_banknotes_(cropped).jpg?width=1200",
+      "alt": "Monedas y billetes de euro.",
+      "credito": "Avij, Dominio público (Wikimedia Commons)"
+    },
+    "skyline_ffm": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Skyline_Frankfurt_am_Main_2015.jpg?width=1200",
+      "alt": "Panorámica de los rascacielos de Fráncfort del Meno.",
+      "credito": "Christian Wolf, CC BY-SA 3.0 DE (Wikimedia Commons)"
+    },
+    "all_notes": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/All_Euro_banknotes.png?width=1200",
+      "alt": "Todos los valores de los billetes de euro.",
+      "credito": "Bericht, CC0 (Wikimedia Commons)"
+    },
+    "croatian": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Croatian_euro_coins_(2).jpg?width=1200",
+      "alt": "Monedas de euro con los motivos croatas.",
+      "credito": "Comisión Europea, CC BY 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Hasta 2002, en España se pagaba en pesetas, en Francia en francos y en Alemania en marcos. Cambiar de país implicaba cambiar de dinero. Hoy, más de veinte países europeos comparten una misma moneda, el ",
+          "marcas": []
+        },
+        {
+          "texto": "euro",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que utilizan más de 340 millones de personas. Detrás hay un proyecto político y económico que llevó décadas.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Maastricht: el punto de partida"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "Tratado de Maastricht",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", firmado el 7 de febrero de 1992 y en vigor desde el 1 de noviembre de 1993, fijó el camino hacia la moneda única. Estableció unos ",
+          "marcas": []
+        },
+        {
+          "texto": "criterios de convergencia",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " que los países debían cumplir para entrar: inflación y tipos de interés controlados, déficit y deuda públicos limitados y una moneda estable. También previó crear un banco central común, el BCE, con sede en Fráncfort, la ciudad financiera que aparece en la imagen.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "skyline_ffm",
+      "pie": "Rascacielos de Fráncfort, donde se encuentra el Banco Central Europeo."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un nacimiento en dos pasos"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El euro nació el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de enero de 1999",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " como moneda contable, es decir, para operaciones financieras y transferencias, en once países. Las monedas y billetes llegaron el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de enero de 2002",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", cuando doce países retiraron sus divisas nacionales. En España, el tipo de cambio quedó fijado de forma irrevocable en ",
+          "marcas": []
+        },
+        {
+          "texto": "166,386 pesetas por euro",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", una cifra que muchos recuerdan aún.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Las fechas del euro",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hito"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1992",
+          "c1": "Se firma el Tratado de Maastricht"
+        },
+        {
+          "c0": "1999",
+          "c1": "Nace el euro como moneda contable en 11 países"
+        },
+        {
+          "c0": "2002",
+          "c1": "Llegan los billetes y monedas a 12 países"
+        },
+        {
+          "c0": "2023",
+          "c1": "Croacia pasa a ser el vigésimo miembro"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué hay en tu cartera"
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "all_notes",
+      "pie": "Los billetes de euro en todos sus valores: son iguales en todos los países de la zona."
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los billetes son iguales en todos los países. Tienen en su diseño ventanas y puentes, motivos arquitectónicos que no corresponden a edificios reales para no favorecer a ningún país. Las monedas, en cambio, tienen una cara común y otra nacional: la de España lleva, según el valor, la catedral de Santiago, la efigie de Cervantes o el rey. Todas valen en cualquier país de la zona.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "croatian",
+      "pie": "Monedas de euro con motivos croatas; Croacia adoptó la moneda en 2023."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Ventajas y debates"
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Sin cambio de moneda:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " viajar y comerciar entre países de la zona resulta más barato y sencillo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Precios comparables:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " consumidores y empresas pueden comparar precios entre países.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Política monetaria común:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los países renunciaron a controlar sus propios tipos de interés y su moneda.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Crítica:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " al compartir moneda, un país en dificultades no puede devaluar; la crisis de deuda de 2010-2012 puso a prueba esa construcción.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El euro es también la segunda moneda más utilizada en las reservas de los bancos centrales y en las transacciones internacionales, por detrás del dólar. Varios países de la UE siguen fuera de la zona euro, ya sea porque aún no cumplen los criterios o porque, como Dinamarca, negociaron una excepción.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un detalle curioso",
+      "texto": "El símbolo € se inspira en la letra griega épsilon, en referencia a la cuna de la civilización europea, con dos líneas que recuerdan la estabilidad.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comisión Europea · El euro",
+          "url": "https://economy-finance.ec.europa.eu/euro_en"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco de España · Historia del euro",
+          "url": "https://www.bde.es/wbe/es/areas-actuacion/billetes-monedas/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "que-es-la-inflacion-y-como-se-mide-el-ipc",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "inflación",
+      "IPC",
+      "precios"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Qué es la inflación y cómo se mide el IPC",
+  "subtitulo": "Los precios suben, pero ¿cuánto y para quién? Una guía sencilla para entender el dato que cada mes marca los titulares y condiciona salarios, pensiones y tipos de interés.",
+  "portada": {
+    "recursoId": "carts",
+    "pie": "Carritos de la compra a la entrada de un supermercado: allí se nota primero la subida de precios."
+  },
+  "recursos": {
+    "carts": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shopping_carts_Tegut_Tauberbischofsheim.jpg?width=1200",
+      "alt": "Hilera de carritos de la compra a la entrada de un supermercado.",
+      "credito": "Triplec85, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "spar": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SPAR_kolonial_mat_varehandel_hyller_(Supermarket_interior_GROCERY_store_aisle_shelves)_Frokostblandinger_gryn_m%C3%BCsli_Axa_frukt_energi_4-korn_bl%C3%A5b%C3%A6r_(cereals_muesli)_etc_Tj%C3%B8me_NORWAY_2023-08-31_IMG_1095.jpg?width=1200",
+      "alt": "Estantería de un supermercado con cajas de cereales y sus etiquetas de precio.",
+      "credito": "Wolfmann, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "omv": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/05_OMV_gas_station_prices_in_Austria_-_gas_prices_in_Europe_2012.jpg?width=1200",
+      "alt": "Panel de precios de los carburantes en una gasolinera de una autopista austriaca.",
+      "credito": "Marek Ślusarczyk, CC BY 3.0 (Wikimedia Commons)"
+    },
+    "bill": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Twenty_euro_banknote_and_coins.jpg?width=1200",
+      "alt": "Un billete de veinte euros y monedas sobre la cuenta de un restaurante.",
+      "credito": "Daniel Lobo, CC BY 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "inflación",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el aumento generalizado y sostenido de los precios. Si un café sube de precio, eso es un cambio puntual. Si suben a la vez el café, la luz, el alquiler y la fruta, y lo hacen durante meses, hablamos de inflación. Cuando ocurre, con el mismo dinero se compra menos: el poder adquisitivo se erosiona.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La cesta de la compra del INE"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "Para medirla, el Instituto Nacional de Estadística (INE) calcula cada mes el ",
+          "marcas": []
+        },
+        {
+          "texto": "Índice de Precios de Consumo (IPC)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Imagina una cesta enorme con los bienes y servicios que consumen los hogares: alimentos, vivienda, transporte, ropa, ocio, sanidad. El INE anota sus precios y los compara con los del año anterior. Cada producto pesa según lo que gastan las familias en él: la vivienda o la comida influyen más que un periódico. Si la cesta costaba 100 euros hace un año y hoy cuesta 103, la inflación interanual es del ",
+          "marcas": []
+        },
+        {
+          "texto": "3 %",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ],
+      "recursoId": "spar",
+      "pie": "Los precios de los alimentos de un supermercado forman parte de la cesta con la que se calcula el IPC."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un ejemplo con números"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una inflación del 3 % parece pequeña, pero se acumula. Si los precios suben un 3 % dos años seguidos, no han subido un 6 %, sino un ",
+          "marcas": []
+        },
+        {
+          "texto": "6,09 %",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", porque el segundo aumento se aplica sobre precios que ya eran más altos. Por eso una inflación moderada, mantenida durante una década, reduce de forma notable lo que compra un salario que no se actualiza.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Dos picos recientes de inflación",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Territorio"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Máximo"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Mes"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "España (IPC)",
+          "c1": "10,8 %",
+          "c2": "Julio de 2022"
+        },
+        {
+          "c0": "Zona euro (IPCA)",
+          "c1": "10,6 %",
+          "c2": "Octubre de 2022"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "IPC, IPCA y la inflación subyacente"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Existen varias versiones del indicador. El ",
+          "marcas": []
+        },
+        {
+          "texto": "IPC",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el nacional. El ",
+          "marcas": []
+        },
+        {
+          "texto": "IPCA",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", o índice armonizado, lo calcula Eurostat con una metodología común para poder comparar países de la zona euro, y es el que utiliza el Banco Central Europeo. Hay además la ",
+          "marcas": []
+        },
+        {
+          "texto": "inflación subyacente",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que deja fuera la energía y los alimentos no elaborados por ser muy volátiles, y sirve para ver la tendencia de fondo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "omv",
+      "pie": "Los carburantes pesan en el IPC: el panel de una gasolinera austriaca con los precios de 2012."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué importa a tu bolsillo"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Salarios y convenios:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " muchas negociaciones incluyen cláusulas de revisión ligadas al IPC.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Pensiones y alquileres:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " suelen actualizarse con referencias basadas en la inflación.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Tipos de interés:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el BCE los sube cuando la inflación se dispara para enfriar la demanda.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Ahorro:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " si tu depósito paga un 2 % y la inflación es del 3 %, pierdes poder de compra aunque el saldo suba.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Tampoco existe una única inflación para todos. Un hogar que destina buena parte de su gasto a la energía o a la comida sufre más una escalada de esos precios que otro con más gasto en servicios. El IPC mide una media; tu experiencia puede ser distinta.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "bill",
+      "pie": "Un billete de veinte euros sobre la cuenta de un restaurante: los servicios también entran en la cesta del IPC."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Para comprobar",
+      "texto": "Los datos de inflación se publican cada mes en la web del INE y en la de Eurostat. Los máximos citados corresponden a las series oficiales publicadas en su momento.",
+      "icono": "verificado",
+      "color": "verde"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "INE · Índice de Precios de Consumo",
+          "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736176802&menu=ultiDatos&idp=1254735976607"
+        },
+        {
+          "id": "f2",
+          "titulo": "Eurostat · Inflación",
+          "url": "https://ec.europa.eu/eurostat/web/hicp"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

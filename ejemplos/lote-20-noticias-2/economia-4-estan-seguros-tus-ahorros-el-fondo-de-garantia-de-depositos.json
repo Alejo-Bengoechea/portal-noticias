@@ -1,0 +1,348 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "estan-seguros-tus-ahorros-el-fondo-de-garantia-de-depositos",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "ahorro",
+      "bancos",
+      "depósitos"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "¿Están seguros tus ahorros? El fondo de garantía",
+  "subtitulo": "Si un banco quiebra, el dinero de tus cuentas está protegido hasta cierto límite. Explicamos cómo funciona el Fondo de Garantía de Depósitos y qué productos no cubre.",
+  "portada": {
+    "recursoId": "bde_cib",
+    "pie": "Sede del Banco de España, en la plaza de Cibeles, Madrid."
+  },
+  "recursos": {
+    "bde_cib": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Banco_de_Espa%C3%B1a_en_Madrid%2C_sito_en_Plaza_de_Cibeles.jpg?width=1200",
+      "alt": "Sede del Banco de España, en la plaza de Cibeles, Madrid.",
+      "credito": "Danbeste, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bde": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Banco_de_Espa%C3%B1a_(Madrid)_06.jpg?width=1200",
+      "alt": "Sede del Banco de España vista desde la plaza de Cibeles, en Madrid.",
+      "credito": "Luis García (Zaqarbal), CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "bde127": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_Banco_de_Espa%C3%B1a_127.jpg?width=1200",
+      "alt": "Detalle de la fachada del Banco de España, en Madrid.",
+      "credito": "GFreihalter, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "bill": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Twenty_euro_banknote_and_coins.jpg?width=1200",
+      "alt": "Un billete de veinte euros y monedas sobre la cuenta de un restaurante.",
+      "credito": "Daniel Lobo, CC BY 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una de las preguntas que más preocupan cuando un banco tiene problemas es sencilla: ",
+          "marcas": []
+        },
+        {
+          "texto": "¿qué pasa con mi dinero?",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " La respuesta está en el ",
+          "marcas": []
+        },
+        {
+          "texto": "Fondo de Garantía de Depósitos de Entidades de Crédito (FGD)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", una institución que protege a los ahorradores si su banco no puede devolverles los depósitos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "100.000 euros por titular y por entidad"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La garantía cubre hasta ",
+          "marcas": []
+        },
+        {
+          "texto": "100.000 euros por titular y por entidad",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". No es un límite por cuenta: si tienes varias cuentas en el mismo banco, se suman. Si tienes dinero en dos bancos distintos, estás protegido en cada uno por separado. En las cuentas con varios titulares, la garantía se aplica a cada persona.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "Qué cubre el fondo",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Producto"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "¿Está garantizado?"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Cuentas corrientes y de ahorro",
+          "c1": "Sí, hasta 100.000 euros"
+        },
+        {
+          "c0": "Depósitos a plazo",
+          "c1": "Sí, hasta 100.000 euros"
+        },
+        {
+          "c0": "Fondos de inversión",
+          "c1": "No: tienen otro régimen de protección"
+        },
+        {
+          "c0": "Acciones y bonos",
+          "c1": "No: dependen de la evolución del mercado"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién lo paga"
+    },
+    {
+      "id": "b06",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El fondo se financia con las ",
+          "marcas": []
+        },
+        {
+          "texto": "aportaciones de los propios bancos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", no con el dinero de los contribuyentes. Se creó en España en 1977 y se ha ido adaptando a las normas europeas. Los bancos y las cajas pagan cuotas en función de los depósitos que tienen y del riesgo que asumen. Si una entidad cae, el fondo reembolsa a sus clientes en un plazo máximo de ",
+          "marcas": []
+        },
+        {
+          "texto": "siete días hábiles",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ],
+      "recursoId": "bde",
+      "pie": "Sede del Banco de España vista desde la plaza de Cibeles, en Madrid."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué papel tiene el Banco de España"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "Banco de España",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", fundado en 1782 con el nombre de Banco de San Carlos, forma parte del Sistema Europeo de Bancos Centrales y supervisa a las entidades de crédito españolas, junto con el Banco Central Europeo, que vigila directamente a los bancos más grandes de la zona euro. Su objetivo es detectar los problemas a tiempo y que los bancos cumplan sus obligaciones.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "bde127",
+      "pie": "Detalle de la fachada del edificio del Banco de España."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cinco consejos para el ahorrador"
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Cuenta el total:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " suma todo lo que tienes en un mismo banco, incluidas cuentas y depósitos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Reparte si superas el límite:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " distribuir el dinero entre entidades distintas aumenta la protección.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Diferencia productos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " un depósito no es lo mismo que un fondo de inversión.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Lee los contratos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " comprueba qué firmas y qué producto contratas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Desconfía de las promesas de rentabilidad garantizada",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " que parezcan demasiado buenas.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "bill",
+      "pie": "Billete de veinte euros y monedas sobre la cuenta de un restaurante."
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Un dato útil",
+      "texto": "La garantía actúa si una entidad no puede pagar. En la vida diaria, lo normal es que el banco devuelva el dinero sin necesidad de intervención.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Fondo de Garantía de Depósitos · Portal oficial",
+          "url": "https://www.fgd.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco de España · Portal oficial",
+          "url": "https://www.bde.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

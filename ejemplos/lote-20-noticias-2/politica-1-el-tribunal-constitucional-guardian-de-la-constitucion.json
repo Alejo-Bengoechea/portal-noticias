@@ -1,0 +1,352 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-tribunal-constitucional-guardian-de-la-constitucion",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "Tribunal Constitucional",
+      "Constitución",
+      "justicia"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Tribunal Constitucional: guardián de la Constitución",
+  "subtitulo": "Doce magistrados que no forman parte del poder judicial ordinario deciden si las leyes respetan la Carta Magna. Explicamos cómo se nombran, qué casos resuelven y qué efectos tienen sus sentencias.",
+  "portada": {
+    "recursoId": "tc7",
+    "pie": "Sede del Tribunal Constitucional de España, en Madrid."
+  },
+  "recursos": {
+    "tc7": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Tribunal_Constitucional_7.JPG?width=1200",
+      "alt": "Sede del Tribunal Constitucional de España, en Madrid.",
+      "credito": "Zarateman, CC0 (Wikimedia Commons)"
+    },
+    "tc2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_-_Tribunal_Constitucional_-_Madrid_02.jpg?width=1200",
+      "alt": "Exterior del Tribunal Constitucional, en Madrid.",
+      "credito": "Javier Pérez Montes, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "tc4": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_-_Tribunal_Constitucional_-_Madrid_04.jpg?width=1200",
+      "alt": "Fachada del Tribunal Constitucional de España.",
+      "credito": "Javier Pérez Montes, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "tc6": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_-_Tribunal_Constitucional_-_Madrid_06.jpg?width=1200",
+      "alt": "Otro ángulo del edificio del Tribunal Constitucional.",
+      "credito": "Javier Pérez Montes, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "const_book": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Constitucion_espanola_1978.JPG?width=1200",
+      "alt": "Ejemplar de la Constitución española de 1978 en el Congreso.",
+      "credito": "miguelazo84, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una ley puede aprobarse por una amplia mayoría del Parlamento y, aun así, ser contraria a la Constitución. Para esos casos existe el ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal Constitucional (TC)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", el órgano que interpreta en última instancia la Carta Magna. Se regula en los artículos ",
+          "marcas": []
+        },
+        {
+          "texto": "159 a 165",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la Constitución y se constituyó en ",
+          "marcas": []
+        },
+        {
+          "texto": "1980",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Doce magistrados"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El Tribunal está formado por ",
+          "marcas": []
+        },
+        {
+          "texto": "doce magistrados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", nombrados por el rey, a propuesta de distintos órganos: cuatro por el Congreso, cuatro por el Senado (ambos por mayoría de tres quintos), dos por el Gobierno y dos por el Consejo General del Poder Judicial. Su mandato dura ",
+          "marcas": []
+        },
+        {
+          "texto": "nueve años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y se renueva por ",
+          "marcas": []
+        },
+        {
+          "texto": "terceras partes cada tres años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Los propios magistrados eligen a su presidente, por un periodo de tres años.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "tc2",
+      "pie": "Exterior del Tribunal Constitucional, en Madrid."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué casos resuelve"
+    },
+    {
+      "id": "b05",
+      "tipo": "tabla",
+      "titulo": "Los principales procedimientos",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Procedimiento"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Quién lo plantea y para qué"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Recurso de inconstitucionalidad",
+          "c1": "Presidente del Gobierno, Defensor del Pueblo, 50 diputados o 50 senadores y órganos autonómicos, contra una ley, en un plazo de tres meses"
+        },
+        {
+          "c0": "Cuestión de inconstitucionalidad",
+          "c1": "Un juez que duda de que una ley que debe aplicar sea constitucional"
+        },
+        {
+          "c0": "Recurso de amparo",
+          "c1": "Cualquier persona que considera vulnerados sus derechos fundamentales, tras agotar la vía judicial"
+        },
+        {
+          "c0": "Conflictos de competencia",
+          "c1": "El Estado y las comunidades autónomas, o estas entre sí, sobre quién puede hacer qué"
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "tc4",
+      "pie": "Fachada del Tribunal Constitucional de España."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El amparo, el trabajo más frecuente"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La mayor parte de los asuntos que llegan al Tribunal son ",
+          "marcas": []
+        },
+        {
+          "texto": "recursos de amparo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que protegen derechos como la libertad de expresión, la tutela judicial efectiva o la igualdad. Desde una reforma de 2007, el Tribunal solo admite aquellos en los que aprecia ",
+          "marcas": []
+        },
+        {
+          "texto": "«especial trascendencia constitucional»",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", para evitar el atasco.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué efectos tienen sus decisiones"
+    },
+    {
+      "id": "b10",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Se publican en el BOE",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " y tienen valor de cosa juzgada desde el día siguiente.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Contra ellas no cabe recurso.",
+              "marcas": [
+                "negrita"
+              ]
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Vinculan a todos los poderes públicos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " si el Tribunal declara inconstitucional una ley, esta queda anulada.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "No es un tribunal ordinario:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " no forma parte del poder judicial ni revisa los hechos de cada caso, sino su encaje constitucional.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "tc6",
+      "pie": "Otro ángulo del edificio del Tribunal Constitucional."
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "const_book",
+      "pie": "Ejemplar de la Constitución española de 1978, que el Tribunal interpreta y protege."
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Una distinción útil",
+      "texto": "El Tribunal Supremo es la cúspide del poder judicial ordinario; el Tribunal Constitucional es un órgano aparte, con la tarea específica de garantizar la supremacía de la Constitución.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Tribunal Constitucional · Portal oficial",
+          "url": "https://www.tribunalconstitucional.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

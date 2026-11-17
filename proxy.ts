@@ -16,7 +16,8 @@ export async function proxy(request: NextRequest) {
       },
     },
   });
-  await client.auth.getUser();
+  // Renueva la sesión si el token está por caducar; verifica sin ir al servidor de Auth cuando es posible.
+  await client.auth.getClaims();
   return response;
 }
 export const config = { matcher: '/mesa-editorial-7k4n/:path*' };

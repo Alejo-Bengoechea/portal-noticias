@@ -1,0 +1,324 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-crisis-financiera-de-2008-como-empezo",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "crisis de 2008",
+      "Lehman Brothers",
+      "banca"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La crisis financiera de 2008: cómo empezó",
+  "subtitulo": "Hipotecas de riesgo, productos financieros opacos y la quiebra de un banco de inversión que sacudió el planeta. Repasamos la cadena de hechos que desembocó en la mayor crisis desde 1929.",
+  "portada": {
+    "recursoId": "lehman",
+    "pie": "La sede de Lehman Brothers en Nueva York, cuya quiebra en septiembre de 2008 marcó el momento más grave de la crisis."
+  },
+  "recursos": {
+    "lehman": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lehman_Brothers_Times_Square_by_David_Shankbone.jpg?width=1200",
+      "alt": "Edificio de Lehman Brothers en Times Square, Nueva York, con su rótulo luminoso.",
+      "credito": "David Shankbone, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "bloques": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuevos_bloques.jpg?width=1200",
+      "alt": "Bloques de viviendas de nueva construcción en una localidad española.",
+      "credito": "Rodelar, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "nyse": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/New_York_Stock_Exchange_August_2017_02.jpg?width=1200",
+      "alt": "Edificio de la Bolsa de Nueva York en el cruce de Broad Street y Wall Street.",
+      "credito": "Arild Vågen, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "occupy": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Occupy_Wall_Street_(6352788126).jpg?width=1200",
+      "alt": "Manifestantes del movimiento Occupy Wall Street en Nueva York en 2011.",
+      "credito": "InSapphoWeTrust, CC BY-SA 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Entre 2008 y 2013 el mundo vivió la mayor crisis económica desde la Gran Depresión. No estalló de golpe: fue una cadena de errores y de contagios que empezó en el mercado hipotecario de Estados Unidos y acabó afectando a bancos, gobiernos y familias de todo el planeta.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Las hipotecas de riesgo"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A comienzos de los años dos mil, el crédito era barato y los precios de las casas subían sin parar. Muchos bancos concedieron ",
+          "marcas": []
+        },
+        {
+          "texto": "hipotecas «subprime»",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", dirigidas a clientes con pocas garantías de poder devolverlas. Esas hipotecas se agruparon en paquetes, se «titulizaron» y se vendieron a inversores de todo el mundo como si fueran activos seguros.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Mientras los precios subían, el sistema funcionaba. Cuando el mercado inmobiliario se frenó y los impagos aumentaron, los paquetes perdieron valor y ",
+          "marcas": []
+        },
+        {
+          "texto": "nadie sabía exactamente dónde estaban los activos tóxicos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La desconfianza paralizó el crédito entre los bancos. España vivía su propia burbuja inmobiliaria, con una enorme concentración de crédito en la construcción y la vivienda.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "bloques",
+      "pie": "Bloques de viviendas de nueva construcción en una localidad española, un ejemplo del auge inmobiliario previo a la crisis."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El momento Lehman"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las primeras alarmas sonaron en agosto de 2007, cuando un banco francés congeló varios de sus fondos. En marzo de 2008 el banco de inversión Bear Stearns tuvo que ser rescatado. El ",
+          "marcas": []
+        },
+        {
+          "texto": "15 de septiembre de 2008",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", ",
+          "marcas": []
+        },
+        {
+          "texto": "Lehman Brothers",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se declaró en quiebra con cientos de miles de millones de dólares en activos. Fue la mayor quiebra de la historia de Estados Unidos. Los gobiernos tuvieron que rescatar a otras entidades, como la aseguradora AIG.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "nyse",
+      "pie": "La Bolsa de Nueva York, en Wall Street, escenario de fuertes caídas durante aquellos meses."
+    },
+    {
+      "id": "b08",
+      "tipo": "tabla",
+      "titulo": "Una cronología resumida",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Fecha"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Agosto de 2007",
+          "c1": "Un banco francés congela fondos ligados a hipotecas de riesgo"
+        },
+        {
+          "c0": "Marzo de 2008",
+          "c1": "Rescate del banco de inversión Bear Stearns"
+        },
+        {
+          "c0": "Septiembre de 2008",
+          "c1": "Quiebra de Lehman Brothers"
+        },
+        {
+          "c0": "Mayo de 2010",
+          "c1": "Primer rescate a Grecia"
+        },
+        {
+          "c0": "2012",
+          "c1": "Línea europea de ayuda para recapitalizar la banca española"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El contagio a Europa y a España"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La crisis financiera se convirtió en una crisis económica y después en una crisis de deuda en la zona euro. En España explotó la burbuja inmobiliaria, muchas cajas de ahorro acumularon pérdidas y se reestructuró el sector financiero con ayuda europea. El paro superó el ",
+          "marcas": []
+        },
+        {
+          "texto": "26 %",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la población activa en 2013.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "occupy",
+      "pie": "Protesta del movimiento Occupy Wall Street en Nueva York en 2011, nacido como reacción a la crisis."
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué se cambió después"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Más capital:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los bancos deben tener más recursos propios para absorber pérdidas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Supervisión europea:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la banca de mayor tamaño de la zona euro está supervisada por el Banco Central Europeo desde 2014.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Resolución bancaria:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " se crearon mecanismos para cerrar entidades en problemas sin recurrir tanto al dinero público.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Una lección",
+      "texto": "Los productos financieros complejos pueden ocultar el riesgo real: cuando nadie entiende qué hay dentro, la confianza desaparece en cuanto surgen las primeras pérdidas.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Federal Reserve History · The Great Recession and its aftermath",
+          "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco de España · Portal oficial",
+          "url": "https://www.bde.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

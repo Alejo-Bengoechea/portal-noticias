@@ -1,0 +1,369 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "como-esta-organizado-el-poder-judicial-en-espana",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "poder judicial",
+      "Tribunal Supremo",
+      "CGPJ"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Cómo está organizado el poder judicial en España",
+  "subtitulo": "De los juzgados de pueblo al Tribunal Supremo: repasamos la estructura de la justicia, quién gobierna a los jueces y qué papel tiene el jurado popular.",
+  "portada": {
+    "recursoId": "supremo_air",
+    "pie": "Vista aérea del Tribunal Supremo de España, en Madrid."
+  },
+  "recursos": {
+    "supremo_air": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tribunal_Supremo%2C_Madrid.jpg?width=1200",
+      "alt": "Vista aérea del Tribunal Supremo de España, en Madrid.",
+      "credito": "FDV, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "supremo02": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fachada_-_Tribunal_Supremo_de_Espana_-_Madrid_02.jpg?width=1200",
+      "alt": "Fachada del Tribunal Supremo de España, en el antiguo convento de las Salesas Reales.",
+      "credito": "Javier Pérez Montes, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "salesas": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gezicht_op_het_convento_de_las_Salesas_Reales_in_Madrid%2C_RP-F-2001-7-657-25.jpg?width=1200",
+      "alt": "Fotografía antigua del convento de las Salesas Reales, en Madrid.",
+      "credito": "Rijksmuseum, CC0 (Wikimedia Commons)"
+    },
+    "supremo03": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fachada_-_Tribunal_Supremo_de_Espana_-_Madrid_03.jpg?width=1200",
+      "alt": "Detalle de la fachada del Tribunal Supremo.",
+      "credito": "Javier Pérez Montes, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La Constitución dice, en su ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 117",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que la justicia emana del pueblo y se administra en nombre del rey por ",
+          "marcas": []
+        },
+        {
+          "texto": "jueces y magistrados independientes, inamovibles, responsables y sometidos únicamente al imperio de la ley",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es el tercer poder del Estado, junto con el legislativo y el ejecutivo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Una pirámide de tribunales"
+    },
+    {
+      "id": "b03",
+      "tipo": "tabla",
+      "titulo": "Los órganos judiciales",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Órgano"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Dónde actúa"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Juzgados",
+          "c1": "Primera instancia, instrucción, lo penal, lo mercantil, lo social y otras materias"
+        },
+        {
+          "c0": "Audiencias Provinciales",
+          "c1": "Una por provincia: causas penales graves y recursos civiles"
+        },
+        {
+          "c0": "Tribunales Superiores de Justicia",
+          "c1": "Uno por comunidad autónoma: cúspide de la justicia en cada territorio"
+        },
+        {
+          "c0": "Audiencia Nacional",
+          "c1": "Asuntos de competencia estatal, como terrorismo o delitos económicos de gran alcance"
+        },
+        {
+          "c0": "Tribunal Supremo",
+          "c1": "Máximo órgano judicial, con cinco salas"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal Supremo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " tiene su sede en Madrid, en el antiguo convento de las ",
+          "marcas": []
+        },
+        {
+          "texto": "Salesas Reales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un edificio del siglo XVIII mandado construir por Fernando VI. Se organiza en ",
+          "marcas": []
+        },
+        {
+          "texto": "cinco salas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": Civil, Penal, Contencioso-Administrativa, Social y Militar. Salvo en materia de garantías constitucionales, es el órgano superior en todos los órdenes.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "supremo02",
+      "pie": "Fachada del Tribunal Supremo de España, en el antiguo convento de las Salesas Reales."
+    },
+    {
+      "id": "b05",
+      "tipo": "imagen",
+      "recursoId": "salesas",
+      "pie": "Fotografía antigua del convento de las Salesas Reales, en Madrid."
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién gobierna a los jueces"
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los jueces no dependen del Gobierno. El órgano que los gobierna es el ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo General del Poder Judicial (CGPJ)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", previsto en el artículo 122 de la Constitución. Lo forman ",
+          "marcas": []
+        },
+        {
+          "texto": "veinte vocales y un presidente",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que también preside el Tribunal Supremo. De los vocales, ",
+          "marcas": []
+        },
+        {
+          "texto": "doce son jueces y magistrados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y ",
+          "marcas": []
+        },
+        {
+          "texto": "ocho juristas de reconocida competencia",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", cuatro propuestos por el Congreso y cuatro por el Senado. El mandato dura ",
+          "marcas": []
+        },
+        {
+          "texto": "cinco años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El Consejo se encarga de los nombramientos, ascensos y del régimen disciplinario de los jueces.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "supremo03",
+      "pie": "Detalle de la fachada del Tribunal Supremo."
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Fiscales, abogados y jurado"
+    },
+    {
+      "id": "b10",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "El Ministerio Fiscal",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " promueve la acción de la justicia en defensa de la legalidad y de los derechos de los ciudadanos. No es parte del poder judicial, aunque actúa ante los tribunales.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "La tutela judicial efectiva",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " está reconocida en el artículo 24: toda persona tiene derecho a obtener la protección de los jueces.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "La justicia gratuita",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " se reconoce a quienes acrediten que no tienen recursos suficientes.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "El jurado popular",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": ", previsto en el artículo 125, interviene en determinados delitos graves; nueve ciudadanos decidirán sobre los hechos, presididos por un magistrado.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "El poder judicial en España: cómo está estructurado y cómo funciona",
+      "url": "https://www.youtube.com/watch?v=0rs4BdvTTzY"
+    },
+    {
+      "id": "b12",
+      "tipo": "nota_editorial",
+      "titulo": "Un matiz",
+      "texto": "El Tribunal Constitucional no forma parte de esta pirámide: es un órgano distinto, encargado de velar por que las leyes y los actos respeten la Constitución.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Poder Judicial · Portal oficial",
+          "url": "https://www.poderjudicial.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

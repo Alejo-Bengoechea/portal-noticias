@@ -1,0 +1,367 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "como-se-reparten-los-escanos-la-ley-dhondt",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "elecciones",
+      "ley d'Hondt",
+      "escaños"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Cómo se reparten los escaños: la ley d'Hondt",
+  "subtitulo": "Votar a una lista no significa que cada voto valga lo mismo en todas partes. Explicamos, con un ejemplo, cómo se traducen los votos en diputados en las elecciones generales.",
+  "portada": {
+    "recursoId": "urna",
+    "pie": "Una persona introduce su voto en la urna durante unas elecciones en España."
+  },
+  "recursos": {
+    "urna": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Elecciones_CyL_2022_05.jpg?width=1200",
+      "alt": "Una persona vota en una urna durante unas elecciones en España.",
+      "credito": "MiguelAlanCS, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "escanos": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Distribuci%C3%B3n_de_esca%C3%B1os_en_el_Congreso_de_los_Diputados_de_la_XIII_Legislatura.png?width=1200",
+      "alt": "Gráfico con la distribución de escaños del Congreso de los Diputados en la XIII Legislatura.",
+      "credito": "Hpa654, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "hemi3": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Hemiciclo_del_Congreso_-_141203_100648.jpg?width=1200",
+      "alt": "Vista del hemiciclo del Congreso de los Diputados.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "congreso": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Congreso_de_los_Diputados_(Espa%C3%B1a)_04.jpg?width=1200",
+      "alt": "Detalle de la fachada principal del Congreso de los Diputados.",
+      "credito": "Fernando Arconada, CC BY-SA 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En unas elecciones generales, los españoles no eligen directamente al presidente del Gobierno: eligen a los ",
+          "marcas": []
+        },
+        {
+          "texto": "diputados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y senadores, y estos votan al presidente. Pero ¿cómo se convierten los votos en escaños? La respuesta está en un método matemático del siglo XIX: la ",
+          "marcas": []
+        },
+        {
+          "texto": "ley d'Hondt",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Primero, cuántos escaños por provincia"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Congreso tiene 350 escaños. Cada una de las 50 provincias recibe un ",
+          "marcas": []
+        },
+        {
+          "texto": "mínimo de dos diputados",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", y Ceuta y Melilla uno cada una: son ",
+          "marcas": []
+        },
+        {
+          "texto": "102 escaños",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de entrada. Los 248 restantes se reparten ",
+          "marcas": []
+        },
+        {
+          "texto": "en proporción a la población",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El resultado es que las provincias pequeñas están algo sobrerrepresentadas y las grandes, como Madrid o Barcelona, tienen más diputados pero menos por habitante.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "Dentro de cada circunscripción, el votante elige una ",
+          "marcas": []
+        },
+        {
+          "texto": "lista cerrada y bloqueada",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": no se puede cambiar el orden de los candidatos. Solo cuentan para el reparto las listas que superan el ",
+          "marcas": []
+        },
+        {
+          "texto": "3 % de los votos válidos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de esa circunscripción. Después se aplica la ley d'Hondt a las que han superado el umbral.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "escanos",
+      "pie": "Distribución de escaños en el Congreso de los Diputados en la XIII Legislatura, que comenzó en 2019."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo funciona la ley d'Hondt"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El método consiste en dividir los votos de cada lista entre 1, 2, 3, 4… hasta el número de escaños en juego, ordenar todos los cocientes de mayor a menor y adjudicar los escaños a los cocientes más altos. Un ejemplo con ",
+          "marcas": []
+        },
+        {
+          "texto": "7 escaños",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y cinco listas:",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "tabla",
+      "titulo": "Reparto de 7 escaños (ejemplo ilustrativo)",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Lista"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Votos"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Escaños"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "A",
+          "c1": "340.000",
+          "c2": "3"
+        },
+        {
+          "c0": "B",
+          "c1": "280.000",
+          "c2": "3"
+        },
+        {
+          "c0": "C",
+          "c1": "160.000",
+          "c2": "1"
+        },
+        {
+          "c0": "D",
+          "c1": "60.000",
+          "c2": "0"
+        },
+        {
+          "c0": "E",
+          "c1": "15.000",
+          "c2": "0"
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los siete cocientes más altos son, de mayor a menor: 340.000 (A), 280.000 (B), 170.000 (A), 160.000 (C), 140.000 (B), 113.333 (A) y 93.333 (B). Por eso A y B obtienen tres escaños y C uno. La lista D, con 60.000 votos, se queda fuera: su primer cociente, 60.000, no alcanza a los de las demás.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién gana y quién pierde"
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "hemi3",
+      "pie": "El hemiciclo del Congreso, donde se sientan los diputados elegidos por este sistema."
+    },
+    {
+      "id": "b11",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Efecto mayoritario:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la ley d'Hondt tiende a favorecer a las listas más votadas y a perjudicar a las pequeñas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Circunscripciones pequeñas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cuantos menos escaños se reparten, más votos hacen falta para obtener uno.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Partidos territoriales:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los que concentran sus votos en pocas provincias pueden lograr representación con menos apoyo total que otros de ámbito nacional.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Estas características alimentan un debate permanente. Los defensores del sistema destacan que favorece gobiernos estables y vincula al diputado con su provincia. Los críticos sostienen que desvirtúa la igualdad del voto y reclaman fórmulas más proporcionales, como una circunscripción más amplia. Cambiar el sistema exigiría reformar la ley electoral, de rango orgánico, que requiere una mayoría absoluta del Congreso, y alguna de las reglas está fijada además en la Constitución.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "congreso",
+      "pie": "La fachada del Congreso de los Diputados, en la Carrera de San Jerónimo."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un ejemplo, no un resultado",
+      "texto": "Los datos de la tabla son inventados con fines explicativos y no corresponden a ninguna elección real.",
+      "icono": "aviso",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Junta Electoral Central · Normativa electoral",
+          "url": "https://www.juntaelectoralcentral.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Ministerio del Interior · Resultados electorales",
+          "url": "https://infoelectoral.interior.gob.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

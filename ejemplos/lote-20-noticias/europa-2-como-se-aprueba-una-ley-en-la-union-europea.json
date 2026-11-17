@@ -1,0 +1,411 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "como-se-aprueba-una-ley-en-la-union-europea",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Parlamento Europeo",
+      "legislación",
+      "UE"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Cómo se aprueba una ley en la Unión Europea",
+  "subtitulo": "La Comisión propone, el Parlamento y el Consejo deciden. Un recorrido por el procedimiento que da forma a las normas que afectan a más de 440 millones de europeos.",
+  "portada": {
+    "recursoId": "ep_strasbourg",
+    "pie": "El hemiciclo del Parlamento Europeo en Estrasburgo durante un pleno."
+  },
+  "recursos": {
+    "ep_strasbourg": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg?width=1200",
+      "alt": "Hemiciclo del Parlamento Europeo en Estrasburgo durante una sesión plenaria.",
+      "credito": "Diliff, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "berlaymont": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique_-_Bruxelles_-_Schuman_-_Berlaymont_-_01.jpg?width=1200",
+      "alt": "Edificio Berlaymont, sede de la Comisión Europea en Bruselas.",
+      "credito": "EmDee, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "ep_booths": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interpreting_booths_Louise_Weiss_building_European_Parliament_Strasbourg_05.jpg?width=1200",
+      "alt": "Cabinas de interpretación del edificio Louise Weiss del Parlamento Europeo.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "ep_brussels": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Parliament_Hemicycle_-_Brussels_2024.jpg?width=1200",
+      "alt": "Hemiciclo del edificio del Parlamento Europeo en Bruselas.",
+      "credito": "Profpcde, CC0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Muchas normas que afectan a tu vida diaria nacen en Bruselas y Estrasburgo: desde el cargador único de los móviles hasta las reglas de protección de datos. No las dicta un solo organismo. En la Unión Europea, las leyes se aprueban mediante un procedimiento en el que intervienen ",
+          "marcas": []
+        },
+        {
+          "texto": "tres instituciones",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Las tres piezas del juego"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "Comisión Europea",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con sede en el edificio Berlaymont de Bruselas, es la única que puede ",
+          "marcas": []
+        },
+        {
+          "texto": "proponer",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " una ley nueva. Vela por el interés general de la Unión. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Parlamento Europeo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " representa directamente a los ciudadanos, que lo eligen cada cinco años. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo de la UE",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " reúne a los ministros de los gobiernos nacionales según el tema de que se trate: agricultura, economía, energía. Parlamento y Consejo deben ponerse de acuerdo, en pie de igualdad, para que una propuesta se convierta en ley.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "berlaymont",
+      "pie": "El Berlaymont, en Bruselas, sede de la Comisión Europea."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "El procedimiento legislativo ordinario"
+    },
+    {
+      "id": "b05",
+      "tipo": "lista",
+      "ordenada": true,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Propuesta:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la Comisión presenta un texto al Parlamento y al Consejo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Primera lectura:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el Parlamento vota su posición y el Consejo aprueba la suya.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Negociación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " si difieren, ambos buscan un texto común en reuniones llamadas «trílogos».",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Aprobación final:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " ambas instituciones votan el texto acordado.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Publicación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la norma se publica en el Diario Oficial y entra en vigor.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Si tras varias rondas no hay acuerdo, la propuesta decae. Por eso las negociaciones pueden alargarse meses o años, sobre todo en temas muy disputados.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Reglamentos y directivas"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "No todas las leyes europeas funcionan igual. Un ",
+          "marcas": []
+        },
+        {
+          "texto": "reglamento",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es obligatorio en todos sus elementos y se aplica directamente en todos los países, sin que cada uno tenga que aprobar una ley propia. Una ",
+          "marcas": []
+        },
+        {
+          "texto": "directiva",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en cambio, fija unos objetivos que cada Estado debe alcanzar, pero deja que cada uno elija cómo hacerlo mediante su legislación nacional, un proceso que se conoce como transposición.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "tabla",
+      "titulo": "El Parlamento Europeo en cifras",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Eurodiputados",
+          "c1": "720"
+        },
+        {
+          "c0": "Escaños de España",
+          "c1": "61"
+        },
+        {
+          "c0": "Idiomas oficiales",
+          "c1": "24"
+        },
+        {
+          "c0": "Sesiones plenarias en Estrasburgo",
+          "c1": "12 al año"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un Parlamento en tres ciudades"
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "ep_booths",
+      "pie": "Cabinas de interpretación del Parlamento Europeo, donde se traduce a los 24 idiomas oficiales."
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Parlamento Europeo tiene sus sesiones plenarias en ",
+          "marcas": []
+        },
+        {
+          "texto": "Estrasburgo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con otras sesiones adicionales y las reuniones de comisiones en ",
+          "marcas": []
+        },
+        {
+          "texto": "Bruselas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", mientras que su secretaría general está en ",
+          "marcas": []
+        },
+        {
+          "texto": "Luxemburgo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es una herencia de la historia europea que se mantiene por los tratados y que genera críticas por su coste y sus desplazamientos. Una de sus señas de identidad es el multilingüismo: los debates se interpretan y los documentos se traducen a los 24 idiomas oficiales de la Unión.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "ep_brussels",
+      "pie": "El hemiciclo de Bruselas, donde se celebran sesiones plenarias adicionales."
+    },
+    {
+      "id": "b14",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: cómo funciona el Parlamento Europeo"
+    },
+    {
+      "id": "b15",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "elDiario.es · ¿Cómo funciona y para qué sirve el Parlamento Europeo?",
+      "url": "https://www.youtube.com/watch?v=c8-n-GfrcCo"
+    },
+    {
+      "id": "b16",
+      "tipo": "nota_editorial",
+      "titulo": "Dónde seguir una ley",
+      "texto": "El Parlamento publica el estado de cada propuesta en su Observatorio Legislativo, accesible para cualquier ciudadano.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Parlamento Europeo · Procedimiento legislativo ordinario",
+          "url": "https://www.europarl.europa.eu/olp/es/ordinary-legislative-procedure/overview"
+        },
+        {
+          "id": "f2",
+          "titulo": "Unión Europea · Instituciones y órganos",
+          "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies_es"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

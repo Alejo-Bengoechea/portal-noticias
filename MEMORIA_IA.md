@@ -4,9 +4,9 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Sincronización
 
-- Última actualización: 2026-11-16 · Codex
-- Commit base: `5837dd3`
-- Árbol al cerrar: con cambios sin commit (rediseño, navegación, portadas por categoría, memoria y contexto).
+- Última actualización: 2026-11-17 · Claude Code
+- Commit base: `db1fbe7`
+- Árbol al cerrar: con cambios sin commit. Sites tiene una versión anterior (sin audiencia real).
 
 ## En curso
 
@@ -15,6 +15,10 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Pendientes
 
+- Audiencia real: `202611170002_audience.sql` aplicada por el usuario el 2026-11-17. Falta publicar Sites (Codex). Después, comprobar que entran visitas desde la URL pública. Hasta publicar, Sites usa la recogida anterior (solo vistas, sin canal).
+- Categoría «Resumen semanal»: aplicar `202611170001_weekly_summary_category.sql` en Supabase o crearla desde `/categorias/nueva` (más simple).
+- Lotes `ejemplos/lote-20-noticias/` y `ejemplos/lote-20-noticias-2/` (20 noticias cada uno): creados y publicados en Supabase el 2026-11-16 desde el panel con la sesión del usuario (40 noticias publicadas en total). Cifras explicativas: contrastar; algunos enlaces de fuentes bloquean scripts (revisar a mano).
+- Navegación del panel: probar con sesión iniciada el cambio entre vistas (el agente no puede iniciar sesión). Si Supabase usa claves JWT simétricas (legacy), `getClaims` sigue consultando Auth: valorar pasar a claves asimétricas en el panel de Supabase.
 - Usuario decide cuándo autorizar el push.
 - Más populares: aplicar `202611160001_popular_articles.sql` en Supabase (incluye el contador de visitas) y comprobar que las visitas se registran (`/api/traffic`). Sin ella, «Más populares» cae a las más recientes.
 - Portadas por categoría: aplicar `202611150001_category_covers.sql` en Supabase y probar el guardado real. Panel (escritorio y móvil, aviso de migración) y rotación del portal verificados en local con datos forzados.
@@ -24,17 +28,18 @@ Estado de trabajo vivo para relevarse entre agentes sin revisar todo de nuevo. R
 
 ## Decisiones vigentes
 
-- 2026-11-13 · Audiencia y tráfico muestra datos simulados identificados (`lib/analytics-demo.ts`) hasta conectar el tráfico real.
+- 2026-11-17 · Audiencia cuenta solo el portal publicado (nunca localhost), sin cookies ni IP. Al pasar a dominio propio, publicar allí; `TRAFFIC_HOSTS` elige dominios si conviven varios.
 
 ## Registro
 
 Más reciente arriba. Máximo 8 entradas; borrar las más antiguas (Git conserva el historial).
 
-- 2026-11-16 · Codex · Aumenta el contraste de «Más populares» en temas claro y oscuro mediante `app/globals.css`. Sin commit.
-- 2026-11-16 · Codex · Corrige scroll lateral, enlaza la marca superior al inicio y reorganiza el footer en `app/(public)/layout.tsx` y `app/globals.css`. Sin commit.
-- 2026-11-16 · Claude Code · El carrusel de portadas ya no se pausa con el cursor encima (`components/cover-carousel.tsx`). Sin commit.
-- 2026-11-16 · Claude Code · Más margen entre las noticias de «Últimas noticias» (final de `app/globals.css`, bloque `.archive-group`). Sin commit.
-- 2026-11-16 · Claude Code · Inicio: «Lo más reciente» y «Últimas noticias» por fecha de creación (4 + 14 siguientes); «Más populares» = 3 con más visitas en 30 días (`getPopularArticles`, migración `202611160001_popular_articles.sql` sin aplicar; mientras tanto usa las más recientes). `lib/articles.ts`, `app/(public)/page.tsx`, tests. Sin commit.
-- 2026-11-16 · Claude Code · Nuevo cargador del portal tipo maqueta de portada con tinta («Preparando la edición» / «Abriendo el reportaje») en categorías y noticias. `components/public-loader.tsx`, `categoria/[slug]/loading.tsx`, `noticia/[slug]/loading.tsx`, `globals.css`. Sin commit.
-- 2026-11-16 · Claude Code · Carrusel de portadas cada 5 s con controles bajo «Leer el artículo» (`components/cover-carousel.tsx`, portal en cada `.hero-copy`); línea separadora entre portada y listado en categorías (`.category-cover-area`). Sin commit.
-- 2026-11-15 · Claude Code · Inicio admite hasta 3 portadas (carrusel) y se guarda sin migración (`setHomeCovers`, `getHomeCovers`; `designateHomeCover`/RPC retirados). Categorías: listado en 2 columnas con tarjeta horizontal (`Cards wide`). Sin commit.
+- 2026-11-17 · Claude Code · Audiencia: botón recargar (`router.refresh`), barras de categoría clicables con top 3 noticias más vistas en vez del desplegable (`components/analytics-dashboard.tsx`, `lib/audience.ts`, `globals.css`). Tests 87/87, check OK. Sin commit.
+- 2026-11-17 · Claude Code · Audiencia y tráfico con datos reales: `lib/audience.ts`, `lib/traffic-source.ts`, `/api/traffic`, `page-view.tsx`, `analytics-dashboard.tsx`, migración `202611170002_audience.sql`; se retira `lib/analytics-demo.ts`. Tests 87/87, check y build OK. Sin commit.
+- 2026-11-17 · Claude Code · La flecha de «Portada actual» del panel abre el portal en otra pestaña (`components/editorial-home.tsx`). Sin commit.
+- 2026-11-17 · Claude Code · Suscríbete ahora es `components/subscribe-section.tsx`, al final de inicio y de cada categoría. Migración `202611170001_weekly_summary_category.sql` (RESUMEN SEMANAL, sin aplicar). Typecheck OK. Sin commit.
+- 2026-11-16 · Claude Code · «Últimas noticias» pasa a 1-3 / 4 / 3-1 / 3 (15 noticias): `components/cards.tsx`, `app/globals.css`, límite 19 en `lib/articles.ts`, `CONTEXTO_IA.md` §5. Tests 81/81. Sin commit.
+- 2026-11-16 · Claude Code · Segundo lote de 20 noticias (5 por categoría) en `ejemplos/lote-20-noticias-2/`; creadas y publicadas desde el panel a petición del usuario. Truco: el editor ignora el primer archivo tras cargar la página y el panel del navegador debe estar visible. Sin commit.
+- 2026-11-16 · Codex · Publica en Sites v5 la escala de escritorio al 80% (`app/globals.css`); comprobada en la URL pública sin solapamiento ni scroll lateral. Sin commit en main.
+- 2026-11-16 · Codex · Publica el estado local actual en Sites, versión desplegada en `alejo-bengoechea-periodismo.tunedsnail1026.chatgpt.site`. Sin commit en main.
+- 2026-11-16 · Claude Code · Redacta 20 noticias (5 por categoría: ECONOMÍA Y FINANZAS, EUROPA, INTERNACIONAL, POLÍTICA) en `ejemplos/lote-20-noticias/`, con 4 imágenes de Wikimedia Commons y fuentes verificadas; 7 llevan vídeo de YouTube. Las sube y publica a Supabase el mismo día (panel, a petición del usuario). Sin commit.

@@ -84,7 +84,7 @@ export function EditorialHome({ data }: { data: EditorialHomeData }) {
         </section>
       </div>
       <section className="home-cover-panel" aria-labelledby="home-cover-heading">
-        <header className="home-panel-head"><div><span className="home-kicker">EN EL PORTAL</span><h2 id="home-cover-heading">Portada actual</h2></div><Link href="/" aria-label="Ver inicio del portal">↗</Link></header>
+        <header className="home-panel-head"><div><span className="home-kicker">EN EL PORTAL</span><h2 id="home-cover-heading">Portada actual</h2></div><Link href="/" target="_blank" rel="noopener noreferrer" aria-label="Ver inicio del portal (se abre en otra ventana)">↗</Link></header>
         {errors.cover ? <p className="home-data-warning" role="status">No se pudo consultar la portada actual.</p> : cover ? <>
           <Link href={`/noticia/${cover.slug}`} className="home-cover-image" aria-label={`Leer ${cover.title}`}>{coverUrl ? <img src={coverUrl} alt={cover.coverAlt} loading="lazy" /> : <span className="home-cover-placeholder" aria-hidden="true">AB<span>.</span></span>}<span className="home-cover-label">{cover.featured ? 'DESTACADA' : 'ÚLTIMA PUBLICADA'}</span></Link>
           <div className="home-cover-copy"><span className="home-cover-category">{cover.category}</span><h3><Link href={`/noticia/${cover.slug}`}>{cover.title}</Link></h3>{cover.subtitle && <p>{cover.subtitle}</p>}<time dateTime={cover.publishedAt}>{date(cover.publishedAt)}</time></div>

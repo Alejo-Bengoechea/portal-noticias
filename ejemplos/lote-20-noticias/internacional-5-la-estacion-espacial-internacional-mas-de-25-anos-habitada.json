@@ -1,0 +1,431 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-estacion-espacial-internacional-mas-de-25-anos-habitada",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "espacio",
+      "ISS",
+      "cooperación"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La Estación Espacial Internacional, más de 25 años habitada",
+  "subtitulo": "Desde el 2 de noviembre de 2000 siempre ha habido personas a bordo. El mayor proyecto de cooperación científica de la historia se acerca al final de su vida útil.",
+  "portada": {
+    "recursoId": "iss_sts134",
+    "pie": "La Estación Espacial Internacional, fotografiada desde un transbordador tras desacoplarse."
+  },
+  "recursos": {
+    "iss_sts134": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/STS-134_International_Space_Station_after_undocking.jpg?width=1200",
+      "alt": "La Estación Espacial Internacional fotografiada desde un transbordador tras desacoplarse.",
+      "credito": "NASA, Dominio público (Wikimedia Commons)"
+    },
+    "iss_2009": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS_March_2009.jpg?width=1200",
+      "alt": "La Estación Espacial Internacional vista desde el transbordador Discovery en 2009.",
+      "credito": "NASA, Dominio público (Wikimedia Commons)"
+    },
+    "cupola": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tracy_Caldwell_Dyson_in_Cupola_ISS.jpg?width=1200",
+      "alt": "Autorretrato de una astronauta mirando la Tierra desde la cúpula de la Estación Espacial Internacional.",
+      "credito": "NASA / Tracy Caldwell Dyson, Dominio público (Wikimedia Commons)"
+    },
+    "hoshide": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS-32_American_EVA_b3_Aki_Hoshide.jpg?width=1200",
+      "alt": "Astronauta durante una caminata espacial en el exterior de la estación espacial.",
+      "credito": "NASA / Akihiko Hoshide, Dominio público (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A unos 400 kilómetros sobre nuestras cabezas, a 28.000 kilómetros por hora, una nave del tamaño de un campo de fútbol da la vuelta a la Tierra cada ",
+          "marcas": []
+        },
+        {
+          "texto": "90 minutos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Es la ",
+          "marcas": []
+        },
+        {
+          "texto": "Estación Espacial Internacional (EEI o ISS)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un laboratorio habitado sin interrupciones desde hace más de un cuarto de siglo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cinco agencias, un solo laboratorio"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El primer módulo, el ruso ",
+          "marcas": []
+        },
+        {
+          "texto": "Zarya",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", se lanzó el 20 de noviembre de 1998. Poco después se unió el estadounidense Unity y la estación fue creciendo pieza a pieza, ensamblada en órbita con decenas de vuelos. El primer equipo de larga duración llegó el ",
+          "marcas": []
+        },
+        {
+          "texto": "2 de noviembre de 2000",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Cinco agencias participan en el proyecto: la ",
+          "marcas": []
+        },
+        {
+          "texto": "NASA",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (Estados Unidos), ",
+          "marcas": []
+        },
+        {
+          "texto": "Roscosmos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (Rusia), la ",
+          "marcas": []
+        },
+        {
+          "texto": "ESA",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (Europa), la ",
+          "marcas": []
+        },
+        {
+          "texto": "JAXA",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (Japón) y la ",
+          "marcas": []
+        },
+        {
+          "texto": "CSA",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " (Canadá). Cada una aporta módulos, equipos, tripulantes o transporte.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "iss_2009",
+      "pie": "La estación vista desde el transbordador Discovery en marzo de 2009."
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "La estación en cifras",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Altitud aproximada",
+          "c1": "400 km"
+        },
+        {
+          "c0": "Velocidad",
+          "c1": "Unos 28.000 km/h"
+        },
+        {
+          "c0": "Una vuelta a la Tierra",
+          "c1": "Unos 90 minutos"
+        },
+        {
+          "c0": "Amaneceres que ve la tripulación",
+          "c1": "16 cada día"
+        },
+        {
+          "c0": "Agencias participantes",
+          "c1": "NASA, Roscosmos, ESA, JAXA y CSA"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "La vida a bordo"
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "cupola",
+      "pie": "Una astronauta se hace un autorretrato en la cúpula de la estación, con la Tierra de fondo."
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Como la estación da una vuelta al planeta cada hora y media, sus ocupantes ven ",
+          "marcas": []
+        },
+        {
+          "texto": "16 amaneceres y atardeceres al día",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Para que los ciclos de sueño no se descontrolen, trabajan con el horario de referencia UTC. Duermen en pequeños compartimentos, comen alimentos deshidratados o envasados y hacen unas ",
+          "marcas": []
+        },
+        {
+          "texto": "dos horas de ejercicio diario",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " para evitar que se debiliten sus músculos y huesos en la ingravidez. El agua se recicla, incluida la del sudor y la de la orina.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Ciencia que no se puede hacer en tierra"
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Medicina:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " estudios sobre pérdida ósea y muscular, vacunas y fármacos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Materiales y combustión:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " experimentos que sin gravedad dan resultados distintos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Observación de la Tierra:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " instrumentos que miden el clima, los bosques y la atmósfera.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Preparar viajes futuros:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " probar tecnologías y efectos del espacio en el cuerpo para misiones largas.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "hoshide",
+      "pie": "Un astronauta durante una caminata espacial en el exterior de la estación."
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Para mantener la estación hay que salir a trabajar fuera. Estas ",
+          "marcas": []
+        },
+        {
+          "texto": "caminatas espaciales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " sirven para reparar, ampliar o actualizar equipos. Se calcula que han pasado por la estación más de 270 personas de una veintena de países, desde astronautas profesionales hasta turistas espaciales.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un futuro con fecha de caducidad"
+    },
+    {
+      "id": "b13",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La estación envejece. Las agencias prevén mantenerla en funcionamiento hasta aproximadamente ",
+          "marcas": []
+        },
+        {
+          "texto": "2030",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", cuando se pretende desorbitarla de forma controlada para que caiga sobre una zona remota del océano Pacífico. Para ello, la NASA encargó a una empresa privada un vehículo especial. Después, el relevo lo tomarán estaciones comerciales y la nueva presencia en la Luna, aunque aún hay incertidumbre sobre los plazos.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: un recorrido por la ISS"
+    },
+    {
+      "id": "b15",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "NASA · Step Inside the International Space Station (POV Tour)",
+      "url": "https://www.youtube.com/watch?v=nmBbcNTUkOg"
+    },
+    {
+      "id": "b16",
+      "tipo": "nota_editorial",
+      "titulo": "Datos que cambian",
+      "texto": "La plantilla de la estación y el calendario de su retirada se actualizan con frecuencia; consulta la web de la NASA o de la ESA.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "NASA · Estación Espacial Internacional",
+          "url": "https://www.nasa.gov/international-space-station/"
+        },
+        {
+          "id": "f2",
+          "titulo": "ESA · La Estación Espacial Internacional",
+          "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "bolsa-e-ibex-35-como-funciona-el-mercado-de-acciones",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "Bolsa",
+      "IBEX 35",
+      "acciones"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Bolsa e IBEX 35: cómo funciona el mercado de acciones",
+  "subtitulo": "Cada día, millones de títulos cambian de manos en un edificio que casi nadie pisa. Repasamos qué es una acción, qué mide el IBEX 35 y por qué la Bolsa sube o baja.",
+  "portada": {
+    "recursoId": "bolsa",
+    "pie": "El Palacio de la Bolsa de Madrid, inaugurado en 1893."
+  },
+  "recursos": {
+    "bolsa": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bolsa_de_Madrid.jpg?width=1200",
+      "alt": "Fachada del Palacio de la Bolsa de Madrid.",
+      "credito": "Fernando, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bolsa_int": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior_del_Palacio_de_la_Bolsa%2C_Madrid%2C_Espa%C3%B1a%2C_2017_29.jpg?width=1200",
+      "alt": "Interior del Palacio de la Bolsa de Madrid.",
+      "credito": "Benjamín Núñez González, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "nyse": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/New_York_Stock_Exchange_August_2017_02.jpg?width=1200",
+      "alt": "Edificio de la Bolsa de Nueva York en el cruce de Broad Street y Wall Street.",
+      "credito": "Arild Vågen, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bolsa_sculpt": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bolsa_Bolsa.jpg?width=1200",
+      "alt": "Escultura de una bolsa de dinero en lo alto del edificio de la Bolsa de Madrid.",
+      "credito": "Boubloub, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una ",
+          "marcas": []
+        },
+        {
+          "texto": "acción",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es una pequeña parte de una empresa. Quien la compra se convierte en copropietario: si la compañía gana dinero y la valoran más, el título suele subir y puede repartir dividendos; si le va mal, ocurre lo contrario. La ",
+          "marcas": []
+        },
+        {
+          "texto": "bolsa",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el mercado organizado donde esas acciones se compran y se venden, con reglas claras y vigilancia de un supervisor, que en España es la CNMV.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un palacio para el parqué"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "La Bolsa de Madrid tiene su sede en un palacio proyectado por Enrique Repullés y Vargas e inaugurado en 1893. Durante más de un siglo, las operaciones se gritaban en el «corro», pero hoy se hacen casi todas por ordenador. El edificio mantiene su valor simbólico y, de hecho, en lo alto luce una escultura con forma de bolsa de dinero, un guiño al propio nombre.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "bolsa_int",
+      "pie": "Interior del Palacio de la Bolsa de Madrid, donde antes se cruzaban las órdenes a viva voz."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué es el IBEX 35"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "IBEX 35",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es el índice de referencia de la bolsa española. Reúne a ",
+          "marcas": []
+        },
+        {
+          "texto": "35 empresas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " entre las más grandes y las que más se negocian, y sirve como termómetro: si el índice sube un 1 %, quiere decir que, en conjunto, el valor de esas compañías ha subido un 1 %. Empezó a calcularse el 14 de enero de 1992.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "El IBEX 35 en pocas líneas",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Característica"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Dato"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Inicio del cálculo",
+          "c1": "14 de enero de 1992"
+        },
+        {
+          "c0": "Empresas",
+          "c1": "35"
+        },
+        {
+          "c0": "Cómo pondera",
+          "c1": "Por capitalización bursátil ajustada al capital flotante"
+        },
+        {
+          "c0": "Revisión de su composición",
+          "c1": "Dos veces al año, en junio y diciembre"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Al ponderar por tamaño, las empresas más grandes pesan más: un movimiento brusco de las mayores mueve el índice mucho más que el de una compañía pequeña. Una empresa puede entrar o salir del índice si cambia su tamaño o la liquidez de sus acciones.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué suben y bajan los precios"
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El precio de una acción sale de la ",
+          "marcas": []
+        },
+        {
+          "texto": "oferta y la demanda",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": si hay más compradores que vendedores, sube; si ocurre lo contrario, baja. Pesan los resultados de la empresa, pero también los tipos de interés, la inflación, los conflictos internacionales o el ánimo de los inversores. Cuando los tipos suben, por ejemplo, el dinero «sin riesgo» rinde más y la bolsa suele resentirse.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "nyse",
+      "pie": "La Bolsa de Nueva York, en Wall Street, fundada en 1792, es la mayor del mundo por capitalización."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Lo que conviene saber antes de entrar"
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Riesgo:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el valor de una inversión en bolsa puede bajar, y no hay garantía de recuperar lo invertido.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Diversificar:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " repartir el dinero entre muchos valores reduce el impacto de que uno solo vaya mal.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Plazo:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " a corto plazo las oscilaciones son enormes; a largo, el comportamiento histórico ha sido más estable, pero el pasado no asegura el futuro.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Costes:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " comisiones e impuestos reducen la rentabilidad real.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "bolsa_sculpt",
+      "pie": "La escultura de la bolsa de dinero que corona el edificio, en alusión al nombre del mercado."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Información, no consejo",
+      "texto": "Este texto es divulgativo y no constituye asesoramiento de inversión. Antes de invertir, infórmate en fuentes oficiales como la CNMV.",
+      "icono": "aviso",
+      "color": "rojo"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Bolsas y Mercados Españoles · IBEX 35",
+          "url": "https://www.bolsasymercados.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "CNMV · Portal del inversor",
+          "url": "https://www.cnmv.es/portal/Inversor/Indice.aspx"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

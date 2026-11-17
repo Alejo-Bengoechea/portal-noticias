@@ -1,0 +1,384 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "que-es-el-g20-y-quienes-lo-forman",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "G20",
+      "economía mundial",
+      "cumbres"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Qué es el G20 y quiénes lo forman",
+  "subtitulo": "Reúne a las mayores economías del planeta y a organizaciones regionales. Explicamos cómo nació, qué decide realmente y por qué sus cumbres se siguen con tanta atención.",
+  "portada": {
+    "recursoId": "g20a",
+    "pie": "Los líderes posan para la foto de familia de la cumbre del G20 de 2025 en Sudáfrica."
+  },
+  "recursos": {
+    "g20a": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/G20_South_Africa_leaders_photo_000186345.jpg?width=1200",
+      "alt": "Foto de familia de los líderes de la cumbre del G20 de 2025 en Sudáfrica.",
+      "credito": "Oficina de Comunicación del Gabinete de Japón, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "osaka05": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meeting_between_leaders_of_Russia%2C_India_and_China_on_the_sidelines_of_the_2019_G20_summit_in_Osaka_05.jpg?width=1200",
+      "alt": "Reunión paralela entre dirigentes de Rusia, India y China en el marco de la cumbre del G20 de Osaka, en 2019.",
+      "credito": "Oficina de Prensa de la Presidencia de Rusia, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "g20b": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/G20_South_Africa_leaders_photo_000186343.jpg?width=1200",
+      "alt": "Los líderes posan para la foto oficial de la cumbre del G20 de 2025.",
+      "credito": "Oficina de Comunicación del Gabinete de Japón, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "osaka01": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Meeting_between_leaders_of_Russia%2C_India_and_China_on_the_sidelines_of_the_2019_G20_summit_in_Osaka_01.jpg?width=1200",
+      "alt": "Encuentro entre mandatarios en los márgenes de la cumbre del G20 de Osaka, en 2019.",
+      "credito": "Oficina de Prensa de la Presidencia de Rusia, CC BY 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "G20",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es un foro de cooperación económica que reúne a ",
+          "marcas": []
+        },
+        {
+          "texto": "19 países, la Unión Europea y la Unión Africana",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Sus miembros concentran alrededor del ",
+          "marcas": []
+        },
+        {
+          "texto": "85 % del PIB mundial",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", cerca del ",
+          "marcas": []
+        },
+        {
+          "texto": "75 % del comercio",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y aproximadamente ",
+          "marcas": []
+        },
+        {
+          "texto": "dos tercios de la población",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " del planeta.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo nació"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Surgió en ",
+          "marcas": []
+        },
+        {
+          "texto": "1999",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", tras la crisis financiera asiática, como una reunión de ministros de Finanzas y gobernadores de bancos centrales de las principales economías, en Berlín. Su peso político cambió con la crisis de 2008: en ",
+          "marcas": []
+        },
+        {
+          "texto": "noviembre de 2008",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se celebró en Washington la primera cumbre de jefes de Estado y de Gobierno, y desde entonces se ha convertido en el principal foro de coordinación económica.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "En abril de ",
+          "marcas": []
+        },
+        {
+          "texto": "2009",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la cumbre de Londres movilizó un paquete de ayudas de más de un billón de dólares para reactivar la economía y reforzar el sistema financiero. Desde entonces se reúne cada año, por lo general a finales de año, en el país que ocupa la presidencia rotatoria. Esta imagen muestra una reunión celebrada al margen de la cumbre de Osaka en 2019.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "osaka05",
+      "pie": "Reunión paralela entre dirigentes de Rusia, India y China, en el marco de la cumbre del G20 de Osaka."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quiénes forman parte"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los 19 países son Alemania, Arabia Saudí, Argentina, Australia, Brasil, Canadá, China, Corea del Sur, Estados Unidos, Francia, India, Indonesia, Italia, Japón, México, Reino Unido, Rusia, Sudáfrica y Turquía. A ellos se suman la ",
+          "marcas": []
+        },
+        {
+          "texto": "Unión Europea",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y, desde la cumbre de Nueva Delhi en 2023, la ",
+          "marcas": []
+        },
+        {
+          "texto": "Unión Africana",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". España no es miembro, pero es ",
+          "marcas": []
+        },
+        {
+          "texto": "invitada permanente",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "g20b",
+      "pie": "Los líderes de los países del G20 durante la foto oficial de 2025."
+    },
+    {
+      "id": "b08",
+      "tipo": "tabla",
+      "titulo": "Hitos del G20",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Fecha"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1999",
+          "c1": "Primera reunión de ministros de Finanzas, en Berlín"
+        },
+        {
+          "c0": "2008",
+          "c1": "Primera cumbre de líderes, en Washington"
+        },
+        {
+          "c0": "2009",
+          "c1": "Cumbre de Londres con un gran paquete de estímulo"
+        },
+        {
+          "c0": "2023",
+          "c1": "La Unión Africana se incorpora como miembro"
+        },
+        {
+          "c0": "2025",
+          "c1": "Cumbre en Johannesburgo, la primera celebrada en África"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué decide de verdad"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El G20 ",
+          "marcas": []
+        },
+        {
+          "texto": "no es una organización con tratado propio ni una secretaría permanente",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": funciona por presidencias rotatorias y sus acuerdos son ",
+          "marcas": []
+        },
+        {
+          "texto": "compromisos políticos, no obligatorios",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Su influencia está en que marca la agenda: se tratan asuntos como la regulación financiera, la deuda de los países pobres, el comercio, el clima o la inteligencia artificial.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "osaka01",
+      "pie": "Encuentro entre mandatarios en los márgenes de la cumbre de Osaka, en 2019."
+    },
+    {
+      "id": "b12",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Ventaja:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " reúne a los actores que realmente pesan en la economía mundial.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Crítica:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " deja fuera a muchos países y sus decisiones no vinculan a nadie.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "No confundir",
+      "texto": "El G7 es otro grupo, formado por siete economías avanzadas, con una agenda propia. El G20 es más amplio e incluye a grandes economías emergentes.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "G20 · Portal oficial",
+          "url": "https://g20.org/"
+        },
+        {
+          "id": "f2",
+          "titulo": "Banco Mundial · El G20",
+          "url": "https://www.bancomundial.org/es/topic/g20"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

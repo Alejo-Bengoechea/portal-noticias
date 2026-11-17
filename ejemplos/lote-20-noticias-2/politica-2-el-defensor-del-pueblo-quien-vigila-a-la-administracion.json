@@ -1,0 +1,381 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-defensor-del-pueblo-quien-vigila-a-la-administracion",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "Defensor del Pueblo",
+      "derechos",
+      "Cortes Generales"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Defensor del Pueblo: quién vigila a la Administración",
+  "subtitulo": "Cualquier ciudadano puede presentarle una queja gratuita si cree que una administración ha vulnerado sus derechos. Explicamos cómo se elige, qué puede hacer y qué no.",
+  "portada": {
+    "recursoId": "defensor1",
+    "pie": "Palacio de los Marqueses de Bermejillo del Rey, sede del Defensor del Pueblo, en Madrid."
+  },
+  "recursos": {
+    "defensor1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Paseo_de_Eduardo_Dato%2C_Palacio_de_los_Marqueses_de_Bermejillo_del_Rey_(sede_del_Defensor_del_Pueblo_de_Espa%C3%B1a)_1.jpg?width=1200",
+      "alt": "Palacio de los Marqueses de Bermejillo del Rey, sede del Defensor del Pueblo, en Madrid.",
+      "credito": "Zarateman, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "defensor2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Paseo_de_Eduardo_Dato%2C_Palacio_de_los_Marqueses_de_Bermejillo_del_Rey_(sede_del_Defensor_del_Pueblo_de_Espa%C3%B1a)_2.jpg?width=1200",
+      "alt": "Fachada de la sede del Defensor del Pueblo, en el paseo de Eduardo Dato.",
+      "credito": "Zarateman, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "const_book": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Constitucion_espanola_1978.JPG?width=1200",
+      "alt": "Ejemplar de la Constitución española de 1978 en el Congreso.",
+      "credito": "miguelazo84, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "congreso": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Congreso_de_los_Diputados_(Espa%C3%B1a)_04.jpg?width=1200",
+      "alt": "Detalle de la fachada principal del Congreso de los Diputados.",
+      "credito": "Fernando Arconada, CC BY-SA 2.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Si una administración tarda años en resolver un trámite, te niega un derecho sin explicación o vulnera una libertad, no siempre hace falta acudir a los tribunales. En España existe una institución a la que se puede recurrir sin abogado ni coste: el ",
+          "marcas": []
+        },
+        {
+          "texto": "Defensor del Pueblo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", previsto en el ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 54",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la Constitución.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un alto comisionado de las Cortes"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "La Constitución lo define como el ",
+          "marcas": []
+        },
+        {
+          "texto": "alto comisionado de las Cortes Generales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", designado por estas para defender los derechos fundamentales y supervisar la actividad de la Administración. Se elige por una mayoría de ",
+          "marcas": []
+        },
+        {
+          "texto": "tres quintos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en el Congreso y en el Senado y su mandato dura ",
+          "marcas": []
+        },
+        {
+          "texto": "cinco años",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". La primera persona en ocupar el cargo fue Joaquín Ruiz-Giménez, en 1982.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "defensor2",
+      "pie": "Fachada de la sede del Defensor del Pueblo, en el paseo de Eduardo Dato."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué puede hacer"
+    },
+    {
+      "id": "b05",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Investigar quejas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cualquier persona puede presentarla, gratis y sin abogado, contra actuaciones de las administraciones públicas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Pedir información",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " y documentos a las administraciones.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Formular recomendaciones y sugerencias",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " para que corrijan sus decisiones o cambien las normas.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Presentar recursos",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " de inconstitucionalidad y de amparo ante el Tribunal Constitucional.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Informar a las Cortes",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cada año de su actividad.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "imagen",
+      "recursoId": "const_book",
+      "pie": "Ejemplar de la Constitución española de 1978, cuyo artículo 54 crea la institución."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Lo que no puede hacer"
+    },
+    {
+      "id": "b08",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Defensor del Pueblo ",
+          "marcas": []
+        },
+        {
+          "texto": "no puede anular",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " una resolución administrativa ni obligar a cumplir sus recomendaciones: su fuerza es la ",
+          "marcas": []
+        },
+        {
+          "texto": "autoridad moral",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y la publicidad de sus informes. Tampoco puede intervenir en asuntos que estén en manos de un juez, porque no sustituye a los tribunales.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "tabla",
+      "titulo": "Defensor del Pueblo y tribunales",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Aspecto"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Defensor del Pueblo"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Tribunales"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Coste",
+          "c1": "Gratuito",
+          "c2": "Puede haber costas y abogado"
+        },
+        {
+          "c0": "Resultado",
+          "c1": "Recomendación",
+          "c2": "Sentencia obligatoria"
+        },
+        {
+          "c0": "Ámbito",
+          "c1": "Supervisión de las administraciones",
+          "c2": "Cualquier conflicto jurídico"
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Prevención de la tortura"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Desde ",
+          "marcas": []
+        },
+        {
+          "texto": "2009",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", el Defensor del Pueblo ejerce también como ",
+          "marcas": []
+        },
+        {
+          "texto": "Mecanismo Nacional de Prevención de la Tortura",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en cumplimiento de un protocolo de Naciones Unidas. Por eso visita comisarías, prisiones, centros de menores o residencias, sin avisar, para comprobar las condiciones de las personas privadas de libertad.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "congreso",
+      "pie": "El Congreso de los Diputados, una de las dos Cámaras que eligen al Defensor del Pueblo."
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Dónde presentar una queja",
+      "texto": "El trámite se puede hacer por escrito o a través de la web de la institución, indicando los hechos y la administración implicada.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Defensor del Pueblo · Portal oficial",
+          "url": "https://www.defensordelpueblo.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

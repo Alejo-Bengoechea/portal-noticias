@@ -1,0 +1,367 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "erasmus-casi-cuatro-decadas-de-estudiantes-por-europa",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Erasmus",
+      "universidad",
+      "educación"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Erasmus: casi cuatro décadas de estudiantes por Europa",
+  "subtitulo": "Empezó en 1987 con poco más de 3.000 jóvenes y hoy forma parte de la identidad europea. Qué es, a quién se dirige y por qué su nombre rinde homenaje a un humanista del siglo XVI.",
+  "portada": {
+    "recursoId": "salamanca",
+    "pie": "Fachada de las Escuelas Mayores de la Universidad de Salamanca, fundada en 1218, una de las más antiguas de Europa."
+  },
+  "recursos": {
+    "salamanca": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fachada_escuelas_mayores_Universidad_de_Salamanca.jpg?width=1200",
+      "alt": "Fachada plateresca de las Escuelas Mayores de la Universidad de Salamanca.",
+      "credito": "Nacaru, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "holbein": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Erasmus_of_Rotterdam_by_Hans_Holbein_d._J._in_Kunstmuseum_Basel.jpg?width=1200",
+      "alt": "Retrato de Erasmo de Rotterdam pintado por Hans Holbein el Joven.",
+      "credito": "Hans Holbein el Joven, Dominio público (Wikimedia Commons)"
+    },
+    "erasmus_groningen": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Erasmus_students_at_a_party_in_Groningen%2C_Netherlands_(2007).jpg?width=1200",
+      "alt": "Estudiantes Erasmus de cinco países reunidos en Groninga, Países Bajos.",
+      "credito": "cocoinzenl, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "erasmus_party": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Erasmus_party.JPG?width=1200",
+      "alt": "Estudiantes Erasmus reunidos en una fiesta en Linköping, Suecia.",
+      "credito": "Gaugi227, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Seguro que conoces a alguien que hizo un ",
+          "marcas": []
+        },
+        {
+          "texto": "Erasmus",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": un semestre o un curso en una universidad de otro país europeo, con las asignaturas reconocidas al volver. Lo que empezó como un experimento universitario se ha convertido en uno de los programas más conocidos de la Unión Europea.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un nombre con historia"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "El programa debe su nombre a ",
+          "marcas": []
+        },
+        {
+          "texto": "Erasmo de Rotterdam",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un humanista holandés del siglo XVI que viajó por media Europa para estudiar y enseñar, y también es un acrónimo en inglés (",
+          "marcas": []
+        },
+        {
+          "texto": "European Community Action Scheme for the Mobility of University Students",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": "). El pintor Hans Holbein el Joven lo retrató en una imagen que se ha hecho famosa. Erasmus defendía la educación y el diálogo entre culturas, ideas que inspiran el proyecto actual.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "holbein",
+      "pie": "Retrato de Erasmo de Rotterdam, pintado por Hans Holbein el Joven."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "De 3.244 a millones de participantes"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El programa echó a andar en ",
+          "marcas": []
+        },
+        {
+          "texto": "1987",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con ",
+          "marcas": []
+        },
+        {
+          "texto": "3.244 estudiantes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en su primer año. Desde entonces, más de ",
+          "marcas": []
+        },
+        {
+          "texto": "15 millones de personas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " han participado en alguna de sus modalidades, según la Comisión Europea. En 2014 se amplió y pasó a llamarse ",
+          "marcas": []
+        },
+        {
+          "texto": "Erasmus+",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con acciones no solo para universitarios, sino también para estudiantes de formación profesional, escuelas, profesorado, jóvenes y deporte. Para el período 2021-2027 cuenta con un presupuesto de unos ",
+          "marcas": []
+        },
+        {
+          "texto": "26.200 millones de euros",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Erasmus en cifras",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Dato"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Valor"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Inicio",
+          "c1": "1987"
+        },
+        {
+          "c0": "Estudiantes el primer año",
+          "c1": "3.244"
+        },
+        {
+          "c0": "Nace Erasmus+",
+          "c1": "2014"
+        },
+        {
+          "c0": "Presupuesto 2021-2027",
+          "c1": "Unos 26.200 millones de euros"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo funciona"
+    },
+    {
+      "id": "b08",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Convenio entre universidades:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el estudiante va a un centro con el que la suya ha firmado un acuerdo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Acuerdo de estudios:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " antes de partir se pactan las asignaturas que se cursarán y se reconocerán.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Beca:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el programa aporta una ayuda económica para costear parte del gasto; la cantidad depende del país de destino y de otras circunstancias.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Sin matrícula extra:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el estudiante paga su matrícula en la universidad de origen, no en la de destino.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "imagen",
+      "recursoId": "erasmus_groningen",
+      "pie": "Estudiantes Erasmus de cinco países reunidos en Groninga, en 2007."
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Más que un curso en el extranjero"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los estudios sobre el programa destacan que mejora el dominio de idiomas y la empleabilidad, y que las experiencias compartidas crean redes de amistad entre países. España es uno de los principales países de destino y de origen de estudiantes, un hecho que se explica en parte por el idioma, el clima y el prestigio de algunas universidades históricas, como la de Salamanca.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "erasmus_party",
+      "pie": "Una fiesta de estudiantes Erasmus en Linköping, Suecia: la vida social forma parte de la experiencia."
+    },
+    {
+      "id": "b13",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Vídeo: Erasmus para todos"
+    },
+    {
+      "id": "b14",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Comisión Europea en España · Erasmus para todos",
+      "url": "https://www.youtube.com/watch?v=GXZk53ZRuV4"
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Una limitación",
+      "texto": "Las becas no cubren siempre todos los gastos: alojamiento y manutención pueden resultar caros según la ciudad de destino. Conviene consultar las condiciones con el servicio de relaciones internacionales de tu universidad.",
+      "icono": "aviso",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Comisión Europea · Erasmus+",
+          "url": "https://erasmus-plus.ec.europa.eu/es"
+        },
+        {
+          "id": "f2",
+          "titulo": "SEPIE · Servicio Español para la Internacionalización de la Educación",
+          "url": "https://www.sepie.es/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

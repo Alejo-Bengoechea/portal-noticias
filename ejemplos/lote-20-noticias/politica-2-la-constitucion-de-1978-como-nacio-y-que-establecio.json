@@ -1,0 +1,378 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "la-constitucion-de-1978-como-nacio-y-que-establecio",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "Constitución",
+      "Transición",
+      "democracia"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "La Constitución de 1978: cómo nació y qué estableció",
+  "subtitulo": "Siete ponentes, un referéndum y un texto de 169 artículos. Repasamos cómo se redactó la norma que rige la vida política española desde hace casi medio siglo.",
+  "portada": {
+    "recursoId": "const_book",
+    "pie": "Ejemplar de la Constitución española de 1978, conservado en el Congreso."
+  },
+  "recursos": {
+    "const_book": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Constitucion_espanola_1978.JPG?width=1200",
+      "alt": "Ejemplar de la Constitución española de 1978 en el Congreso.",
+      "credito": "miguelazo84, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "anefo": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Affiches_in_Spanje_in_verband_met_verkiezingen_over_nieuw_grondwet_6_december_aa%2C_Bestanddeelnr_930-0184.jpg?width=1200",
+      "alt": "Carteles en España con motivo del referéndum sobre la nueva Constitución del 6 de diciembre de 1978.",
+      "credito": "Anefo, CC0 (Wikimedia Commons)"
+    },
+    "const_si": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Constituci%C3%B3n_1978_s%C3%AD.jpg?width=1200",
+      "alt": "Papeleta con el voto afirmativo en el referéndum constitucional de 1978.",
+      "credito": "B25es, Dominio público (Wikimedia Commons)"
+    },
+    "const_senado": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Madrid_-_Senado_-_141204_105744.jpg?width=1200",
+      "alt": "Ejemplar de la Constitución de 1978 expuesto en el interior del Palacio del Senado.",
+      "credito": "Barcex, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La ",
+          "marcas": []
+        },
+        {
+          "texto": "Constitución española de 1978",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es la norma suprema del país. Nació tras la muerte de Franco en 1975 y las primeras elecciones democráticas, celebradas en junio de 1977, que dieron paso a unas Cortes con el encargo de redactar una Carta Magna.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los siete ponentes"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Una ",
+          "marcas": []
+        },
+        {
+          "texto": "ponencia constitucional",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de siete miembros elaboró el primer borrador. Representaban a las principales fuerzas políticas: Gabriel Cisneros, Miguel Herrero de Miñón y José Pedro Pérez-Llorca (UCD), Gregorio Peces-Barba (PSOE), Miquel Roca (Minoría Catalana), Jordi Solé Tura (PCE) y Manuel Fraga (Alianza Popular). Son conocidos como los «padres de la Constitución». El texto se negoció durante meses en una atmósfera de consenso, con cesiones de todos los lados.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "anefo",
+      "pie": "Carteles en las calles de España con motivo del referéndum constitucional del 6 de diciembre de 1978."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Del Parlamento a las urnas"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las Cortes aprobaron el texto definitivo el ",
+          "marcas": []
+        },
+        {
+          "texto": "31 de octubre de 1978",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El ",
+          "marcas": []
+        },
+        {
+          "texto": "6 de diciembre",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se sometió a referéndum: votó a favor cerca del ",
+          "marcas": []
+        },
+        {
+          "texto": "88 %",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de quienes acudieron a las urnas, con una participación de alrededor del 67 %. El rey Juan Carlos I la sancionó el 27 de diciembre y se publicó en el Boletín Oficial del Estado el ",
+          "marcas": []
+        },
+        {
+          "texto": "29 de diciembre de 1978",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", fecha en que entró en vigor.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "La Constitución en fechas",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Fecha"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "15 jun 1977",
+          "c1": "Primeras elecciones democráticas"
+        },
+        {
+          "c0": "31 oct 1978",
+          "c1": "Aprobación por las Cortes"
+        },
+        {
+          "c0": "6 dic 1978",
+          "c1": "Referéndum de ratificación"
+        },
+        {
+          "c0": "29 dic 1978",
+          "c1": "Publicación en el BOE y entrada en vigor"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Qué establece"
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "const_si",
+      "pie": "Una papeleta con el voto afirmativo en el referéndum constitucional de 1978."
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Estado social y democrático de Derecho",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " (artículo 1), con la soberanía en el pueblo español.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Monarquía parlamentaria",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " como forma política del Estado.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Derechos y libertades fundamentales",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": ", como la igualdad, la libertad de expresión o el derecho a la educación.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Estado de las autonomías",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " (artículo 2): reconoce la autonomía de nacionalidades y regiones, dentro de la unidad de España.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "División de poderes:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " Gobierno, Cortes Generales y Poder Judicial.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La Constitución se compone de un título preliminar y diez títulos, con ",
+          "marcas": []
+        },
+        {
+          "texto": "169 artículos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", además de disposiciones adicionales, transitorias, derogatoria y final. Es una norma de las más estables de la historia constitucional española, que fue en sus siglos anteriores muy convulsa.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo se reforma"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Reformarla no es sencillo. Para cambios generales se necesita el apoyo de ",
+          "marcas": []
+        },
+        {
+          "texto": "tres quintos",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de cada Cámara. Para una revisión total o que afecte a los títulos más protegidos, como el preliminar o los derechos fundamentales, se requiere una mayoría de dos tercios, la disolución de las Cortes, un nuevo voto y un referéndum obligatorio. Hasta ahora, la Constitución se ha reformado tres veces: en 1992, para permitir que los ciudadanos de la UE puedan ser elegidos en elecciones municipales; en 2011, para introducir el principio de estabilidad presupuestaria en el artículo 135; y en 2024, para sustituir el término «disminuidos» del artículo 49 por «personas con discapacidad».",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "const_senado",
+      "pie": "Un ejemplar de la Constitución expuesto en el interior del Palacio del Senado."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Un detalle",
+      "texto": "El texto íntegro de la Constitución está disponible en la web del Congreso y en el Boletín Oficial del Estado, de acceso libre.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Congreso de los Diputados · Constitución española",
+          "url": "https://www.congreso.es/constitucion"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

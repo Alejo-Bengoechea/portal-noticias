@@ -10,9 +10,17 @@ import { CategoryCoversPanel } from '@/components/category-covers-panel';
 export default async function NewsManager({ searchParams }: { searchParams: Promise<NewsQuery> }) {
   const client = await adminClient();
   if (!client) redirect('/mesa-editorial-7k4n/login');
-  const { data, count, categories, error, q, state, sort, sorting, drafts, view } = await managedNewsBatch(await searchParams, 0, client);
-  const covers = drafts || error ? [] : await getHomeCovers().catch(() => []);
-  const coverData = drafts ? null : await categoryCoverData(client, covers.map(cover => cover.id));
+  const params = await searchParams;
+  const draftView = params.vista === 'borradores';
+  // Las tres lecturas son independientes: se piden a la vez en lugar de una tras otra.
+  const [batch, homeCovers, coverOptions] = await Promise.all([
+    managedNewsBatch(params, 0, client),
+    draftView ? [] : getHomeCovers().catch(() => []),
+    draftView ? null : categoryCoverData(client),
+  ]);
+  const { data, count, categories, error, q, state, sort, sorting, drafts, view } = batch;
+  const covers = drafts || error ? [] : homeCovers;
+  const coverData = coverOptions && { ...coverOptions, homeIds: covers.map(cover => cover.id) };
   const mode = 'reales';
   const base = drafts ? '/mesa-editorial-7k4n/borradores' : '/mesa-editorial-7k4n/publicaciones';
   const query = { q, estado: state, orden: sort, datos: mode, vista: view };

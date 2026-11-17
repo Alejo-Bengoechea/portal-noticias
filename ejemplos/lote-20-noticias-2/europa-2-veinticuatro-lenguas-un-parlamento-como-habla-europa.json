@@ -1,0 +1,332 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "veinticuatro-lenguas-un-parlamento-como-habla-europa",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "idiomas",
+      "interpretación",
+      "Parlamento Europeo"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "24 lenguas, un Parlamento: cómo habla Europa",
+  "subtitulo": "En la Unión Europea todas las lenguas oficiales valen lo mismo. Explicamos cómo se organiza el multilingüismo y cómo trabajan los intérpretes que lo hacen posible.",
+  "portada": {
+    "recursoId": "interp6",
+    "pie": "Cabina de interpretación del Parlamento Europeo en Bruselas."
+  },
+  "recursos": {
+    "interp6": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interpreting_booth_European_Parliament_Brussels_06.jpg?width=1200",
+      "alt": "Cabina de interpretación del Parlamento Europeo en Bruselas.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "louise14": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Louise_Weiss_building_EP_Strasbourg_14.jpg?width=1200",
+      "alt": "Interior del edificio Louise Weiss del Parlamento Europeo, en Estrasburgo.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "ep_booths": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Interpreting_booths_Louise_Weiss_building_European_Parliament_Strasbourg_05.jpg?width=1200",
+      "alt": "Cabinas de interpretación del edificio Louise Weiss del Parlamento Europeo.",
+      "credito": "FrDr, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "ep_strasbourg": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg?width=1200",
+      "alt": "Hemiciclo del Parlamento Europeo en Estrasburgo durante una sesión plenaria.",
+      "credito": "Diliff, CC BY-SA 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Una sesión del Parlamento Europeo es como una pequeña torre de Babel con auriculares. Los eurodiputados pueden hablar en cualquiera de las ",
+          "marcas": []
+        },
+        {
+          "texto": "24 lenguas oficiales",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la Unión y ser entendidos al instante por sus colegas. La Unión ha decidido que ninguna lengua oficial tenga más peso jurídico que otra.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un principio desde el primer día"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El primer reglamento aprobado por la entonces Comunidad Económica Europea, en ",
+          "marcas": []
+        },
+        {
+          "texto": "1958",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", fijó el régimen lingüístico: los documentos y las intervenciones se hacen en las lenguas oficiales de los Estados miembros. Con cada ampliación se ha ido sumando alguna lengua. Los ciudadanos pueden dirigirse a las instituciones europeas en cualquiera de ellas y recibir respuesta en la misma.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Con 24 lenguas oficiales, las ",
+          "marcas": []
+        },
+        {
+          "texto": "combinaciones posibles",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " entre ellas son 552: cada lengua puede traducirse a las otras 23. Para atender todas, las instituciones europeas emplean a miles de ",
+          "marcas": []
+        },
+        {
+          "texto": "traductores",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y a cientos de ",
+          "marcas": []
+        },
+        {
+          "texto": "intérpretes",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". En el Parlamento, los edificios de Bruselas y Estrasburgo cuentan con numerosas cabinas desde las que se interpreta en directo.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "louise14",
+      "pie": "Interior del edificio Louise Weiss del Parlamento Europeo, en Estrasburgo."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Las 24 lenguas"
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Las lenguas oficiales, por familia",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Familia"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Lenguas"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Germánicas",
+          "c1": "Alemán, danés, inglés, neerlandés y sueco"
+        },
+        {
+          "c0": "Románicas",
+          "c1": "Español, francés, italiano, portugués y rumano"
+        },
+        {
+          "c0": "Eslavas",
+          "c1": "Búlgaro, checo, croata, eslovaco, esloveno y polaco"
+        },
+        {
+          "c0": "Bálticas",
+          "c1": "Letón y lituano"
+        },
+        {
+          "c0": "Urálicas",
+          "c1": "Estonio, finés y húngaro"
+        },
+        {
+          "c0": "Otras",
+          "c1": "Griego, irlandés y maltés"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "ep_booths",
+      "pie": "Cabinas de interpretación del edificio Louise Weiss del Parlamento Europeo."
+    },
+    {
+      "id": "b08",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo trabaja un intérprete"
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Interpretar no es traducir:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la interpretación es oral y simultánea; la traducción es escrita y puede revisarse.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Hacia la lengua materna:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " lo habitual es que cada intérprete trabaje hacia su lengua de origen para ganar naturalidad.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Con relevo:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cuando no hay intérprete directo entre dos lenguas, se interpreta a través de una lengua intermedia, lo que se conoce como interpretación «por relé».",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "En parejas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " los intérpretes se turnan cada media hora, porque la concentración exige mucho.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "ep_strasbourg",
+      "pie": "Hemiciclo del Parlamento Europeo en Estrasburgo durante una sesión plenaria."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un debate abierto"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El multilingüismo es costoso y complejo, pero las instituciones lo defienden como una forma de que ningún ciudadano quede excluido por razón de su idioma. En la práctica, en el trabajo diario de muchos grupos y comisiones se usan unas pocas lenguas de trabajo, mientras que en el pleno se mantiene la interpretación completa.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Un dato curioso",
+      "texto": "El irlandés es lengua oficial de la Unión desde 2007, aunque las instituciones aplicaron durante varios años una excepción temporal a su uso. Su estatuto fue plenamente equiparado en 2022.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Unión Europea · Lenguas oficiales",
+          "url": "https://european-union.europa.eu/principles-countries-history/languages_es"
+        },
+        {
+          "id": "f2",
+          "titulo": "Parlamento Europeo · Portal oficial",
+          "url": "https://www.europarl.europa.eu/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

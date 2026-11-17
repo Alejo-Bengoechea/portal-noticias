@@ -1,0 +1,438 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-estado-de-las-autonomias-17-comunidades-y-dos-ciudades",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "POLÍTICA",
+    "etiquetas": [
+      "autonomías",
+      "Constitución",
+      "organización territorial"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Estado de las autonomías: 17 comunidades y 2 ciudades",
+  "subtitulo": "La Constitución de 1978 permitió que las regiones se organizaran en comunidades autónomas. Contamos cómo se construyó ese modelo y qué competencias tiene cada nivel.",
+  "portada": {
+    "recursoId": "casa_correos",
+    "pie": "Real Casa de Correos, en la Puerta del Sol, sede del Gobierno de la Comunidad de Madrid."
+  },
+  "recursos": {
+    "casa_correos": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/115_Real_Casa_de_Correos%2C_Puerta_del_Sol_7_(Madrid)%2C_seu_de_la_Comunidad_de_Madrid.jpg?width=1200",
+      "alt": "Real Casa de Correos, en la Puerta del Sol, sede del Gobierno de la Comunidad de Madrid.",
+      "credito": "Enric, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "casa_correos2": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/117_Real_Casa_de_Correos%2C_Puerta_del_Sol_7_(Madrid)%2C_seu_de_la_Comunidad_de_Madrid.jpg?width=1200",
+      "alt": "Fachada de la Real Casa de Correos, en Madrid.",
+      "credito": "Enric, CC BY 4.0 (Wikimedia Commons)"
+    },
+    "const_book": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Constitucion_espanola_1978.JPG?width=1200",
+      "alt": "Ejemplar de la Constitución española de 1978 en el Congreso.",
+      "credito": "miguelazo84, CC BY-SA 3.0 (Wikimedia Commons)"
+    },
+    "senado1": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio_del_Senado_-_Madrid_-_20250920_001.jpg?width=1200",
+      "alt": "Fachada del Palacio del Senado, en Madrid.",
+      "credito": "Américo Toledano, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "España es un Estado unitario con un alto grado de descentralización. Cada comunidad autónoma tiene su propio ",
+          "marcas": []
+        },
+        {
+          "texto": "Parlamento, Gobierno y estatuto de autonomía",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", además de competencias en materias como sanidad, educación o urbanismo. Este modelo, conocido como ",
+          "marcas": []
+        },
+        {
+          "texto": "Estado de las autonomías",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", nació de la Constitución de 1978.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un modelo abierto"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La Constitución no dibujó un mapa. Reconoció en el ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 2",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " «la autonomía de las nacionalidades y regiones que la integran» y, en su ",
+          "marcas": []
+        },
+        {
+          "texto": "Título VIII",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", estableció cómo podían acceder a ella. Dos caminos principales: el del ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 143",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", más lento y con competencias iniciales limitadas, y el del ",
+          "marcas": []
+        },
+        {
+          "texto": "artículo 151",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", más rápido y con un techo competencial mayor.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "izquierda",
+      "spans": [
+        {
+          "texto": "Los primeros estatutos fueron los del ",
+          "marcas": []
+        },
+        {
+          "texto": "País Vasco",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y ",
+          "marcas": []
+        },
+        {
+          "texto": "Cataluña",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", aprobados en ",
+          "marcas": []
+        },
+        {
+          "texto": "1979",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", seguidos por los de ",
+          "marcas": []
+        },
+        {
+          "texto": "Galicia",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " y ",
+          "marcas": []
+        },
+        {
+          "texto": "Andalucía",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en ",
+          "marcas": []
+        },
+        {
+          "texto": "1981",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Andalucía alcanzó la vía rápida tras un referéndum en febrero de 1980. A principios de ",
+          "marcas": []
+        },
+        {
+          "texto": "1983",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", todo el territorio peninsular, las islas y los archipiélagos se habían organizado en comunidades autónomas. Más tarde, ",
+          "marcas": []
+        },
+        {
+          "texto": "Ceuta y Melilla",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " obtuvieron sus estatutos como ",
+          "marcas": []
+        },
+        {
+          "texto": "ciudades autónomas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en 1995.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "casa_correos2",
+      "pie": "Fachada de la Real Casa de Correos, en Madrid."
+    },
+    {
+      "id": "b05",
+      "tipo": "tabla",
+      "titulo": "Hitos de la construcción autonómica",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Hecho"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "1978",
+          "c1": "Se aprueba la Constitución"
+        },
+        {
+          "c0": "1979",
+          "c1": "Estatutos del País Vasco y de Cataluña"
+        },
+        {
+          "c0": "1981",
+          "c1": "Estatutos de Galicia y Andalucía"
+        },
+        {
+          "c0": "1983",
+          "c1": "Últimos estatutos de las comunidades"
+        },
+        {
+          "c0": "1995",
+          "c1": "Estatutos de Ceuta y Melilla"
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién hace qué"
+    },
+    {
+      "id": "b07",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los artículos ",
+          "marcas": []
+        },
+        {
+          "texto": "148 y 149",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " de la Constitución reparten las competencias. El Estado se reserva asuntos como la defensa, las relaciones internacionales, la nacionalidad o la legislación mercantil y penal. Las comunidades pueden asumir otras, como la agricultura, la asistencia social o la ordenación del territorio. Sanidad y educación se gestionan en buena parte por las comunidades, dentro de un marco estatal.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "const_book",
+      "pie": "Ejemplar de la Constitución española de 1978, cuyo Título VIII regula la organización territorial."
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Policías autonómicas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " Cataluña, el País Vasco y Navarra tienen cuerpos propios, como los Mossos d’Esquadra, la Ertzaintza y la Policía Foral.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Lenguas cooficiales:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " en varias comunidades, la lengua propia es oficial junto al castellano.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Financiación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " la mayoría de las comunidades se financian por el régimen común; el País Vasco y Navarra tienen un sistema foral, con concierto y convenio económico.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién resuelve los conflictos"
+    },
+    {
+      "id": "b11",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cuando el Estado y una comunidad discrepan sobre quién tiene una competencia, o una ley autonómica puede chocar con la Constitución, la decisión última corresponde al ",
+          "marcas": []
+        },
+        {
+          "texto": "Tribunal Constitucional",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", que actúa como árbitro del sistema.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "senado1",
+      "pie": "Fachada del Palacio del Senado, la Cámara que la Constitución define como de representación territorial."
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Un detalle",
+      "texto": "Los estatutos de autonomía se aprueban como leyes orgánicas por las Cortes Generales, y se pueden reformar por el procedimiento que cada uno establece.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Congreso de los Diputados · La Constitución",
+          "url": "https://www.congreso.es/constitucion"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Constitución Española",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

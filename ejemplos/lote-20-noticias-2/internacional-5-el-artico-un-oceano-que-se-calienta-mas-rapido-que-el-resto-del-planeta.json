@@ -1,0 +1,417 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-artico-un-oceano-que-se-calienta-mas-rapido-que-el-resto-del-planeta",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "INTERNACIONAL",
+    "etiquetas": [
+      "Ártico",
+      "clima",
+      "geopolítica"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Ártico: el océano que se calienta más rápido",
+  "subtitulo": "No es un continente ni un país: es un océano helado rodeado de tierras de ocho Estados. Explicamos quién lo gobierna, por qué se calienta tan deprisa y qué se juega en él.",
+  "portada": {
+    "recursoId": "arctic_mosaic",
+    "pie": "Vista de satélite del Ártico."
+  },
+  "recursos": {
+    "arctic_mosaic": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mosaic_of_the_Arctic.jpg?width=1200",
+      "alt": "Vista de satélite del Ártico.",
+      "credito": "NASA, Dominio público (Wikimedia Commons)"
+    },
+    "iceberg": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Iceberg_in_the_Arctic_with_its_underside_exposed.jpg?width=1200",
+      "alt": "Iceberg en el Ártico con su parte inferior a la vista.",
+      "credito": "Andreas Weith, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bear_sv": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Polar_bear_(Ursus_maritimus)_in_the_drift_ice_region_north_of_Svalbard.jpg?width=1200",
+      "alt": "Un oso polar sobre el hielo a la deriva al norte de Svalbard.",
+      "credito": "Andreas Weith, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "baffin": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sea_Ice_off_Baffin_Island.jpg?width=1200",
+      "alt": "Imagen de satélite del hielo marino junto a la isla de Baffin.",
+      "credito": "Jeff Schmaltz (NASA), Dominio público (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En el extremo norte del planeta hay un océano casi cerrado, cubierto de hielo durante gran parte del año. Es el ",
+          "marcas": []
+        },
+        {
+          "texto": "Ártico",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". A diferencia de la Antártida, que es un continente, el Ártico es ",
+          "marcas": []
+        },
+        {
+          "texto": "agua rodeada de tierra",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": Canadá, Dinamarca (por Groenlandia), Estados Unidos (Alaska), Finlandia, Islandia, Noruega, Rusia y Suecia tienen territorio dentro de él.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un lugar que se calienta a otra velocidad"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Las mediciones por satélite del hielo marino comenzaron en ",
+          "marcas": []
+        },
+        {
+          "texto": "1979",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Desde entonces la superficie de hielo que sobrevive al verano ha disminuido de forma notable y el mínimo más bajo de la serie se registró en ",
+          "marcas": []
+        },
+        {
+          "texto": "2012",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Varios estudios científicos señalan que la región se ha calentado ",
+          "marcas": []
+        },
+        {
+          "texto": "casi cuatro veces más rápido que la media del planeta",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " en las últimas décadas, un fenómeno conocido como ",
+          "marcas": []
+        },
+        {
+          "texto": "amplificación ártica",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ".",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Una de las causas es el llamado ",
+          "marcas": []
+        },
+        {
+          "texto": "efecto albedo",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ": el hielo y la nieve reflejan gran parte de la luz solar, pero el agua oscura la absorbe. Cuando el hielo se funde, queda más agua expuesta, absorbe más calor y se acelera el deshielo. Por eso lo que ocurre en el Ártico no se queda allí: influye en las corrientes, el nivel del mar y el tiempo en otras latitudes.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "iceberg",
+      "pie": "Iceberg en el Ártico con su parte inferior a la vista."
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién gobierna el Ártico"
+    },
+    {
+      "id": "b06",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "No existe un tratado como el de la Antártida. El Ártico se rige por el ",
+          "marcas": []
+        },
+        {
+          "texto": "derecho del mar",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", es decir, por la Convención de las Naciones Unidas sobre el Derecho del Mar. Cada país ribereño tiene derechos económicos sobre una franja de ",
+          "marcas": []
+        },
+        {
+          "texto": "200 millas",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " desde su costa y puede reclamar ampliaciones de su plataforma continental. El ",
+          "marcas": []
+        },
+        {
+          "texto": "Polo Norte",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " está en aguas internacionales, sin soberanía de ningún Estado. El archipiélago de ",
+          "marcas": []
+        },
+        {
+          "texto": "Svalbard",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se rige por un tratado firmado en 1920 que reconoce la soberanía de Noruega y otorga derechos de explotación a otros países firmantes.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "imagen",
+      "recursoId": "bear_sv",
+      "pie": "Un oso polar sobre el hielo a la deriva al norte de Svalbard."
+    },
+    {
+      "id": "b08",
+      "tipo": "tabla",
+      "titulo": "Ártico y Antártida",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Aspecto"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Ártico"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "Antártida"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Qué es",
+          "c1": "Océano rodeado de tierra",
+          "c2": "Continente rodeado de océano"
+        },
+        {
+          "c0": "Habitantes permanentes",
+          "c1": "Unos cuatro millones de personas",
+          "c2": "Ninguno: solo personal científico"
+        },
+        {
+          "c0": "Régimen jurídico",
+          "c1": "Derecho del mar y soberanía de los Estados ribereños",
+          "c2": "Tratado Antártico (1959)"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un foro para ocho países"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En ",
+          "marcas": []
+        },
+        {
+          "texto": "1996",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", la Declaración de Ottawa creó el ",
+          "marcas": []
+        },
+        {
+          "texto": "Consejo Ártico",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", un foro de cooperación entre los ocho Estados árticos y las organizaciones de pueblos indígenas, que participan como permanentes. Se ocupa de la protección del medio ambiente y el desarrollo sostenible, pero no trata asuntos militares.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "baffin",
+      "pie": "Imagen de satélite del hielo marino junto a la isla de Baffin."
+    },
+    {
+      "id": "b12",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Lo que está en juego"
+    },
+    {
+      "id": "b13",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Rutas marítimas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " al derretirse el hielo, se abren pasos como el de Noroeste y la ruta marítima del Norte.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Recursos:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el subsuelo guarda petróleo, gas y minerales, aunque su explotación es costosa y polémica.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Pueblos indígenas:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " las comunidades inuit, sami y otras dependen de la caza, la pesca y el hielo.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Biodiversidad:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " especies como el oso polar y la foca dependen del hielo marino.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Para ampliar",
+      "texto": "Si te interesa el otro extremo del planeta, puedes leer nuestro reportaje sobre la Antártida, el continente que pertenece a la ciencia.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Consejo Ártico · Portal oficial",
+          "url": "https://arctic-council.org/"
+        },
+        {
+          "id": "f2",
+          "titulo": "NSIDC · Centro Nacional de Datos de Nieve y Hielo",
+          "url": "https://nsidc.org/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "bitcoin-que-es-y-por-que-su-precio-se-mueve-tanto",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "bitcoin",
+      "criptomonedas",
+      "blockchain"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "Bitcoin: qué es y por qué su precio se mueve tanto",
+  "subtitulo": "Nació en 2009 sin banco central, sin empresa detrás y con un tope de 21 millones de unidades. Explicamos cómo funciona y qué hay detrás de sus subidas y caídas.",
+  "portada": {
+    "recursoId": "casascius",
+    "pie": "Una moneda física de colección de 2011 con el símbolo de bitcoin; la criptomoneda en sí es digital."
+  },
+  "recursos": {
+    "casascius": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Physical_Bitcoin_2011_Casascius_1_Bitcoin_Coin_Token.png?width=1200",
+      "alt": "Anverso de una moneda física de colección de 2011 con el símbolo de bitcoin.",
+      "credito": "Tiberiandusk, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "btc_laptop": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Close-up_of_a_Bitcoin_physical_coin_in_a_womans_hand_and_a_laptop_on_her_lap.jpg?width=1200",
+      "alt": "Una mujer sostiene una moneda física de bitcoin con un portátil sobre las rodillas.",
+      "credito": "Shixart1985, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "bixbit": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cell_BiXBiT.jpg?width=1200",
+      "alt": "Equipos de minería de criptomonedas sumergidos en un sistema de refrigeración por inmersión.",
+      "credito": "Stealth2021, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "casascius_back": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Physical_Bitcoin_2011_Casascius_1_Bitcoin_Coin_Token_Typo_Hologram_Back.png?width=1200",
+      "alt": "Reverso de la moneda física de bitcoin de 2011, con un holograma de seguridad.",
+      "credito": "Tiberiandusk, CC BY-SA 4.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Bitcoin",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " es una moneda digital que no depende de ningún banco ni gobierno. En octubre de 2008, una persona o grupo que firmaba como ",
+          "marcas": []
+        },
+        {
+          "texto": "Satoshi Nakamoto",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " publicó el documento que describía su funcionamiento, y el 3 de enero de 2009 se generó el primer bloque de su red. Nunca se ha confirmado quién estaba detrás de ese seudónimo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Cómo funciona sin un banco en medio"
+    },
+    {
+      "id": "b03",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Las operaciones de bitcoin se registran en la ",
+          "marcas": []
+        },
+        {
+          "texto": "cadena de bloques",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " o ",
+          "marcas": []
+        },
+        {
+          "texto": "blockchain",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": ", un libro de cuentas público que copian miles de ordenadores. Cada cierto tiempo, un grupo de transacciones se agrupa en un bloque que se añade al libro. Para ello hay que resolver un problema matemático que exige mucha potencia de cálculo: es la llamada ",
+          "marcas": []
+        },
+        {
+          "texto": "minería",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Quien lo logra recibe bitcoins nuevos como recompensa. Alterar el pasado exigiría rehacer todo ese trabajo, y eso es lo que da seguridad a la red.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "btc_laptop",
+      "pie": "Aunque existan monedas físicas de colección, bitcoin solo existe como anotaciones en un registro digital."
+    },
+    {
+      "id": "b04",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un número limitado"
+    },
+    {
+      "id": "b05",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "A diferencia del dinero de un banco central, que se puede emitir sin tope, el protocolo de bitcoin fija un máximo de ",
+          "marcas": []
+        },
+        {
+          "texto": "21 millones de unidades",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Además, la recompensa por minar cada bloque se reduce a la mitad aproximadamente cada cuatro años, en un suceso conocido como ",
+          "marcas": []
+        },
+        {
+          "texto": "halving",
+          "marcas": [
+            "cursiva"
+          ]
+        },
+        {
+          "texto": ". Esa escasez programada es uno de los argumentos de sus defensores.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b06",
+      "tipo": "tabla",
+      "titulo": "Recompensa por bloque minado",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Año"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Bitcoins por bloque"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "2009",
+          "c1": "50"
+        },
+        {
+          "c0": "2012",
+          "c1": "25"
+        },
+        {
+          "c0": "2016",
+          "c1": "12,5"
+        },
+        {
+          "c0": "2020",
+          "c1": "6,25"
+        },
+        {
+          "c0": "2024",
+          "c1": "3,125"
+        }
+      ]
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Por qué sube y baja tanto"
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "bixbit",
+      "pie": "Equipos de minería sumergidos en líquido para refrigerarlos: minar consume mucha energía."
+    },
+    {
+      "id": "b09",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "Mercado pequeño y especulativo:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " comparado con las bolsas tradicionales, mueve menos dinero, así que operaciones grandes desplazan el precio con más facilidad.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Sin activos que lo respalden:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " no genera beneficios ni dividendos; su valor depende de lo que otros estén dispuestos a pagar.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Noticias y regulación:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " las decisiones de reguladores, bancos o grandes empresas pueden provocar movimientos bruscos.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "Opera sin descanso:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " cotiza las 24 horas, todos los días del año, y reacciona al instante a cualquier noticia.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "En enero de 2024, Estados Unidos aprobó los primeros fondos cotizados que replican directamente el precio del bitcoin, lo que facilitó la entrada de inversores tradicionales. Algunos países han ido más lejos: El Salvador lo declaró moneda de curso legal en 2021, una medida muy debatida.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Los riesgos que conviene conocer"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Bitcoin no cuenta con una garantía de depósitos como una cuenta bancaria. Si se pierde la clave privada que da acceso a los fondos, no hay forma de recuperarlos. Además, las estafas relacionadas con criptomonedas son frecuentes, y su minería ha sido criticada por su consumo eléctrico. Las autoridades financieras europeas llevan años advirtiendo de que se trata de un activo de alto riesgo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "casascius_back",
+      "pie": "Reverso de la moneda de colección, con un holograma de seguridad: objeto de coleccionista, no dinero digital."
+    },
+    {
+      "id": "b14",
+      "tipo": "nota_editorial",
+      "titulo": "Información, no consejo",
+      "texto": "Este artículo es divulgativo y no recomienda comprar ni vender ningún activo. Quien invierta en criptomonedas puede perder todo su dinero.",
+      "icono": "aviso",
+      "color": "rojo"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Bitcoin · Documento original (Satoshi Nakamoto)",
+          "url": "https://bitcoin.org/bitcoin.pdf"
+        },
+        {
+          "id": "f2",
+          "titulo": "CNMV · Información de interés para el inversor",
+          "url": "https://www.cnmv.es/portal/Inversor/Informacion-Interes.aspx"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

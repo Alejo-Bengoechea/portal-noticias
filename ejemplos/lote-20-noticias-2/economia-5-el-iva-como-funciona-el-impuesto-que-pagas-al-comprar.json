@@ -1,0 +1,345 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-iva-como-funciona-el-impuesto-que-pagas-al-comprar",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "ECONOMÍA Y FINANZAS",
+    "etiquetas": [
+      "IVA",
+      "impuestos",
+      "consumo"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El IVA: cómo funciona el impuesto que pagas al comprar",
+  "subtitulo": "Está en casi todos los tickets, pero pocos saben quién lo ingresa y cómo. Explicamos los tipos, la cadena de cobro y las excepciones en Canarias, Ceuta y Melilla.",
+  "portada": {
+    "recursoId": "carts",
+    "pie": "Carritos de la compra a la entrada de un supermercado."
+  },
+  "recursos": {
+    "carts": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shopping_carts_Tegut_Tauberbischofsheim.jpg?width=1200",
+      "alt": "Hilera de carritos de la compra a la entrada de un supermercado.",
+      "credito": "Triplec85, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "spar": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SPAR_kolonial_mat_varehandel_hyller_(Supermarket_interior_GROCERY_store_aisle_shelves)_Frokostblandinger_gryn_m%C3%BCsli_Axa_frukt_energi_4-korn_bl%C3%A5b%C3%A6r_(cereals_muesli)_etc_Tj%C3%B8me_NORWAY_2023-08-31_IMG_1095.jpg?width=1200",
+      "alt": "Estantería de un supermercado con cajas de cereales y sus etiquetas de precio.",
+      "credito": "Wolfmann, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "bill": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Twenty_euro_banknote_and_coins.jpg?width=1200",
+      "alt": "Un billete de veinte euros y monedas sobre la cuenta de un restaurante.",
+      "credito": "Daniel Lobo, CC BY 2.0 (Wikimedia Commons)"
+    },
+    "omv": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/05_OMV_gas_station_prices_in_Austria_-_gas_prices_in_Europe_2012.jpg?width=1200",
+      "alt": "Panel de precios de los carburantes en una gasolinera de una autopista austriaca.",
+      "credito": "Marek Ślusarczyk, CC BY 3.0 (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Cada vez que compras un café, una camisa o un billete de tren, una parte del precio que pagas no es para el vendedor: es el ",
+          "marcas": []
+        },
+        {
+          "texto": "Impuesto sobre el Valor Añadido (IVA)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". En España se aplica desde el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de enero de 1986",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", cuando el país entró en la entonces Comunidad Económica Europea.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Tres tipos, según el producto"
+    },
+    {
+      "id": "b03",
+      "tipo": "tabla",
+      "titulo": "Tipos de IVA en la España peninsular y Baleares",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Tipo"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Ejemplos"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "21 % (general)",
+          "c1": "Ropa, electrónica, muebles, la mayoría de servicios"
+        },
+        {
+          "c0": "10 % (reducido)",
+          "c1": "Hostelería y restauración, transporte de viajeros, vivienda nueva"
+        },
+        {
+          "c0": "4 % (superreducido)",
+          "c1": "Pan, leche, huevos, frutas, verduras, libros, medicamentos"
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "La idea es que los bienes más básicos paguen menos. Algunas medidas temporales han rebajado el IVA de ciertos alimentos en épocas de precios altos, por lo que conviene consultar la normativa vigente en cada momento.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Quién lo paga de verdad"
+    },
+    {
+      "id": "b06",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "El IVA lo ",
+          "marcas": []
+        },
+        {
+          "texto": "paga el consumidor final",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", aunque lo ingresan las empresas. Cada vendedor cobra el impuesto a su cliente («IVA repercutido») y se deduce el que él ha pagado a sus proveedores («IVA soportado»). Solo ingresa en Hacienda la diferencia: el impuesto recae sobre el ",
+          "marcas": []
+        },
+        {
+          "texto": "valor que cada empresa añade",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " al producto.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "spar",
+      "pie": "Estantería de un supermercado con productos y sus etiquetas de precio."
+    },
+    {
+      "id": "b07",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Un ejemplo con números"
+    },
+    {
+      "id": "b08",
+      "tipo": "tabla",
+      "titulo": "La cadena de un producto al 21 %",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Eslabón"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Vende por"
+        },
+        {
+          "clave": "c2",
+          "etiqueta": "IVA ingresado en Hacienda"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Fabricante",
+          "c1": "100 euros",
+          "c2": "21,00 euros"
+        },
+        {
+          "c0": "Distribuidor",
+          "c1": "150 euros",
+          "c2": "10,50 euros"
+        },
+        {
+          "c0": "Tienda",
+          "c1": "200 euros",
+          "c2": "10,50 euros"
+        },
+        {
+          "c0": "Consumidor",
+          "c1": "Paga 242 euros",
+          "c2": "Total recaudado: 42 euros"
+        }
+      ]
+    },
+    {
+      "id": "b09",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Fíjate en que el total que llega a Hacienda (42 euros) coincide con el 21 % del precio final sin impuestos (200 euros): cada empresa solo ingresa lo que corresponde a su parte de la cadena.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b10",
+      "tipo": "imagen",
+      "recursoId": "bill",
+      "pie": "Un billete de veinte euros y monedas sobre la cuenta de un restaurante, donde el IVA suele ser del 10 %."
+    },
+    {
+      "id": "b11",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Canarias, Ceuta y Melilla"
+    },
+    {
+      "id": "b12",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El IVA no se aplica en todo el territorio español. En ",
+          "marcas": []
+        },
+        {
+          "texto": "Canarias",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " rige el ",
+          "marcas": []
+        },
+        {
+          "texto": "Impuesto General Indirecto Canario (IGIC)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", con un tipo general más bajo, y en ",
+          "marcas": []
+        },
+        {
+          "texto": "Ceuta y Melilla",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": " se aplica el ",
+          "marcas": []
+        },
+        {
+          "texto": "Impuesto sobre la Producción, los Servicios y la Importación (IPSI)",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". En ambos casos se trata de regímenes fiscales especiales reconocidos por la normativa.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b13",
+      "tipo": "imagen",
+      "recursoId": "omv",
+      "pie": "Panel de precios de los carburantes, en cuyos importes se incluyen impuestos."
+    },
+    {
+      "id": "b14",
+      "tipo": "video_externo",
+      "proveedor": "youtube",
+      "titulo": "Qué es el IVA, explicado por RTVE",
+      "url": "https://www.youtube.com/watch?v=ucTLcummmUA"
+    },
+    {
+      "id": "b15",
+      "tipo": "nota_editorial",
+      "titulo": "Para fijarte en el ticket",
+      "texto": "En una factura aparecen separados la base imponible, el tipo de IVA y la cuota. Las empresas y los autónomos pueden deducirse el IVA soportado; el consumidor, no.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Agencia Tributaria · Portal oficial",
+          "url": "https://sede.agenciatributaria.gob.es/"
+        },
+        {
+          "id": "f2",
+          "titulo": "BOE · Ley 37/1992 del Impuesto sobre el Valor Añadido",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}

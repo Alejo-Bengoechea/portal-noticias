@@ -1,0 +1,298 @@
+{
+  "versionEsquema": "1.0.0",
+  "metadatos": {
+    "slug": "el-tratado-de-roma-de-1957-el-nacimiento-del-mercado-comun",
+    "idioma": "es",
+    "estado": "borrador",
+    "tipo": "reportaje",
+    "seccion": "EUROPA",
+    "etiquetas": [
+      "Tratado de Roma",
+      "historia",
+      "CEE"
+    ]
+  },
+  "autores": [
+    {
+      "nombre": "Redacción"
+    }
+  ],
+  "fechas": {
+    "publicacion": null,
+    "actualizacion": "2026-11-16"
+  },
+  "titular": "El Tratado de Roma de 1957: nace el mercado común",
+  "subtitulo": "Seis países firmaron en el Capitolio una apuesta por la paz a través de la economía. Repasamos qué se acordó, cómo evolucionó y qué queda de aquel texto en la Unión actual.",
+  "portada": {
+    "recursoId": "treaties_rome",
+    "pie": "Los principales tratados de la Unión Europea expuestos en Roma en 1997."
+  },
+  "recursos": {
+    "treaties_rome": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_treaties_on_display_in_Rome%2C_1997.jpg?width=1200",
+      "alt": "Los principales tratados de la Unión Europea expuestos en Roma en 1997.",
+      "credito": "Comisión Europea, CC BY 3.0 (Wikimedia Commons)"
+    },
+    "eura112": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euratom_Treaty_(Treaty_of_Rome)_Dutch_copy_(page_112_crop)_signatures.jpg?width=1200",
+      "alt": "Página con las firmas de un ejemplar del Tratado de Roma de 1957.",
+      "credito": "Gobierno de Italia (EUR-Lex), CC BY 4.0 (Wikimedia Commons)"
+    },
+    "berlaymont": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgique_-_Bruxelles_-_Schuman_-_Berlaymont_-_01.jpg?width=1200",
+      "alt": "Edificio Berlaymont, sede de la Comisión Europea en Bruselas.",
+      "credito": "EmDee, CC BY-SA 4.0 (Wikimedia Commons)"
+    },
+    "eura151": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euratom_Treaty_(Treaty_of_Rome)_Dutch_copy_(page_151_crop)_signatures.jpg?width=1200",
+      "alt": "Otra página de firmas del Tratado de Roma de 1957.",
+      "credito": "Gobierno de Italia (EUR-Lex), CC BY 4.0 (Wikimedia Commons)"
+    },
+    "coins_cropped": {
+      "tipo": "imagen",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Euro_coins_and_banknotes_(cropped).jpg?width=1200",
+      "alt": "Monedas y billetes de euro.",
+      "credito": "Avij, Dominio público (Wikimedia Commons)"
+    }
+  },
+  "cuerpo": [
+    {
+      "id": "b01",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El ",
+          "marcas": []
+        },
+        {
+          "texto": "25 de marzo de 1957",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", en una sala del Capitolio de Roma, los representantes de seis países firmaron dos tratados que cambiarían la historia del continente. Habían pasado solo doce años desde el final de la Segunda Guerra Mundial y la idea era sencilla: si las economías de los antiguos enemigos se entrelazaban, una guerra entre ellos sería casi imposible.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b02",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Seis países"
+    },
+    {
+      "id": "b03",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "Los firmantes fueron ",
+          "marcas": []
+        },
+        {
+          "texto": "Bélgica, Francia, Italia, Luxemburgo, los Países Bajos y la República Federal de Alemania",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". Ya compartían desde 1951 la Comunidad Europea del Carbón y del Acero, impulsada por la declaración de Robert Schuman del 9 de mayo de 1950.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b04",
+      "tipo": "tabla",
+      "titulo": "Dos tratados el mismo día",
+      "columnas": [
+        {
+          "clave": "c0",
+          "etiqueta": "Tratado"
+        },
+        {
+          "clave": "c1",
+          "etiqueta": "Objetivo"
+        }
+      ],
+      "filas": [
+        {
+          "c0": "Comunidad Económica Europea (CEE)",
+          "c1": "Crear un mercado común y una unión aduanera"
+        },
+        {
+          "c0": "Comunidad Europea de la Energía Atómica (Euratom)",
+          "c1": "Cooperar en el uso pacífico de la energía nuclear"
+        }
+      ]
+    },
+    {
+      "id": "b05",
+      "tipo": "texto_imagen",
+      "ladoTexto": "derecha",
+      "spans": [
+        {
+          "texto": "Los tratados entraron en vigor el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de enero de 1958",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ". El de la CEE proponía eliminar los aranceles entre los miembros, fijar un arancel común frente a terceros países y permitir la libre circulación de personas, mercancías, servicios y capitales. La unión aduanera se completó el ",
+          "marcas": []
+        },
+        {
+          "texto": "1 de julio de 1968",
+          "marcas": [
+            "negrita"
+          ]
+        },
+        {
+          "texto": ", antes de lo previsto.",
+          "marcas": []
+        }
+      ],
+      "recursoId": "eura112",
+      "pie": "Página con las firmas de un ejemplar del Tratado de Roma."
+    },
+    {
+      "id": "b06",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "De la Comunidad a la Unión"
+    },
+    {
+      "id": "b07",
+      "tipo": "lista",
+      "ordenada": false,
+      "elementos": [
+        {
+          "spans": [
+            {
+              "texto": "1986:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " España y Portugal se incorporan a la Comunidad.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "1992:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el Tratado de Maastricht crea la Unión Europea.",
+              "marcas": []
+            }
+          ]
+        },
+        {
+          "spans": [
+            {
+              "texto": "2009:",
+              "marcas": [
+                "negrita"
+              ]
+            },
+            {
+              "texto": " el Tratado de Lisboa renombra el de Roma como Tratado de Funcionamiento de la Unión Europea, que sigue vigente.",
+              "marcas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b08",
+      "tipo": "imagen",
+      "recursoId": "berlaymont",
+      "pie": "Edificio Berlaymont, sede de la Comisión Europea en Bruselas."
+    },
+    {
+      "id": "b09",
+      "tipo": "encabezado",
+      "nivel": 2,
+      "texto": "Lo que queda de aquel texto"
+    },
+    {
+      "id": "b10",
+      "tipo": "parrafo",
+      "spans": [
+        {
+          "texto": "El Tratado de Roma no ha desaparecido: sus principios siguen siendo la base del mercado único. Lo que hoy damos por normal, como comprar un producto en otro país europeo o trabajar en él sin permiso especial, parte de aquellas libertades. El tratado preveía además la creación de instituciones comunes, como una Comisión y una Asamblea, que han evolucionado hasta convertirse en la Comisión Europea y el Parlamento Europeo.",
+          "marcas": []
+        }
+      ]
+    },
+    {
+      "id": "b11",
+      "tipo": "imagen",
+      "recursoId": "eura151",
+      "pie": "Otra página de firmas del Tratado de Roma de 1957."
+    },
+    {
+      "id": "b12",
+      "tipo": "imagen",
+      "recursoId": "coins_cropped",
+      "pie": "Monedas y billetes de euro, símbolo de la integración económica europea."
+    },
+    {
+      "id": "b13",
+      "tipo": "nota_editorial",
+      "titulo": "Una curiosidad",
+      "texto": "Cada 25 de marzo se recuerda el aniversario del Tratado. Los 27 miembros actuales descienden de aquel núcleo de seis países.",
+      "icono": "info",
+      "color": "ambar"
+    },
+    {
+      "id": "fuentes",
+      "tipo": "fuentes",
+      "elementos": [
+        {
+          "id": "f1",
+          "titulo": "Unión Europea · Historia, 1945-1959",
+          "url": "https://european-union.europa.eu/principles-countries-history/history-eu/1945-59_es"
+        },
+        {
+          "id": "f2",
+          "titulo": "EUR-Lex · Portal de derecho de la Unión",
+          "url": "https://eur-lex.europa.eu/"
+        }
+      ]
+    }
+  ],
+  "presentacion": {
+    "plantilla": "reportaje",
+    "indice": {
+      "mostrar": false,
+      "niveles": [
+        2,
+        3
+      ]
+    },
+    "mostrarFirma": true,
+    "mostrarAvisoFiccion": false,
+    "embeds": {
+      "habilitados": true,
+      "cargarBajoDemanda": true
+    },
+    "mostrarFechaActualizacion": true
+  }
+}
